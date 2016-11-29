@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://anvartk@bitbucket.org/anvartk/turbobeta.git"
+    "url": "git+https://anvartk@bitbucket.org/anvartk/turbo.git"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/anvartk/turbobeta#readme",
+  "homepage": "https://bitbucket.org/anvartk/turbo#readme",
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-sass": "^1.0.0",
