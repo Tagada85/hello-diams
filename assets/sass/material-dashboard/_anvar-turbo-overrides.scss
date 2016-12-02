@@ -1,0 +1,138 @@
+    .icon.icon-primary {
+      color: #9c27b0; }
+    .icon.icon-info {
+      color: #00bcd4; }
+    .icon.icon-success {
+      color: #4caf50; }
+    .icon.icon-warning {
+      color: #ff9800; }
+    .icon.icon-danger {
+      color: #f44336; }
+    .icon.icon-rose {
+      color: #e91e63; }
+      
+ 
+// Reduced top and bottom margin to reduce vertical gutter
+.card {
+    margin: 15px 0;
+
+
+}
+
+// Card with background color black
+.card-weather  {
+	background: #42A5F5;
+	color:#ffffff;
+}
+
+
+      
+      
+/*-------------------------
+   Streamline
+--------------------------*/
+
+.text-muted {
+    color: #777777;
+}
+.streamline{
+	.sl-item{
+		position: relative;
+    	padding-bottom: 12px;
+    	border-left: 1px solid #ccc;
+		
+		.sl-content {
+			margin-left: 24px;
+		}
+		
+		p{
+			margin-bottom: 10px;
+		}
+		
+		.sl-avatar {
+			position: absolute;
+			left: -22px;
+			
+			img{
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+			}
+		}
+		
+		.text-muted {
+			color: inherit;
+			opacity: .6;
+		}
+		
+		.fz-sm {
+			font-size: 12px !important;
+		}
+	}
+	
+	.sl-primary {
+		border-left-color: #188ae2;
+	}
+	.sl-danger {
+		border-left-color: #ff5b5b;
+	}
+	.sl-success {
+		border-left-color: #10c469;
+	}
+	.sl-warning {
+		border-left-color: #f9c851;
+	}
+	
+	.sl-item:before {
+		content: '';
+		position: absolute;
+		left: -6px;
+		top: 0;
+		background-color: #ccc;
+		width: 12px;
+		height: 12px;
+		border-radius: 100%;
+	}
+	
+	.sl-primary:before, .sl-primary:last-child:after {
+		background-color: #188ae2;
+	}
+	.sl-danger:before, .sl-danger:last-child:after {
+		background-color: #ff5b5b;
+	}
+	.sl-success:before, .sl-success:last-child:after {
+		background-color: #10c469;
+	}
+	.sl-warning:before, .sl-warning:last-child:after {
+		background-color: #f9c851;
+	}
+	
+	&.sl-style-2{
+		.sl-item:before {
+			top: 6px;
+			background-color: #fff;
+			width: 11px;
+			height: 11px;
+			
+			border-color: #ccc;
+			border-style: solid;
+			border-width: 1px;
+			border-radius: 10px;
+		}
+		
+		.sl-primary:before, .sl-primary:last-child:after {
+			border-color: #188ae2;
+		}
+		.sl-danger:before, .sl-danger:last-child:after {
+			border-color: #ff5b5b;
+		}
+		.sl-success:before, .sl-success:last-child:after {
+			border-color: #10c469;
+		}
+		.sl-warning:before, .sl-warning:last-child:after {
+			border-color: #f9c851;
+		}
+		
+	}
+
+}
