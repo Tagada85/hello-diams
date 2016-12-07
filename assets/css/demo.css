@@ -56,3 +56,54 @@
 .tim-row h3{
     margin-top: 0;
 }
+
+
+
+/*-------------------------------------
+    Icons
+--------------------------------------*/
+.icons-card{
+	
+}
+.icons-card ul{
+	padding-left: 0;
+    padding-bottom: 1px;
+    margin-bottom: 20px;
+    list-style: none;
+    overflow: hidden;
+}
+.icons-card ul li{
+	float: left;
+    width: 25%;
+    height: 100px;
+    padding: 10px;
+    margin: 0 -1px -1px 0;
+    
+    line-height: 1.4;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+.icons-card ul li:hover {
+    background-color: rgba(86,61,124,.1);
+}
+
+@media (min-width: 768px){
+.icons-card ul li{
+    width: 10%;
+}
+}
+
+.icons-card .card-content .zmdi {
+    font-size: 30px;
+    vertical-align: middle;
+    color: #333;
+}
+
+.icons-card .card-content ul li span {
+	font-size: 13px;
+    margin-top: 10px;
+    color: #5e5e5e;
+    display: block;
+    text-align: center;
+    word-wrap: break-word;
+}

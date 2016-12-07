@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+    <head>
+    	<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dashplus Admin</title>
+
+        <!-- Vendor CSS -->
+        <link href="../../vendors/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+        <link href="../../vendors/animate.css/animate.min.css" rel="stylesheet">
+        <link href="../../vendors/sweetalert/dist/sweetalert.css" rel="stylesheet">
+        <link href="../../vendors/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+        <link href="../../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">   
+        
+        <!-- Dashplus CSS -->
+        <link href="../../dist/css/dashplus_1.min.css" rel="stylesheet">
+        <link href="../../dist/css/dashplus_2.min.css" rel="stylesheet">
+    </head>
+    <body class="layout-fixed-left-menu left-sidebar-toggled">
+        <header id="header" class="clearfix" data-dp-theme="bluegrey">
+            <ul class="main-header">
+            	<li class="dp-trigger" data-dp-action="left-sidebar-toggle" data-dp-target="#sidebar-left">
+                    <a href=""><i class="menu-icon zmdi zmdi-arrow-left"></i></a>
+                </li>
+                <li class="header-logo hidden-xs">
+                    <a href="../../index.html">Dashplus Admin</a>
+                </li>
+
+                <li class="pull-right">
+                    <ul class="header-menu">
+                        <li class="dropdown menu-notifications">
+                            <a data-toggle="dropdown" href="">
+                                <i class="menu-icon zmdi zmdi-notifications"></i>
+                                <i class="menu-counts">10</i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg pull-right">
+                                <div class="list-group menu-notification">
+                                    <div class="list-group-header">Notification</div>
+                                    <div class="list-group-body">
+                                        <a class="list-group-item media" href="">
+                                            <div class="pull-left">
+                                                <img class="lg-item-img" src="../../dist/images/profile-pics/1.jpg" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="lg-item-heading">Thomas Douglas</div>
+                                                <small class="lg-item-text">Cum sociis natoque penatibus et magnis dis parturient montes</small>
+                                            </div>
+                                        </a>
+                                        <a class="list-group-item media" href="">
+                                            <div class="pull-left">
+                                                <img class="lg-item-img" src="../../dist/images/profile-pics/2.jpg" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="lg-item-heading">David Edmonds</div>
+                                                <small class="lg-item-text">Nunc quis diam diamurabitur at dolor elementum, dictum turpis vel</small>
+                                            </div>
+                                        </a>
+                                        <a class="list-group-item media" href="">
+                                            <div class="pull-left">
+                                                <img class="lg-item-img" src="../../dist/images/profile-pics/3.jpg" alt="">
+                                            </div>
+                                            <div class="media-body">
+                                                <div class="lg-item-heading">Robert Taylor</div>
+                                                <small class="lg-item-text">Phasellus a ante et est ornare accumsan at vel magnauis blandit turpis at augue ultricies</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <a class="view-more" href="">View More</a>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="dropdown menu-tasks hidden-xs">
+                            <a data-toggle="dropdown" href="">
+                                <i class="menu-icon zmdi zmdi-assignment"></i>
+                                <i class="menu-counts">9</i>
+                            </a>
+                            <div class="dropdown-menu pull-right dropdown-menu-lg">
+                                <div class="list-group">
+                                	<div class="list-group-header">Tasks</div>
+                                    <div class="list-group-body">
+                                        <div class="list-group-item">
+                                            <div>
+                                                <div class="lg-item-heading m-b-5 pull-left">New</div>
+                                                <div class="lg-item-heading m-b-5 pull-right">1%</div>
+                                                <div style="clear:both;"></div>
+                                            </div>
+    
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="75"
+                                                     aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                    <span class="sr-only">75%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div>
+                                                <div class="lg-item-heading m-b-5 pull-left">Overdue</div>
+                                                <div class="lg-item-heading m-b-5 pull-right">18/150</div>
+                                                <div style="clear:both;"></div>
+                                            </div>
+    
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="18" 
+                                                     aria-valuemin="0" aria-valuemax="100" style="width: 18%">
+                                                    <span class="sr-only">18%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div>
+                                                <div class="lg-item-heading m-b-5 pull-left">In Progress</div>
+                                                <div class="lg-item-heading m-b-5 pull-right">25/150</div>
+                                                <div style="clear:both;"></div>
+                                            </div>
+    
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="25" 
+                                                     aria-valuemin="0" aria-valuemax="100" style="width: 25%">
+                                                    <span class="sr-only">25%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div>
+                                                <div class="lg-item-heading m-b-5 pull-left">Completed</div>
+                                                <div class="lg-item-heading m-b-5 pull-right">112/150</div>
+                                                <div style="clear:both;"></div>
+                                            </div>
+    
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="75" 
+                                                     aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                                                    <span class="sr-only">75%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="view-more" href="">View More</a>
+                                    </div>
+                            	</div>
+                            </div>
+                        </li>
+                        
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href=""><i class="menu-icon zmdi zmdi-apps"></i></a>
+                            
+                            <div class="dropdown-menu pull-right" style="min-width: 400px;">
+                                <div class="dropdown-grid">
+                                	<ul>
+                                        <li><a href="" ><i class="zmdi zmdi-email c-lime-600"></i></a> <span>Mailbox</span></</li>
+                                        <li><a href="" ><i class="zmdi zmdi-account c-grey-600"></i></a> <span>My Account</span></li>
+                                        <li><a href="" ><i class="zmdi zmdi-google-drive c-cyan-600"></i></a> <span>My Drive</span></li>
+                                        <li><a href="" ><i class="zmdi zmdi-money c-red-600"></i></a> <span>Rewards</span></li>
+                                        <li><a href="" ><i class="zmdi zmdi-help c-blue-600"></i></a> <span>Help</span></li>
+                                        <li><a href="" ><i class="zmdi zmdi-thumb-up c-teal-600"></i></a> <span>Feedback</span></l>
+                                        <li><a href="" ><i class="zmdi zmdi-accounts c-grey-700"></i></a> <span>Contacts</span></li>
+                                        <li><a href="" ><i class="zmdi zmdi-file-text c-blue-800"></i></a> <span>Docs</span></li>
+                                        <li><a href="" ><i class="zmdi zmdi-calendar-note c-pink-600"></i></a> <span>Calendar</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href=""><i class="menu-icon zmdi zmdi-more-vert"></i></a>
+                            
+                            <ul class="dropdown-menu dm-icon pull-right">
+                                <li>
+                                    <a href=""><i class="zmdi zmdi-account"></i> My Profile</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="zmdi zmdi-favorite"></i> Favorites</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="zmdi zmdi-settings"></i> Other Settings</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="zmdi zmdi-square-right"></i> Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dp-trigger" data-dp-action="sidebar-open" data-dp-target="#sidebar-right">
+                            <a href=""><i class="menu-icon zmdi zmdi-settings"></i></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+        
+        <!-- Right Side Bar -->
+        <aside id="sidebar-right" class="sidebar">
+            <div class="lg-body mcs-overflow">
+                <ul class="tab-nav m-t-10 p-l-15 p-r-15" role="tablist">
+                	<li class="active">
+                    	<a href="#control-tab-settings" aria-controls="control-tab-settings" role="tab" data-toggle="tab"><i class="him-icon zmdi zmdi-settings"></i></a>
+                    </li>
+                    <li><a href="#control-tab-contacts" aria-controls="control-tab-contacts" role="tab" data-toggle="tab"><i class="him-icon zmdi zmdi-accounts"></i></a></li>
+                    <li class="close-btn">
+                        <a href="" data-dp-action="sidebar-close" data-dp-target="#sidebar-right">
+                        	<i class="zmdi zmdi-close"></i>
+                    	</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active p-l-25 p-r-25 p-b-25 p-t-10" id="control-tab-settings">
+                        <ul class="skin-colors">
+                            <li class="skin-switch hidden-xs">
+                                <span class="dp-skin md-bg-light-blue" data-dp-action="change-skin" data-dp-skin="lightblue"></span>
+                                <span class="dp-skin md-bg-blue-grey" data-dp-action="change-skin" data-dp-skin="bluegrey"></span>
+                                <span class="dp-skin md-bg-cyan" data-dp-action="change-skin" data-dp-skin="cyan"></span>
+                                <span class="dp-skin md-bg-teal" data-dp-action="change-skin" data-dp-skin="teal"></span>
+                                <span class="dp-skin md-bg-orange" data-dp-action="change-skin" data-dp-skin="orange"></span>
+                                <span class="dp-skin md-bg-brown" data-dp-action="change-skin" data-dp-skin="brown"></span>
+                                <span class="dp-skin md-bg-green" data-dp-action="change-skin" data-dp-skin="green"></span>
+                                <span class="dp-skin md-bg-purple" data-dp-action="change-skin" data-dp-skin="purple"></span>
+                                <span class="dp-skin md-bg-pink" data-dp-action="change-skin" data-dp-skin="pink"></span>
+                                <span class="dp-skin md-bg-blue" data-dp-action="change-skin" data-dp-skin="blue"></span>
+                            </li>
+                        </ul>
+                        
+                        <div class="select m-t-25">
+                            <select class="form-control">
+                                <option>Select an Option</option>
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                                <option>Option 4</option>
+                                <option>Option 5</option>
+                            </select>
+                        </div>
+                        <div class="select">
+                            <select class="form-control">
+                                <option>Select an Option</option>
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                                <option>Option 4</option>
+                                <option>Option 5</option>
+                            </select>
+                        </div>
+                        
+                        <div class="toggle-switch toggle-switch-demo m-b-15 m-t-25" data-ts-color="pink">
+                            <input id="ts1" type="checkbox" hidden="hidden">
+                            <label for="ts1" class="ts-helper"></label>
+                            <label for="ts1" class="ts-label m-l-10">Toggle Settings One</label>
+                        </div>
+                        <div class="toggle-switch toggle-switch-demo m-b-15" data-ts-color="purple">
+                            <input id="ts2" type="checkbox" hidden="hidden">
+                            <label for="ts2" class="ts-helper"></label>
+                            <label for="ts2" class="ts-label m-l-10">Toggle Settings Two</label>
+                        </div>
+                        
+                        <div class="checkbox m-b-15 m-t-25"><label><input type="checkbox" value=""><i class="input-helper"></i>Settings option 1</label></div>
+                        <div class="checkbox m-b-15"><label><input type="checkbox" value=""><i class="input-helper"></i>Settings option 2</label></div>
+                        
+                        <label class="radio radio-inline m-r-20 m-t-25"><input type="radio" name="inlineRadioOptions" value="option1"><i class="input-helper"></i>1</label>
+                        <label class="radio radio-inline m-r-20 m-t-25"><input type="radio" name="inlineRadioOptions" value="option2"><i class="input-helper"></i>2</label>
+                        <label class="radio radio-inline m-r-20 m-t-25"><input type="radio" name="inlineRadioOptions" value="option3"><i class="input-helper"></i>3</label>
+                    </div>
+                    
+                    <div role="tabpanel" class="tab-pane" id="control-tab-contacts">
+                        <div class="list-group">
+                            <a class="list-group-item media" href="">
+                                <div class="pull-left p-relative">
+                                    <img class="lg-item-img" src="../../dist/images/profile-pics/2.jpg" alt="">
+                                    <i class="chat-status-busy"></i>
+                                </div>
+                                <div class="media-body">
+                                    <div class="lg-item-heading">Thomas Douglas</div>
+                                    <small class="lg-item-text">Available</small>
+                                </div>
+                            </a>
+    
+                            <a class="list-group-item media" href="">
+                                <div class="pull-left">
+                                    <img class="lg-item-img" src="../../dist/images/profile-pics/1.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <div class="lg-item-heading">David Edmonds</div>
+                                    <small class="lg-item-text">Last seen 12 hours ago</small>
+                                </div>
+                            </a>
+    
+                            <a class="list-group-item media" href="">
+                                <div class="pull-left p-relative">
+                                    <img class="lg-item-img" src="../../dist/images/profile-pics/3.jpg" alt="">
+                                    <i class="chat-status-online"></i>
+                                </div>
+                                <div class="media-body">
+                                    <div class="lg-item-heading">Robert Taylor</div>
+                                    <small class="lg-item-text">Availble</small>
+                                </div>
+                            </a>
+    
+                            <a class="list-group-item media" href="">
+                                <div class="pull-left p-relative">
+                                    <img class="lg-item-img" src="../../dist/images/profile-pics/4.jpg" alt="">
+                                    <i class="chat-status-online"></i>
+                                </div>
+                                <div class="media-body">
+                                    <div class="lg-item-heading">John Smith</div>
+                                    <small class="lg-item-text">Availble</small>
+                                </div>
+                            </a>
+    
+                            <a class="list-group-item media" href="">
+                                <div class="pull-left">
+                                    <img class="lg-item-img" src="../../dist/images/profile-pics/5.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <div class="lg-item-heading">Tim Booth</div>
+                                    <small class="lg-item-text">Last seen 10 days ago</small>
+                                </div>
+                            </a>
+                            
+                            <a class="list-group-item media" href="">
+                                <div class="pull-left p-relative">
+                                    <img class="lg-item-img" src="../../dist/images/profile-pics/6.jpg" alt="">
+                                    <i class="chat-status-busy"></i>
+                                </div>
+                                <div class="media-body">
+                                    <div class="lg-item-heading">William James</div>
+                                    <small class="lg-item-text">Available</small>
+                                </div>
+                            </a>
+    
+                            <a class="list-group-item media" href="">
+                                <div class="pull-left">
+                                    <img class="lg-item-img" src="../../dist/images/profile-pics/7.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <div class="lg-item-heading">Paul Graham</div>
+                                    <small class="lg-item-text">Last seen 7 hours ago</small>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section id="main">
+        	<!-- Main Nav Bar -->
+            <nav id="sidebar-left" class="sidebar mcs-overflow">
+            	<ul class="sb-header m-b-20">
+                	<li class="dp-trigger" data-dp-action="left-sidebar-toggle" data-dp-target="#sidebar-left">
+                        <a href=""><span class="header-logo m-r-20">Dashplus Admin</span><i class="menu-icon zmdi zmdi-arrow-left"></i></a>
+                    </li>
+                </ul>
+                <div class="nav-menu-wrapper mcs-overflow1">
+                	<ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="" data-dp-action="submenu-toggle"><i class="zmdi zmdi-palette"></i>&nbsp;<span>Dashboard</span></a>
+                            
+                            <ul>
+                                <li><a href="../../index.html">Dashboard v1</a></li>
+                                <li><a href="../../pages/dashboard/dashboard-v2.html">Dashboard v2</a></li>
+                                <li><a href="../../pages/dashboard/dashboard-v3.html">Dashboard v3</a></li>
+                                <li><a href="../../pages/dashboard/dashboard-v4.html">Dashboard v4</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../pages/widgets/widgets.html"><i class="zmdi zmdi-apps"></i>&nbsp;<span>Widgets</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" data-dp-action="submenu-toggle"><i class="zmdi zmdi-chart"></i>&nbsp;<span>Charts</span></a>
+                            <ul>
+                                <li><a href="../../pages/charts/chart-js-charts.html">ChartJS</a></li>
+                                <li><a href="../../pages/charts/flot-charts.html">Flot</a></li>
+                                <li><a href="../../pages/charts/other-charts.html">Inline Charts</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item mm-col-3">
+                            <a href="" data-dp-action="submenu-toggle" class="mega-menu-toggle"><i class="zmdi zmdi-laptop-mac"></i>&nbsp;<span>UI Elements</span></a>
+                            <ul class="mega-menu">
+                                <li>
+                                    <ul>
+                                        <li><a href="../../pages/UI/accordions.html">Accordions</a></li>
+                                        <li><a href="../../pages/UI/alerts-dialogs.html">Alerts & Dialogs</a></li>
+                                        <li><a href="../../pages/UI/buttons.html">Buttons</a></li>
+                                        <li><a href="../../pages/UI/breadcrumbs.html">Breadcrumbs</a></li>
+                                        <li><a href="../../pages/UI/colors.html">Colors</a></li>
+                                        <li><a href="../../pages/UI/dropdown.html">Dropdown</a></li>
+                                    </ul>
+                                    <ul>  
+                                        <li><a href="../../pages/UI/icons.html">Icons</a></li>
+                                        <li><a href="../../pages/UI/jumbotron.html">Jumbotron</a></li> 
+                                        <li><a href="../../pages/UI/notifications.html">Notifications</a></li>
+                                        <li><a href="../../pages/UI/media.html">Media</a></li>
+                                        <li><a href="../../pages/UI/modals.html">Modals</a></li>
+                                        <li><a href="../../pages/UI/pagination.html">Pagination</a></li>
+                                    </ul>
+                                    <ul> 
+                                        <li><a href="../../pages/UI/popovers.html">Popovers</a></li>
+                                        <li><a href="../../pages/UI/preloaders-progress-bar.html">Preloaders & Progress Bar</a></li>
+                                        <li><a href="../../pages/UI/tabs.html">Tabs</a></li>
+                                        <li><a href="../../pages/UI/tooltips.html">Tool Tips</a></li>
+                                        <li><a href="../../pages/UI/typography.html">Typography</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" data-dp-action="submenu-toggle"><i class="zmdi zmdi-border-color"></i>&nbsp;<span>Forms</span></a>
+                            <ul>
+                                <li><a href="../../pages/forms/basic-elements.html">Basic Elements</a></li>
+                                <li><a href="../../pages/forms/advanced-elements.html">Advanced Elements</a></li>
+                                <li><a href="../../pages/forms/form-validation.html">Form Validation</a></li>
+                                <li><a href="../../pages/forms/form-wizard.html">Form Wizard</a></li>
+                                <li><a href="../../pages/forms/sample-forms.html">Sample Forms</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" data-dp-action="submenu-toggle"><i class="zmdi zmdi-grid"></i>&nbsp;<span>Tables</span></a>
+        
+                            <ul>
+                                <li><a href="../../pages/tables/tables.html">Simple Tables</a></li>
+                                <li><a href="../../pages/tables/data-tables.html">Data Tables</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item mm-col-2">
+                            <a href="" data-dp-action="submenu-toggle" class="mega-menu-toggle"><i class="zmdi zmdi-copy"></i>&nbsp;<span>Sample Pages</span></a>
+                            <ul class="mega-menu">
+                                <li>
+                                    <ul>
+                                    	<li><a href="../../pages/sample-pages/user-profile.html">User Profile</a></li>
+                                        <li><a href="../../pages/sample-pages/login.html">Login</a></li>
+                                        <li><a href="../../pages/sample-pages/signup.html">Sign Up</a></li>
+                                        <li><a href="../../pages/sample-pages/pricing-table.html">Pricing Table</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="../../pages/sample-pages/invoice.html">Invoice</a></li>
+                                        <li><a href="../../pages/sample-pages/help-faqs.html">Help & FAQs</a></li>
+                                        <li><a href="../../pages/sample-pages/404.html">404</a></li>
+                                        <li><a href="../../pages/sample-pages/500.html">500</a></li>
+                                    </ul>
+                       			</li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" data-dp-action="submenu-toggle"><i class="zmdi zmdi-layers"></i>&nbsp;<span>Multi Level</span></a>
+        
+                            <ul>
+                                <li><a href="">Level One</a></li>
+                                <li class="nav-item level-one">
+                                    <a href="" data-dp-action="submenu-toggle">Level One</a>
+        
+                                    <ul>
+                                        <li><a href="">Level Two</a></li>
+                                        <li><a href="">Level Two</a></li>
+                                        <li><a href="">Level Two</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Level One</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../pages/other/base-classes.html"><i class="zmdi zmdi-code-setting"></i>&nbsp;<span>Base Classes</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../pages/docs/documentation.html"><i class="zmdi zmdi-collection-text"></i>&nbsp;<span>Documentation</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            <!-- Content Section START -->
+            <section id="content">
+                <div class="container">
+                    <div class="block-header clearfix">
+                        <h2 class="pull-left">ChartJS Charts
+                            <small>ChartJS is a pure JavaScript plotting library for jQuery, with a focus on simple usage,
+                                attractive looks and interactive features.
+                            </small>
+                        </h2>
+
+                        <ul class="breadcrumb pull-right">
+                            <li><a href="../../index.html">Home</a></li>
+                            <li><a href="">Charts</a></li>
+                            <li><a href="">ChartJS Charts</a></li>
+                        </ul>
+                    </div>
+                   
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
+                                </div>
+
+                                <div class="card-body card-padding">
+                                    <div class="chart">
+                                        <canvas id="lineChart2" height="250"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
+                                </div>
+
+                                <div class="card-body card-padding">
+                                    <div class="chart">
+                                        <canvas id="pieChart" height="250"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
+
+                                    <ul class="actions">
+                                        <li>
+                                            <a href="">
+                                                <i class="md md-cached"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <i class="md md-file-download"></i>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="" data-toggle="dropdown">
+                                                <i class="md md-more-vert"></i>
+                                            </a>
+
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li>
+                                                    <a href="">Change Date Range</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">Change Graph Type</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">Other Settings</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-body card-padding">
+                                    <div class="chart">
+                                        <canvas id="areaChart" height="250"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
+                                </div>
+
+                                <div class="card-body card-padding">
+                                    <div class="chart">
+                                        <canvas id="lineChart" height="250"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
+                                </div>
+
+                                <div class="card-body card-padding">
+                                    <div class="chart">
+                                        <canvas id="barChart" height="230"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Content Section END -->
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            Copyright &copy; 2016 Admin Dashboard
+
+
+        </footer>
+
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="preloader pls-blue">
+                <svg class="pl-circular" viewBox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20" />
+                </svg>
+
+                <p>Please wait...</p>
+            </div>
+        </div>
+        
+        <!-- Javascript Libraries -->
+        <!-- Javascript Libraries -->
+        <script src="../../vendors/jquery/dist/jquery.min.js"></script>
+        <script src="../../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        
+        <script src="../../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="../../vendors/Waves/dist/waves.min.js"></script>
+        <script src="../../vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="../../vendors/sweetalert/dist/sweetalert.min.js"></script>
+
+        <script src="../../vendors/charts/chartjs/Chart.min.js" type="text/javascript"></script>
+
+        <script src="../../dist/js/dashplus.min.js"></script>
+	</body>
+</html>

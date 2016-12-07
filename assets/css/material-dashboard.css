@@ -9734,12 +9734,109 @@ footer {
 .icon.icon-rose {
   color: #e91e63; }
 
+ /*-------------------------
+  Card
+--------------------------*/
+/*@sidebar-shadow: 3px 3px 10px rgba(51, 51, 51, 0.38);*/
 .card {
   margin: 15px 0; }
 
 .card-weather {
   background: #42A5F5;
   color: #ffffff; }
+
+.login-page .card-login .card-header {
+  margin-top: 0px;
+  margin-bottom: 20px; }
+.login-page .card-login h5 {
+  margin-bottom: 0px; }
+
+.invoice {
+  min-width: 1100px;
+  max-width: 1170px; }
+
+.i-logo {
+  width: 150px; }
+
+.i-table .highlight {
+  background-color: #eee;
+  border-bottom: 1px solid #e6e6e6; }
+.i-table td.highlight {
+  font-size: 14px;
+  font-weight: 500; }
+
+.four-zero {
+  height: 100vh;
+  background-color: #9c27b0; }
+
+.fz-block {
+  background: #557382;
+  border-radius: 2px;
+  position: absolute;
+  top: 50%;
+  margin-top: -150px;
+  color: #ECF0F1;
+  text-align: center;
+  padding: 25px;
+  height: 300px;
+  width: 500px;
+  left: 50%;
+  margin-left: -250px; }
+  .fz-block h2 {
+    font-size: 130px;
+    line-height: 100%;
+    color: #ECF0F1;
+    font-weight: 100; }
+  @media (max-width: 767px) {
+    .fz-block {
+      width: calc(100% - 40px);
+      left: 20px;
+      margin-left: 0;
+      height: 260px;
+      margin-top: -130px; }
+      .fz-block h2 {
+        font-size: 90px; } }
+  .fz-block small {
+    display: block;
+    font-size: 26px;
+    margin-top: -10px; }
+
+.fzb-links {
+  margin-top: 20px; }
+  .fzb-links > a {
+    font-size: 16px;
+    display: inline-block;
+    color: #ECF0F1;
+    margin: 0 1px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.09);
+    border-radius: 50%;
+    text-align: center; }
+    .fzb-links > a:hover {
+      background: rgba(0, 0, 0, 0.2); }
+
+.or-rule {
+  position: relative;
+  display: block;
+  margin: 15px 0;
+  text-align: center;
+  color: #222;
+  opacity: .3; }
+
+.or-rule:before, .or-rule:after {
+  display: block;
+  border-top: 1px solid #eeeeee;
+  content: "";
+  position: absolute;
+  width: 35%;
+  left: 10%;
+  top: 50%; }
+
+.or-rule:after {
+  left: auto;
+  right: 10%; }
 
 /*-------------------------
    Streamline
@@ -9809,5 +9906,228 @@ footer {
   border-color: #10c469; }
 .streamline.sl-style-2 .sl-warning:before, .streamline.sl-style-2 .sl-warning:last-child:after {
   border-color: #f9c851; }
+
+/*
+ *----------------------------------------------------------
+ * File Name : accordion.scss                                   
+ * Short Desc: Accordion Styles  
+ * Author    : Turbo
+ * ---------------------------------------------------------
+ */
+/*  Accordion - Style 1  */
+/*-----------------------*/
+.accordion .accordion-header {
+  margin: 4px 0 0 0;
+  color: #222222;
+  background: #eeeeee;
+  border-radius: 0;
+  border: none;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px; }
+  .accordion .accordion-header:before, .accordion .accordion-header:after {
+    font-family: Material-Design-Iconic-Font;
+    font-size: 18px;
+    position: absolute;
+    display: block;
+    -webkit-transition: -webkit-transform 280ms;
+    transition: -webkit-transform 280ms;
+    transition: transform 280ms;
+    transition: transform 280ms,-webkit-transform 280ms; }
+  .accordion .accordion-header:after {
+    content: '\f2f9';
+    top: 8px;
+    right: 8px; }
+  .accordion .accordion-header.ui-state-active:before, .accordion .accordion-header.ui-state-active:after {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg); }
+.accordion .accordion-content {
+  padding: 16px;
+  border: 0;
+  line-height: 20px; }
+  .accordion .accordion-content p {
+    margin-bottom: 0px; }
+
+/*  Accordion - Style 2  */
+/*-----------------------*/
+.accordion-alt .accordion-header {
+  background: #FFFFFF;
+  padding: 14px 20px 14px 40px;
+  border-top: 1px solid #eeeeee; }
+  .accordion-alt .accordion-header:after {
+    content: ''; }
+  .accordion-alt .accordion-header:before {
+    content: '\f278';
+    left: 20px;
+    top: 14px;
+    color: #00bcd4; }
+  .accordion-alt .accordion-header.ui-state-active {
+    border-bottom: 0; }
+  .accordion-alt .accordion-header.ui-state-active:before {
+    content: '\f273'; }
+  .accordion-alt .accordion-header:first-child {
+    border-top: none; }
+.accordion-alt .accordion-content {
+  padding: 16px 20px; }
+
+/*
+ *----------------------------------------------------------
+ * File Name : price-table.less                                   
+ * Short Desc: Price Table Styles  
+ * Author    : Dashplus
+ * ---------------------------------------------------------
+ */
+.price-table {
+  margin-top: 30px; }
+  .price-table .pt-top-bar {
+    padding: 5px;
+    background-color: #4caf50;
+    text-align: center; }
+    .price-table .pt-top-bar h4, .price-table .pt-top-bar h2 {
+      color: #FFFFFF;
+      font-weight: 400; }
+  .price-table .pt-header {
+    border-bottom: 1px solid #edf1f2;
+    text-align: center;
+    padding: 15px; }
+    .price-table .pt-header h4, .price-table .pt-header h2 {
+      color: #cecece;
+      font-weight: 400; }
+    .price-table .pt-header sup {
+      top: -18px; }
+  .price-table .pt-footer {
+    padding: 20px 0; }
+    .price-table .pt-footer .btn {
+      color: #FFFFFF;
+      background-color: #4caf50; }
+    .price-table .pt-footer .btn-alt {
+      color: #cecece;
+      background-color: white; }
+  .price-table .pt-body {
+    padding-top: 10px;
+    padding-left: 30px; }
+    .price-table .pt-body .list-group-item {
+      padding: 15px 0; }
+    .price-table .pt-body i {
+      color: #4caf50;
+      margin-right: 5px;
+      font-size: 16px; }
+      .price-table .pt-body i:before {
+        content: '\f26b'; }
+    .price-table .pt-body .na {
+      text-decoration: line-through;
+      color: white; }
+      .price-table .pt-body .na i {
+        color: #f44336; }
+        .price-table .pt-body .na i:before {
+          content: '\f134'; }
+
+.price-table.recommanded {
+  margin-top: 0px; }
+  .price-table.recommanded .pt-top-bar {
+    background-color: #ff9800; }
+  .price-table.recommanded .pt-header {
+    background-color: white; }
+  .price-table.recommanded .pt-footer {
+    padding: 50px 0; }
+    .price-table.recommanded .pt-footer .btn {
+      color: #cecece;
+      background-color: #ff9800; }
+    .price-table.recommanded .pt-footer .btn-alt {
+      color: #cecece;
+      background-color: white; }
+
+.price-table-alt .price-table {
+  border-radius: 10px; }
+  .price-table-alt .price-table .pt-top-bar {
+    padding: 8px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px; }
+    .price-table-alt .price-table .pt-top-bar h4, .price-table-alt .price-table .pt-top-bar h2 {
+      font-size: 14px;
+      margin: 0; }
+.price-table-alt .price-table.recommanded .pt-top-bar h4 {
+  color: #cecece; }
+
+/*
+
+.pt-inner {
+    text-align: center;
+
+    .pti-header {
+          padding: 45px 10px 70px;
+          color: #fff;
+          position: relative;
+        margin-bottom: 15px;
+
+
+        & > h2 {
+              margin: 0;
+              line-height: 100%;
+              color: #fff;
+              font-weight: 100;
+              font-size: 50px;
+
+            small {
+                  color: #fff;
+                  letter-spacing: 0;
+                  vertical-align: top;
+                  font-size: 16px;
+                  font-weight: 100;
+            }
+        }
+
+        .ptih-title {
+              background-color: rgba(0, 0, 0, 0.1);
+              padding: 8px 10px 9px;
+              text-transform: uppercase;
+              margin: 0 -10px;
+              position: absolute;
+              width: 100%;
+              bottom: 0;
+        }
+    }
+
+    .pti-body {
+        padding: 0 23px;
+
+        .ptib-item {
+            padding: 15px 0;
+            font-weight: 400;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid #eee;
+            }
+        }
+    }
+
+    .pti-footer {
+        padding: 10px 20px 30px;
+
+        & > a {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            color: #fff;
+            display: inline-block;
+            line-height: 60px;
+            font-size: 30px;
+            @include transition(all);
+            @include transition-duration(300ms);
+
+            &:hover {
+                @include opacity(0.85);
+                @include z-depth(1);
+            }
+        }
+    }
+
+
+}
+*/
 
 /*# sourceMappingURL=material-dashboard.css.map */

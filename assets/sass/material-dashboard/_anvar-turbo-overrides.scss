@@ -11,6 +11,15 @@
     .icon.icon-rose {
       color: #e91e63; }
       
+ /*-------------------------
+  Card
+--------------------------*/
+$card-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+
+$header-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+$sidebar-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+/*@sidebar-shadow: 3px 3px 10px rgba(51, 51, 51, 0.38);*/
+ 
  
 // Reduced top and bottom margin to reduce vertical gutter
 .card {
@@ -25,6 +34,146 @@
 	color:#ffffff;
 }
 
+
+//Login page 
+
+.login-page{
+
+    .card-login{
+
+        .card-header{
+            margin-top:0px;
+            margin-bottom: 20px;
+
+        }
+    	 h5 {
+    		margin-bottom: 0px;
+    	}
+    }
+
+}
+
+
+//Invoice Page
+
+.invoice {
+    min-width: 1100px;
+    max-width: 1170px;
+}
+
+.i-logo {
+        width: 150px;
+}
+
+.i-table {
+    .highlight { 
+        background-color: #eee; 
+        border-bottom: 1px solid darken(#eee, 3%); 
+    }
+    
+    td.highlight {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+//Error page 404
+
+.four-zero {
+	height: 100vh;
+	background-color: $brand-primary;
+}
+
+
+.fz-block {
+	background: #557382;
+	border-radius: 2px;
+	position: absolute;
+	top: 50%;
+	margin-top: -150px;
+	color: #ECF0F1;
+	text-align: center;
+	padding: 25px;
+	height: 300px;
+	width: 500px;
+	left: 50%;
+	margin-left: -250px;
+
+	h2 {
+		font-size: 130px;
+		line-height: 100%;
+		color: #ECF0F1;
+		font-weight: 100;
+	}
+
+
+	@media (max-width: $screen-xs-max) {
+		width: #{"calc(100% - 40px)"};
+		left: 20px;
+		margin-left: 0;
+		height: 260px;
+		margin-top: -130px;
+
+		h2 {
+			font-size: 90px;
+		}
+	}
+
+	small {
+		display: block;
+		font-size: 26px;
+		margin-top: -10px
+	}
+}
+
+.fzb-links {
+	margin-top: 20px;
+
+	& > a {
+		font-size: 16px;
+		display: inline-block;
+		color: #ECF0F1;
+		margin: 0 1px;
+		line-height: 30px;
+		width: 30px;
+		height: 30px;
+		background: rgba(0, 0, 0, 0.09);
+		border-radius: 50%;
+		text-align: center;
+
+		&:hover {
+			background: rgba(0, 0, 0, 0.2);
+		}
+	}
+}
+
+
+
+//OR Rule
+
+.or-rule {
+    position: relative;
+    display: block;
+    margin: 15px 0;
+    text-align: center;
+    color: #222;
+    opacity: .3;
+}
+
+.or-rule:before, .or-rule:after {
+    display: block;
+    border-top: 1px solid #eeeeee;
+    content: "";
+    position: absolute;
+    width: 35%;
+    left: 10%;
+    top: 50%;
+}
+
+.or-rule:after {
+    left: auto;
+    right: 10%;
+}
 
       
       
