@@ -1,0 +1,67 @@
+/*
+ *----------------------------------------------------------
+ * File Name : pagination.less                                   
+ * Short Desc: Pagination Styles  
+ * Author    : Dashplus
+ * ---------------------------------------------------------
+ */ 
+
+.pagination {
+    border-radius: 0;
+    
+    & > li {
+        margin: 0 2px;
+        display: inline-block;
+        vertical-align: top;
+        
+        & > a,
+        & > span {
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            line-height: 38px;
+            text-align: center;
+            font-size: 14px;
+            z-index: 1;
+            position: relative;
+            cursor: pointer;
+            background-clip: padding-box;
+            
+            & > .zmdi {
+                font-size: 22px;
+                line-height: 39px;
+            }
+        }
+         
+        &.disabled {
+            @include opacity(0.5);
+        }  
+    }
+}
+
+.pagination.round{
+	& > li {
+		& > a,
+        & > span {
+    		border-radius: 50% !important;
+		}
+	}
+}
+
+
+/* List Group Pagination */
+/*-----------------------*/
+.lg-pagination {
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 0;
+}
+
+
+/* Pager Styles */
+/*---------------------*/
+.pager li > a, .pager li > span {
+    padding: 5px 10px 6px; 
+    color: $pagination-color;
+}
