@@ -18,6 +18,9 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
+
+    <link href="../../assets/vendors/dropzone/dropzone.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -84,7 +87,7 @@
 								<li><a href="../ui/breadcrumbs.html">Breadcrumbs</a></li>
 								<li><a href="../ui/colors.html">Colors</a></li>
 								<li><a href="../ui/dropdown.html">Dropdown</a></li>
-								<li><a href="../ui/dropdown.html">Grid System</a></li>
+								<li><a href="../ui/grid.html">Grid System</a></li>
 								<li><a href="../ui/icons.html">Icons</a></li>
 								<li><a href="../ui/jumbotron.html">Jumbotron</a></li> 
 								<li><a href="../ui/notifications.html">Notifications</a></li>
@@ -253,9 +256,6 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card">
-                                <div class="card-header card-header-icon" data-background-color="rose">
-                                    <i class="material-icons">today</i>
-                                </div>
                                 <div class="card-content">
                                     <h4 class="card-title">Datetime Picker</h4>
                                     <div class="form-group">
@@ -267,9 +267,6 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card">
-                                <div class="card-header card-header-icon" data-background-color="rose">
-                                    <i class="material-icons">library_books</i>
-                                </div>
                                 <div class="card-content">
                                     <h4 class="card-title">Datetime Picker</h4>
                                     <div class="form-group">
@@ -281,9 +278,6 @@
                         </div>
                         <div class="col-md-4">
                             <div class="card">
-                                <div class="card-header card-header-icon" data-background-color="rose">
-                                    <i class="material-icons">av_timer</i>
-                                </div>
                                 <div class="card-content">
                                     <h4 class="card-title">Datetime Picker</h4>
                                     <div class="form-group">
@@ -315,6 +309,44 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
+                                            <div class="row">
+												<legend>Select</legend>
+												<div class="col-sm-6">
+													<p>Basic Example</p>
+
+													<div class="form-group">
+														<div class="select">
+															<select class="form-control">
+																<option>Select an Option</option>
+																<option>Option 1</option>
+																<option>Option 2</option>
+																<option>Option 3</option>
+																<option>Option 4</option>
+																<option>Option 5</option>
+															</select>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-sm-6">
+													<p>Disabled Stat</p>
+
+													<div class="form-group">
+														<div class="select">
+															<select class="form-control" disabled>
+																<option>Select an Option</option>
+																<option>Option 1</option>
+																<option>Option 2</option>
+																<option>Option 3</option>
+																<option>Option 4</option>
+																<option>Option 5</option>
+															</select>
+														</div>
+													</div>
+												</div>
+                                        	</div>
+                                        	<br>
+                                        	<br>
                                             <legend>Customisable Select</legend>
                                             <div class="row">
                                                 <div class="col-lg-5 col-md-6 col-sm-3">
@@ -349,8 +381,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <br>
+                                    </div>                            
+                        			<br>
                                     <br>
                                     <div class="row">
                                         <div class="col-md-6">
@@ -487,12 +519,28 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="col-md-4 col-sm-4">
+                                            <legend>Drop Files (Dropzone.js)</legend>
+											  <div id="dropzone">
+												  <form action="/upload" class="dropzone needsclick" id="demo-upload">
+
+												  <div class="dz-message needsclick">
+													Drop files here or click to upload.<br />
+													<span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
+												  </div>
+
+												</form>
+											</div>
+										</div>		
+                                        
                                     </div>
                                 </div>
                             </div>
                             <!-- end card -->
                         </div>
                     </div>
+
                 </div>
             </div>
             <footer class="footer">
@@ -506,17 +554,17 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    Company
+                                    Documentation
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Portfolio
+                                    Contact
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Blog
+                                    Support
                                 </a>
                             </li>
                         </ul>
@@ -526,7 +574,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                        <a href="#">Turbo Admin</a>
                     </p>
                 </div>
             </footer>
@@ -574,4 +622,12 @@
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="../../assets/js/demo.js"></script>
 
+<script src="../../assets/vendors/dropzone/dropzone.min.js"></script>
+<script>
+
+$(document).ready(function() {
+	md.initSliders()
+	demo.initFormExtendedDatetimepickers();
+});
+</script>
 </html>
