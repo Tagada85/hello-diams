@@ -21,7 +21,7 @@
 		line-height: 24px;
 		
 		&:before, &:after {
-			font-family: Material-Design-Iconic-Font;
+			font-family: 'Material Icons';
 			font-size: 18px;
 			position: absolute;
 			display: block;
@@ -32,7 +32,7 @@
 		}
 		
 		&:after {
-			content: '\f2f9';
+			content: 'keyboard_arrow_down';
 			top: 8px;
 			right: 8px;
 		}
@@ -58,16 +58,16 @@
 .accordion-alt{
 	.accordion-header {
 		background: $white-color;
-		padding: 14px 20px 14px 40px;
-		border-top: 1px solid $gray-lighter;
+		padding: 14px 20px 12px 40px !important;
+		border-top: 1px solid $gray-lighter !important;
 		
 		&:after {
 			content: '';
 		}
 		&:before {
-			content: '\f278';
-			left: 20px;
-    		top: 14px;
+			content: 'add';
+			left: 10px;
+    		top: 13px;
 			color: $brand-info;
 		}
 		
@@ -76,11 +76,11 @@
 		}
 		
 		&.ui-state-active:before {
-			content: '\f273';
+			content: 'remove';
 		}
 		
 		&:first-child {
-			border-top: none;
+			border-top: none !important;
 		}
 	}
 	

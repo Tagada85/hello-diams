@@ -23,7 +23,7 @@
 	.pt-header{
 		border-bottom: 1px solid #edf1f2;
 		text-align: center;
-		padding: 15px;
+		padding: 10px;
 		
 		h4, h2{
 			color: $brand-default;
@@ -35,9 +35,10 @@
 	}
 	
 	.pt-footer{
-		padding: 20px 0;
+		padding: 0px 0 20px 0;
 		
 		.btn{
+			padding: 10px 30px;
 			color: $white-color;
 			background-color: $brand-success;
 		}
@@ -50,30 +51,25 @@
 	.pt-body{
 		padding-top: 10px;
 		padding-left: 30px;
-		
+		margin-bottom: 0px;
+
 		.list-group-item{
-			padding: 15px 0;
+			padding: 13px 0;
+			border: 0;
 		}
 		
 		i{	
 			color: $brand-success;
 			margin-right: 5px;
 			font-size: 16px;
-			
-			&:before {
-				content: '\f26b';
-			}
+			top: 15px;
 		}
 		.na{
 			text-decoration: line-through;
-			color: lighten($brand-default,90%);
+			color: lighten($brand-default,40%);
 			
 			i{	
 				color: $brand-danger;
-				
-				&:before {
-					content: '\f134';
-				}
 			}
 		}
 	}
@@ -83,19 +79,19 @@
 	margin-top: 0px;
 	
 	.pt-top-bar{
-		background-color: $brand-warning;
+		background-color: $md-yellow-600;
 	}
 	
 	.pt-header{
-		background-color: lighten($brand-warning,80%);
+		background-color: lighten($md-yellow-600,14%);
 	}
 	
 	.pt-footer{
-		padding: 50px 0;
+		padding: 40px 0;
 		
 		.btn{
 			color: $brand-default;
-			background-color: $brand-warning;
+			background-color: $md-yellow-600;
 		}
 		.btn-alt{
 			color: $brand-default;

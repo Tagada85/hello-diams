@@ -318,6 +318,104 @@ $md-white: #FFFFFF;
 $md-color-variations: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700;
 $md-main-colors: red, pink, purple, deep-purple, indigo, blue, light-blue, cyan, teal, green, light-green, lime, yellow, amber, orange, deep-orange, brown, grey;
 
+$color-valiations-map: (
+	'red': (
+		'50': $md-red-50, '100': $md-red-100, '200': $md-red-200, '300': $md-red-300,  '400': $md-red-400, 
+		'500': $md-red-500, '600': $md-red-600, '700': $md-red-700, '800': $md-red-800, '900': $md-red-900, 
+		'A100': $md-red-A100, 'A200': $md-red-A200, 'A400': $md-red-A400, 'A700': $md-red-A700
+		),
+	'pink': (
+		'50': $md-pink-50, '100': $md-pink-100, '200': $md-pink-200, '300': $md-pink-300,  '400': $md-pink-400, 
+		'500': $md-pink-500, '600': $md-pink-600, '700': $md-pink-700, '800': $md-pink-800, '900': $md-pink-900, 
+		'A100': $md-pink-A100, 'A200': $md-pink-A200, 'A400': $md-pink-A400, 'A700': $md-pink-A700
+		),
+	'purple': (
+		'50': $md-purple-50, '100': $md-purple-100, '200': $md-purple-200, '300': $md-purple-300,  '400': $md-purple-400, 
+		'500': $md-purple-500, '600': $md-purple-600, '700': $md-purple-700, '800': $md-purple-800, '900': $md-purple-900, 
+		'A100': $md-purple-A100, 'A200': $md-purple-A200, 'A400': $md-purple-A400, 'A700': $md-purple-A700
+		),
+	'deep-purple': (
+		'50': $md-deep-purple-50, '100': $md-deep-purple-100, '200': $md-deep-purple-200, '300': $md-deep-purple-300,  '400': $md-deep-purple-400, 
+		'500': $md-deep-purple-500, '600': $md-deep-purple-600, '700': $md-deep-purple-700, '800': $md-deep-purple-800, '900': $md-deep-purple-900, 
+		'A100': $md-deep-purple-A100, 'A200': $md-deep-purple-A200, 'A400': $md-deep-purple-A400, 'A700': $md-deep-purple-A700
+		),
+	'indigo': (
+		'50': $md-indigo-50, '100': $md-indigo-100, '200': $md-indigo-200, '300': $md-indigo-300,  '400': $md-indigo-400, 
+		'500': $md-indigo-500, '600': $md-indigo-600, '700': $md-indigo-700, '800': $md-indigo-800, '900': $md-indigo-900, 
+		'A100': $md-indigo-A100, 'A200': $md-indigo-A200, 'A400': $md-indigo-A400, 'A700': $md-indigo-A700
+		),
+	'blue': (
+		'50': $md-blue-50, '100': $md-blue-100, '200': $md-blue-200, '300': $md-blue-300,  '400': $md-blue-400, 
+		'500': $md-blue-500, '600': $md-blue-600, '700': $md-blue-700, '800': $md-blue-800, '900': $md-blue-900, 
+		'A100': $md-blue-A100, 'A200': $md-blue-A200, 'A400': $md-blue-A400, 'A700': $md-blue-A700
+		),
+	'light-blue': (
+		'50': $md-light-blue-50, '100': $md-light-blue-100, '200': $md-light-blue-200, '300': $md-light-blue-300,  '400': $md-light-blue-400, 
+		'500': $md-light-blue-500, '600': $md-light-blue-600, '700': $md-light-blue-700, '800': $md-light-blue-800, '900': $md-light-blue-900, 
+		'A100': $md-light-blue-A100, 'A200': $md-light-blue-A200, 'A400': $md-light-blue-A400, 'A700': $md-light-blue-A700
+		),
+	'cyan': (
+		'50': $md-cyan-50, '100': $md-cyan-100, '200': $md-cyan-200, '300': $md-cyan-300,  '400': $md-cyan-400, 
+		'500': $md-cyan-500, '600': $md-cyan-600, '700': $md-cyan-700, '800': $md-cyan-800, '900': $md-cyan-900, 
+		'A100': $md-cyan-A100, 'A200': $md-cyan-A200, 'A400': $md-cyan-A400, 'A700': $md-cyan-A700
+		),
+	'teal': (
+		'50': $md-teal-50, '100': $md-teal-100, '200': $md-teal-200, '300': $md-teal-300,  '400': $md-teal-400, 
+		'500': $md-teal-500, '600': $md-teal-600, '700': $md-teal-700, '800': $md-teal-800, '900': $md-teal-900, 
+		'A100': $md-teal-A100, 'A200': $md-teal-A200, 'A400': $md-teal-A400, 'A700': $md-teal-A700
+		),
+	'green': (
+		'50': $md-green-50, '100': $md-green-100, '200': $md-green-200, '300': $md-green-300,  '400': $md-green-400, 
+		'500': $md-green-500, '600': $md-green-600, '700': $md-green-700, '800': $md-green-800, '900': $md-green-900, 
+		'A100': $md-green-A100, 'A200': $md-green-A200, 'A400': $md-green-A400, 'A700': $md-green-A700
+		),
+	'light-green': (
+		'50': $md-light-green-50, '100': $md-light-green-100, '200': $md-light-green-200, '300': $md-light-green-300,  '400': $md-light-green-400, 
+		'500': $md-light-green-500, '600': $md-light-green-600, '700': $md-light-green-700, '800': $md-light-green-800, '900': $md-light-green-900, 
+		'A100': $md-light-green-A100, 'A200': $md-light-green-A200, 'A400': $md-light-green-A400, 'A700': $md-light-green-A700
+		),
+	'lime': (
+		'50': $md-lime-50, '100': $md-lime-100, '200': $md-lime-200, '300': $md-lime-300,  '400': $md-lime-400, 
+		'500': $md-lime-500, '600': $md-lime-600, '700': $md-lime-700, '800': $md-lime-800, '900': $md-lime-900, 
+		'A100': $md-lime-A100, 'A200': $md-lime-A200, 'A400': $md-lime-A400, 'A700': $md-lime-A700
+		),
+	'yellow': (
+		'50': $md-yellow-50, '100': $md-yellow-100, '200': $md-yellow-200, '300': $md-yellow-300,  '400': $md-yellow-400, 
+		'500': $md-yellow-500, '600': $md-yellow-600, '700': $md-yellow-700, '800': $md-yellow-800, '900': $md-yellow-900, 
+		'A100': $md-yellow-A100, 'A200': $md-yellow-A200, 'A400': $md-yellow-A400, 'A700': $md-yellow-A700
+		),
+	'amber': (
+		'50': $md-amber-50, '100': $md-amber-100, '200': $md-amber-200, '300': $md-amber-300,  '400': $md-amber-400, 
+		'500': $md-amber-500, '600': $md-amber-600, '700': $md-amber-700, '800': $md-amber-800, '900': $md-amber-900, 
+		'A100': $md-amber-A100, 'A200': $md-amber-A200, 'A400': $md-amber-A400, 'A700': $md-amber-A700
+		),
+	'orange': (
+		'50': $md-orange-50, '100': $md-orange-100, '200': $md-orange-200, '300': $md-orange-300,  '400': $md-orange-400, 
+		'500': $md-orange-500, '600': $md-orange-600, '700': $md-orange-700, '800': $md-orange-800, '900': $md-orange-900, 
+		'A100': $md-orange-A100, 'A200': $md-orange-A200, 'A400': $md-orange-A400, 'A700': $md-orange-A700
+		),
+	'deep-orange': (
+		'50': $md-deep-orange-50, '100': $md-deep-orange-100, '200': $md-deep-orange-200, '300': $md-deep-orange-300,  '400': $md-deep-orange-400, 
+		'500': $md-deep-orange-500, '600': $md-deep-orange-600, '700': $md-deep-orange-700, '800': $md-deep-orange-800, '900': $md-deep-orange-900, 
+		'A100': $md-deep-orange-A100, 'A200': $md-deep-orange-A200, 'A400': $md-deep-orange-A400, 'A700': $md-deep-orange-A700
+		),
+	'brown': (
+		'50': $md-brown-50, '100': $md-brown-100, '200': $md-brown-200, '300': $md-brown-300,  '400': $md-brown-400, 
+		'500': $md-brown-500, '600': $md-brown-600, '700': $md-brown-700, '800': $md-brown-800, '900': $md-brown-900, 
+		'A100': $md-brown-A100, 'A200': $md-brown-A200, 'A400': $md-brown-A400, 'A700': $md-brown-A700
+		),
+	'grey': (
+		'50': $md-grey-50, '100': $md-grey-100, '200': $md-grey-200, '300': $md-grey-300,  '400': $md-grey-400, 
+		'500': $md-grey-500, '600': $md-grey-600, '700': $md-grey-700, '800': $md-grey-800, '900': $md-grey-900, 
+		'A100': $md-grey-A100, 'A200': $md-grey-A200, 'A400': $md-grey-A400, 'A700': $md-grey-A700
+		),
+	'blue-grey': (
+		'50': $md-blue-grey-50, '100': $md-blue-grey-100, '200': $md-blue-grey-200, '300': $md-blue-grey-300,  '400': $md-blue-grey-400, 
+		'500': $md-blue-grey-500, '600': $md-blue-grey-600, '700': $md-blue-grey-700, '800': $md-blue-grey-800, '900': $md-blue-grey-900, 
+		'A100': $md-blue-grey-A100, 'A200': $md-blue-grey-A200, 'A400': $md-blue-grey-A400, 'A700': $md-blue-grey-A700
+		),
+);
+
 .c-black {
   	color: $md-black !important;
 }
@@ -332,45 +430,74 @@ $md-main-colors: red, pink, purple, deep-purple, indigo, blue, light-blue, cyan,
   	background: $md-white !important;
 }
 
-@mixin output-color-classes($name, $color)
-{
+@mixin output-color-classes($name, $color){
 	.c-#{$name} {color: $color !important;}
 	.md-bg-#{$name} {background: $color !important;}
 }
 
-@mixin color-classes($main-color)
-{
-
-
-	$j: length($md-color-variations);
-	
-	@while $j > 0 {
-		$variation: extract($md-color-variations, $j);
+@each $main-color, $variations in $color-valiations-map {
+	@each $variation, $color in $variations {
+		@if $variation == '500'{
+			@include output-color-classes($main-color, $color);
+		}
 		$color-name: "#{$main-color}-#{$variation}";
-		$color: "$md-#{$color-name}";
-		
 		@include output-color-classes($color-name, $color);
-		
-		 $j: $j - 1;
 	}
 }
 
-
-$i: length($md-main-colors);
-
-@while $i > 0 {
-	$main-color: extract($md-main-colors, $i);
-	$mcolor: "$md-#{$main-color}-500";
-	
-	@include output-color-classes($main-color, $mcolor);
-	@include color-classes($main-color);
-	
-	 $i: $i - 1;
+/*---- Color Page Styles - Start -----*/
+.color-palette {
+	font-weight: 500;
+	color: #000;
+}
+.color-palette .light {
+	color: #fff;
+}
+.color-palette .dark {
+	color: #000;
 }
 
+.main-color {
+    height: 100px;
+	color: #fff;
+    padding: 15px 15px;
+    border-radius: 0px;
+    margin-bottom: 5px;
+	text-align:center;
+}
 
-@include output-color-classes(blue-grey, $md-blue-grey-500);
-@include color-classes(blue-grey);
+.main-color .name {
+	text-align:left;
+    display: block;
+    margin-bottom: 35px;
+	font-size:15px;
+}
+.main-color .class {
+    float: left;
+}
+.main-color .color {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.main-color .shade {
+}
+
+.color-palette .color{
+	font-size:14px;
+    padding:14px 15px;
+}
+.color-palette .color .class{
+    
+}
+.color-palette .color .shade{
+    left: 25%;
+}
+.color-palette .color .hex{
+    float: right;
+    text-transform: uppercase;
+}
+/*---- Color Page Styles - End -----*/
+
 
 /* .bg-black-trp { background-color: rgba(0,0,0,0.1) !important; } */
 

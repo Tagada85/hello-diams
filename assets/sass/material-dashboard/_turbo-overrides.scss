@@ -4,6 +4,8 @@
  * Line: new
  *-------------------------
  */
+$brand-default: $md-grey-800; 
+
 $border-radius-default: 0px !default;
 
 $navbar-bg: #607D8B !default;
@@ -23,6 +25,78 @@ $num: 50;
     .f-#{$num} { font-size: #{$num}px !important; }
     $num: $num - 5;
 }
+
+/* Generate Margin Class (margin, margin-top, margin-bottom, margin-left, margin-right) */
+@mixin output-margin-classes($key){
+	.m-#{$key} {
+        margin: #{$key}px !important;
+    }
+    
+    .m-t-#{$key} {
+        margin-top: #{$key}px !important;
+    }
+    
+    .m-b-#{$key} {
+        margin-bottom: #{$key}px !important;
+    }
+    
+    .m-l-#{$key} {
+        margin-left: #{$key}px !important;
+    }
+    
+    .m-r-#{$key} {
+        margin-right: #{$key}px !important;
+    }
+}
+
+$mnum: 0;
+@while $mnum < 10 {
+    @include output-margin-classes($mnum);
+    $mnum: $mnum + 1;
+}
+
+$mnum: 10;
+@while $mnum <= 30 {
+    @include output-margin-classes($mnum);
+    $mnum: $mnum + 5;
+}
+
+
+/* Generate Padding Class (padding, padding-top, padding-bottom, padding-left, padding-right) */
+@mixin output-padding-classes($key){
+	.p-#{$key} {
+        padding: #{$key}px !important;
+    }
+    
+    .p-t-#{$key} {
+        padding-top: #{$key}px !important;
+    }
+    
+    .p-b-#{$key} {
+        padding-bottom: #{$key}px !important;
+    }
+    
+    .p-l-#{$key} {
+        padding-left: #{$key}px !important;
+    }
+    
+    .p-r-#{$key} {
+        padding-right: #{$key}px !important;
+    }
+}
+
+$pnum: 0;
+@while $pnum < 10 {
+    @include output-padding-classes($pnum);
+    $pnum: $pnum + 1;
+}
+
+$pnum: 10;
+@while $pnum <= 30 {
+    @include output-padding-classes($pnum);
+    $pnum: $pnum + 5;
+}
+
     
 /* Output font-weight classes */
 /*.f-100 { font-weight: 100 !important; }
@@ -114,8 +188,7 @@ $num: 50;
  * Line: 178+, 217+
  *-------------------------
  */
-.btn,
-.navbar .navbar-nav > li > a.btn{
+.navbar .navbar-minimize button{
 	&.btn-just-icon{
         padding: 10px 10px;
 		color: $white-color;
