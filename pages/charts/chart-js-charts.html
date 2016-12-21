@@ -250,107 +250,90 @@
             </nav>
             <div class="content">
                 <div class="container-fluid">
-					<h4 class="pull-left">ChartJS Charts
-						<small>ChartJS is a pure JavaScript plotting library for jQuery, with a focus on simple usage,
-							attractive looks and interactive features.
-						</small>
-					</h4>
+                    <div class="header text-center">
+                        <h3 class="title">ChartJS Charts</h3>
+                        <p class="category">ChartJS is a simple yet flexible JavaScript charting library for designers & developers.
+                            Please checkout their
+                            <a href="http://www.chartjs.org/docs/" target="_blank">full documentation.</a>
+                        </p>
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="card">
                                 <div class="card-header">
-                                    <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
+                                    <h4>Pie Chart</h4>
                                 </div>
-
-                                <div class="card-content card-padding">
-                                    <div class="chart">
-                                        <canvas id="lineChart2" height="250"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
-                                </div>
-
-                                <div class="card-content card-padding">
+                                <div class="card-content">
                                     <div class="chart">
                                         <canvas id="pieChart" height="250"></canvas>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="card">
                                 <div class="card-header">
-                                    <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
-
-                                    <ul class="actions">
-                                        <li>
-                                            <a href="">
-                                                <i class="md md-cached"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <i class="md md-file-download"></i>
-                                            </a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="" data-toggle="dropdown">
-                                                <i class="md md-more-vert"></i>
-                                            </a>
-
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li>
-                                                    <a href="">Change Date Range</a>
-                                                </li>
-                                                <li>
-                                                    <a href="">Change Graph Type</a>
-                                                </li>
-                                                <li>
-                                                    <a href="">Other Settings</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    <h4>Doughnut Chart</h4>
                                 </div>
-
-                                <div class="card-content card-padding">
+                                <div class="card-content">
                                     <div class="chart">
-                                        <canvas id="areaChart" height="250"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header">
-                                    <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
-                                </div>
-
-                                <div class="card-content card-padding">
-                                    <div class="chart">
-                                        <canvas id="lineChart" height="250"></canvas>
+                                        <canvas id="doughnutChart" height="250"></canvas>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h2>Sales Statistics <small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
+                                    <h4>Area Chart</h4>
+                                </div>
+
+                                <div class="card-content">
+                                    <div class="chart">
+                                        <canvas id="areaChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Line Chart</h4>
+                                </div>
+                                <div class="card-content">
+                                    <div class="chart">
+                                        <canvas id="lineChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Bar Chart</h4>
                                 </div>
 
                                 <div class="card-content card-padding">
                                     <div class="chart">
-                                        <canvas id="barChart" height="230"></canvas>
+                                        <canvas id="barChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Bar Line Combo Chart</h4>
+                                </div>
+
+                                <div class="card-content card-padding">
+                                    <div class="chart">
+                                        <canvas id="barlinecomboChart"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -369,17 +352,17 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    Company
+                                    Documentation
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Portfolio
+                                    Contact
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Blog
+                                    Support
                                 </a>
                             </li>
                         </ul>
@@ -389,7 +372,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                        <a href="#">Turbo Admin</a>
                     </p>
                 </div>
             </footer>
@@ -440,13 +423,7 @@
 
 
 
-<script src="../../assets/js/demo/charts.js"></script>
 <script src="../../assets/js/demo/chartjs-charts/chartjs-charts.js"></script>
-<script src="../../assets/js/demo/flot-charts/curved-line-chart.js"></script>
-<script src="../../assets/js/demo/flot-charts/line-chart.js"></script>
-<script src="../../assets/js/demo/flot-charts/dynamic-chart.js"></script>
-<script src="../../assets/js/demo/flot-charts/bar-chart.js"></script>
-<script src="../../assets/js/demo/flot-charts/pie-chart.js"></script>
 
 
 </html>

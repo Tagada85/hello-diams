@@ -18,6 +18,15 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
+<style>
+
+    .demo-placeholder {
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	line-height: 1.2em;
+}
+</style>
 </head>
 
 <body>
@@ -250,65 +259,37 @@
             </nav>
             <div class="content">
                 <div class="container-fluid">
-					<h4 class="pull-left">Flot Charts
-						<small>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage,
+                    <div class="header text-center">
+                        <h3 class="title">Flot Charts</h3>
+                        <p class="category">Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage,
 							attractive looks and interactive features.
-						</small>
-					</h4>
-
+                            Please checkout their
+                            <a href="https://github.com/flot/flot/blob/master/API.md" target="_blank">full documentation.</a>
+                        </p>
+                    </div>
                    
                     <div class="row">
                         <div class="col-md-6">
                             <div class="card">
                                 <div class="card-header">
-                                    <h2>Donut Chart<small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
+                                    <h4>Pie Chart</h4>
                                 </div>
 
-                                <div class="card-content card-padding">
-                                    <div id="donut-chart" class="flot-chart-pie"></div>
-                                    <div class="flc-donut hidden-xs"></div>
+                                <div class="card-content">
+                                    <div id="pie-chart" class="demo-placeholder"></div>
+                                    <div class="flc-pie hidden-xs"></div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-md-6">
                             <div class="card">
                             	<div class="card-header">
-                                    <h2>Line Chart<small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
-                                    <ul class="actions">
-                                        <li>
-                                            <a href="">
-                                                <i class="md md-cached"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                <i class="md md-file-download"></i>
-                                            </a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="" data-toggle="dropdown">
-                                                <i class="md md-more-vert"></i>
-                                            </a>
-
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li>
-                                                    <a href="">Change Date Range</a>
-                                                </li>
-                                                <li>
-                                                    <a href="">Change Graph Type</a>
-                                                </li>
-                                                <li>
-                                                    <a href="">Other Settings</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                    <h4>Line Chart</h4>
                                 </div>
 
-                                <div class="card-content card-padding">
+                                <div class="card-content">
                                     <div class="chart-edge">
-                                        <div id="line-chart" class="flot-chart-line"></div>
+                                        <div id="line-chart" class="demo-placeholder"></div>
                                     </div>
                                 </div>
                             </div>
@@ -319,57 +300,54 @@
                         <div class="col-md-6">
                             <div class="card">
                                 <div class="card-header">
-                                    <h2>Pie Chart<small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
+                                    <h4>Real-time Chart</h4>
                                 </div>
 
-                                <div class="card-content card-padding">
-                                    <div id="pie-chart" class="flot-chart-pie"></div>
-                                    <div class="flc-pie hidden-xs"></div>
+                                <div class="card-content">
+                                    <div id="realtime-chart" class="demo-placeholder"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="card" style="min-height: 383px">
-                                <div class="card-header">
-                                    <h2>Bar Chart<small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
-                                </div>
-
-                                <div class="card-content card-padding">
-                                    <div id="bar-chart" class="flot-chart-bar"></div>
-                                    <div class="flc-bar"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
                         <div class="col-md-6">
                             <div class="card">
                                 <div class="card-header">
-                                    <h2>Real-time Chart<small>Vestibulum purus quam scelerisque, mollis nonummy metus</small></h2>
+                                    <h4>Area Chart</h4>
                                 </div>
 
-                                <div class="card-content card-padding">
-                                    <div id="dynamic-chart" class="flot-chart-line"></div>
-                                    <div class="flc-dynamic"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h2>Curved Line Chart<small>Line Chart with curved edges</small></h2>
-                                </div>
-
-                                <div class="card-content card-padding">
+                                <div class="card-content">
                                     <div class="chart-edge">
-                                        <div id="curved-line-chart" class="flot-chart-curved-line"></div>
+                                        <div id="area-chart" class="demo-placeholder"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Stacked Bar Chart</h4>
+                                </div>
+
+                                <div class="card-content">
+                                    <div id="stacked-bar-chart" class="demo-placeholder"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Bar Chart</h4>
+                                </div>
+
+                                <div class="card-content">
+                                    <div id="column-chart" class="demo-placeholder"></div>
+                                    <div class="flc-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <footer class="footer">
@@ -383,17 +361,17 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    Company
+                                    Documentation
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Portfolio
+                                    Contact
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Blog
+                                    Support
                                 </a>
                             </li>
                         </ul>
@@ -403,7 +381,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                        <a href="#">Turbo Admin</a>
                     </p>
                 </div>
             </footer>
@@ -425,10 +403,10 @@
 
 <script src="../../assets/vendors/charts/flot/jquery.flot.js"></script>
 <script src="../../assets/vendors/charts/flot/jquery.flot.resize.js"></script>
-<script src="../../assets/vendors/charts/flot.curvedlines/curvedLines.js"></script>
 <script src="../../assets/vendors/charts/flot/jquery.flot.pie.js"></script>
-<script src="../../assets/vendors/charts/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
-<script src="../../assets/vendors/charts/flot-orderBars/js/jquery.flot.orderBars.js"></script>
+<script src="../../assets/vendors/charts/flot/jquery.flot.stack.js"></script>
+<script src="../../assets/vendors/charts/flot/jquery.flot.categories.js"></script>
+
 
 <!--  Plugin for the Wizard -->
 <script src="../../assets/js/jquery.bootstrap-wizard.js"></script>
@@ -461,11 +439,8 @@
 
 
 
-<script src="../../assets/js/demo/flot-charts/pie-chart.js"></script>
-<script src="../../assets/js/demo/flot-charts/curved-line-chart.js"></script>
-<script src="../../assets/js/demo/flot-charts/line-chart.js"></script>
-<script src="../../assets/js/demo/flot-charts/dynamic-chart.js"></script>
-<script src="../../assets/js/demo/flot-charts/bar-chart.js"></script>
+<script src="../../assets/js/demo/flot-charts/flot-charts.js"></script>
+
 
 
 </html>

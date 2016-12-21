@@ -24,8 +24,13 @@ $sidebar-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
 // Reduced top and bottom margin to reduce vertical gutter
 .card {
     margin: 15px 0;
+}
 
-
+//Card Testimonial
+.card-testimonial{
+    .card-avatar{
+    	margin: 20px auto -40px;
+    }
 }
 
 // Card with background color black
@@ -36,9 +41,68 @@ $sidebar-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
 
 // card profile page
 
-.card-profile .card-avatar {
-	margin: 50px auto 0;
+.card-profile {
+	.card-avatar {
+		margin: 50px auto 0;
+	}
+	.bg-info {
+    	color: #dcf2f8;
+    	background-color: #23b7e5;
+	}
+	.bg-info-alt {
+    	color: #dcf2f8;
+    	background-color: #16aad8;
+	}
+    .card-footer {
+    	margin: 0px 15px 0px 15px;
+    	padding: 0px;
+    	div {
+    	    display:block;
+    	}
+	}
+	.profile-social-wrapper{
+		padding: 20px;
+		text-align: center;
+	}
+	.profile-count{
+		color:#ffffff;
+		font-size: 24px;
+		display:block;
+		margin-bottom: 5px;
+	}
 }
+
+
+//timeline
+
+.timeline.timeline-simple > li > .timeline-image {
+    left: 5%;
+}
+
+.timeline > li > .timeline-image {
+    left: 5%;
+    width: 50px;
+    height: 50px;
+    line-height: 51px;
+    text-align: center;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    margin-left: -24px;
+    z-index: 100;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    
+    img {
+		width:100%;
+		line-height: inherit;
+		border-radius: 500px;
+    }
+    
+}
+
 
 //Login page 
 
