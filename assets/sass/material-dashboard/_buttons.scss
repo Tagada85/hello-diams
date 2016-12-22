@@ -40,7 +40,7 @@
       @include btn-styles($brand-danger);
     }
     &.btn-rose{
-      @include btn-styles($brand-rose);
+      @include btn-styles($white-color);
     }
     &.btn-white{
         &,

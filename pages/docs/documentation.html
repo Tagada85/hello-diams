@@ -12,18 +12,20 @@
     <!-- Bootstrap core CSS     -->
     <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
-    <link href="../../assets/css/material-dashboard.css" rel="stylesheet" />
+    <link href="../../assets/css/turbo.css" rel="stylesheet" />
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="../../assets/css/demo.css" rel="stylesheet" />
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
+    <link href="../../assets/vendors/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">    
+    <!--    JQuery UI     -->
+    <link href="../../assets/vendors/jquery-ui-1.12.0/jquery-ui.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="wrapper">
-		<div class="sidebar" >
-
+		<div class="sidebar">
             <div class="logo">
                 <a href="#" class="simple-text">
                     Turbo Admin
@@ -63,9 +65,6 @@
 								<li>
 									<a href="../charts/flot-charts.html">Flot</a>
 								</li>
-								<li>
-									<a href="../charts/other-charts.html">Inline Charts</a>
-								</li>
 							</ul>
 						</div>
 					</li>
@@ -81,20 +80,12 @@
 								<li><a href="../ui/accordions.html">Accordions</a></li>
 								<li><a href="../ui/alerts-dialogs.html">Alerts & Dialogs</a></li>
 								<li><a href="../ui/buttons.html">Buttons</a></li>
-								<li><a href="../ui/breadcrumbs.html">Breadcrumbs</a></li>
 								<li><a href="../ui/colors.html">Colors</a></li>
-								<li><a href="../ui/dropdown.html">Dropdown</a></li>
 								<li><a href="../ui/grid.html">Grid System</a></li>
 								<li><a href="../ui/icons.html">Icons</a></li>
-								<li><a href="../ui/jumbotron.html">Jumbotron</a></li> 
-								<li><a href="../ui/notifications.html">Notifications</a></li>
-								<li><a href="../ui/media.html">Media</a></li>
 								<li><a href="../ui/modals.html">Modals</a></li>
-								<li><a href="../ui/pagination.html">Pagination</a></li>
-								<li><a href="../ui/popovers.html">Popovers</a></li>
-								<li><a href="../ui/preloaders-progress-bar.html">Preloaders & Progress Bar</a></li>
+								<li><a href="../ui/notifications.html">Notifications</a></li>
 								<li><a href="../ui/tabs.html">Tabs</a></li>
-								<li><a href="../ui/tooltips.html">Tool Tips</a></li>
 								<li><a href="../ui/typography.html">Typography</a></li>
 							</ul>
 						</div>
@@ -139,6 +130,7 @@
 						</a>
 						<div class="collapse" id="pages" aria-expanded="false" style="height: 0px;">
 							<ul class="nav">
+								<li><a href="../sample-pages/template.html">Template</a></li>
 								<li><a href="../sample-pages/user-profile.html">User Profile</a></li>
 								<li><a href="../sample-pages/login.html">Login</a></li>
 								<li><a href="../sample-pages/signup.html">Sign Up</a></li>
@@ -153,7 +145,7 @@
 						</div>
 					</li>
 					<li>
-						<a href="../calendar/calendar.html">
+						<a href="calendar/calendar.html">
 							<i class="material-icons">date_range</i>
 							<p>Calendar
 								<b class="caret"></b>
@@ -161,15 +153,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="../widgets/widgets.html">
-							<i class="material-icons">settings_ethernet</i>
-							<p>Base Classes
-								<b class="caret"></b>
-							</p>
-						</a>
-					</li>
-					<li>
-						<a href="../docs/documentation.html">
+						<a href="docs/documentation.html">
 							<i class="material-icons">library_books</i>
 							<p>Documentation</p>
 						</a>
@@ -201,7 +185,7 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">notifications</i>
-                                    <span class="notification">5</span>
+                                    <span class="notification">6</span>
                                     <p class="hidden-lg hidden-md">
                                         Notifications
                                         <b class="caret"></b>
@@ -209,19 +193,21 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="#">Mike John responded to your email</a>
+                                        <a href="#">You have 5 new messages</a>
                                     </li>
                                     <li>
-                                        <a href="#">You have 5 new tasks</a>
+                                        <a href="#">You're now friend with Mike</a>
                                     </li>
                                     <li>
-                                        <a href="#">You're now friend with Andrew</a>
+                                        <a href="#">Wish Mary on her birthday!</a>
+                                    </li>                                    <li>
+                                        <a href="#">5 warnings in Server Console</a>
                                     </li>
                                     <li>
-                                        <a href="#">Another Notification</a>
+                                        <a href="#">Jane completed 'Induction Training'</a>
                                     </li>
                                     <li>
-                                        <a href="#">Another One</a>
+                                        <a href="#">'Prepare Marketing Report' is overdue</a>
                                     </li>
                                 </ul>
                             </li>
@@ -273,85 +259,107 @@
                           <h3>TEMPLATE STRUCTURE </h3>
                         </div>
                         <div class="card-content">
-                          <p><span class="lead">The general template structure is the same throughout the template. All template files have fixed structure consisting of header, top menu, main sidebar menu, right sidebar settings and page content.</span></p>
+                          <p><span class="lead">The general template structure is the same throughout the template. All template files have fixed structure consisting of header, top menu, main sidebar menu and page content.</span></p>
                           <div role="tabpanel">
                             <ul class="nav nav-pills" role="tablist">
                               <li class="active"><a href="#home11" aria-controls="home11" role="tab" data-toggle="tab">Basic Structure</a> </li>
                             </ul>
                             <div class="tab-content">
                               <div role="tabpanel" class="tab-pane active" id="home11">
-                                <p>The basic HTML structure is as shown below. You can add different components to suit your needs. You will find a blank page template in the pages folder. You can modify header, top menu, side bar menu and right sidebar content of this page and start using it as the basic page template for your project.</p>
+                                <p>The basic HTML structure is as shown below. You can add different components to suit your needs. You will find a blank page template in the pages folder. You can modify header, top menu and side bar menu of this page and start using it as the basic page template for your project.</p>
                                 <pre class="prettyprint linenums">
-&lt;!DOCTYPE html&gt;
-&lt;!--[if IE 9 ]&gt;&lt;html class=&quot;ie9&quot;&gt;&lt;![endif]--&gt;
-    &lt;head&gt;
-    	&lt;meta charset=&quot;utf-8&quot;&gt;
-        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-        &lt;title&gt;Turbo Admin&lt;/title&gt;
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
 
-        &lt;!-- Vendor CSS --&gt;
-        &lt;link href=&quot;../../vendors/animate.css/animate.min.css&quot; rel=&quot;stylesheet&quot;&gt;
-        &lt;link href=&quot;../../vendors/sweetalert/dist/sweetalert.css&quot; rel=&quot;stylesheet&quot;&gt;
-        &lt;link href=&quot;../../vendors/material-design-iconic-font/dist/css/material-design-iconic-font.min.css&quot; rel=&quot;stylesheet&quot;&gt;
-        &lt;link href=&quot;../../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css&quot; rel=&quot;stylesheet&quot;&gt;
-        &lt;link href=&quot;../../vendors/bootstrap-select/dist/css/bootstrap-select.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8" /&gt;
+    &lt;link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" /&gt;
+    &lt;link rel="icon" type="image/png" href="../assets/img/favicon.png" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    &lt;title&gt;Turbo - Bootstrap Material Admin Dashboard Template&lt;/title&gt;
+    &lt;meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' /&gt;
+    &lt;meta name="viewport" content="width=device-width" /&gt;
+    &lt;!-- Bootstrap core CSS     --&gt;
+    &lt;link href="../assets/css/bootstrap.min.css" rel="stylesheet" /&gt;
+    &lt;!--  Material Dashboard CSS    --&gt;
+    &lt;link href="../assets/css/turbo.css" rel="stylesheet" /&gt;
+    &lt;!--  CSS for Demo Purpose, don't include it in your project     --&gt;
+    &lt;link href="../assets/css/demo.css" rel="stylesheet" /&gt;
+    &lt;!--     Fonts and icons     --&gt;
+    &lt;link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet"&gt;
+    &lt;link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" /&gt;
+&lt;/head&gt;
 
-        &lt;!-- Turbo CSS --&gt;
-        &lt;link href=&quot;../../dist/css/Turbo_1.min.css&quot; rel=&quot;stylesheet&quot;&gt;
-        &lt;link href=&quot;../../dist/css/Turbo_2.min.css&quot; rel=&quot;stylesheet&quot;&gt;
-
-    &lt;/head&gt;
-    &lt;body class=&quot;layout-fixed-left-menu left-sidebar-toggled&quot;&gt;
-    	&lt;!-- HEADER/TOPBAR SECTION --&gt;
-        &lt;header id=&quot;header&quot; class=&quot;clearfix&quot; data-dp-theme=&quot;bluegrey&quot;&gt;
-
-        &lt;/header&gt;
-        
-        &lt;!-- Right Side Bar --&gt;
-        &lt;aside id=&quot;sidebar-right&quot; class=&quot;sidebar&quot;&gt;
-
-        &lt;/aside&gt;
-
-        &lt;section id=&quot;main&quot;&gt;
-        	&lt;!-- Main Nav Bar --&gt;
-            &lt;nav id=&quot;sidebar-left&quot; class=&quot;sidebar mcs-overflow&quot;&gt;
-        	&lt;!-- Left Side Bar --&gt;
-            &lt;/nav&gt;
-            
-            &lt;!-- Content Section START --&gt;
-            &lt;section id=&quot;content&quot;&gt;
-                &lt;div class=&quot;container&quot;&gt;
-                    &lt;div class=&quot;block-header clearfix&quot;&gt;
-                        &lt;h2 class=&quot;pull-left&quot;&gt;Page Title&lt;/h2&gt;
-
-                        &lt;ul class=&quot;breadcrumb pull-right&quot;&gt;
-                            &lt;li&gt;&lt;a href=&quot;../../index.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
-                            &lt;li&gt;&lt;a href=&quot;&quot;&gt;Page Name&lt;/a&gt;&lt;/li&gt;
-                        &lt;/ul&gt;
+&lt;body&gt;
+    &lt;div class="wrapper"&gt;
+		&lt;div class="sidebar" &gt;
+            &lt;div class="logo"&gt;
+                &lt;a href="#" class="simple-text"&gt;
+                    Turbo Admin
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="logo logo-mini"&gt;
+                &lt;a href="#" class="simple-text"&gt;
+                    T
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="sidebar-wrapper"&gt;
+                &lt;ul class="nav"&gt;
+                    &lt;li&gt;
+                        &lt;a href="../index.html"&gt;
+                            &lt;i class="material-icons"&gt;dashboard&lt;/i&gt;
+                            &lt;p&gt;Dashboard&lt;/p&gt;
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="main-panel"&gt;
+            &lt;nav class="navbar navbar-default navbar-absolute"&gt;
+                &lt;div class="container-fluid"&gt;
+                    &lt;div class="navbar-minimize"&gt;
+                        &lt;button id="minimizeSidebar" class="btn btn-round btn-white btn-fill btn-just-icon"&gt;
+							&lt;i class="material-icons visible-on-sidebar-regular f-26"&gt;keyboard_arrow_left&lt;/i&gt;
+                            &lt;i class="material-icons visible-on-sidebar-mini f-26"&gt;keyboard_arrow_right&lt;/i&gt;
+                        &lt;/button&gt;
                     &lt;/div&gt;
-                   &lt;!-- Card Content --&gt;
+                    &lt;div class="navbar-header"&gt;
+                        &lt;button type="button" class="navbar-toggle" data-toggle="collapse"&gt;
+                            &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+                            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                        &lt;/button&gt;
+                        &lt;a class="navbar-brand" href="#"&gt; Template &lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div class="collapse navbar-collapse"&gt;
+
+                    &lt;/div&gt;
                 &lt;/div&gt;
-            &lt;/section&gt;
-            &lt;!-- Content Section END --&gt;
-        &lt;/section&gt;
+            &lt;/nav&gt;
+            &lt;div class="content"&gt;
+                &lt;div class="container-fluid"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;footer class="footer"&gt;
+                &lt;div class="container"&gt;
+                &lt;/div&gt;
+            &lt;/footer&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;!--   Core JS Files   --&gt;
+&lt;script src="../assets/js/jquery-3.1.1.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/jquery-ui.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/bootstrap.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/material.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
 
-        &lt;!-- Footer --&gt;
-        &lt;footer id=&quot;footer&quot;&gt;
+&lt;!-- Turbo Admin javascript methods --&gt;
+&lt;script src="../assets/js/turbo.js"&gt;&lt;/script&gt;
+&lt;!-- Turbo Admin DEMO methods, don't include it in your project! --&gt;
+&lt;script src="../assets/js/demo.js"&gt;&lt;/script&gt;
 
-        &lt;/footer&gt;
-        
-        &lt;!-- Javascript Libraries --&gt;
-        &lt;script src=&quot;../../vendors/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;../../vendors/bootstrap/dist/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
-        
-        &lt;script src=&quot;../../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;../../vendors/Waves/dist/waves.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;../../vendors/bootstrap-growl/bootstrap-growl.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;../../vendors/sweetalert/dist/sweetalert.min.js&quot;&gt;&lt;/script&gt;
-
-        &lt;script src=&quot;../../dist/js/Turbo.min.js&quot;&gt;&lt;/script&gt;
-	&lt;/body&gt;
 &lt;/html&gt;
                                 </pre>
                               </div>
@@ -370,21 +378,18 @@
                           <div role="tabpanel">
                             <ul class="nav nav-pills" role="tablist">
                             
-                              <li class="active"><a href="#ui-accordions" aria-controls="ui-accordions" role="tab" data-toggle="tab">Accordions</a> </li>
-                              <li><a href="#ui-alerts-dialogs" aria-controls="ui-alerts-dialogs" role="tab" data-toggle="tab">Alerts & Dialogs</a> </li>
-                              <li><a href="#ui-buttons" aria-controls="ui-buttons" role="tab" data-toggle="tab">Buttons</a> </li>
-                              <li><a href="#ui-breadcrumbs" aria-controls="ui-breadcrumbs" role="tab" data-toggle="tab">Breadcrumbs</a> </li>
-                              <li><a href="#ui-colors" aria-controls="ui-colors" role="tab" data-toggle="tab">Colors</a> </li>
-                              <li><a href="#ui-dropdown" aria-controls="ui-dropdown" role="tab" data-toggle="tab">Dropdown</a> </li>
-                              <li><a href="#ui-icons" aria-controls="ui-icons" role="tab" data-toggle="tab">Icons</a> </li>
-                              <li><a href="#ui-jumbotron" aria-controls="ui-jumbotron" role="tab" data-toggle="tab">Jumbotron</a> </li>
-                              <li><a href="#ui-notifications" aria-controls="ui-notifications" role="tab" data-toggle="tab">Notifications</a> </li>
-                              <li><a href="#ui-media" aria-controls="ui-media" role="tab" data-toggle="tab">Media</a> </li>
+                              <li class="active"><a href="#ui-accordions" aria-controls="ui-accordions" role="tab" data-toggle="tab">Accordions</a></li>
+                              <li><a href="#ui-alerts" aria-controls="ui-alerts" role="tab" data-toggle="tab">Alerts</a></li>
+                              <li><a href="#ui-buttons" aria-controls="ui-buttons" role="tab" data-toggle="tab">Buttons</a></li>
+                              <li><a href="#ui-colors" aria-controls="ui-colors" role="tab" data-toggle="tab">Colors</a></li>
+                              <li><a href="#ui-icons" aria-controls="ui-icons" role="tab" data-toggle="tab">Icons</a></li>
                               <li><a href="#ui-modals" aria-controls="ui-modals" role="tab" data-toggle="tab">Modals</a> </li>
-                            </ul>
+                              <li><a href="#ui-notifications" aria-controls="ui-notifications" role="tab" data-toggle="tab">Notifications</a></li>
+                              <li><a href="#ui-tabs" aria-controls="ui-tabs" role="tab" data-toggle="tab">Tabs</a> </li>
+                              <li><a href="#ui-typography" aria-controls="ui-typography" role="tab" data-toggle="tab">Typography</a></li>                            </ul>
                             <div class="tab-content">
                               <div role="tabpanel" class="tab-pane active" id="ui-accordions">
-                                <p>Accordion displays collapsible content panels for presenting information in a limited amount of space. DashPlus uses jQuery UI to implement the accordion. jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library. Whether you're building highly interactive web applications or you just need to add a date picker to a form control, jQuery UI is the perfect choice.
+                                <p>Accordion displays collapsible content panels for presenting information in a limited amount of space. Turbo uses jQuery UI to implement the accordion. jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library. Whether you're building highly interactive web applications or you just need to add a date picker to a form control, jQuery UI is the perfect choice.
 </p>
 								<div class="card-content">
                                 	<div id="simple-accordion" class="accordion">
@@ -435,35 +440,15 @@
                                 <p>Please refer to <a href="http://api.jqueryui.com/accordion/">http://api.jqueryui.com/accordion/</a> for detailed documentation</p>
 
                               </div>
-                              <div role="tabpanel" class="tab-pane" id="ui-alerts-dialogs">
-								<h4>Sweet Alert (Dialogs)</h4>
-                                <p>Sweet Alert is a beautiful replacement of Javascript alert. SweetAlert automatically centers itself on the page and looks great no matter if you're using a desktop computer, mobile or tablet. It's even highly customizeable. Here is a basic example</p>
-                                <pre class="prettyprint linenums"><span class="attr">swal</span>(<span class="str">"Here's a message!"</span>)</pre>
-                                <p>Please refer to <a href="http://t4t5.github.io/sweetalert/">http://t4t5.github.io/sweetalert/</a> for detailed documentation</p>
-                                <h4>Bootstrap Simple Alerts</h4>
-                                <p>Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</p>
-                                <p>Wrap any text and an optional dismiss button in .alert and one of the four contextual classes (e.g., .alert-success) for basic alert messages.</p>
-								<div class="bs-example" data-example-id="simple-alerts"> 
-									<div class="alert alert-success" role="alert"> <strong>Well done!</strong> You successfully read this important alert message. </div> 
-									<div class="alert alert-info" role="alert"> <strong>Heads up!</strong> This alert needs your attention, but it's not super important. </div> 
-									<div class="alert alert-warning" role="alert"> <strong>Warning!</strong> Better check yourself, you're not looking too good. </div> 
-									<div class="alert alert-danger" role="alert"> <strong>Oh snap!</strong> Change a few things up and try submitting again. </div> 
-								</div>
-								<pre class="prettyprint linenums">&lt;div class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;...&lt;/div&gt;
-&lt;div class=&quot;alert alert-info&quot; role=&quot;alert&quot;&gt;...&lt;/div&gt;
-&lt;div class=&quot;alert alert-warning&quot; role=&quot;alert&quot;&gt;...&lt;/div&gt;
-&lt;div class=&quot;alert alert-danger&quot; role=&quot;alert&quot;&gt;...&lt;/div&gt;</pre>
-								<h4>Bootstrap Dismissible Alerts</h4>
-								<p>Build on any alert by adding an optional .alert-dismissible and close button.</p>								
-								<div class="alert alert-warning alert-dismissible" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> <strong>Warning!</strong> Better check yourself, you're not looking too good. </div>
-								<pre class="prettyprint linenums"><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-warning alert-dismissible"</span> <span class="na">role=</span><span class="s">"alert"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"close"</span> <span class="na">data-dismiss=</span><span class="s">"alert"</span> <span class="na">aria-label=</span><span class="s">"Close"</span><span class="nt">&gt;&lt;span</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span><span class="ni">&amp;times;</span><span class="nt">&lt;/span&gt;&lt;/button&gt;</span>
-  <span class="nt">&lt;strong&gt;</span>Warning!<span class="nt">&lt;/strong&gt;</span> Better check yourself, you're not looking too good.
-<span class="nt">&lt;/div&gt;</span></code></pre>
-                                <p>Please refer to <a href="http://getbootstrap.com/components/#alerts">http://getbootstrap.com/components/#alerts</a> for detailed documentation</p>
+                              <div role="tabpanel" class="tab-pane" id="ui-alerts">
+								<h4>Sweet Alert2 (Dialogs)</h4>
+                                <p>A beautiful and customizable replacement for JavaScript's popup boxes Supported fork of t4t5/sweetalert. SweetAlert2 automatically centers itself on the page and looks great no matter if you're using a desktop computer, mobile or tablet. It's even highly customizeable. Here is a basic example</p>
+                                <button id="sweetalert-demo" class="btn btn-default btn-fill"> Try me!<div class="ripple-container"></div></button>
+                                <pre class="prettyprint linenums"><span class="attr">swal</span>(<span class="str">"Here is a message!"</span>)</pre>
+                                <p>Please refer to <a href="http://limonte.github.io/sweetalert2/">http://limonte.github.io/sweetalert2/</a> for detailed documentation</p>
                               </div>
                               <div role="tabpanel" class="tab-pane" id="ui-buttons">
-                                <p>Template use material design style for buttons, with various colors and options.</p>
+                                <p>Turbo use material design style for buttons, with various colors and options.</p>
                                 <h4><strong>Basic</strong> Buttons</h4>
                                 <p>We use any of the available button classes to quickly create a styled button.</p>
 								<h5><strong>Bootstrap</strong> Default, disabled and customized material design Buttons</h5>
@@ -473,16 +458,16 @@
                                 <button type="button" class="btn btn-success">Success</button>                           
                                 <button type="button" class="btn btn-warning">Warning</button>
                                 <button type="button" class="btn btn-danger">Danger</button>
-								<button class="btn btn-success" disabled="disabled">Disabled</button>
-								<button class="btn md-bg-teal">Teal</button>
+                                <button type="button" class="btn btn-white">White</button>
+
                                 <pre class="prettyprint linenums m-t-20">&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Default&lt;/button&gt;
 &lt;button type=&quot;button&quot; class=&quot;btn btn-info&quot;&gt;Info&lt;/button&gt;
 &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Primary&lt;/button&gt;
 &lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot;&gt;Success&lt;/button&gt;
 &lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;Warning&lt;/button&gt;
 &lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;Danger&lt;/button&gt;
-&lt;button class=&quot;btn btn-success&quot; disabled=&quot;disabled&quot;&gt;Disabled&lt;/button&gt;
-&lt;button class=&quot;btn md-bg-teal&quot;&gt;Teal&lt;/button&gt;</pre>
+&lt;button type=&quot;button&quot; class=&quot;btn btn-white&quot;&gt;White&lt;/button&gt;
+</pre>
                                 <h5><strong>Button</strong> Sizes</h5>                                                             
                                 <p>You can have larger or smaller buttons by adding sizing classes.</p>
 								<button class="btn btn-default btn-lg">Large</button>
@@ -494,94 +479,54 @@
 &lt;button class=&quot;btn btn-default btn-sm&quot;&gt;Small&lt;/button&gt;
 &lt;button class=&quot;btn btn-default btn-xs&quot;&gt;Extra Small&lt;/button&gt;</pre>
                                 <h4><strong>Button</strong> Dropdowns</h4>
-                                <div class="btn-group-demo">
-                                <div class="btn-group">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-default dropdown-toggle"
-                                                data-toggle="dropdown">
-                                            Dropdown
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Dropdown link</a></li>
-                                            <li><a href="#">Dropdown link</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                               
-                            </div><pre class="prettyprint linenums m-t-20">&lt;button type=&quot;button&quot; class=&quot;btn btn-default dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
-&lt;/button&gt;
-&lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Dropdown link&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Dropdown link&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</pre>
-                                <h4><strong>Button</strong> Icons, shapes and colors</h4>
-                                <div class="card-content">                                    
-									<button class="btn btn-default btn-icon-text"><i class="zmdi zmdi-home"></i> Home
+								<div class="dropdown">
+									<button type="button" class="btn btn-default dropdown-toggle"
+											data-toggle="dropdown">
+										Dropdown
+										<span class="caret"></span>
 									</button>
-									<button class="btn btn-primary"><i class="zmdi zmdi-home"></i></button>
-									<button class="btn btn-warning btn-icon"><i class="zmdi zmdi-linkedin"></i></button>                                  
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">Dropdown link</a></li>
+										<li><a href="#">Dropdown link</a></li>
+									</ul>
+								</div>
+
+                            <pre class="prettyprint linenums m-t-20">&lt;div class="dropdown"&gt;
+	&lt;button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"&gt;Dropdown
+		&lt;span class="caret"&gt;&lt;/span&gt;
+	&lt;/button&gt;
+	&lt;ul class="dropdown-menu" role="menu"&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Dropdown link&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;Dropdown link&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</pre>
+                                <h4><strong>Button</strong> Icons and Shapes</h4>
+                                <div class="card-content">                                    
+									<button class="btn btn-primary btn-icon-text"><i class="zmdi zmdi-home f-20"></i> Home
+									</button>
+									<button class="btn btn-primary btn-round"><i class="zmdi zmdi-home f-20"></i></button>
                                 </div>
-                                <pre class="prettyprint linenums m-t-20">&lt;button class=&quot;btn btn-default btn-icon-text&quot;&gt;&lt;i class=&quot;zmdi zmdi-home&quot;&gt;&lt;/i&gt; Home&lt;/button&gt;
-&lt;button class=&quot;btn btn-primary&quot;&gt;&lt;i class=&quot;zmdi zmdi-home&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class=&quot;btn btn-warning btn-icon&quot;&gt;&lt;i class=&quot;zmdi zmdi-linkedin&quot;&gt;&lt;/i&gt;&lt;/button&gt;</pre>
+                                <pre class="prettyprint linenums m-t-20">&lt;button class=&quot;btn btn-primary btn-icon-text&quot;&gt;&lt;i class=&quot;zmdi zmdi-home f-20&quot;&gt;&lt;/i&gt; Home&lt;/button&gt;
+&lt;button class=&quot;btn btn-primary btn-round&quot;&gt;&lt;i class=&quot;zmdi zmdi-home f-20&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+</pre>
 								<h4><strong>Button</strong> Groups</h4>
                                 <div class="btn-group btn-group-lg" role="group">
-                                            <button type="button" class="btn btn-default">Left</button>
-                                            <button type="button" class="btn btn-default">Middle</button>
-                                            <button type="button" class="btn btn-default">Right</button>
+                                    <button type="button" class="btn btn-primary">Left</button>
+                                    <button type="button" class="btn btn-primary">Middle</button>
+                                    <button type="button" class="btn btn-primary">Right</button>
 								</div>
-                                <pre class="prettyprint linenums m-t-20">&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Left&lt;/button&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Middle&lt;/button&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Right&lt;/button&gt;</pre> 
-								<h5><strong>Button</strong> Toolbars</h5>
-                                <div class="btn-group btn-group-seperator">
-                                            <button type="button" class="btn btn-default"><i class="zmdi zmdi-home f-20"></i></button>
-                                            <button type="button" class="btn btn-default"><i class="zmdi zmdi-zoom-in f-20"></i></button>
-                                            <button type="button" class="btn btn-default"><i class="zmdi zmdi-zoom-out f-20"></i></button>
-								</div>
-                                <pre class="prettyprint linenums m-t-20">&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;&lt;i class=&quot;zmdi zmdi-home f-20&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;&lt;i class=&quot;zmdi zmdi-zoom-in f-20&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;&lt;i class=&quot;zmdi zmdi-zoom-out f-20&quot;&gt;&lt;/i&gt;&lt;/button&gt;</pre>
+                                <pre class="prettyprint linenums m-t-20">&lt;div class="btn-group btn-group-lg" role="group"&gt;
+	&lt;button type="button" class="btn btn-primary"&gt;Left&lt;/button&gt;
+	&lt;button type="button" class="btn btn-primary"&gt;Middle&lt;/button&gt;
+	&lt;button type="button" class="btn btn-primary"&gt;Right&lt;/button&gt;
+&lt;/div&gt;</pre> 
 
 
 
-                              </div>
-                              <div role="tabpanel" class="tab-pane" id="ui-breadcrumbs">
-                              <p>Indicate the current page’s location within a navigational hierarchy. Separators are automatically added in CSS through <code>:before</code> and
-                                <code>content</code>.</p>
-                                <br>
-								<ol class="breadcrumb">
-									<li class="active">Home</li>
-								</ol>
 
-								<ol class="breadcrumb">
-									<li><a href="#">Home</a></li>
-									<li class="active">Library</li>
-								</ol>
-								<ol class="breadcrumb">
-									<li><a href="#">Home</a></li>
-									<li><a href="#">Library</a></li>
-									<li class="active">Data</li>
-								</ol> 
-								</br>
-                              <pre class="prettyprint linenums"><code>&lt;ol class=&quot;breadcrumb&quot;&gt;
-	&lt;li class=&quot;active&quot;&gt;Home&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ol class=&quot;breadcrumb&quot;&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
-	&lt;li class=&quot;active&quot;&gt;Library&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ol class=&quot;breadcrumb&quot;&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Library&lt;/a&gt;&lt;/li&gt;
-	&lt;li class=&quot;active&quot;&gt;Data&lt;/li&gt;
-&lt;/ol&gt;</code></pre>  
                               </div>
                               <div role="tabpanel" class="tab-pane" id="ui-colors">
-                                <p>Here is a color palette based on the material design base colors. Each of these colors is defined with a base color class and an optional lighten or darken class.. Color palette is provided by Materialize.<br>
+                                <p>Here is a color palette based on the material design base colors. Each of these colors is defined with a base color class and an optional lighten or darken class..<br>
                                 </p>
                                 <p><strong>How to add a color?</strong></p>
                                 <p>On Material design color page, you just have to copy and name of the color and use it as a class for the element you want to change color.</p>
@@ -591,126 +536,8 @@
                                 <p>You can use this color palette for text color too.</p>
                                 <p>Below example shows how to give an indigo color for a paragraph in the card: </p>
                                 <pre class="prettyprint"><ol class="linenums"><li class="L0"><span class="tag">&lt;div</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"card md-bg-indigo"</span><span class="tag">&gt;</span></li><li class="L1"><span class="pln"> // YOUR CONTENT</span></li><li class="L2"><span class="tag">&lt;/div&gt;</span></li></ol></pre>
-                                <a href="../../pages/UI/colors.html" target="_blank">See Material Design Colors</a>
+                                <a href="../../pages/ui/colors.html" target="_blank">See Material Design Colors</a>
                                 <p></p>
-
-                              </div>
-                              <div role="tabpanel" class="tab-pane" id="ui-dropdown">
-									<p class="f-500 c-black m-b-5">Basic Previews (After triggering)</p>
-									<small>Please refer the Colors page for all the available color options. Adding <code>.dm-icon</code> class to the <code>.dropdown-menu</code> will enable extra room for icons in dropdown links.</small>
-
-									<br/>
-									<br/>
-
-									<div class="dropdown-basic-demo clearfix">
-										<ul class="dropdown-menu" role="menu">
-											<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-											<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-											<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-										</ul>
-									</div>
-
-									<div class="dropdown-basic-demo clearfix">
-										<ul class="dropdown-menu dm-icon md-bg-teal c-white" role="menu">
-											<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="c-white"><i class="zmdi zmdi-home"></i> Action</a></li>
-											<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="c-white"><i class="zmdi zmdi-account"></i> Another action</a></li>
-											<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="c-white"><i class="zmdi zmdi-email"></i> Something else here</a></li>
-											<li class="divider md-bg-grey-400"></li>
-											<li role="presentation"><a role="menuitem" tabindex="-1" href="#" class="c-white"><i class="zmdi zmdi-pin"></i> Separated link</a></li>
-										</ul>
-									</div>
-
-									<br/>
-									<pre class="prettyprint linenums">&lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;
-	&lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
-	&lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
-	&lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
-	&lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
-	&lt;li role=&quot;presentation&quot;&gt;&lt;a role=&quot;menuitem&quot; tabindex=&quot;-1&quot; href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;							</pre>
-									
-
-									<p class="f-500 c-black m-b-20">Alignment</p>
-
-									<div class="clearfix dropdown-btn-demo">
-										<div class="dropdown">
-											<button type="button" class="btn btn-default" data-toggle="dropdown"
-													aria-expanded="false">Dropdown Left
-											</button>
-
-											<ul class="dropdown-menu">
-												<li><a href="#">Action</a></li>
-												<li><a href="#">Another action</a></li>
-												<li><a href="#">Something else here</a></li>
-												<li class="divider"></li>
-												<li><a href="#">Separated link</a></li>
-											</ul>
-										</div>
-
-										<div class="dropdown">
-											<button type="button" class="btn btn-default" data-toggle="dropdown"
-													aria-expanded="false">Dropdown Right
-											</button>
-
-											<ul class="dropdown-menu pull-right">
-												<li><a href="#">Action</a></li>
-												<li><a href="#">Another action</a></li>
-												<li><a href="#">Something else here</a></li>
-												<li class="divider"></li>
-												<li><a href="#">Separated link</a></li>
-											</ul>
-										</div>
-									</div>
-
-									<br/>
-									<br/>
-
-									<p class="c-black f-500 m-b-20">Dropups - Trigger dropdown menus above elements</p>
-
-									<div class="dropdown-btn-demo">
-										<div class="dropdown dropup">
-											<a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown">This is a
-												Dropup</a>
-											<ul class="dropdown-menu">
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a>
-												</li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another
-													action</a></li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else
-													here</a></li>
-												<li class="divider"></li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated
-													link</a></li>
-											</ul>
-										</div>
-
-									</div>
-
-									<br/>
-									<br/>
-
-									<p class="c-black f-500 m-b-20">Button Dropdowns</p>
-
-									<div class="dropdown-btn-demo">
-										<div class="dropdown">
-											<a href="#" class="dropdown-toggle btn btn-default"
-											   data-toggle="dropdown">Default</a>
-											<ul class="dropdown-menu pull-left">
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a>
-												</li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another
-													action</a></li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else
-													here</a></li>
-												<li class="divider"></li>
-												<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated
-													link</a></li>
-											</ul>
-										</div>
-
-									</div>
 
                               </div>
                               <div role="tabpanel" class="tab-pane" id="ui-icons">
@@ -720,761 +547,189 @@
 
 								<pre class="prettyprint"><ol class="linenums"><li class="L0"><span class="tag">&lt;i</span><span class="pln"> </span><span class="atn">class</span><span class="pun">=</span><span class="atv">"zmdi zmdi-coffee"</span><span class="tag">&gt;&lt;/i&gt;</span></li></ol></pre>
                                 <p></p>
-                                <p> <a  href="../../pages/UI/icons.html" target="_blank">See Material Design Icons</a> </p>
-                              </div>
-                              <div role="tabpanel" class="tab-pane" id="ui-jumbotron">
-								<p>Jumbotron is a a lightweight, flexible component that can optionally extend the entire viewport to showcase key content on your site.</p>
-
-								<div class="jumbotron">
-									<h1>Hello, world!</h1>
-									<p>This is a simple hero unit, a simple jumbotron-style component for calling extra
-										attention to featured content or information.</p>
-									<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-								</div>
-
-								<pre class="prettyprint linenums">&lt;div class=&quot;jumbotron&quot;&gt;
-	&lt;h1&gt;Hello, world!&lt;/h1&gt;
-	&lt;p&gt;This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.&lt;/p&gt;
-	&lt;p&gt;&lt;a class=&quot;btn btn-primary btn-lg&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Learn more&lt;/a&gt;&lt;/p&gt;																
-&lt;/div&gt;</pre>
-
-								<p>To make the jumbotron full width, and without rounded corners, place it outside all
-									<code>.container</code>s and instead add a <code>.container</code> within.</p>
-
-                              </div>
-                              <div role="tabpanel" class="tab-pane" id="ui-notifications">
-								<div class="notification-demo row">
-									<div>
-										<a href="" class="btn md-bg-blue-grey m-l-10" data-type="inverse" data-from="top"
-										   data-align="left" data-icon="fa fa-check" style="width: auto;">Top Left</a>
-									</div>
-                                </div>
-                                <div>
-									<pre class="prettyprint linenums">&lt;a href=&quot;&quot; class=&quot;btn md-bg-blue-grey&quot; data-type=&quot;inverse&quot; data-from=&quot;top&quot; data-align=&quot;left&quot; data-icon=&quot;fa fa-check&quot;&gt;Top Left&lt;/a&gt;</pre>
-									<p>data-type can be inverse, info, success, warning or danger.  data-from can be top or bottom.  data-align can be left, center or right.</p> 
-
-								</div>                              
-                              </div>
-                              <div role="tabpanel" class="tab-pane" id="ui-media">
-                                <h4>Lightgallery</h4>
-                                <p>Lightgallery is a lightweight modular responsive jquery light box gallery, which allows you to create beautiful image & video galleries.</p>
-
-									<h5>include CSS and Javascript files</h5>
-									<p>First of all add lightgallery.css in the <code>&lt;head&gt;</code> of the document</p>
-									<div class="code-demo">
-										<div class="sample-code html">
-											<pre class="prettyprint linenums">&lt;head&gt;
-	&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;css/lightgallery.css&quot; /&gt; 
-&lt;/head&gt;</pre>
-										</div>
-									</div>
-									<p>Then include jQuery and lightgallery.min.js into your document. <br>If you want to include any lightgallery plugin you can include it after lightgallery.min.js.</p>
-									<div class="code-demo">
-										<div class="sample-code html">
-									<pre class="prettyprint linenums">&lt;body&gt;
-	....
-
-	&lt;!-- jQuery version must be &gt;= 1.8.0; --&gt;
-	&lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
-	&lt;script src=&quot;js/lightgallery.min.js&quot;&gt;&lt;/script&gt;
-
-	&lt;!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) --&gt;
-	&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js&quot;&gt;&lt;/script&gt;
-
-	&lt;!-- lightgallery plugins --&gt;
-	&lt;script src=&quot;js/lg-thumbnail.min.js&quot;&gt;&lt;/script&gt;
-	&lt;script src=&quot;js/lg-fullscreen.min.js&quot;&gt;&lt;/script&gt;
-&lt;/body&gt;</pre>
-										</div>
-									</div>
-
-									<h5>The markup</h5>
-									<p>Lightgallery does not force you to use any kind of markup. you can use whatever markup you want. But i suggest you to use the following markup. <a href="../demos/html-markup.html">Here </a> you can find the detailed examples of deferent kind of markups.</p>
-									<div>
-										<div>
-									<pre class="prettyprint linenums">&lt;div id=&quot;lightgallery&quot;&gt;
-  &lt;a href=&quot;img/img1.jpg&quot;&gt;
-      &lt;img src=&quot;img/thumb1.jpg&quot; /&gt;
-  &lt;/a&gt;
-  &lt;a href=&quot;img/img2.jpg&quot;&gt;
-      &lt;img src=&quot;img/thumb2.jpg&quot; /&gt;
-  &lt;/a&gt;
-  ...
-&lt;/div&gt;</pre>
-										</div>
-									</div>
-
-									<h5>Call the plugin</h5>
-									<p>Finally you need to initiate the gallery by adding the following code.</p>
-									<div>
-										<div>
-									<pre class="prettyprint linenums">&lt;script type=&quot;text/javascript&quot;&gt;
-    $(document).ready(function() {
-        $(&quot;#lightgallery&quot;).lightGallery(); 
-    });
-&lt;/script&gt;</pre>
-										</div>
-									</div>
-
-
-
-                                <p>Please refer to <a href="https://sachinchoolur.github.io/lightGallery/docs/">https://sachinchoolur.github.io/lightGallery/docs/</a> for detailed documentation</p>
-                                
-                                <h4>jQuery Isotope</h4>
-                                <p>Create an Adaptive, Filterable Portfolio Using jQuery Isotope.</p>
-								<h5>HTML</h5>
-								<p>Include the Isotope .js file in your site.</p>
-
-								<pre class="prettyprint linenums"><code>&lt;script src=&quot;/path/to/isotope.pkgd.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-								<p>Isotope works on a container element with a group of similar child items.</p>
-
-								<pre class="prettyprint linenums">&lt;div class=&quot;grid&quot;&gt;
-  &lt;div class=&quot;grid-item&quot;&gt;...&lt;/div&gt;
-  &lt;div class=&quot;grid-item grid-item--width2&quot;&gt;...&lt;/div&gt;
-  &lt;div class=&quot;grid-item&quot;&gt;...&lt;/div&gt;
-  ...
-&lt;/div&gt;</pre>
-
-								<h5>CSS</h5>
-								<p>All sizing of items is handled by your CSS.</p>
-
-								<pre class="prettyprint linenums">.grid-item { width: 25%; }
-.grid-item--width2 { width: 50%; }</pre>
-
-								<h5>Initialize with jQuery</h5>
-								<p>You can use Isotope as a jQuery plugin: $('selector').isotope().</p>
-								<pre class="prettyprint linenums">$(&#39;.grid&#39;).isotope({
-  // options
-  itemSelector: &#39;.grid-item&#39;,
-  layoutMode: &#39;fitRows&#39;
-});</pre>
-                                
-                                <p>Please refer to <a href="http://isotope.metafizzy.co/">http://isotope.metafizzy.co/</a> for detailed documentation</p>
-
+                                <p> <a  href="../../pages/ui/icons.html" target="_blank">See Material Design Icons</a> </p>
                               </div>
                               <div role="tabpanel" class="tab-pane" id="ui-modals">
 								<p>Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.
 								</p>
-								<p class="f-500 c-black m-b-20">A rendered modal with header, body, and set of actions in
-									the footer.</p>
+								<p class="f-500 c-black m-b-20">Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
 
-								<div class="clearfix modal-preview-demo">
-									<div class="modal"> <!-- Inline style just for preview -->
-										<div class="modal-dialog">
-											<div class="modal-content">
-												<div class="modal-header">
-													<h4 class="modal-title">Modal title</h4>
-												</div>
-												<div class="modal-body">
-													<p>Curabitur blandit mollis lacus. Nulla sit amet est. Suspendisse nisl
-														elit, rhoncus eget, elementum ac, condimentum eget, diam. Donec mi
-														odio, faucibus at, scelerisque quis, convallis in, nisi. Cras
-														sagittis.</p>
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-default">Save changes</button>
-													<button type="button" class="btn btn-info" data-dismiss="modal">Close
-													</button>
-												</div>
-											</div>
-										</div>
+								<!-- Button trigger modal -->
+								<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+								  Launch demo modal
+								</button>
+
+								<!-- Modal -->
+								<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								  <div class="modal-dialog" role="document">
+									<div class="modal-content">
+									  <div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+									  </div>
+									  <div class="modal-body">
+										Content goes here
+									  </div>
+									  <div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary">Save changes</button>
+									  </div>
 									</div>
+								  </div>
 								</div>
 
 								<br/>
 								<pre class="prettyprint linenums">
-&lt;div class=&quot;modal&quot;&gt; &lt;!-- Inline style just for preview --&gt;
-	&lt;div class=&quot;modal-dialog&quot;&gt;
-		&lt;div class=&quot;modal-content&quot;&gt;
-			&lt;div class=&quot;modal-header&quot;&gt;
-				&lt;h4 class=&quot;modal-title&quot;&gt;Modal title&lt;/h4&gt;
+&lt;!-- Button trigger modal --&gt;
+&lt;button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal"&gt;
+  Launch demo modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"&gt;
+	&lt;div class="modal-dialog" role="document"&gt;
+		&lt;div class="modal-content"&gt;
+			&lt;div class="modal-header"&gt;
+				&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;
+				&lt;h4 class="modal-title" id="myModalLabel"&gt;Modal title&lt;/h4&gt;
 			&lt;/div&gt;
-			&lt;div class=&quot;modal-body&quot;&gt;
-				&lt;p&gt;Curabitur blandit mollis lacus. Nulla sit amet est. Suspendisse nisl
-					elit, rhoncus eget, elementum ac, condimentum eget, diam. Donec mi
-					odio, faucibus at, scelerisque quis, convallis in, nisi. Cras
-					sagittis.&lt;/p&gt;
+			&lt;div class="modal-body"&gt;
+			Content goes here
 			&lt;/div&gt;
-			&lt;div class=&quot;modal-footer&quot;&gt;
-				&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Save changes&lt;/button&gt;
-				&lt;button type=&quot;button&quot; class=&quot;btn btn-info&quot; data-dismiss=&quot;modal&quot;&gt;Close
-				&lt;/button&gt;
+			&lt;div class="modal-footer"&gt;
+				&lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;Close&lt;/button&gt;
+				&lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;								
 								</pre>
 								
-								<br/>
-
-								<p class="f-500 c-black m-b-20">Modals have two optional sizes, available via modifier
-									classes to be placed on a <code>.modal-dialog</code>.</p>
-
-								<div class="btn-demo">
-									<a data-toggle="modal" href="#modalDefault" class="btn btn-sm btn-default">Modal -
-										Default</a>
-								</div>
 
 								<br/>
 								<pre class="prettyprint linenums">
 &lt;a data-toggle=&quot;modal&quot; href=&quot;#modalDefault&quot; class=&quot;btn btn-sm btn-default&quot;&gt;Modal -
 	Default&lt;/a&gt;</pre>
-								<br/>
 
-								<!-- Modal Default -->
-								<div class="modal fade" id="modalDefault" tabindex="-1" role="dialog" aria-hidden="true">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<h4 class="modal-title">Modal title</h4>
-											</div>
-											<div class="modal-body">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales
-													orci ante, sed ornare eros vestibulum ut. Ut accumsan vitae eros sit
-													amet tristique. Nullam scelerisque nunc enim, non dignissim nibh
-													faucibus ullamcorper. Fusce pulvinar libero vel ligula iaculis
-													ullamcorper. Integer dapibus, mi ac tempor varius, purus nibh mattis
-													erat, vitae porta nunc nisi non tellus. Vivamus mollis ante non massa
-													egestas fringilla. Vestibulum egestas consectetur nunc at ultricies.
-													Morbi quis consectetur nunc.</p>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-default">Save changes</button>
-												<button type="button" class="btn btn-info" data-dismiss="modal">Close
-												</button>
-											</div>
-										</div>
-									</div>
-								</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                              </div>                              
+                              <div role="tabpanel" class="tab-pane" id="ui-notifications">
+                              	<p>Bootstrap Notify- This plugin helps to turn standard bootstrap alerts into "growl" like notifications.</p>
 
-                      <div class="card">
-                        <div class="card-header">
-                          <h3>UI Elements - Continued..</h3>
-                        </div>
-                        <div class="card-content">
-                          <div role="tabpanel">
-                            <ul class="nav nav-pills" role="tablist">
-                              <li class="active"><a href="#ui-pagination" aria-controls="ui-pagination" role="tab" data-toggle="tab">Pagination</a> </li>
-                              <li><a href="#ui-popovers" aria-controls="ui-popovers" role="tab" data-toggle="tab">Popovers</a> </li>
-                              <li><a href="#ui-preloaders-progress" aria-controls="ui-preloaders-progress" role="tab" data-toggle="tab">Preloaders & Progress Bar</a> </li>
-                              <li><a href="#ui-tabs" aria-controls="ui-tabs" role="tab" data-toggle="tab">Tabs</a> </li>
-                              <li><a href="#ui-tooltips" aria-controls="ui-tooltips" role="tab" data-toggle="tab">Tool Tips</a> </li>
-                              <li><a href="#ui-typography" aria-controls="ui-typography" role="tab" data-toggle="tab">Typography</a> </li>
-                            </ul>
-                            <div class="tab-content">
-                              <div role="tabpanel" class="tab-pane active" id="ui-pagination">
-                              
-									<div class="bs-docs-section">
-										<h4>Pagination</h4>
-										<p>Provide pagination links for your site or app with the multi-page pagination component, or the simpler pager alternative.
-										</p>
-										<h5>Default pagination
-										</h5>
-										<p>Simple pagination inspired by Rdio, great for apps and search results. The large block is hard to miss, easily scalable, and provides large click areas.</p>
-										<div class="bs-example" data-example-id="simple-pagination">
-											<nav aria-label="Page navigation">
-												<ul class="pagination">
-													<li>
-														<a href="#" aria-label="Previous">
-															<span aria-hidden="true">«</span>
-														</a>
-													</li>
-													<li>
-														<a href="#">1</a>
-													</li>
-													<li>
-														<a href="#">2</a>
-													</li>
-													<li>
-														<a href="#">3</a>
-													</li>
-													<li>
-														<a href="#">4</a>
-													</li>
-													<li>
-														<a href="#">5</a>
-													</li>
-													<li>
-														<a href="#" aria-label="Next">
-															<span aria-hidden="true">»</span>
-														</a>
-													</li>
-												</ul>
-											</nav>
-										</div>
-										<pre class="prettyprint linenums">&lt;nav aria-label=&quot;Page navigation&quot;&gt;
-  &lt;ul class=&quot;pagination&quot;&gt;
-	&lt;li&gt;
-	  &lt;a href=&quot;#&quot; aria-label=&quot;Previous&quot;&gt;
-		&lt;span aria-hidden=&quot;true&quot;&gt;&amp;laquo;&lt;/span&gt;
-	  &lt;/a&gt;
-	&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;5&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;
-	  &lt;a href=&quot;#&quot; aria-label=&quot;Next&quot;&gt;
-		&lt;span aria-hidden=&quot;true&quot;&gt;&amp;raquo;&lt;/span&gt;
-	  &lt;/a&gt;
-	&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;</pre>
-										<h5>
-										  Disabled and active states
-										</h5>
-										<p>Links are customizable for different circumstances. Use 
-											<code>.disabled</code> for unclickable links and 
-											<code>.active</code> to indicate the current page.
-										</p>
-										<div class="bs-example" data-example-id="disabled-active-pagination">
-											<nav aria-label="...">
-												<ul class="pagination">
-													<li class="disabled">
-														<a href="#" aria-label="Previous">
-															<span aria-hidden="true">«</span>
-														</a>
-													</li>
-													<li class="active">
-														<a href="#">1 
-															<span class="sr-only">(current)</span>
-														</a>
-													</li>
-													<li>
-														<a href="#">2</a>
-													</li>
-													<li>
-														<a href="#">3</a>
-													</li>
-													<li>
-														<a href="#">4</a>
-													</li>
-													<li>
-														<a href="#">5</a>
-													</li>
-													<li>
-														<a href="#" aria-label="Next">
-															<span aria-hidden="true">»</span>
-														</a>
-													</li>
-												</ul>
-											</nav>
-										</div>
-										<pre class="prettyprint linenums">&lt;nav aria-label=&quot;...&quot;&gt;
-  &lt;ul class=&quot;pagination&quot;&gt;
-	&lt;li class=&quot;disabled&quot;&gt;&lt;a href=&quot;#&quot; aria-label=&quot;Previous&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;laquo;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-	&lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;1 &lt;span class=&quot;sr-only&quot;&gt;(current)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-	...
-  &lt;/ul&gt;
-&lt;/nav&gt;</pre>
-										<p>We recommend that you swap out active or disabled anchors for 
-											<code>&lt;span&gt;</code>, or omit the anchor in the case of the previous/next arrows, to remove click functionality while retaining intended styles.
-										</p>
-										<pre class="prettyprint linenums">&lt;nav aria-label=&quot;...&quot;&gt;
-  &lt;ul class=&quot;pagination&quot;&gt;
-	&lt;li class=&quot;disabled&quot;&gt;
-	  &lt;span&gt;
-		&lt;span aria-hidden=&quot;true&quot;&gt;&amp;laquo;&lt;/span&gt;
-	  &lt;/span&gt;
-	&lt;/li&gt;
-	&lt;li class=&quot;active&quot;&gt;
-	  &lt;span&gt;1 &lt;span class=&quot;sr-only&quot;&gt;(current)&lt;/span&gt;&lt;/span&gt;
-	&lt;/li&gt;
-	...
-  &lt;/ul&gt;
-&lt;/nav&gt;</pre>
-									</div>
-                              </div>
-                              <div role="tabpanel" class="tab-pane" id="ui-popovers">
-									<p>Add small overlays of content, like those on the iPad, to any element for housing secondary information.</p>
-									<p>Popovers whose both title and content are zero-length are never displayed.</p>
 
-									<h4>Static Popovers</h4>
+									<div class="alert alert-info">
+										<button type="button" aria-hidden="true" class="close">
+											<i class="material-icons">close</i>
+										</button>
+										<span>This is a notification with close button.</span>
+									</div>
+									<pre class="prettyprint linenums">
+&lt;div class="alert alert-info"&gt;
+	&lt;button type="button" aria-hidden="true" class="close"&gt;
+		&lt;i class="material-icons"&gt;close&lt;/i&gt;
+	&lt;/button&gt;
+	&lt;span&gt;This is a notification with close button.&lt;/span&gt;
+&lt;/div&gt;
+								</pre>									
+									<br/>
 
-									<p>Four options are available: top, right, bottom, and left aligned.</p>
-									<div class="bs-example bs-example-popover" data-example-id="static-popovers">
-										<div class="popover top">
-											<div class="arrow"></div>
-											<h3 class="popover-title">Popover top</h3>
-											<div class="popover-content">
-												<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-											</div>
-										</div>
-										<div class="popover right">
-											<div class="arrow"></div>
-											<h3 class="popover-title">Popover right</h3>
-											<div class="popover-content">
-												<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-											</div>
-										</div>
-										<div class="popover bottom">
-											<div class="arrow"></div>
-											<h3 class="popover-title">Popover bottom</h3>
-											<div class="popover-content">
-												<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-											</div>
-										</div>
-										<div class="popover left">
-											<div class="arrow"></div>
-											<h3 class="popover-title">Popover left</h3>
-											<div class="popover-content">
-												<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-											</div>
-										</div>
-										<div class="clearfix"></div>
-									</div>
-									<h5>Four directions</h5>
-									<div class="bs-example popover-demo">
-										<div class="bs-example-popovers">
-											<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."> Popover on right </button>
-											<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."> Popover on top </button>
-											<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title=""> Popover on bottom </button>
-											<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title=""> Popover on left </button>
-										</div>
-									</div>
-									<pre class="prettyprint linenums m-t-20">&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-container=&quot;body&quot; data-toggle=&quot;popover&quot; data-placement=&quot;left&quot; data-content=&quot;Vivamus sagittis lacus vel augue laoreet rutrum faucibus.&quot;&gt;Popover on left
-&lt;/button&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-container=&quot;body&quot; data-toggle=&quot;popover&quot; data-placement=&quot;top&quot; data-content=&quot;Vivamus sagittis lacus vel augue laoreet rutrum faucibus.&quot;&gt;Popover on top
-&lt;/button&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-container=&quot;body&quot; data-toggle=&quot;popover&quot; data-placement=&quot;bottom&quot; data-content=&quot;Vivamus sagittis lacus vel augue laoreet rutrum faucibus.&quot;&gt;Popover on bottom
-&lt;/button&gt;
-&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-container=&quot;body&quot; data-toggle=&quot;popover&quot; data-placement=&quot;right&quot; data-content=&quot;Vivamus sagittis lacus vel augue laoreet rutrum faucibus.&quot;&gt;Popover on right
-&lt;/button&gt;</pre>
-									<h5></a>Dismiss on next click</h5>
-									<p>Use the <code>focus</code> trigger to dismiss popovers on the next click that the user makes.</p>
-									<div> 
-										<a tabindex="0" class="btn btn-lg btn-danger bs-docs-popover" role="button" data-toggle="popover" data-trigger="focus" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="Dismissible popover">Dismissible popover</a> 
-									</div>
-									<pre class="prettyprint linenums m-t-20">&lt;a tabindex=&quot;0&quot; class=&quot;btn btn-lg btn-danger&quot; role=&quot;button&quot; data-toggle=&quot;popover&quot; data-trigger=&quot;focus&quot; title=&quot;Dismissible popover&quot; data-content=&quot;And here&#39;s some amazing content. It&#39;s very engaging. Right?&quot;&gt;Dismissible popover&lt;/a&gt;</pre>
-                              </div>
-                              <div role="tabpanel" class="tab-pane" id="ui-preloaders-progress">
-<h4>Preloaders</h4>
-<h5>Preloader Color</h5>
-<div class="preloader pls-red">
-	<svg class="pl-circular" viewBox="25 25 50 50">
-		<circle class="plc-path" cx="50" cy="50" r="20"/>
-	</svg>
-</div>
+									<button class="btn btn-primary" onclick="demo.showNotification('top','right')">Top Right</button>
+									<p>HTML</p>
 <pre class="prettyprint linenums">
-&lt;div class=&quot;preloader pls-red&quot;&gt;
-	&lt;svg class=&quot;pl-circular&quot; viewBox=&quot;25 25 50 50&quot;&gt;
-		&lt;circle class=&quot;plc-path&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;20&quot;/&gt;
-	&lt;/svg&gt;
-&lt;/div&gt;
+&lt;button class="btn btn-primary btn-block" onclick="demo.showNotification('top','right')"&gt;Top Right&lt;/button&gt;									
 </pre>
-<h5>Preloader size</h5>
-<div class="preloader pl-lg">
-	<svg class="pl-circular" viewBox="25 25 50 50">
-		<circle class="plc-path" cx="50" cy="50" r="20"/>
-	</svg>
-</div>
+
+<p>Javascript</p>
 <pre class="prettyprint linenums">
-&lt;div class=&quot;preloader pl-lg&quot;&gt;
-	&lt;svg class=&quot;pl-circular&quot; viewBox=&quot;25 25 50 50&quot;&gt;
-		&lt;circle class=&quot;plc-path&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;20&quot;/&gt;
-	&lt;/svg&gt;
-&lt;/div&gt;
+&lt;script&gt;
+showNotification: function(from, align){
+	type = ['','info','success','warning','danger','rose','primary'];
+
+	color = Math.floor((Math.random() * 6) + 1);
+
+	$.notify({
+		icon: "notifications",
+		message: "Welcome to &lt;b&gt;Material Dashboard&lt;/b&gt; - a beautiful freebie for every web developer."
+
+	},{
+		type: type[color],
+		timer: 3000,
+		placement: {
+			from: from,
+			align: align
+		}
+	});
+}
+&lt;/script&gt;										
 </pre>
-<h5>Spinner Pie</h5>
-<div class="mk-spinner-pie"></div>
-<pre class="prettyprint linenums">
-&lt;div class=&quot;mk-spinner-pie&quot;&gt;&lt;/div&gt;
-</pre>
-                              
-                              
-<h4>Progress bars
-</h4>
-<p>Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible progress bars.</p>
-<h5>Basic example
-</h5>
-<p>Default progress bar.</p>
-<div class="bs-example" data-example-id="simple-progress-bar">
-	<div class="progress pb-md m-b-10">
-		<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-			<span class="sr-only">60% Complete</span>
-		</div>
-	</div>
-</div>
-
-	<pre class="prettyprint linenums">&lt;div class=&quot;progress&quot;&gt;
-	&lt;div class=&quot;progress-bar&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;60&quot;	aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width: 60%;&quot;&gt;
-		&lt;span class=&quot;sr-only&quot;&gt;60% Complete&lt;/span&gt;
-	&lt;/div&gt;
-&lt;/div&gt;</pre>
-<h5>With label
-</h5>
-<p>Remove the 
-	<code>&lt;span&gt;</code> with 
-	<code>.sr-only</code> class from within the progress bar to show a visible percentage.
-</p>
-<div class="bs-example" data-example-id="progress-bar-with-label">
-	<div class="progress pb-md m-b-10">
-		<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%"> 60% </div>
-	</div>
-</div>
-	<pre class="prettyprint linenums">&lt;div class=&quot;progress-bar&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;60&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width:60%&quot;&gt; 60% &lt;/div&gt;</pre>
-<p>To ensure that the label text remains legible even for low percentages, consider adding a 
-	<code>min-width</code> to the progress bar.
-</p>
-<div class="bs-example" data-example-id="progress-bar-at-low-percentage">
-	<div class="progress pb-md m-b-10">
-		<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width:2em"> 0% </div>
-	</div>
-	<div class="progress pb-md m-b-10">
-		<div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="min-width:2em;width:2%"> 2% </div>
-	</div>
-</div>
-
-	<pre class="prettyprint linenums">&lt;div class=&quot;progress-bar&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;0&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;min-width:2em&quot;&gt; 0% &lt;/div&gt;
-&lt;div class=&quot;progress-bar&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;2&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;min-width:2em;width:2%&quot;&gt; 2% &lt;/div&gt;</pre>
-<h5>Contextual alternatives
-</h5>
-<p>Progress bars use some of the same button and alert classes for consistent styles.</p>
-<div class="bs-example" data-example-id="contextual-progress-bar">
-	<div class="progress pb-md m-b-10">
-		<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-			<span class="sr-only">40% Complete (success)</span>
-		</div>
-	</div>
-	<div class="progress pb-md m-b-10">
-		<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
-			<span class="sr-only">20% Complete</span>
-		</div>
-	</div>
-	<div class="progress pb-md m-b-10">
-		<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-			<span class="sr-only">60% Complete (warning)</span>
-		</div>
-	</div>
-	<div class="progress pb-md m-b-10">
-		<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-			<span class="sr-only">80% Complete (danger)</span>
-		</div>
-	</div>
-</div>
-
-	<pre class="prettyprint linenums">&lt;div class=&quot;progress-bar progress-bar-success&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;40&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width:40%&quot;&gt;
-	&lt;span class=&quot;sr-only&quot;&gt;40% Complete (success)&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class=&quot;progress-bar progress-bar-info&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;20&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width:20%&quot;&gt;
-	&lt;span class=&quot;sr-only&quot;&gt;20% Complete&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class=&quot;progress-bar progress-bar-warning&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;60&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width:60%&quot;&gt;
-	&lt;span class=&quot;sr-only&quot;&gt;60% Complete (warning)&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class=&quot;progress-bar progress-bar-danger&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;80&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width:80%&quot;&gt;
-	&lt;span class=&quot;sr-only&quot;&gt;80% Complete (danger)&lt;/span&gt;
-&lt;/div&gt;</pre>
-<h5>Striped
-</h5>
-<p>Uses a gradient to create a striped effect. Not available in IE9 and below.</p>
-<div class="bs-example" data-example-id="striped-progress-bar">
-	<div class="progress pb-md m-b-10">
-		<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-			<span class="sr-only">40% Complete (success)</span>
-		</div>
-	</div>
-	<div class="progress pb-md m-b-10">
-		<div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
-			<span class="sr-only">20% Complete</span>
-		</div>
-	</div>
-	<div class="progress pb-md m-b-10">
-		<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-			<span class="sr-only">60% Complete (warning)</span>
-		</div>
-	</div>
-	<div class="progress pb-md m-b-10">
-		<div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-			<span class="sr-only">80% Complete (danger)</span>
-		</div>
-	</div>
-</div>
-	<pre class="prettyprint linenums">&lt;div class=&quot;progress-bar progress-bar-success progress-bar-striped&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;40&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width:40%&quot;&gt;
-	&lt;span class=&quot;sr-only&quot;&gt;40% Complete (success)&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class=&quot;progress-bar progress-bar-info progress-bar-striped&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;20&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width:20%&quot;&gt;
-	&lt;span class=&quot;sr-only&quot;&gt;20% Complete&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class=&quot;progress-bar progress-bar-warning progress-bar-striped&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;60&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width:60%&quot;&gt;
-	&lt;span class=&quot;sr-only&quot;&gt;60% Complete (warning)&lt;/span&gt;
-&lt;/div&gt;
-&lt;div class=&quot;progress-bar progress-bar-danger progress-bar-striped&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;80&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width:80%&quot;&gt;
-	&lt;span class=&quot;sr-only&quot;&gt;80% Complete (danger)&lt;/span&gt;
-&lt;/div&gt;</pre>
-<h5>Animated
-</h5>
-<p>Add 
-	<code>.active</code> to 
-	<code>.progress-bar-striped</code> to animate the stripes right to left. Not available in IE9 and below.
-</p>
-<div class="bs-example" data-example-id="animated-progress-bar">
-	<div class="progress pb-md m-b-10 active">
-		<div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:45%">
-			<span class="sr-only">45% Complete</span>
-		</div>
-	</div>
-</div>
-	<pre class="prettyprint linenums">&lt;div class=&quot;progress-bar progress-bar-striped&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;45&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width:45%&quot;&gt;
-	&lt;span class=&quot;sr-only&quot;&gt;45% Complete&lt;/span&gt;
-&lt;/div&gt;</pre>
-<h5>Stacked
-</h5>
-<p>Place multiple bars into the same 
-	<code>.progress</code> to stack them.
-</p>
-<div class="bs-example" data-example-id="stacked-progress-bar">
-	<div class="progress pb-md m-b-10">
-		<div class="progress-bar progress-bar-success" style="width:35%">
-			<span class="sr-only">35% Complete (success)</span>
-		</div>
-		<div class="progress-bar progress-bar-warning progress-bar-striped" style="width:20%">
-			<span class="sr-only">20% Complete (warning)</span>
-		</div>
-		<div class="progress-bar progress-bar-danger" style="width:10%">
-			<span class="sr-only">10% Complete (danger)</span>
-		</div>
-	</div>
-</div>
-	<pre class="prettyprint linenums">&lt;div class=&quot;progress-bar progress-bar-success&quot; style=&quot;width:35%&quot;&gt;
-	&lt;span class=&quot;sr-only&quot;&gt;35% Complete (success)&lt;/span&gt;
-&lt;/div&gt;</pre>
+									<br/>
 
 
+                        
                               </div>
                               <div role="tabpanel" class="tab-pane" id="ui-tabs">
 									<div class="bs-docs-section">
-										<h4>Togglable tabs 
-										</h4>
 										<h5>Example tabs
 										</h5>
-										<p>Add quick, dynamic tab functionality to transition through panes of local content, even via dropdown menus. 
-											<strong>Nested tabs are not supported.</strong>
+										<p>Add quick, dynamic tab functionality to transition through panes of local content. 
 										</p>
-										<div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
-											<ul class="nav nav-tabs" id="myTabs" role="tablist">
-												<li role="presentation" class="active">
-													<a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Home</a>
-												</li>
-												<li role="presentation">
-													<a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Profile</a>
-												</li>
-												<li role="presentation" class="dropdown">
-													<a href="#" class="dropdown-toggle" id="myTabDrop1" data-toggle="dropdown" aria-controls="myTabDrop1-contents">Dropdown 
-														<span class="caret"></span>
-													</a>
-													<ul class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
-														<li>
-															<a href="#dropdown1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">@fat</a>
-														</li>
-														<li>
-															<a href="#dropdown2" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">@mdo</a>
-														</li>
-													</ul>
-												</li>
-											</ul>
-											<div class="tab-content" id="myTabContent">
-												<div class="tab-pane fade in active" role="tabpanel" id="home" aria-labelledby="home-tab">
-													<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-												</div>
-												<div class="tab-pane fade" role="tabpanel" id="profile" aria-labelledby="profile-tab">
-													<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-												</div>
-												<div class="tab-pane fade" role="tabpanel" id="dropdown1" aria-labelledby="dropdown1-tab">
-													<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-												</div>
-												<div class="tab-pane fade" role="tabpanel" id="dropdown2" aria-labelledby="dropdown2-tab">
-													<p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
-												</div>
+										<ul class="nav nav-pills nav-pills-warning">
+											<li class="active">
+												<a href="#pill1" data-toggle="tab">Profile</a>
+											</li>
+											<li>
+												<a href="#pill2" data-toggle="tab">Settings</a>
+											</li>
+											<li>
+												<a href="#pill3" data-toggle="tab">Options</a>
+											</li>
+										</ul>
+										<div class="tab-content">
+											<div class="tab-pane active" id="pill1">
+												Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.
+												<br />
+												<br /> Dramatically visualize customer directed convergence without revolutionary ROI. Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.
+												<br />
+												<br /> This is very nice.
+											</div>
+											<div class="tab-pane" id="pill2">
+												Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.
+												<br />
+												<br />Dramatically maintain clicks-and-mortar solutions without functional solutions.
+											</div>
+											<div class="tab-pane" id="pill3">
+												Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas.
+												<br />
+												<br />Dynamically innovate resource-leveling customer service for state of the art customer service.
 											</div>
 										</div>
-										<h5>Markup
+										<h5>HTML Markup
 										</h5>
-										<p>You can activate a tab or pill navigation without writing any JavaScript by simply specifying 
-											<code>data-toggle="tab"</code> or 
-											<code>data-toggle="pill"</code> on an element. Adding the 
-											<code>nav</code> and 
-											<code>nav-tabs</code> classes to the tab 
-											<code>ul</code> will apply the Bootstrap 
-											<a href="../components/#nav-tabs">tab styling</a>, while adding the 
-											<code>nav</code> and 
-											<code>nav-pills</code> classes will apply 
-											<a href="../components/#nav-pills">pill styling</a>.
-										</p>
-										<pre class="prettyprint linenums">&lt;div&gt;
-  &lt;!-- Nav tabs --&gt;
-  &lt;ul class=&quot;nav nav-tabs&quot; role=&quot;tablist&quot;&gt;
-	&lt;li role=&quot;presentation&quot; class=&quot;active&quot;&gt;&lt;a href=&quot;#home&quot; aria-controls=&quot;home&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
-	&lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;#profile&quot; aria-controls=&quot;profile&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;Profile&lt;/a&gt;&lt;/li&gt;
-	&lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;#messages&quot; aria-controls=&quot;messages&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;Messages&lt;/a&gt;&lt;/li&gt;
-	&lt;li role=&quot;presentation&quot;&gt;&lt;a href=&quot;#settings&quot; aria-controls=&quot;settings&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;Settings&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;!-- Tab panes --&gt;
-  &lt;div class=&quot;tab-content&quot;&gt;
-	&lt;div role=&quot;tabpanel&quot; class=&quot;tab-pane active&quot; id=&quot;home&quot;&gt;...&lt;/div&gt;
-	&lt;div role=&quot;tabpanel&quot; class=&quot;tab-pane&quot; id=&quot;profile&quot;&gt;...&lt;/div&gt;
-	&lt;div role=&quot;tabpanel&quot; class=&quot;tab-pane&quot; id=&quot;messages&quot;&gt;...&lt;/div&gt;
-	&lt;div role=&quot;tabpanel&quot; class=&quot;tab-pane&quot; id=&quot;settings&quot;&gt;...&lt;/div&gt;
-  &lt;/div&gt;
+										<pre class="prettyprint linenums">&lt;ul class="nav nav-pills nav-pills-primary"&gt;
+	&lt;li class="active"&gt;
+		&lt;a href="#pill1" data-toggle="tab"&gt;Tab1&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href="#pill2" data-toggle="tab"&gt;Tab2&lt;/a&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href="#pill3" data-toggle="tab"&gt;Tab3&lt;/a&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="tab-content"&gt;
+	&lt;div class="tab-pane active" id="pill1"&gt;
+		Tab1 Content goes here.
+	&lt;/div&gt;
+	&lt;div class="tab-pane" id="pill2"&gt;
+		Tab2 Content goes here.
+	&lt;/div&gt;
+	&lt;div class="tab-pane" id="pill3"&gt;
+		Tab3 Content goes here.
+	&lt;/div&gt;
 &lt;/div&gt;</pre>
 									</div>          
                 			  </div>
-                              <div role="tabpanel" class="tab-pane" id="ui-tooltips">
-									<h4>Tooltips 
-									</h4>
-									<p>Inspired by the excellent jQuery.tipsy plugin written by Jason Frame; Tooltips are an updated version, which don't rely on images, use CSS3 for animations, and data-attributes for local title storage.</p>
-									<p>Tooltips with zero-length titles are never displayed.</p>
-
-									<pre class="prettyprint linenums">
-&lt;div&gt;
-	&lt;p&gt;Tight pants next level keffiyeh 
-		&lt;a href=&quot;#&quot; data-toggle=&quot;tooltip&quot; title=&quot;&quot; data-original-title=&quot;Default tooltip&quot;&gt;you probably&lt;/a&gt; haven&#39;t heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney&#39;s fixie sustainable quinoa 8-bit american apparel 
-		&lt;a href=&quot;#&quot; data-toggle=&quot;tooltip&quot; title=&quot;Another tooltip&quot;&gt;have a&lt;/a&gt; terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney&#39;s cleanse vegan chambray. A really ironic artisan 
-		&lt;a href=&quot;#&quot; data-toggle=&quot;tooltip&quot; title=&quot;&quot; data-original-title=&quot;Another one here too&quot;&gt;whatever keytar&lt;/a&gt;, scenester farm-to-table banksy Austin 
-		&lt;a href=&quot;#&quot; data-toggle=&quot;tooltip&quot; title=&quot;&quot; data-original-title=&quot;The last tip!&quot;&gt;twitter handle&lt;/a&gt; freegan cred raw denim single-origin coffee viral.
-	&lt;/p&gt;
-&lt;/div&gt;
-									</pre>
-									
-									<h5>Static tooltip
-									</h5>
-									<p>Four options are available: top, right, bottom, and left aligned.</p>
-
-									<h5>Four directions
-									</h5>
-
-										<pre class="prettyprint linenums">&lt;div class=&quot;btn-demo&quot;&gt;
-	&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;tooltip&quot;
-			data-placement=&quot;left&quot; title=&quot;Tooltip on left&quot;&gt;Tooltip on left
-	&lt;/button&gt;
-	&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot;
-			title=&quot;Tooltip on top&quot;&gt;Tooltip on top
-	&lt;/button&gt;
-	&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;tooltip&quot;
-			data-placement=&quot;bottom&quot; title=&quot;Tooltip on bottom&quot;&gt;Tooltip on bottom
-	&lt;/button&gt;
-	&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-toggle=&quot;tooltip&quot;
-			data-placement=&quot;right&quot; title=&quot;Tooltip on right&quot;&gt;Tooltip on right
-	&lt;/button&gt;
-&lt;/div&gt;</pre>
-									<div class="bs-callout bs-callout-danger" id="callout-tooltip-opt-in">
-										<p>One way to initialize all tooltips on a page would be to select them by their 
-											<code>data-toggle</code> attribute:
-										</p>
-											<pre class="prettyprint linenums">$(function(){
-	$(&#39;[data-toggle=&quot;tooltip&quot;]&#39;).tooltip()
-})</pre>
-									</div>								
-                              </div>
                               <div role="tabpanel" class="tab-pane" id="ui-typography">
-									<h4>Typography
-									</h4>
+
 									<h5>Headings
 									</h5>
 									<p>All HTML headings, 
@@ -1488,358 +743,124 @@
 											<tbody>
 												<tr>
 													<td>
-														<h1>h1. Bootstrap heading</h1>
+														<h1>h1. Turbo heading</h1>
 													</td>
 												</tr>
 												<tr>
 													<td>
-														<h2>h2. Bootstrap heading</h2>
+														<h2>h2. Turbo heading</h2>
 													</td>
 												</tr>
 												<tr>
 													<td>
-														<h3>h3. Bootstrap heading</h3>
+														<h3>h3. Turbo heading</h3>
 													</td>
 												</tr>
 												<tr>
 													<td>
-														<h4>h4. Bootstrap heading</h4>
+														<h4>h4. Turbo heading</h4>
 													</td>
 												</tr>
 												<tr>
 													<td>
-														<h5>h5. Bootstrap heading</h5>
+														<h5>h5. Turbo heading</h5>
 													</td>
 												</tr>
 												<tr>
 													<td>
-														<h6>h6. Bootstrap heading</h6>
+														<h6>h6. Turbo heading</h6>
 													</td>
 												</tr>
 											</tbody>
 										</table>
 									</div>
-									<pre class="prettyprint linenums">&lt;h1&gt;h1. Bootstrap heading&lt;/h1&gt;
-&lt;h2&gt;h2. Bootstrap heading&lt;/h2&gt;
-&lt;h3&gt;h3. Bootstrap heading&lt;/h3&gt;
-&lt;h4&gt;h4. Bootstrap heading&lt;/h4&gt;
-&lt;h5&gt;h5. Bootstrap heading&lt;/h5&gt;
-&lt;h6&gt;h6. Bootstrap heading&lt;/h6&gt;</pre>
-									<p>Create lighter, secondary text in any heading with a generic 
-										<code>&lt;small&gt;</code> tag or the 
-										<code>.small</code> class.
-									</p>
-									<div>
-										<table class="table">
-											<tbody>
-												<tr>
-													<td>
-														<h1>h1. Bootstrap heading 
-															<small>Secondary text</small>
-														</h1>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<h2>h2. Bootstrap heading 
-															<small>Secondary text</small>
-														</h2>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<h3>h3. Bootstrap heading 
-															<small>Secondary text</small>
-														</h3>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<h4>h4. Bootstrap heading 
-															<small>Secondary text</small>
-														</h4>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<h5>h5. Bootstrap heading 
-															<small>Secondary text</small>
-														</h5>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<h6>h6. Bootstrap heading 
-															<small>Secondary text</small>
-														</h6>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-									<pre class="prettyprint linenums">&lt;h1&gt;h1. Bootstrap heading&lt;small&gt;Secondary text&lt;/small&gt;&lt;/h1&gt;
-&lt;h2&gt;h2. Bootstrap heading&lt;small&gt;Secondary text&lt;/small&gt;&lt;/h2&gt;
-&lt;h3&gt;h3. Bootstrap heading&lt;small&gt;Secondary text&lt;/small&gt;&lt;/h3&gt;
-&lt;h4&gt;h4. Bootstrap heading&lt;small&gt;Secondary text&lt;/small&gt;&lt;/h4&gt;
-&lt;h5&gt;h5. Bootstrap heading&lt;small&gt;Secondary text&lt;/small&gt;&lt;/h5&gt;
-&lt;h6&gt;h6. Bootstrap heading&lt;small&gt;Secondary text&lt;/small&gt;&lt;/h6&gt;</pre>
-									<h5>Body copy</h5>
-									<p>Bootstrap's global default 
-										<code>font-size</code> is 
-										<strong>14px</strong>, with a 
-										<code>line-height</code> of 
-										<strong>1.428</strong>. This is applied to the 
-										<code>&lt;body&gt;</code> and all paragraphs. In addition, 
-										<code>&lt;p&gt;</code> (paragraphs) receive a bottom margin of half their computed line-height (10px by default).
-									</p>
-									<div>
-										<p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
-										<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
-										<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-									</div>
-									<pre class="prettyprint linenums">&lt;p&gt;...&lt;/p&gt;</pre>
-									<h5>Lead body copy</h5>
-									<p>Make a paragraph stand out by adding 
-										<code>.lead</code>.
-									</p>
-									<div>
-										<p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
-									</div>
-									<pre class="prettyprint linenums">&lt;p class=&quot;lead&quot;&gt;...&lt;/p&gt;</pre>
+									<pre class="prettyprint linenums">&lt;h1&gt;h1. Turbo heading&lt;/h1&gt;
+&lt;h2&gt;h2. Turbo heading&lt;/h2&gt;
+&lt;h3&gt;h3. Turbo heading&lt;/h3&gt;
+&lt;h4&gt;h4. Turbo heading&lt;/h4&gt;
+&lt;h5&gt;h5. Turbo heading&lt;/h5&gt;
+&lt;h6&gt;h6. Turbo heading&lt;/h6&gt;</pre>
 
-									<h4>Inline text elements</h4>
-									<h5>Marked text</h5>
-									<p>For highlighting a run of text due to its relevance in another context, use the 
-										<code>&lt;mark&gt;</code> tag.
-									</p>
-									<div class="bs-example" data-example-id="simple-mark">
-										<p>You can use the mark tag to 
-											<mark>highlight</mark> text.
-										</p>
-									</div>
-									<pre class="prettyprint linenums">You can use the mark tag to &lt;mark&gt;highlight&lt;/mark&gt; text.</pre>
-									<h5 id="deleted-text">
-										<a class="anchorjs-link " href="#deleted-text" aria-label="Anchor link for: deleted text" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Deleted text
-									</h5>
-									<p>For indicating blocks of text that have been deleted use the 
-										<code>&lt;del&gt;</code> tag.
-									</p>
-									<div class="bs-example" data-example-id="simple-del">
-										<p>
-											<del>This line of text is meant to be treated as deleted text.</del>
-										</p>
-									</div>
-									<pre class="prettyprint linenums">&lt;del&gt;This line of text is meant to be treated as deleted text.&lt;/del&gt;</pre>
-									<h5 id="strikethrough-text">
-										<a class="anchorjs-link " href="#strikethrough-text" aria-label="Anchor link for: strikethrough text" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Strikethrough text
-									</h5>
-									<p>For indicating blocks of text that are no longer relevant use the 
-										<code>&lt;s&gt;</code> tag.
-									</p>
-									<div class="bs-example" data-example-id="simple-s">
-										<p>
-											<s>This line of text is meant to be treated as no longer accurate.</s>
-										</p>
-									</div>									
-									<pre class="prettyprint linenums">&lt;s&gt;This line of text is meant to be treated as no longer accurate.&lt;/s&gt;</pre>
-									<h5 id="inserted-text">
-										<a class="anchorjs-link " href="#inserted-text" aria-label="Anchor link for: inserted text" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Inserted text
-									</h5>
-									<p>For indicating additions to the document use the 
-										<code>&lt;ins&gt;</code> tag.
-									</p>
-									<div class="bs-example" data-example-id="simple-ins">
-										<p>
-											<ins>This line of text is meant to be treated as an addition to the document.</ins>
-										</p>
-									</div>									
-										<pre class="prettyprint linenums">&lt;ins&gt;This line of text is meant to be treated as an addition to the document.&lt;/ins&gt;</pre>
-									<h5 id="underlined-text">
-										<a class="anchorjs-link " href="#underlined-text" aria-label="Anchor link for: underlined text" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Underlined text
-									</h5>
-									<p>To underline text use the 
-										<code>&lt;u&gt;</code> tag.
-									</p>
-									<div class="bs-example" data-example-id="simple-u">
-										<p>
-											<u>This line of text will render as underlined</u>
-										</p>
-									</div>
-									<pre class="prettyprint linenums">&lt;u&gt;This line of text will render as underlined.&lt;/u&gt;</pre>
-									<p>Make use of HTML's default emphasis tags with lightweight styles.</p>
-									<h5 id="small-text">
-										<a class="anchorjs-link " href="#small-text" aria-label="Anchor link for: small text" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Small text
-									</h5>
-									<p>For de-emphasizing inline or blocks of text, use the 
-										<code>&lt;small&gt;</code> tag to set text at 85% the size of the parent. Heading elements receive their own 
-										<code>font-size</code> for nested 
-										<code>&lt;small&gt;</code> elements.
-									</p>
-									<p>You may alternatively use an inline element with 
-										<code>.small</code> in place of any 
-										<code>&lt;small&gt;</code>.
-									</p>
-									<div class="bs-example" data-example-id="simple-small">
-										<p>
-											<small>This line of text is meant to be treated as fine print.</small>
-										</p>
-									</div>
-									<pre class="prettyprint linenums">&lt;small&gt;This line of text is meant to be treated as fine print.&lt;/small&gt;</pre>
-									<h5 id="bold">
-										<a class="anchorjs-link " href="#bold" aria-label="Anchor link for: bold" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Bold
-									</h5>
-									<p>For emphasizing a snippet of text with a heavier font-weight.</p>
-									<div class="bs-example" data-example-id="simple-strong">
-										<p>The following snippet of text is 
-											<strong>rendered as bold text</strong>.
-										</p>
-									</div>
-									<pre class="prettyprint linenums">&lt;strong&gt;rendered as bold text&lt;/strong&gt;</pre>
-									<h5 id="italics">
-										<a class="anchorjs-link " href="#italics" aria-label="Anchor link for: italics" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Italics
-									</h5>
-									<p>For emphasizing a snippet of text with italics.</p>
-									<div class="bs-example" data-example-id="simple-em">
-										<p>The following snippet of text is 
-											<em>rendered as italicized text</em>.
-										</p>
-									</div>
-									<pre class="prettyprint linenums">&lt;em&gt;rendered as italicized text&lt;/em&gt;</pre>
-									<div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
-										<h4>Alternate elements</h4>
-										<p>Feel free to use 
-											<code>&lt;b&gt;</code> and 
-											<code>&lt;i&gt;</code> in HTML5. 
-											<code>&lt;b&gt;</code> is meant to highlight words or phrases without conveying additional importance while 
-											<code>&lt;i&gt;</code> is mostly for voice, technical terms, etc.
-										</p>
-									</div>
-									<h4 id="type-alignment">
-										<a class="anchorjs-link " href="#type-alignment" aria-label="Anchor link for: type alignment" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Alignment classes
-									</h4>
-									<p>Easily realign text to components with text alignment classes.</p>
-									<div class="bs-example" data-example-id="text-alignment">
-										<p class="text-left">Left aligned text.</p>
-										<p class="text-center">Center aligned text.</p>
-										<p class="text-right">Right aligned text.</p>
-										<p class="text-justify">Justified text.</p>
-										<p class="text-nowrap">No wrap text.</p>
-									</div>
-									<pre class="prettyprint linenums">&lt;p class=&quot;text-left&quot;&gt;Left aligned text.&lt;/p&gt;
-&lt;p class=&quot;text-center&quot;&gt;Center aligned text.&lt;/p&gt;
-&lt;p class=&quot;text-right&quot;&gt;Right aligned text.&lt;/p&gt;
-&lt;p class=&quot;text-justify&quot;&gt;Justified text.&lt;/p&gt;
-&lt;p class=&quot;text-nowrap&quot;&gt;No wrap text.&lt;/p&gt;</pre>
-									<h4 id="type-transformation">
-										<a class="anchorjs-link " href="#type-transformation" aria-label="Anchor link for: type transformation" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Transformation classes
-									</h4>
-									<p>Transform text in components with text capitalization classes.</p>
-									<div class="bs-example" data-example-id="text-capitalization">
-										<p class="text-lowercase">Lowercased text.</p>
-										<p class="text-uppercase">Uppercased text.</p>
-										<p class="text-capitalize">Capitalized text.</p>
-									</div>
-									<pre class="prettyprint linenums">&lt;p class=&quot;text-lowercase&quot;&gt;Lowercased text.&lt;/p&gt;
-&lt;p class=&quot;text-uppercase&quot;&gt;Uppercased text.&lt;/p&gt;
-&lt;p class=&quot;text-capitalize&quot;&gt;Capitalized text.&lt;/p&gt;</pre>
-									<h4 id="type-abbreviations">
-										<a class="anchorjs-link " href="#type-abbreviations" aria-label="Anchor link for: type abbreviations" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Abbreviations
-									</h4>
-									<p>Stylized implementation of HTML's 
-										<code>&lt;abbr&gt;</code> element for abbreviations and acronyms to show the expanded version on hover. Abbreviations with a 
-										<code>title</code> attribute have a light dotted bottom border and a help cursor on hover, providing additional context on hover and to users of assistive technologies.
-									</p>
-									<h5 id="basic-abbreviation">
-										<a class="anchorjs-link " href="#basic-abbreviation" aria-label="Anchor link for: basic abbreviation" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Basic abbreviation
-									</h5>
-									<div class="bs-example" data-example-id="simple-abbr">
-										<p>An abbreviation of the word attribute is 
-											<abbr title="attribute">attr</abbr>.
-										</p>
-									</div>
-									<pre class="prettyprint linenums">&lt;p&gt;An abbreviation of the word attribute is &lt;abbr title=&quot;attribute&quot;&gt;attr&lt;/abbr&gt;.&lt;/p&gt;</pre>
-									<h5 id="initialism">
-										<a class="anchorjs-link " href="#initialism" aria-label="Anchor link for: initialism" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Initialism
-									</h5>
-									<p>Add 
-										<code>.initialism</code> to an abbreviation for a slightly smaller font-size.
-									</p>
-									<div class="bs-example" data-example-id="simple-initialism">
-										<p>
-											<abbr title="HyperText Markup Language" class="initialism">HTML</abbr> is the best thing since sliced bread.
-										</p>
-									</div>
-									<pre class="prettyprint linenums">&lt;p&gt;Add &lt;abbr title=&quot;Initialism&quot; class=&quot;initialism&quot;&gt;Initialism&lt;/abbr&gt; to an abbreviation for a slightly smaller font-size.&lt;/p&gt;</pre>
-									<h4 id="type-addresses">
-										<a class="anchorjs-link " href="#type-addresses" aria-label="Anchor link for: type addresses" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Addresses
-									</h4>
-									<p>Present contact information for the nearest ancestor or the entire body of work. Preserve formatting by ending all lines with 
-										<code>&lt;br&gt;</code>.
-									</p>
+<h5>Paragraph</h5>
+<p>I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.</p>
 
-									<h4 id="type-blockquotes">
-										<a class="anchorjs-link " href="#type-blockquotes" aria-label="Anchor link for: type blockquotes" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Blockquotes
-									</h4>
-									<p>For quoting blocks of content from another source within your document.</p>
-									<h5 id="default-blockquote">
-										<a class="anchorjs-link " href="#default-blockquote" aria-label="Anchor link for: default blockquote" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Default blockquote
-									</h5>
-									<p>Wrap 
-										<code>&lt;blockquote&gt;</code> around any 
-										<abbr title="HyperText Markup Language">HTML</abbr> as the quote. For straight quotes, we recommend a 
-										<code>&lt;p&gt;</code>.
-									</p>
-									<div class="bs-example" data-example-id="simple-blockquote">
-										<blockquote>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-										</blockquote>
-									</div>
-									<pre class="prettyprint linenums">&lt;blockquote&gt;
-	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;
+<pre class="prettyprint linenums">&lt;p&gt;I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.&lt;/p&gt;</pre>
+
+<h5>Quote</h5>
+<blockquote>
+	<p>
+		I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.
+	</p>
+	<small>
+		Maya Angelou
+	</small>
+</blockquote>
+<pre class="prettyprint linenums">&lt;blockquote&gt;
+	&lt;p&gt;
+		I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.
+	&lt;/p&gt;
+	&lt;small&gt;
+		Maya Angelou
+	&lt;/small&gt;
 &lt;/blockquote&gt;</pre>
-									<h5 id="blockquote-options">
-										<a class="anchorjs-link " href="#blockquote-options" aria-label="Anchor link for: blockquote options" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Blockquote options
-									</h5>
-									<p>Style and content changes for simple variations on a standard 
-										<code>&lt;blockquote&gt;</code>.
-									</p>
-									<h4 id="naming-a-source">
-										<a class="anchorjs-link " href="#naming-a-source" aria-label="Anchor link for: naming a source" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Naming a source
-									</h4>
-									<p>Add a 
-										<code>&lt;footer&gt;</code> for identifying the source. Wrap the name of the source work in 
-										<code>&lt;cite&gt;</code>.
-									</p>
-									<div class="bs-example" data-example-id="blockquote-cite">
-										<blockquote>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-											<footer>Someone famous in 
-												<cite title="Source Title">Source Title</cite>
-											</footer>
-										</blockquote>
-									</div>
-									<pre class="prettyprint linenums">&lt;blockquote&gt;
-	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;
-	&lt;footer&gt;Someone famous in &lt;cite title=&quot;Source Title&quot;&gt;Source Title&lt;/cite&gt;&lt;/footer&gt;
-&lt;/blockquote&gt;</pre>
-									<h5 id="alternate-displays">
-										<a class="anchorjs-link " href="#alternate-displays" aria-label="Anchor link for: alternate displays" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Alternate displays
-									</h5>
-									<p>Add 
-										<code>.blockquote-reverse</code> for a blockquote with right-aligned content.
-									</p>
-									<div class="bs-example" style="overflow:hidden" data-example-id="blockquote-reverse">
-										<blockquote class="blockquote-reverse">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-											<footer>Someone famous in 
-												<cite title="Source Title">Source Title</cite>
-											</footer>
-										</blockquote>
-									</div>
-									<pre class="prettyprint linenums">&lt;blockquote class=&quot;blockquote-reverse&quot;&gt;
-	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.&lt;/p&gt;
-	&lt;footer&gt;Someone famous in &lt;cite title=&quot;Source Title&quot;&gt;Source Title&lt;/cite&gt;&lt;/footer&gt;
-&lt;/blockquote&gt;</pre>
+
+<h5>Muted Text</h5>
+<p class="text-muted">
+	To live is the rarest thing in the world. Most people exist, that is all.
+</p>
+<pre class="prettyprint linenums">&lt;p class="text-muted"&gt;
+	To live is the rarest thing in the world. Most people exist, that is all.
+&lt;/p&gt;</pre>
+
+<h5>Primary Text</h5>
+<p class="text-primary">
+	To live is the rarest thing in the world. Most people exist, that is all. </p>
+<pre class="prettyprint linenums">&lt;p class="text-primary"&gt;
+	To live is the rarest thing in the world. Most people exist, that is all. &lt;/p&gt;</pre>
+
+<h5>Info Text</h5>
+<p class="text-info">
+	To live is the rarest thing in the world. Most people exist, that is all. </p>
+<pre class="prettyprint linenums">&lt;p class="text-info"&gt;
+	To live is the rarest thing in the world. Most people exist, that is all. &lt;/p&gt;</pre>
+
+<h5>Success Text</h5>
+<p class="text-success">
+	To live is the rarest thing in the world. Most people exist, that is all. </p>
+<pre class="prettyprint linenums">&lt;p class="text-success"&gt;
+	To live is the rarest thing in the world. Most people exist, that is all. &lt;/p&gt;</pre>
+	
+<h5>Warning Text</h5>
+<p class="text-warning">
+	To live is the rarest thing in the world. Most people exist, that is all.
+</p>
+<pre class="prettyprint linenums">&lt;p class="text-warning"&gt;
+	To live is the rarest thing in the world. Most people exist, that is all.
+&lt;/p&gt;</pre>
+
+<h5>Danger Text</h5>
+<p class="text-danger">
+	To live is the rarest thing in the world. Most people exist, that is all. </p>
+<pre class="prettyprint linenums">&lt;p class="text-danger"&gt;
+	To live is the rarest thing in the world. Most people exist, that is all. &lt;/p&gt;</pre>
+	
+<h2>
+	<h5>Small Tag</h5>
+	Header with small subtitle
+	<br>
+	<small>Use "small" tag for the headers</small>
+</h2>
+
+<pre class="prettyprint linenums">&lt;h2&gt;
+	&lt;h5&gt;Small Tag&lt;/h5&gt;
+	Header with small subtitle
+	&lt;br&gt;
+	&lt;small&gt;Use "small" tag for the headers&lt;/small&gt;
+&lt;/h2&gt;</pre>
+
+
+
+
 									<h4 id="type-lists">
 										<a class="anchorjs-link " href="#type-lists" aria-label="Anchor link for: type lists" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; line-height: inherit; position: absolute; margin-left: -1em; padding-right: 0.5em;"></a>Lists
 									</h4>
@@ -1955,1180 +976,8 @@
                             </div>
                           </div>
                         </div>
-                      </div>  
-                      
-                      <div class="card">
-                        <div class="card-header">
-                          <h3>Widgets </h3>
-                        </div>
-                        <div class="card-content md-bg-grey-100">
-                        	</br>
-                          <h4>Blank Card</h4>
-                    <div class="row">
-							<div class="col-sm-6">  
-								<div class="card" style="min-height: 350px">
-									<div class="card-header">
-										<h3>Card Heading</h3>
-										<ul class="actions">
-											<li class="dropdown action-show">
-												<a href="" data-toggle="dropdown" aria-expanded="false">
-													<i class="zmdi zmdi-more-vert"></i>
-												</a>
-
-												<div class="dropdown-menu pull-right">
-													<p class="p-20">
-														You can put anything here
-													</p>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<div class="card-content">
-										<p>Card content goes here.</p>
-									</div>
-								</div>
-							</div>
-                    </div>
-                    </br>
-					<pre class="prettyprint linenums">
-&lt;div class=&quot;card&quot; style=&quot;min-height: 350px&quot;&gt;
-	&lt;div class=&quot;card-header&quot;&gt;
-		&lt;h2&gt;Card Heading&lt;/h2&gt;
-		&lt;ul class=&quot;actions&quot;&gt;
-			&lt;li class=&quot;dropdown action-show&quot;&gt;
-				&lt;a href=&quot;&quot; data-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;&gt;
-					&lt;i class=&quot;zmdi zmdi-more-vert&quot;&gt;&lt;/i&gt;
-				&lt;/a&gt;
-
-				&lt;div class=&quot;dropdown-menu pull-right&quot;&gt;
-					&lt;p class=&quot;p-20&quot;&gt;
-						You can put anything here
-					&lt;/p&gt;
-				&lt;/div&gt;
-			&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;card-content&quot;&gt;
-		&lt;p&gt;Card content goes here.&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-					</pre>
-                    </br>
-                          <h4>Combined Card</h4>
-                    <div class="row">
-                    	<div class="col-sm-12">
-                            <div class="card card-tile-combined">
-                                <div class="card-content">
-                                    <div class="row">
-                                        <div class="col-sm-3 first">
-											<p class="text-center">Content Here</p>
-                                        </div>
-                                    
-                                        <div class="col-sm-3">
-											<p class="text-center">Content Here</p>
-                                        </div>
-                                    
-                                        <div class="col-sm-3">
-											<p class="text-center">Content Here</p>
-                                        </div>
-                                    
-                                        <div class="col-sm-3">
-											<p class="text-center">Content Here</p>
-                                        </div>
-                                	</div>
-                                            
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </br>
-					<pre class="prettyprint linenums">
-&lt;div class=&quot;card card-tile-combined&quot;&gt;
-	&lt;div class=&quot;card-content&quot;&gt;
-		&lt;div class=&quot;row&quot;&gt;
-			&lt;div class=&quot;col-sm-3 first&quot;&gt;
-				&lt;p class=&quot;text-center&quot;&gt;Content Here&lt;/p&gt;
-			&lt;/div&gt;
-		
-			&lt;div class=&quot;col-sm-3&quot;&gt;
-				&lt;p class=&quot;text-center&quot;&gt;Content Here&lt;/p&gt;
-			&lt;/div&gt;
-		
-			&lt;div class=&quot;col-sm-3&quot;&gt;
-				&lt;p class=&quot;text-center&quot;&gt;Content Here&lt;/p&gt;
-			&lt;/div&gt;
-		
-			&lt;div class=&quot;col-sm-3&quot;&gt;
-				&lt;p class=&quot;text-center&quot;&gt;Content Here&lt;/p&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-					</pre>
-                    </br>
-                                        
-                    <div class="row">
-                    	<div class="col-sm-4">
-                            <div class="card">
-                                <div class="card-content">
-                                    <div class="widget">
-                                        <header class="widget-header">
-                                            <h4 class="widget-title">Activities</h4>
-                                        </header>
-                                        <hr class="widget-separator">
-                                        <div class="widget-body">
-                                            <div class="streamline">
-                                                <div class="sl-item sl-primary">
-                                                    <div class="sl-content">
-                                                        <small class="text-muted">5 mins ago</small>
-                                                        <p>Williams has just joined Project X</p>
-                                                    </div>
-                                                </div>
-                                                <div class="sl-item sl-danger">
-                                                    <div class="sl-content">
-                                                        <small class="text-muted">25 mins ago</small>
-                                                        <p>Jane sent you a request to grant access to the project folder</p>
-                                                    </div>
-                                                </div>
-                                                <div class="sl-item sl-success">
-                                                    <div class="sl-content">
-                                                        <small class="text-muted">40 mins ago</small>
-                                                        <p>Kate added you to her team</p>
-                                                    </div>
-                                                </div>
-                                                <div class="sl-item">
-                                                    <div class="sl-content">
-                                                        <small class="text-muted">55</small>
-                                                        <p>John has finished his task</p>
-                                                    </div>
-                                                </div>
-                                                <div class="sl-item sl-warning">
-                                                    <div class="sl-content">
-                                                        <small class="text-muted">60 mins ago</small>
-                                                        <p>Jim shared a folder with you</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </br>
-					<pre class="prettyprint linenums">
-&lt;div class=&quot;widget&quot;&gt;
-	&lt;header class=&quot;widget-header&quot;&gt;
-		&lt;h4 class=&quot;widget-title&quot;&gt;Activities&lt;/h4&gt;
-	&lt;/header&gt;
-	&lt;hr class=&quot;widget-separator&quot;&gt;
-	&lt;div class=&quot;widget-body&quot;&gt;
-		&lt;div class=&quot;streamline&quot;&gt;
-			&lt;div class=&quot;sl-item sl-primary&quot;&gt;
-				&lt;div class=&quot;sl-content&quot;&gt;
-					&lt;small class=&quot;text-muted&quot;&gt;5 mins ago&lt;/small&gt;
-					&lt;p&gt;Williams has just joined Project X&lt;/p&gt;
-				&lt;/div&gt;
-			&lt;/div&gt;
-...
-			&lt;div class=&quot;sl-item sl-warning&quot;&gt;
-				&lt;div class=&quot;sl-content&quot;&gt;
-					&lt;small class=&quot;text-muted&quot;&gt;60 mins ago&lt;/small&gt;
-					&lt;p&gt;Jim shared a folder with you&lt;/p&gt;
-				&lt;/div&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-					</pre>
-                    </br>
-                    <div class="row">
-                    	<div class="col-sm-4">
-                            <div class="card" style="min-height: 465px">
-                                <div class="card-body">
-                                    <div class="widget widget-report-table">
-                                        <header class="widget-header m-b-15">
-                                            <h4 class="widget-title">Sales Report</h4>
-                                        </header>
-                                        
-                                        <div class="row m-0 md-bg-grey-100 p-l-25 p-r-25">
-                                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                                <h3>August 2016</h3>
-                                                <p>SALES REPORT</p>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6 col-xs-6 ">
-                                                <h1 class="text-right c-teal f-300 m-t-20">$13,253</h1>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="widget-body p-15">
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        <th>ID</th>
-                                                        <th>Name</th>
-                                                        <th>Amount</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>41387</td>
-                                                        <td>A. Datum Corporation</td>
-                                                        <td>6,400.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>41408</td>
-                                                        <td>Proseware, Inc.</td>
-                                                        <td>5,800.00</td>
-                                                    </tr>
-                                                    
-                                                    <tr>
-                                                        <td>41408</td>
-                                                        <td>School of Fine Art</td>
-                                                        <td>5,800.00</td>
-                                                    </tr>                                                    
-                                                    <tr>
-                                                        <td>41423</td>
-                                                        <td>Trey Research</td>
-                                                        <td>6,300.00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>41387</td>
-                                                        <td>A. Datum Corporation</td>
-                                                        <td>6,900.00</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>    
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                        
-                    </div>
-                    </br>
-					<pre class="prettyprint linenums">
-&lt;div class=&quot;widget widget-report-table&quot;&gt;
-	&lt;header class=&quot;widget-header m-b-15&quot;&gt;
-		&lt;h4 class=&quot;widget-title&quot;&gt;Sales Report&lt;/h4&gt;
-	&lt;/header&gt;
-	
-	&lt;div class=&quot;row m-0 md-bg-grey-100 p-l-25 p-r-25&quot;&gt;
-		&lt;div class=&quot;col-md-6 col-sm-6 col-xs-6&quot;&gt;
-			&lt;h2&gt;August 2016&lt;/h2&gt;
-			&lt;p&gt;SALES REPORT&lt;/p&gt;
-		&lt;/div&gt;
-		&lt;div class=&quot;col-md-6 col-sm-6 col-xs-6 &quot;&gt;
-			&lt;h1 class=&quot;text-right c-teal f-300 m-t-20&quot;&gt;$13,253&lt;/h1&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-	
-	&lt;div class=&quot;widget-body p-15&quot;&gt;
-		&lt;table class=&quot;table table-bordered&quot;&gt;
-			&lt;thead&gt;
-				&lt;tr&gt;
-					&lt;th&gt;ID&lt;/th&gt;
-					&lt;th&gt;Name&lt;/th&gt;
-					&lt;th&gt;Amount&lt;/th&gt;
-				&lt;/tr&gt;
-			&lt;/thead&gt;
-			&lt;tbody&gt;
-				&lt;tr&gt;
-					&lt;td&gt;41387&lt;/td&gt;
-					&lt;td&gt;A. Datum Corporation&lt;/td&gt;
-					&lt;td&gt;6,400.00&lt;/td&gt;
-				&lt;/tr&gt;
-...
-				&lt;tr&gt;
-					&lt;td&gt;41387&lt;/td&gt;
-					&lt;td&gt;A. Datum Corporation&lt;/td&gt;
-					&lt;td&gt;6,900.00&lt;/td&gt;
-				&lt;/tr&gt;
-			&lt;/tbody&gt;
-		&lt;/table&gt;    
-	&lt;/div&gt;
-&lt;/div&gt;
-					</pre>
-                    </br>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="card" style="min-height: 465px">
-                                <div class="card-content">
-                                    <div class="widget widget-status-table">
-                                        <header class="widget-header">
-                                            <h4 class="widget-title">Status Table</h4>
-                                        </header>
-                                        <hr class="widget-separator">
-                                        <div class="widget-body p-0">
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Sales Person</th>
-                                                        <th>Status</th>
-                                                        <th>Commission</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>John Smith</td>
-                                                        <td><span class="approved">Approved</span></td>
-                                                        <td>$24</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jerry Goldsmith</td>
-                                                        <td><span class="pending">Pending</span></td>
-                                                        <td>$640</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Steve Martin</td>
-                                                        <td><span class="approved">Approved</span></td>
-                                                        <td>$78</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Mike Dell</td>
-                                                        <td><span class="denied">Rejected</span></td>
-                                                        <td>$33</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jim Cook</td>
-                                                        <td><span class="pending">Pending</span></td>
-                                                        <td>$640</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Steve Martin</td>
-                                                        <td><span class="approved">Approved</span></td>
-                                                        <td>$78</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Mike Dell</td>
-                                                        <td><span class="denied">Rejected</span></td>
-                                                        <td>$33</td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>    
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </br>
-					<pre class="prettyprint linenums">
-&lt;div class=&quot;widget widget-status-table&quot;&gt;
-	&lt;header class=&quot;widget-header&quot;&gt;
-		&lt;h4 class=&quot;widget-title&quot;&gt;Status Table&lt;/h4&gt;
-	&lt;/header&gt;
-	&lt;hr class=&quot;widget-separator&quot;&gt;
-	&lt;div class=&quot;widget-body p-0&quot;&gt;
-		&lt;table class=&quot;table table-bordered&quot;&gt;
-			&lt;thead&gt;
-				&lt;tr&gt;
-					&lt;th&gt;Sales Person&lt;/th&gt;
-					&lt;th&gt;Status&lt;/th&gt;
-					&lt;th&gt;Commission&lt;/th&gt;
-				&lt;/tr&gt;
-			&lt;/thead&gt;
-			&lt;tbody&gt;
-				&lt;tr&gt;
-					&lt;td&gt;John Smith&lt;/td&gt;
-					&lt;td&gt;&lt;span class=&quot;approved&quot;&gt;Approved&lt;/span&gt;&lt;/td&gt;
-					&lt;td&gt;$24&lt;/td&gt;
-				&lt;/tr&gt;
-...
-				&lt;tr&gt;
-					&lt;td&gt;Mike Dell&lt;/td&gt;
-					&lt;td&gt;&lt;span class=&quot;denied&quot;&gt;Rejected&lt;/span&gt;&lt;/td&gt;
-					&lt;td&gt;$33&lt;/td&gt;
-				&lt;/tr&gt;
-
-			&lt;/tbody&gt;
-		&lt;/table&gt;    
-	&lt;/div&gt;
-&lt;/div&gt;
-					</pre>
-                    </br>
-                    <div class="row">
-                        <!-- Tasks -->
-                        <div class="col-sm-4">
-                          <div class="card" style="min-height: 465px">
-                            <div class="card-header p-b-10">
-                              <h3>Task Progress<small>Report on progress of pending tasks</small></h3>
-                            </div>
-                            <div class="card-body">
-                              <div class="list-group">
-                                <div class="list-group-item">
-                                  <div class="lgi-heading m-b-5">Induction Training</div>
-                                  <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="95"
-                                                                     aria-valuemin="0" aria-valuemax="100" style="width: 60%"> <span class="sr-only">95% Complete (success)</span> </div>
-                                  </div>
-                                </div>
-                                <div class="list-group-item">
-                                  <div class="lgi-heading m-b-5">Create Tutorials</div>
-                                  <div class="progress">
-                                    <div class="progress-bar progress-bar-success" role="progressbar"
-                                                                     aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
-                                                                     style="width: 35%"> <span class="sr-only">35% Complete (success)</span> </div>
-                                  </div>
-                                </div>
-                                <div class="list-group-item">
-                                  <div class="lgi-heading m-b-5">Create Annual Training Plan</div>
-                                  <div class="progress">
-                                    <div class="progress-bar progress-bar-info" role="progressbar"
-                                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
-                                                                     style="width: 25%"> <span class="sr-only">25% Complete</span> </div>
-                                  </div>
-                                </div>
-                                <div class="list-group-item">
-                                  <div class="lgi-heading m-b-5">Recruit Jr Trainers</div>
-                                  <div class="progress">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar"
-                                                                     aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                                                                     style="width: 60%"> <span class="sr-only">75% Complete (warning)</span> </div>
-                                  </div>
-                                </div>
-                                <div class="list-group-item">
-                                  <div class="lgi-heading m-b-5">Develop Training App</div>
-                                  <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar"
-                                                                     aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
-                                                                     style="width: 80%"> <span class="sr-only">80% Complete (danger)</span> </div>
-                                  </div>
-                                </div>
-                                <div class="list-group-item">
-                                  <p>Note: For detailed progress report visit individual task details</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                      	</div>
-                    </div>
-                    </br>
-					<pre class="prettyprint linenums">
-  &lt;div class=&quot;card&quot;&gt;
-	&lt;div class=&quot;card-header p-b-10&quot;&gt;
-	  &lt;h2&gt;Task Progress&lt;small&gt;Report on progress of pending tasks&lt;/small&gt;&lt;/h2&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;card-body&quot;&gt;
-	  &lt;div class=&quot;list-group&quot;&gt;
-		&lt;div class=&quot;list-group-item&quot;&gt;
-		  &lt;div class=&quot;lgi-heading m-b-5&quot;&gt;Induction Training&lt;/div&gt;
-		  &lt;div class=&quot;progress&quot;&gt;
-			&lt;div class=&quot;progress-bar&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;95&quot;
-											 aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width: 60%&quot;&gt; &lt;span class=&quot;sr-only&quot;&gt;95% Complete (success)&lt;/span&gt; &lt;/div&gt;
-		  &lt;/div&gt;
-		&lt;/div&gt;
-		...
-		&lt;div class=&quot;list-group-item&quot;&gt;
-		  &lt;div class=&quot;lgi-heading m-b-5&quot;&gt;Develop Training App&lt;/div&gt;
-		  &lt;div class=&quot;progress&quot;&gt;
-			&lt;div class=&quot;progress-bar progress-bar-danger&quot; role=&quot;progressbar&quot;
-											 aria-valuenow=&quot;80&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot;
-											 style=&quot;width: 80%&quot;&gt; &lt;span class=&quot;sr-only&quot;&gt;80% Complete (danger)&lt;/span&gt; &lt;/div&gt;
-		  &lt;/div&gt;
-		&lt;/div&gt;
-	  &lt;/div&gt;
-	&lt;/div&gt;
-  &lt;/div&gt;
-					</pre>
-                    </br>
-                    <div class="row">
-                    	<!-- list-group -->
-                        <div class="col-sm-4">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3>Contacts
-                                        <small>Praesent commodo cursus magnavel scelerisque nisl</small>
-                                    </h3>
-                                </div>
-                                <div class="card-body p-b-20">
-                                    <div class="list-group">
-                                        <a class="list-group-item media" href="">
-                                            <div class="pull-left">
-                                                <img class="lg-item-img" src="../../dist/images/profile-pics/1.jpg" alt="">
-                                            </div>
-                                            <div class="media-body">
-                                                <div class="pull-left">
-                                                	<div class="lg-item-heading">David Belle</div>
-                                                	<small class="lg-item-text">david@gmail.com</small>
-                                                </div>
-                                                <div class="pull-right">
-                                                	<div class="lg-item-heading">PR Manager</div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a class="list-group-item media" href="">
-                                            <div class="pull-left">
-                                                <img class="lg-item-img" src="../../dist/images/profile-pics/2.jpg" alt="">
-                                            </div>
-                                            <div class="media-body">
-                                                <div class="pull-left">
-                                                	<div class="lg-item-heading">Jonathan Morris</div>
-                                                	<small class="lg-item-text">jonathan$hotmail.com</small>
-                                                </div>
-                                                <div class="pull-right">
-                                                	<div class="lg-item-heading">Director at Tony’s</div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a class="list-group-item media" href="">
-                                            <div class="pull-left">
-                                                <img class="lg-item-img" src="../../dist/images/profile-pics/3.jpg" alt="">
-                                            </div>
-                                            <div class="media-body">
-                                                <div class="pull-left">
-                                                	<div class="lg-item-heading">Fredric Mitchell Jr.</div>
-                                                	<small class="lg-item-text">fredric@gmail.com</small>
-                                                </div>
-                                                <div class="pull-right">
-                                                	<div class="lg-item-heading">PR Manager</div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a class="list-group-item media" href="">
-                                            <div class="pull-left">
-                                                <img class="lg-item-img" src="../../dist/images/profile-pics/4.jpg" alt="">
-                                            </div>
-                                            <div class="media-body">
-                                            	<div class="pull-left">
-                                                	<div class="lg-item-heading">Glenn Jecobs</div>
-                                                	<small class="lg-item-text">glenn@hotmail.com</small>
-                                                </div>
-                                                <div class="pull-right">
-                                                	<div class="lg-item-heading">Assistan</div>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                   	</div>
-                                </div>
-                            </div>
-                      	</div>
-                    </div>
-                    </br>
-					<pre class="prettyprint linenums">
-&lt;div class=&quot;card&quot;&gt;
-	&lt;div class=&quot;card-header&quot;&gt;
-		&lt;h2&gt;Contacts
-			&lt;small&gt;Praesent commodo cursus magnavel scelerisque nisl&lt;/small&gt;
-		&lt;/h2&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;card-body p-b-20&quot;&gt;
-		&lt;div class=&quot;list-group&quot;&gt;
-			&lt;a class=&quot;list-group-item media&quot; href=&quot;&quot;&gt;
-				&lt;div class=&quot;pull-left&quot;&gt;
-					&lt;img class=&quot;lg-item-img&quot; src=&quot;../../dist/images/profile-pics/1.jpg&quot; alt=&quot;&quot;&gt;
-				&lt;/div&gt;
-				&lt;div class=&quot;media-body&quot;&gt;
-					&lt;div class=&quot;pull-left&quot;&gt;
-						&lt;div class=&quot;lg-item-heading&quot;&gt;David Belle&lt;/div&gt;
-						&lt;small class=&quot;lg-item-text&quot;&gt;david@gmail.com&lt;/small&gt;
-					&lt;/div&gt;
-					&lt;div class=&quot;pull-right&quot;&gt;
-						&lt;div class=&quot;lg-item-heading&quot;&gt;PR Manager&lt;/div&gt;
-					&lt;/div&gt;
-				&lt;/div&gt;
-			&lt;/a&gt;
-			...
-			&lt;a class=&quot;list-group-item media&quot; href=&quot;&quot;&gt;
-				&lt;div class=&quot;pull-left&quot;&gt;
-					&lt;img class=&quot;lg-item-img&quot; src=&quot;../../dist/images/profile-pics/4.jpg&quot; alt=&quot;&quot;&gt;
-				&lt;/div&gt;
-				&lt;div class=&quot;media-body&quot;&gt;
-					&lt;div class=&quot;pull-left&quot;&gt;
-						&lt;div class=&quot;lg-item-heading&quot;&gt;Glenn Jecobs&lt;/div&gt;
-						&lt;small class=&quot;lg-item-text&quot;&gt;glenn@hotmail.com&lt;/small&gt;
-					&lt;/div&gt;
-					&lt;div class=&quot;pull-right&quot;&gt;
-						&lt;div class=&quot;lg-item-heading&quot;&gt;Assistan&lt;/div&gt;
-					&lt;/div&gt;
-				&lt;/div&gt;
-			&lt;/a&gt;
-
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-					</pre>
-                    </br>
-                    <div class="row">
-                    	<div class="col-sm-4">  
-                        	<div id="profile-card" class="card profile-card" style="min-height: 394px">
-                            	<div class="card-image waves-effect waves-block waves-light">
-                                	<img class="activator" src="../../dist/images/profile-menu.png" alt="user background">
-                                </div>
-                                <div class="card-content p-l-20 p-b-20">
-                                	<img src="../../dist/images/profile-pics/profile-pic.jpg" alt="" class="circle responsive-img activator card-profile-image"> 
-                                    <a class="btn-floating activator btn-move-up waves-effect waves-light darken-2 right md-bg-orange-900">
-                                    	<i class="zmdi zmdi-account-circle"></i>
-                                    </a>
-                                    <span class="card-title activator grey-text text-darken-4 m-t-30">Kate Winslet</span>
-                                    <p><i class="zmdi zmdi-account"></i>Project Manager</p>
-                                    <p><i class="zmdi zmdi-phone"></i>+1 (612) 999 99999</p>
-                                    <p><i class="zmdi zmdi-email"></i>kate@dashmonk.com</p>
-                              	</div>
-                                <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                                	<span class="card-title grey-text text-darken-4 btn-move-down">Kate Winslet<i class="zmdi zmdi-close right"></i></span>
-                                    <p class="p-b-20">Here is some more information about this card.</p>
-                                    <p><i class="zmdi zmdi-account"></i>Project Manager</p>
-                                    <p><i class="zmdi zmdi-phone"></i>+1 (612) 999 99999</p>
-                                    <p><i class="zmdi zmdi-email"></i>kate@dashmonk.com</p>
-                                    <p><i class="zmdi zmdi-cake"></i>11th Sep 1989</p>
-                                    <p><i class="zmdi zmdi-airplane"></i>BAR - AUS</p>
-                             	</div>
-                        	</div>
-                        </div>
-                    </div>
-                    </br>
-					<pre class="prettyprint linenums">
-&lt;div id=&quot;profile-card&quot; class=&quot;card profile-card&quot;&gt;
-	&lt;div class=&quot;card-image waves-effect waves-block waves-light&quot;&gt;
-		&lt;img class=&quot;activator&quot; src=&quot;../../dist/images/profile-menu.png&quot; alt=&quot;user background&quot;&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;card-content p-l-20 p-b-20&quot;&gt;
-		&lt;img src=&quot;../../dist/images/profile-pics/profile-pic.jpg&quot; alt=&quot;&quot; class=&quot;circle responsive-img activator card-profile-image&quot;&gt; 
-		&lt;a class=&quot;btn-floating activator btn-move-up waves-effect waves-light darken-2 right md-bg-orange-900&quot;&gt;
-			&lt;i class=&quot;zmdi zmdi-account-circle&quot;&gt;&lt;/i&gt;
-		&lt;/a&gt;
-		&lt;span class=&quot;card-title activator grey-text text-darken-4 m-t-30&quot;&gt;Kate Winslet&lt;/span&gt;
-		&lt;p&gt;Some content here.&lt;/p&gt;
-
-	&lt;/div&gt;
-	&lt;div class=&quot;card-reveal&quot; style=&quot;display: none; transform: translateY(0px);&quot;&gt;
-		&lt;span class=&quot;card-title grey-text text-darken-4 btn-move-down&quot;&gt;Kate Winslet&lt;i class=&quot;zmdi zmdi-close right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-		&lt;p class=&quot;p-b-20&quot;&gt;Here is some more information about this card.&lt;/p&gt;
-
-	&lt;/div&gt;
-&lt;/div&gt;
-					</pre>
-                    </br>
-                    <div class="row">
-                    	<div class="col-sm-4">
-                        	<!-- Todo -->
-                          <div id="todo1" class="card card-todo-list" style="min-height: 566px">
-                            <div class="card-header ch-alt">
-                              <h3>Todo Lists <small>Manage your Todo Lists</small></h3>
-                            </div>
-                            <div class="card-content">
-                              <div class="todo-add"> <i class="ta-btn zmdi zmdi-plus c-black" data-dp-action="todo-form-open"></i>
-                                <div class="ta-block">
-                                  <textarea placeholder="What you want to do..."></textarea>
-                                  <div class="tab-actions"> <a data-dp-action="todo-form-close" href="" class="c-red"><i class="zmdi zmdi-close"></i></a> <a data-dp-action="todo-form-close" href="" class="c-green"><i class="zmdi zmdi-check"></i></a> </div>
-                                </div>
-                              </div>
-                              <div class="list-group">
-                                <div class="list-group-item media">
-                                  <div class="pull-right">
-                                    <ul class="actions">
-                                      <li class="dropdown"> <a href="#" data-toggle="dropdown"> <i class="zmdi zmdi-more-vert"></i> </a>
-                                        <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="">Delete</a></li>
-                                          <li><a href="">Archive</a></li>
-                                        </ul>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <div class="media-body">
-                                    <div class="checkbox">
-                                      <label>
-                                      <input type="checkbox">
-                                      <i class="input-helper"></i> <span>
-                                      <div class="lgi-heading">Get video on company culture. Get reviewed by Tim</div>
-                                      <small class="lgi-text">assigned to Jenny</small> </span>
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="list-group-item media">
-                                  <div class="pull-right">
-                                    <ul class="actions">
-                                      <li class="dropdown"> <a href="#" data-toggle="dropdown"> <i class="zmdi zmdi-more-vert"></i> </a>
-                                        <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="">Delete</a></li>
-                                          <li><a href="">Archive</a></li>
-                                        </ul>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <div class="media-body">
-                                    <div class="checkbox">
-                                      <label>
-                                      <input type="checkbox">
-                                      <i class="input-helper"></i> <span>
-                                      <div class="lgi-heading">Create training material and upload on Intranet. Circulate email with link</div>
-                                      <small class="lgi-text">assigned to Allen</small> </span>
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="list-group-item media">
-                                  <div class="pull-right">
-                                    <ul class="actions">
-                                      <li class="dropdown"> <a href="#" data-toggle="dropdown"> <i class="zmdi zmdi-more-vert"></i> </a>
-                                        <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="">Delete</a></li>
-                                          <li><a href="">Archive</a></li>
-                                        </ul>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <div class="media-body">
-                                    <div class="checkbox">
-                                      <label>
-                                      <input type="checkbox">
-                                      <i class="input-helper"></i> <span>
-                                      <div class="lgi-heading">Get video on company culture. Get reviewed by Tim</div>
-                                      <small class="lgi-text">assigned to Jenny</small> </span>
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="list-group-item media">
-                                  <div class="pull-right">
-                                    <ul class="actions">
-                                      <li class="dropdown"> <a href="#" data-toggle="dropdown"> <i class="zmdi zmdi-more-vert"></i> </a>
-                                        <ul class="dropdown-menu dropdown-menu-right">
-                                          <li><a href="">Delete</a></li>
-                                          <li><a href="">Archive</a></li>
-                                        </ul>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <div class="media-body">
-                                    <div class="checkbox">
-                                      <label>
-                                      <input type="checkbox">
-                                      <i class="input-helper"></i> <span>
-                                      <div class="lgi-heading">Create training material and upload on Intranet. Circulate email with link</div>
-                                      <small class="lgi-text">assigned to Allen</small> </span>
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>  
-                    </div>
-                    </br>
-					<pre class="prettyprint linenums">
-  &lt;div id=&quot;todo1&quot; class=&quot;card card-todo-list&quot;&gt;
-	&lt;div class=&quot;card-header ch-alt&quot;&gt;
-	  &lt;h2&gt;Todo Lists &lt;small&gt;Manage your Todo Lists&lt;/small&gt;&lt;/h2&gt;
-	&lt;/div&gt;
-	&lt;div class=&quot;card-content&quot;&gt;
-	  &lt;div class=&quot;todo-add&quot;&gt; &lt;i class=&quot;ta-btn zmdi zmdi-plus c-black&quot; data-dp-action=&quot;todo-form-open&quot;&gt;&lt;/i&gt;
-		&lt;div class=&quot;ta-block&quot;&gt;
-		  &lt;textarea placeholder=&quot;What you want to do...&quot;&gt;&lt;/textarea&gt;
-		  &lt;div class=&quot;tab-actions&quot;&gt; &lt;a data-dp-action=&quot;todo-form-close&quot; href=&quot;&quot; class=&quot;c-red&quot;&gt;&lt;i class=&quot;zmdi zmdi-close&quot;&gt;&lt;/i&gt;&lt;/a&gt; &lt;a data-dp-action=&quot;todo-form-close&quot; href=&quot;&quot; class=&quot;c-green&quot;&gt;&lt;i class=&quot;zmdi zmdi-check&quot;&gt;&lt;/i&gt;&lt;/a&gt; &lt;/div&gt;
-		&lt;/div&gt;
-	  &lt;/div&gt;
-	  &lt;div class=&quot;list-group&quot;&gt;
-		&lt;div class=&quot;list-group-item media&quot;&gt;
-		  &lt;div class=&quot;pull-right&quot;&gt;
-			&lt;ul class=&quot;actions&quot;&gt;
-			  &lt;li class=&quot;dropdown&quot;&gt; &lt;a href=&quot;#&quot; data-toggle=&quot;dropdown&quot;&gt; &lt;i class=&quot;zmdi zmdi-more-vert&quot;&gt;&lt;/i&gt; &lt;/a&gt;
-				&lt;ul class=&quot;dropdown-menu dropdown-menu-right&quot;&gt;
-				  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Delete&lt;/a&gt;&lt;/li&gt;
-				  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Archive&lt;/a&gt;&lt;/li&gt;
-				&lt;/ul&gt;
-			  &lt;/li&gt;
-			&lt;/ul&gt;
-		  &lt;/div&gt;
-		  &lt;div class=&quot;media-body&quot;&gt;
-			&lt;div class=&quot;checkbox&quot;&gt;
-			  &lt;label&gt;
-			  &lt;input type=&quot;checkbox&quot;&gt;
-			  &lt;i class=&quot;input-helper&quot;&gt;&lt;/i&gt; &lt;span&gt;
-			  &lt;div class=&quot;lgi-heading&quot;&gt;Get video on company culture. Get reviewed by Tim&lt;/div&gt;
-			  &lt;small class=&quot;lgi-text&quot;&gt;assigned to Jenny&lt;/small&gt; &lt;/span&gt;
-			  &lt;/label&gt;
-			&lt;/div&gt;
-		  &lt;/div&gt;
-		&lt;/div&gt;
-		...
-		&lt;div class=&quot;list-group-item media&quot;&gt;
-		  &lt;div class=&quot;pull-right&quot;&gt;
-			&lt;ul class=&quot;actions&quot;&gt;
-			  &lt;li class=&quot;dropdown&quot;&gt; &lt;a href=&quot;#&quot; data-toggle=&quot;dropdown&quot;&gt; &lt;i class=&quot;zmdi zmdi-more-vert&quot;&gt;&lt;/i&gt; &lt;/a&gt;
-				&lt;ul class=&quot;dropdown-menu dropdown-menu-right&quot;&gt;
-				  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Delete&lt;/a&gt;&lt;/li&gt;
-				  &lt;li&gt;&lt;a href=&quot;&quot;&gt;Archive&lt;/a&gt;&lt;/li&gt;
-				&lt;/ul&gt;
-			  &lt;/li&gt;
-			&lt;/ul&gt;
-		  &lt;/div&gt;
-		  &lt;div class=&quot;media-body&quot;&gt;
-			&lt;div class=&quot;checkbox&quot;&gt;
-			  &lt;label&gt;
-			  &lt;input type=&quot;checkbox&quot;&gt;
-			  &lt;i class=&quot;input-helper&quot;&gt;&lt;/i&gt; &lt;span&gt;
-			  &lt;div class=&quot;lgi-heading&quot;&gt;Create training material and upload on Intranet. Circulate email with link&lt;/div&gt;
-			  &lt;small class=&quot;lgi-text&quot;&gt;assigned to Allen&lt;/small&gt; &lt;/span&gt;
-			  &lt;/label&gt;
-			&lt;/div&gt;
-		  &lt;/div&gt;
-		&lt;/div&gt;
-	  &lt;/div&gt;
-	&lt;/div&gt;
-  &lt;/div&gt;
-					</pre>
-                    </br>
-                    <div class="row">
-						<h4>FullCalendar</h4>
-						<p>A JavaScript event calendar. Customizable and open source. Display a full-size drag-n-drop event calendar, leveraging jQuery.</p>
-
-                        <div class="col-sm-4">
-                        	<div class="card" id="calendar-widget">
-                                <div class="card-header ch-alt md-bg-purple-500">
-                                    <div class="cwh-year"></div>
-                                    <div class="cwh-day"></div>
-                                </div>
-
-                                <div class="card-content-sm">
-                                    <div id="cw-body"></div>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                    </br>
-
-									<h5>include CSS and Javascript files</h5>
-									<p>First of all add fullcalendar.min.css in the document</p>
-
-									<pre class="prettyprint linenums">
-&lt;link href=&quot;../../vendors/fullcalendar/dist/fullcalendar.min.css&quot; rel=&quot;stylesheet&quot;&gt;
-									</pre>
-
-									<p>Then include JQuery, Moment and fullcalendar.min.js into your document.</p>
-									<pre class="prettyprint linenums">
-&lt;script src=&quot;../../vendors/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;../../vendors/moment/min/moment.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;../../vendors/fullcalendar/dist/fullcalendar.min.js&quot;&gt;&lt;/script&gt;
-									</pre>
-
-									<h5>The markup</h5>
-									<p></p>
-									<div>
-										<div>
-											<pre class="prettyprint linenums">
-&lt;div class=&quot;card&quot; id=&quot;calendar-widget&quot;&gt;
-	&lt;div class=&quot;card-header ch-alt md-bg-purple-500&quot;&gt;
-		&lt;div class=&quot;cwh-year&quot;&gt;&lt;/div&gt;
-		&lt;div class=&quot;cwh-day&quot;&gt;&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;card-content-sm&quot;&gt;
-		&lt;div id=&quot;cw-body&quot;&gt;&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-											</pre>
-										</div>
-									</div>
-
-									<h5>Call the plugin</h5>
-									<p>Finally you need to initiate the plugin by adding the following code.</p>
-									<div>
-										<div>
-											<pre class="prettyprint linenums">
-$(document).ready(function() {
-
-    // page is now ready, initialize the calendar...
-
-    $(&#39;#calendar-widget&#39;).fullCalendar({
-        // put your options and callbacks here
-    })
-
-});
-											</pre>
-										</div>
-									</div>
-
-                                <p>Please refer to <a href="https://fullcalendar.io/docs/usage/">https://fullcalendar.io/docs/usage/</a> for detailed documentation</p>
-                    </br>
-                    <div class="row">
-                        <div class="col-sm-4">
-                        	<div class="card" id="calendar-widget-2" style="min-height: 566px">
-                                <div class="card-content-sm">
-                                    <div id="cw-body-2"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </br>
-					<pre class="prettyprint linenums">
-&lt;div class=&quot;card&quot; id=&quot;calendar-widget-2&quot; &gt;
-	&lt;div class=&quot;card-content-sm&quot;&gt;
-		&lt;div id=&quot;cw-body-2&quot;&gt;&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-					</pre>
-                    </br>
-                    <div class="row">
-						<h4>jVectorMap</h4>
-						<p>jQuery plugin for embedding vector maps with reach API and methods for data visualization to the web-pages.</p>
-                    	<div class="col-sm-6">
-                            <div class="card card-map">
-                                <div class="card-header">
-                                    <h3>Maps <small>Order processing staus by region</small></h3>
-                                </div>
-    
-                                <div class="card-content">
-                                	<div class="row">
-                                        <div class="col-sm-12 p-t-10">
-                                            <div id="dashboard-map-orders" style="width: 100%; height: 300px"></div>
-                                        </div>
-                                	</div>    
-                                </div>
-                          	</div>
-                        </div>
-                                                
-                  	</div>
-                    </br>
-
-						<h5>include CSS and Javascript files</h5>
-						<p>First of all add jquery-jvectormap.css in the document</p>
-
-						<pre class="prettyprint linenums">
-&lt;link href=&quot;../../vendors/map/jvectormap/jquery-jvectormap-2.0.3.css&quot; rel=&quot;stylesheet&quot;&gt;
-						</pre>
-
-						<p>Then include JQuery, jquery-jvectormap.min.js  and jquery-jvectormap-world-mill.js into your document.</p>
-						<pre class="prettyprint linenums">
-&lt;script src=&quot;../../vendors/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;../../vendors/map/jvectormap/jquery-jvectormap-2.0.3.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;../../vendors/map/jvectormap/jquery-jvectormap-world-mill.js&quot;&gt;&lt;/script&gt;
-						</pre>
-
-						<h5>The markup</h5>
-						<p></p>
-						<div>
-							<div>
-								<pre class="prettyprint linenums">
-&lt;div id=&quot;dashboard-map-orders&quot; style=&quot;width: 100%; height: 300px&quot;&gt;&lt;/div&gt;
-								</pre>
-							</div>
-						</div>
-
-						<h5>Call the plugin</h5>
-						<p>Finally you need to initiate the plugin by adding the following code.</p>
-						<div>
-							<div>
-								<pre class="prettyprint linenums">
-$(document).ready(function() {
-
-$('#dashboard-map-orders').vectorMap({map: 'world_mill'});
-
-});
-								</pre>
-							</div>
-						</div>
-
-					<p>Please refer to <a href="http://jvectormap.com/tutorials/getting-started/">http://jvectormap.com/tutorials/getting-started/</a> for detailed documentation</p>
-                    </br>
-                    <div class="row">
-						<div class="col-sm-3">
-							<div class="card md-bg-pink-400 widget-loader-bar">
-								  <div class="card-body">
-									  <div class="carousel vertical slide" data-ride="carousel" data-interval="3500">
-										  <!-- Wrapper for slides -->
-										  <div class="carousel-inner" role="listbox">
-											  <div class="item active">
-													<p>Content goes here.</p>
-											  </div>
-							  
-											  <div class="item">
-													<p>Content goes here.</p>
-											  </div>
-							  
-										  </div>
-									  </div>
-								  </div>
-							</div>
-						</div>
-                    </div>
-                    </br>
-					<pre class="prettyprint linenums">
-&lt;div class=&quot;card md-bg-pink-400 widget-loader-bar&quot;&gt;
-	  &lt;div class=&quot;card-body&quot;&gt;
-		  &lt;div class=&quot;carousel vertical slide&quot; data-ride=&quot;carousel&quot; data-interval=&quot;3500&quot;&gt;
-			  &lt;!-- Wrapper for slides --&gt;
-			  &lt;div class=&quot;carousel-inner&quot; role=&quot;listbox&quot;&gt;
-				  &lt;div class=&quot;item active&quot;&gt;
-						&lt;p&gt;Content goes here.&lt;/p&gt;
-				  &lt;/div&gt;
-  
-				  &lt;div class=&quot;item&quot;&gt;
-						&lt;p&gt;Content goes here.&lt;/p&gt;
-				  &lt;/div&gt;
-  
-			  &lt;/div&gt;
-		  &lt;/div&gt;
-	  &lt;/div&gt;
-&lt;/div&gt;
-					</pre>
-                    </br>
-                    <div class="row">
-						<h4>simpleWeather</h4>
-						<p>simple jQuery plugin to display current weather data for any location and doesn't get in your way.</p>
-
-						<div class="col-sm-3">
-						   <div class="card card-weather-widget">
-								<div class="card-content md-bg-blue-400">
-									<div id="weather-min" class="row p-0">
-										<div class="col-sm-6 m-t-40 f-300 p-0">
-											<h3>&nbsp;</h3>
-											<h1 class="c-white" id="weather-temp">73<sup>°F</sup></h1>
-											<p class="c-white" id="weather-location">Austin, TX<br/> USA</p>
-										</div>
-										<div class="col-sm-6 text-right p-0 c-white"> 
-											<span id="weather-img"></span><br/>
-											<b class="f-14 f-500 text-uppercase" id="weather-text">SUNNY DAY</b>
-											<p class="c-grey-300" id="weather-date">Sep 1</p>
-										</div>
-									</div>
-								</div>
-							</div>  
-						</div>
-                    </div>
-                    </br>
-						<h5>include Javascript files</h5>
-
-						<p>Include JQuery, jquery.simpleWeather.min.js into your document.</p>
-						<pre class="prettyprint linenums">
-&lt;script src=&quot;../../vendors/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;../../vendors/simpleWeather/jquery.simpleWeather.min.js&quot;&gt;&lt;/script&gt;
-						</pre>
-
-						<h5>The markup</h5>
-						<p></p>
-						<div>
-							<div>
-								<pre class="prettyprint linenums">
-&lt;div class=&quot;card card-weather-widget&quot;&gt;
-&lt;div class=&quot;card-content md-bg-blue-400&quot;&gt;
-&lt;div id=&quot;weather-min&quot; class=&quot;row p-0&quot;&gt;
-&lt;div class=&quot;col-sm-6 m-t-40 f-300 p-0&quot;&gt;
-	&lt;h3&gt;&amp;nbsp;&lt;/h3&gt;
-	&lt;h1 class=&quot;c-white&quot; id=&quot;weather-temp&quot;&gt;73&lt;sup&gt;&#176;F&lt;/sup&gt;&lt;/h1&gt;
-	&lt;p class=&quot;c-white&quot; id=&quot;weather-location&quot;&gt;Austin, TX&lt;br/&gt; USA&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;col-sm-6 text-right p-0 c-white&quot;&gt; 
-	&lt;span id=&quot;weather-img&quot;&gt;&lt;/span&gt;&lt;br/&gt;
-	&lt;b class=&quot;f-14 f-500 text-uppercase&quot; id=&quot;weather-text&quot;&gt;SUNNY DAY&lt;/b&gt;
-	&lt;p class=&quot;c-grey-300&quot; id=&quot;weather-date&quot;&gt;Sep 1&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;  
-								</pre>
-							</div>
-						</div>
-
-						<h5>Call the plugin</h5>
-						<p>Finally you need to initiate the plugin by adding the following code.</p>
-						<div>
-							<div>
-								<pre class="prettyprint linenums">
-$.simpleWeather({
-zipcode: &#39;&#39;,
-location: &#39;Austin, TX&#39;,
-woeid: &#39;&#39;,
-unit: &#39;f&#39;,
-success: function(weather) {
-$(&#39;#weather-temp&#39;).html(weather.temp+&#39;&lt;sup&gt;&#39;+weather.units.temp+&#39;&lt;sup&gt;&#39;);
-$(&#39;#weather-location&#39;).html(weather.region+&#39;, &#39;+weather.country+&#39;,&lt;br/&gt;&#39;+weather.city);
-
-$(&#39;#weather-img&#39;).html(&#39;&lt;img src=&quot;&#39;+weather.thumbnail+&#39;&quot; /&gt;&#39;);
-$(&#39;#weather-text&#39;).html(weather.text);
-$(&#39;#weather-date&#39;).html(weather.date);
-},
-error: function(error) {
-$(&quot;#weather-min&quot;).html(&#39;&lt;p&gt;&#39;+error+&#39;&lt;/p&gt;&#39;);
-}
-});
-								</pre>
-							</div>
-						</div>
-
-					<p>Please refer to <a href="http://simpleweatherjs.com/#docs">http://simpleweatherjs.com/#docs</a> for detailed documentation</p>
-                    </br>
-                    <div class="row">
-							<div class="col-sm-3"> 
-								<!-- Widget Tile 1 -->
-								<div class="card md-bg-deep-purple-400">    
-									<div class="card-body">
-									  <div>
-
-											<div class="p-t-20 p-l-25 p-r-25 p-b-10">
-												<div class="clearfix">
-													<div class="pull-left1">
-														<div class="text-uppercase c-black">
-															<span class="f-14">Monthly Sales <i class="zmdi zmdi-chevron-right f-20 m-l-5"></i></span>
-														</div>
-													</div>
-												</div>
-											</div>
-			
-											<div class="p-l-25 p-r-25">
-												<div class="c-grey-700">
-													<h3 class="m-0 p-b-5 f-28 f-400 c-white">$258,000</h3>
-													<p class="m-t-5 f-12 c-white"><i class="zmdi zmdi-caret-up f-18 m-r-5"></i>5% up from last month</p>
-												</div>
-											</div>
-			
-											<div class="p-b-25"> 
-												<div class="progress md-bg-grey-500">
-													<div class="progress-bar md-bg-white" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-													</div>
-												</div>
-											</div>
-											
-
-									  </div>
-									</div>
-								</div>
-							
-							</div>
-                    </div>
-                    </br>
-					<pre class="prettyprint linenums">
-&lt;div class=&quot;card md-bg-deep-purple-400&quot;&gt;    
-	&lt;div class=&quot;card-body&quot;&gt;
-	  &lt;div&gt;
-
-			&lt;div class=&quot;p-t-20 p-l-25 p-r-25 p-b-10&quot;&gt;
-				&lt;div class=&quot;clearfix&quot;&gt;
-					&lt;div class=&quot;pull-left1&quot;&gt;
-						&lt;div class=&quot;text-uppercase c-black&quot;&gt;
-							&lt;span class=&quot;f-14&quot;&gt;Monthly Sales &lt;i class=&quot;zmdi zmdi-chevron-right f-20 m-l-5&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-						&lt;/div&gt;
-					&lt;/div&gt;
-				&lt;/div&gt;
-			&lt;/div&gt;
-
-			&lt;div class=&quot;p-l-25 p-r-25&quot;&gt;
-				&lt;div class=&quot;c-grey-700&quot;&gt;
-					&lt;h3 class=&quot;m-0 p-b-5 f-28 f-400 c-white&quot;&gt;$258,000&lt;/h3&gt;
-					&lt;p class=&quot;m-t-5 f-12 c-white&quot;&gt;&lt;i class=&quot;zmdi zmdi-caret-up f-18 m-r-5&quot;&gt;&lt;/i&gt;5% up from last month&lt;/p&gt;
-				&lt;/div&gt;
-			&lt;/div&gt;
-
-			&lt;div class=&quot;p-b-25&quot;&gt; 
-				&lt;div class=&quot;progress md-bg-grey-500&quot;&gt;
-					&lt;div class=&quot;progress-bar md-bg-white&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;60&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width: 45%&quot;&gt;
-					&lt;/div&gt;
-				&lt;/div&gt;
-			&lt;/div&gt;
-			
-
-	  &lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-					</pre>
-                    </br>
-                        </div>
                       </div>
-                      
+
                       <div class="card">
                         <div class="card-header">
                           <h3>Charts </h3>
@@ -5823,7 +3672,7 @@ Images used in this template are taken from Pixabay
 </body>
 <!--   Core JS Files   -->
 <script src="../../assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
-<script src="../../assets/js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="../../assets/vendors/jquery-ui-1.12.0/jquery-ui.js"></script>
 <script src="../../assets/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../../assets/js/material.min.js" type="text/javascript"></script>
 <script src="../../assets/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
@@ -5858,21 +3707,29 @@ Images used in this template are taken from Pixabay
 <!-- TagsInput Plugin -->
 <script src="../../assets/js/jquery.tagsinput.js"></script>
 <!-- Material Dashboard javascript methods -->
-<script src="../../assets/js/material-dashboard.js"></script>
+<script src="../../assets/js/turbo.js"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="../../assets/js/demo.js"></script>
-<script>
-    $(document).ready(function() {
-        demo.initCharts();
-    });
-</script>
+
+
 <script type="text/javascript">
-    $(document).ready(function() {
+	$(document).ready(function(){
+	
+	//JQuery UI Accordion
+	
+		$("#simple-accordion").accordion({
+			collapsible: true,
+			animate: 200
+		});
+		
+		
+		//Sweet Alert2
 
-        // Javascript method's body can be found in assets/js/demos.js
-        //demo.initDashboardPageCharts();
-
-        demo.initVectorMap();
-    });
+		$('#sweetalert-demo').on('click', function () {
+			swal('Here is a message!');
+		});
+		
+		
+	});
 </script>
 </html>

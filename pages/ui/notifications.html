@@ -6,27 +6,25 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../../assets/img/apple-icon.png" />
     <link rel="icon" type="image/png" href="../../assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Bootstrap Material Admin Dashboard Template</title>
+    <title>Turbo - Bootstrap Material Admin Dashboard Template</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Bootstrap core CSS     -->
     <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
-    <link href="../../assets/css/material-dashboard.css" rel="stylesheet" />
+    <link href="../../assets/css/turbo.css" rel="stylesheet" />
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="../../assets/css/demo.css" rel="stylesheet" />
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
-    
+    <!--    JQuery UI     -->
     <link href="../../assets/vendors/jquery-ui-1.12.0/jquery-ui.css" rel="stylesheet">
-
 </head>
 
 <body>
     <div class="wrapper">
-		<div class="sidebar" >
-
+		<div class="sidebar">
             <div class="logo">
                 <a href="#" class="simple-text">
                     Turbo Admin
@@ -66,9 +64,6 @@
 								<li>
 									<a href="../charts/flot-charts.html">Flot</a>
 								</li>
-								<li>
-									<a href="../charts/other-charts.html">Inline Charts</a>
-								</li>
 							</ul>
 						</div>
 					</li>
@@ -82,22 +77,14 @@
 						<div class="collapse" id="ui-elements" aria-expanded="false" style="height: 0px;">
 							<ul class="nav">
 								<li><a href="../ui/accordions.html">Accordions</a></li>
-								<li><a href="../ui/alerts-dialogs.html">Alerts & Dialogs</a></li>
+								<li><a href="../ui/alerts.html">Alerts</a></li>
 								<li><a href="../ui/buttons.html">Buttons</a></li>
-								<li><a href="../ui/breadcrumbs.html">Breadcrumbs</a></li>
 								<li><a href="../ui/colors.html">Colors</a></li>
-								<li><a href="../ui/dropdown.html">Dropdown</a></li>
 								<li><a href="../ui/grid.html">Grid System</a></li>
 								<li><a href="../ui/icons.html">Icons</a></li>
-								<li><a href="../ui/jumbotron.html">Jumbotron</a></li> 
-								<li><a href="../ui/notifications.html">Notifications</a></li>
-								<li><a href="../ui/media.html">Media</a></li>
 								<li><a href="../ui/modals.html">Modals</a></li>
-								<li><a href="../ui/pagination.html">Pagination</a></li>
-								<li><a href="../ui/popovers.html">Popovers</a></li>
-								<li><a href="../ui/preloaders-progress-bar.html">Preloaders & Progress Bar</a></li>
+								<li><a href="../ui/notifications.html">Notifications</a></li>
 								<li><a href="../ui/tabs.html">Tabs</a></li>
-								<li><a href="../ui/tooltips.html">Tool Tips</a></li>
 								<li><a href="../ui/typography.html">Typography</a></li>
 							</ul>
 						</div>
@@ -142,6 +129,7 @@
 						</a>
 						<div class="collapse" id="pages" aria-expanded="false" style="height: 0px;">
 							<ul class="nav">
+								<li><a href="../sample-pages/template.html">Template</a></li>
 								<li><a href="../sample-pages/user-profile.html">User Profile</a></li>
 								<li><a href="../sample-pages/login.html">Login</a></li>
 								<li><a href="../sample-pages/signup.html">Sign Up</a></li>
@@ -164,15 +152,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="../widgets/widgets.html">
-							<i class="material-icons">settings_ethernet</i>
-							<p>Base Classes
-								<b class="caret"></b>
-							</p>
-						</a>
-					</li>
-					<li>
-						<a href="../widgets/widgets.html">
+						<a href="../docs/documentation.html">
 							<i class="material-icons">library_books</i>
 							<p>Documentation</p>
 						</a>
@@ -204,7 +184,7 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">notifications</i>
-                                    <span class="notification">5</span>
+                                    <span class="notification">6</span>
                                     <p class="hidden-lg hidden-md">
                                         Notifications
                                         <b class="caret"></b>
@@ -212,19 +192,21 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="#">Mike John responded to your email</a>
+                                        <a href="#">You have 5 new messages</a>
                                     </li>
                                     <li>
-                                        <a href="#">You have 5 new tasks</a>
+                                        <a href="#">You're now friend with Mike</a>
                                     </li>
                                     <li>
-                                        <a href="#">You're now friend with Andrew</a>
+                                        <a href="#">Wish Mary on her birthday!</a>
+                                    </li>                                    <li>
+                                        <a href="#">5 warnings in Server Console</a>
                                     </li>
                                     <li>
-                                        <a href="#">Another Notification</a>
+                                        <a href="#">Jane completed 'Induction Training'</a>
                                     </li>
                                     <li>
-                                        <a href="#">Another One</a>
+                                        <a href="#">'Prepare Marketing Report' is overdue</a>
                                     </li>
                                 </ul>
                             </li>
@@ -255,7 +237,7 @@
                 <div class="container-fluid">
                     <div class="header text-center">
                         <h3 class="title">Notifications</h3>
-                        <p class="category">Handcrafted by our friend
+                        <p class="category">Handcrafted by
                             <a target="_blank" href="https://github.com/mouse0270">Robert McIntosh</a>. Please checkout the
                             <a href="http://bootstrap-notify.remabledesigns.com/" target="_blank">full documentation.</a>
                         </p>
@@ -282,13 +264,6 @@
                                             <i class="material-icons">close</i>
                                         </button>
                                         <span data-notify="message">This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.</span>
-                                    </div>
-                                    <div class="alert alert-rose alert-with-icon" data-notify="container">
-                                        <i class="material-icons" data-notify="icon">notifications</i>
-                                        <button type="button" aria-hidden="true" class="close">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                        <span data-notify="message">This is a notification with close button and icon and is made with ".alert-rose". You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.</span>
                                     </div>
                                 </div>
                             </div>
@@ -334,13 +309,6 @@
                                         <span>
                                             <b> Primary - </b> This is a regular notification made with ".alert-primary"</span>
                                     </div>
-                                    <div class="alert alert-rose">
-                                        <button type="button" aria-hidden="true" class="close">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                        <span>
-                                            <b> Rose - </b> This is a regular notification made with ".alert-rose"</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -383,108 +351,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-12 text-center">
-                                            <div class="card-header">
-                                                <h4 class="card-title">Modal</h4>
-                                            </div>
-                                            <button class="btn btn-primary btn-raised btn-round" data-toggle="modal" data-target="#myModal">
-                                                Classic modal
-                                            </button>
-                                            <button class="btn btn-raised btn-round btn-info" data-toggle="modal" data-target="#noticeModal">
-                                                Notice modal
-                                            </button>
-                                            <button class="btn btn-raised btn-round btn-rose" data-toggle="modal" data-target="#smallAlertModal">
-                                                Small alert modal
-                                            </button>
-                                            <!-- Classic Modal -->
-                                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                                                <i class="material-icons">clear</i>
-                                                            </button>
-                                                            <h4 class="modal-title">Modal title</h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.
-                                                            </p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-simple">Nice Button</button>
-                                                            <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--  End Modal -->
-                                            <!-- notice modal -->
-                                            <div class="modal fade" id="noticeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-notice">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
-                                                            <h5 class="modal-title" id="myModalLabel">How Do You Become an Affiliate?</h5>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <div class="instruction">
-                                                                <div class="row">
-                                                                    <div class="col-md-8">
-                                                                        <strong>1. Register</strong>
-                                                                        <p>The first step is to create an account at
-                                                                            <a href="http://www.creative-tim.com/">Creative Tim</a>. You can choose a social network or go for the classic version, whatever works best for you.</p>
-                                                                    </div>
-                                                                    <div class="col-md-4">
-                                                                        <div class="picture">
-                                                                            <img src="../../assets/img/card-1.jpeg" alt="Thumbnail Image" class="img-rounded img-responsive">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="instruction">
-                                                                <div class="row">
-                                                                    <div class="col-md-8">
-                                                                        <strong>2. Apply</strong>
-                                                                        <p>The first step is to create an account at
-                                                                            <a href="http://www.creative-tim.com/">Creative Tim</a>. You can choose a social network or go for the classic version, whatever works best for you.</p>
-                                                                    </div>
-                                                                    <div class="col-md-4">
-                                                                        <div class="picture">
-                                                                            <img src="../../assets/img/card-2.jpeg" alt="Thumbnail Image" class="img-rounded img-responsive">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <p>If you have more questions, don't hesitate to contact us or send us a tweet @creativetim. We're here to help!</p>
-                                                        </div>
-                                                        <div class="modal-footer text-center">
-                                                            <button type="button" class="btn btn-info btn-round" data-dismiss="modal">Sounds good!</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- end notice modal -->
-                                            <!-- small modal -->
-                                            <div class="modal fade" id="smallAlertModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-small ">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="material-icons">clear</i></button>
-                                                        </div>
-                                                        <div class="modal-body text-center">
-                                                            <h5>Are you sure you want to do this? </h5>
-                                                        </div>
-                                                        <div class="modal-footer text-center">
-                                                            <button type="button" class="btn btn-simple" data-dismiss="modal">Never mind</button>
-                                                            <button type="button" class="btn btn-success btn-simple">Yes</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--    end small modal -->
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -502,17 +368,17 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    Company
+                                    Documentation
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Portfolio
+                                    Contact
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Blog
+                                    Support
                                 </a>
                             </li>
                         </ul>
@@ -522,7 +388,7 @@
                         <script>
                             document.write(new Date().getFullYear())
                         </script>
-                        <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                        <a href="#">Turbo Admin</a>
                     </p>
                 </div>
             </footer>

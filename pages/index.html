@@ -12,7 +12,7 @@
     <!-- Bootstrap core CSS     -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
     <!--  Material Dashboard CSS    -->
-    <link href="../assets/css/material-dashboard.css" rel="stylesheet" />
+    <link href="../assets/css/turbo.css" rel="stylesheet" />
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="../assets/css/demo.css" rel="stylesheet" />
     <!--     Fonts and icons     -->
@@ -22,8 +22,7 @@
 
 <body>
     <div class="wrapper">
-		<div class="sidebar" >
-
+		<div class="sidebar">
             <div class="logo">
                 <a href="#" class="simple-text">
                     Turbo Admin
@@ -37,7 +36,7 @@
             <div class="sidebar-wrapper">
 				<ul class="nav">
                     <li>
-                        <a href="./index.html">
+                        <a href="index.html">
                             <i class="material-icons">dashboard</i>
                             <p>Dashboard</p>
                         </a>
@@ -63,9 +62,6 @@
 								<li>
 									<a href="charts/flot-charts.html">Flot</a>
 								</li>
-								<li>
-									<a href="charts/other-charts.html">Inline Charts</a>
-								</li>
 							</ul>
 						</div>
 					</li>
@@ -81,20 +77,13 @@
 								<li><a href="ui/accordions.html">Accordions</a></li>
 								<li><a href="ui/alerts-dialogs.html">Alerts & Dialogs</a></li>
 								<li><a href="ui/buttons.html">Buttons</a></li>
-								<li><a href="ui/breadcrumbs.html">Breadcrumbs</a></li>
 								<li><a href="ui/colors.html">Colors</a></li>
-								<li><a href="ui/dropdown.html">Dropdown</a></li>
 								<li><a href="ui/grid.html">Grid System</a></li>
 								<li><a href="ui/icons.html">Icons</a></li>
-								<li><a href="ui/jumbotron.html">Jumbotron</a></li> 
-								<li><a href="ui/notifications.html">Notifications</a></li>
-								<li><a href="ui/media.html">Media</a></li>
 								<li><a href="ui/modals.html">Modals</a></li>
-								<li><a href="ui/pagination.html">Pagination</a></li>
+								<li><a href="ui/notifications.html">Notifications</a></li>
 								<li><a href="ui/popovers.html">Popovers</a></li>
-								<li><a href="ui/preloaders-progress-bar.html">Preloaders & Progress Bar</a></li>
 								<li><a href="ui/tabs.html">Tabs</a></li>
-								<li><a href="ui/tooltips.html">Tool Tips</a></li>
 								<li><a href="ui/typography.html">Typography</a></li>
 							</ul>
 						</div>
@@ -139,6 +128,7 @@
 						</a>
 						<div class="collapse" id="pages" aria-expanded="false" style="height: 0px;">
 							<ul class="nav">
+								<li><a href="sample-pages/template.html">Template</a></li>
 								<li><a href="sample-pages/user-profile.html">User Profile</a></li>
 								<li><a href="sample-pages/login.html">Login</a></li>
 								<li><a href="sample-pages/signup.html">Sign Up</a></li>
@@ -193,7 +183,7 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="material-icons">notifications</i>
-                                    <span class="notification">5</span>
+                                    <span class="notification">6</span>
                                     <p class="hidden-lg hidden-md">
                                         Notifications
                                         <b class="caret"></b>
@@ -201,19 +191,21 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="#">Mike John responded to your email</a>
+                                        <a href="#">You have 5 new messages</a>
                                     </li>
                                     <li>
-                                        <a href="#">You have 5 new tasks</a>
+                                        <a href="#">You're now friend with Mike</a>
                                     </li>
                                     <li>
-                                        <a href="#">You're now friend with Andrew</a>
+                                        <a href="#">Wish Mary on her birthday!</a>
+                                    </li>                                    <li>
+                                        <a href="#">5 warnings in Server Console</a>
                                     </li>
                                     <li>
-                                        <a href="#">Another Notification</a>
+                                        <a href="#">Jane completed 'Induction Training'</a>
                                     </li>
                                     <li>
-                                        <a href="#">Another One</a>
+                                        <a href="#">'Prepare Marketing Report' is overdue</a>
                                     </li>
                                 </ul>
                             </li>
@@ -741,7 +733,7 @@
 <!-- TagsInput Plugin -->
 <script src="../assets/js/jquery.tagsinput.js"></script>
 <!-- Material Dashboard javascript methods -->
-<script src="../assets/js/material-dashboard.js"></script>
+<script src="../assets/js/turbo.js"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="../assets/js/demo.js"></script>
 <script>
@@ -753,8 +745,6 @@
     $(document).ready(function() {
 
         // Javascript method's body can be found in assets/js/demos.js
-        //demo.initDashboardPageCharts();
-
         demo.initVectorMap();
     });
 </script>
