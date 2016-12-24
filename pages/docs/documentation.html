@@ -15,6 +15,8 @@
     <link href="../../assets/css/turbo.css" rel="stylesheet" />
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="../../assets/css/demo.css" rel="stylesheet" />
+    <link href="../../assets/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
@@ -987,84 +989,158 @@ showNotification: function(from, align){
                             <ul class="nav nav-pills" role="tablist">
                               <li class="active"><a href="#chartjs" aria-controls="chartjs" role="tab" data-toggle="tab">ChartJS</a> </li>
                               <li><a href="#flotcharts" aria-controls="flotcharts" role="tab" data-toggle="tab">Flot</a> </li>
-                              <li><a href="#inlinecharts" aria-controls="inlinecharts" role="tab" data-toggle="tab">Inline Charts</a> </li>
                             </ul>
                             <div class="tab-content">
                               <div role="tabpanel" class="tab-pane active" id="chartjs">
                                 <h4>Chart.js</h4>
                                 <p>Simple yet flexible JavaScript charting for designers & developers.</p>
-									<canvas id="docMyChart" width="400" height="400"></canvas>
-									<h5>Usage</h5>
-
-									<p>Include Chart.min.js into your document.</p>
-									<pre class="prettyprint linenums">
-&lt;script src=&quot;../../vendors/charts/chartjs/Chart.min.js&quot;&gt;&lt;/script&gt;
-									</pre>
-
-									<h5>The markup</h5>
-									<p></p>
-									<div>
-										<div>
-											<pre class="prettyprint linenums">
-&lt;canvas id=&quot;docMyChart&quot; width=&quot;400&quot; height=&quot;400&quot;&gt;&lt;/canvas&gt;
-											</pre>
-										</div>
+                                	<div class="row">	
+									<div class="col-md-6"><canvas id="docMyChart" width="400" height="400"></canvas></div>
+									<div class="col-md-6"></div>
 									</div>
+<h4>Usage</h4>
+<p>To import Chart.js using an old-school script tag:</p>
+<pre>
+<code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"Chart.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+    <span class="hljs-keyword">var</span> myChart = <span class="hljs-keyword">new</span> Chart({...})
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code>
+</pre>
+<p>To import Chart.js using an awesome module loader:</p>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">// Using CommonJS</span>
+<span class="hljs-keyword">var</span> Chart = <span class="hljs-built_in">require</span>(<span class="hljs-string">'src/chart.js'</span>)
+<span class="hljs-keyword">var</span> myChart = <span class="hljs-keyword">new</span> Chart({...})
 
-									<h5>Call the plugin</h5>
-									<p>Finally you need to initiate the plugin by adding the following code.</p>
-									<div>
-										<div>
-											<pre class="prettyprint linenums">
-				var barChartCanvas = $(&quot;#docMyChart&quot;).get(0).getContext(&quot;2d&quot;);
-				var barChart = new Chart(barChartCanvas);
-				var barChartData = {
-					labels: [&quot;Red&quot;, &quot;Blue&quot;, &quot;Yellow&quot;, &quot;Green&quot;, &quot;Purple&quot;, &quot;Orange&quot;],
-					datasets: [{
-						label: &#39;# of Votes&#39;,
-						data: [12, 19, 3, 5, 2, 3],
-						backgroundColor: [
-							&#39;rgba(255, 99, 132, 0.2)&#39;,
-							&#39;rgba(54, 162, 235, 0.2)&#39;,
-							&#39;rgba(255, 206, 86, 0.2)&#39;,
-							&#39;rgba(75, 192, 192, 0.2)&#39;,
-							&#39;rgba(153, 102, 255, 0.2)&#39;,
-							&#39;rgba(255, 159, 64, 0.2)&#39;
-						],
-						borderColor: [
-							&#39;rgba(255,99,132,1)&#39;,
-							&#39;rgba(54, 162, 235, 1)&#39;,
-							&#39;rgba(255, 206, 86, 1)&#39;,
-							&#39;rgba(75, 192, 192, 1)&#39;,
-							&#39;rgba(153, 102, 255, 1)&#39;,
-							&#39;rgba(255, 159, 64, 1)&#39;
-						],
-						borderWidth: 1
-					}]
-				};
-				var barChartOptions = {
-					scales: {
-						yAxes: [{
-							ticks: {
-								beginAtZero:true
-							}
-						}]
-					}
-				};
+<span class="hljs-comment">// ES6</span>
+<span class="hljs-keyword">import</span> Chart <span class="hljs-keyword">from</span> <span class="hljs-string">'src/chart.js'</span>
+<span class="hljs-keyword">let</span> myChart = <span class="hljs-keyword">new</span> Chart({...})
 
-				barChart.Bar(barChartData, barChartOptions);
+<span class="hljs-comment">// Using requirejs</span>
+<span class="hljs-built_in">require</span>([<span class="hljs-string">'path/to/Chartjs'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">Chart</span>)</span>{
+ <span class="hljs-keyword">var</span> myChart = <span class="hljs-keyword">new</span> Chart({...})
+})
+</code>
+</pre>
+<h4>Creating a Chart</h4>
+<p>To create a chart, we need to instantiate the <code>Chart</code> class. To do this, we need to pass in the node, jQuery instance, or 2d context of the canvas of where we want to draw the chart. Here&#39;s an example.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myChart"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"400"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+</code>
+</pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Any of the following formats may be used</span>
+<span class="hljs-keyword">var</span> ctx = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"myChart"</span>);
+<span class="hljs-keyword">var</span> ctx = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"myChart"</span>).getContext(<span class="hljs-string">"2d"</span>);
+<span class="hljs-keyword">var</span> ctx = $(<span class="hljs-string">"#myChart"</span>);
+<span class="hljs-keyword">var</span> ctx = <span class="hljs-string">"myChart"</span>;
+</code>
+</pre>
+<p>Once you have the element or context, you&#39;re ready to instantiate a pre-defined chart-type or create your own!</p>
+<p>The following example instantiates a bar chart showing the number of votes for different colors and the y-axis starting at 0.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myChart"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"400"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">var</span> ctx = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"myChart"</span>);
+<span class="hljs-keyword">var</span> myChart = <span class="hljs-keyword">new</span> Chart(ctx, {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'bar'</span>,
+    <span class="hljs-attr">data</span>: {
+        <span class="hljs-attr">labels</span>: [<span class="hljs-string">"Red"</span>, <span class="hljs-string">"Blue"</span>, <span class="hljs-string">"Yellow"</span>, <span class="hljs-string">"Green"</span>, <span class="hljs-string">"Purple"</span>, <span class="hljs-string">"Orange"</span>],
+        <span class="hljs-attr">datasets</span>: [{
+            <span class="hljs-attr">label</span>: <span class="hljs-string">'# of Votes'</span>,
+            <span class="hljs-attr">data</span>: [<span class="hljs-number">12</span>, <span class="hljs-number">19</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],
+            <span class="hljs-attr">backgroundColor</span>: [
+                <span class="hljs-string">'rgba(255, 99, 132, 0.2)'</span>,
+                <span class="hljs-string">'rgba(54, 162, 235, 0.2)'</span>,
+                <span class="hljs-string">'rgba(255, 206, 86, 0.2)'</span>,
+                <span class="hljs-string">'rgba(75, 192, 192, 0.2)'</span>,
+                <span class="hljs-string">'rgba(153, 102, 255, 0.2)'</span>,
+                <span class="hljs-string">'rgba(255, 159, 64, 0.2)'</span>
+            ],
+            <span class="hljs-attr">borderColor</span>: [
+                <span class="hljs-string">'rgba(255,99,132,1)'</span>,
+                <span class="hljs-string">'rgba(54, 162, 235, 1)'</span>,
+                <span class="hljs-string">'rgba(255, 206, 86, 1)'</span>,
+                <span class="hljs-string">'rgba(75, 192, 192, 1)'</span>,
+                <span class="hljs-string">'rgba(153, 102, 255, 1)'</span>,
+                <span class="hljs-string">'rgba(255, 159, 64, 1)'</span>
+            ],
+            <span class="hljs-attr">borderWidth</span>: <span class="hljs-number">1</span>
+        }]
+    },
+    <span class="hljs-attr">options</span>: {
+        <span class="hljs-attr">scales</span>: {
+            <span class="hljs-attr">yAxes</span>: [{
+                <span class="hljs-attr">ticks</span>: {
+                    <span class="hljs-attr">beginAtZero</span>:<span class="hljs-literal">true</span>
+                }
+            }]
+        }
+    }
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code>
+</pre>
+<p>It&#39;s that easy to get started using Chart.js! From here you can explore the many options that can help you customise your charts with scales, tooltips, labels, colors, custom actions, and much more.</p>
+<p>There are many examples of Chart.js that are available in the <code>/samples</code> folder of <code>Chart.js.zip</code> that is attatched to every <a href="https://github.com/chartjs/Chart.js/releases" target="_blank">release</a>.</p>
 
-											</pre>
-										</div>
-									</div>
 
+<h4>Chart Configuration</h4>
+
+<p>Chart.js provides a number of options for changing the behaviour of created charts. These configuration options can be changed on a per chart basis by passing in an options object when creating the chart. Alternatively, the global configuration can be changed which will be used by all charts created after that point.</p>
+<h5>Chart Data</h5>
+<p>To display data, the chart must be passed a data object that contains all of the information needed by the chart. The data object can contain the following parameters</p>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>datasets</td>
+                <td>Array[object]</td>
+                <td>Contains data for each dataset. See the documentation for each chart type to determine the valid options that can be attached to the dataset</td>
+            </tr>
+            <tr>
+                <td>labels</td>
+                <td>Array[string]</td>
+                <td>Optional parameter that is used with the <a href="#scales-category-scale">category axis</a>.</td>
+            </tr>
+            <tr>
+                <td>xLabels</td>
+                <td>Array[string]</td>
+                <td>Optional parameter that is used with the category axis and is used if the axis is horizontal</td>
+            </tr>
+            <tr>
+                <td>yLabels</td>
+                <td>Array[string]</td>
+                <td>Optional parameter that is used with the category axis and is used if the axis is vertical</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h5>Creating a Chart with Options</h5>
+<p>To create a chart with configuration options, simply pass an object containing your configuration to the constructor. In the example below, a line chart is created and configured to not be responsive.</p>
+<pre>
+<code class="lang-javascript"><span class="hljs-keyword">var</span> chartInstance = <span class="hljs-keyword">new</span> Chart(ctx, {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'line'</span>,
+    <span class="hljs-attr">data</span>: data,
+    <span class="hljs-attr">options</span>: {
+        <span class="hljs-attr">responsive</span>: <span class="hljs-literal">false</span>
+    }
+});
+</code>
+</pre>
                                 <p>Please refer to <a href="http://www.chartjs.org/docs/">http://www.chartjs.org/docs/</a> for detailed documentation</p>
+                                
                               </div>
                               <div role="tabpanel" class="tab-pane" id="flotcharts">
                                 <h4>Flot</h4>
                                 <p>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.</p>
 									
-									<div id="doc-line-chart" style="width:50%;height:300px" class="flot-chart-line"></div>
+									<div id="doc-line-chart" style="width:50%;height:300px"></div>
 									<h5>Usage</h5>
 
 									<p>Include jquery.flot.js into your document.</p>
@@ -1077,7 +1153,7 @@ showNotification: function(from, align){
 									<div>
 										<div>
 											<pre class="prettyprint linenums">
-&lt;div id=&quot;doc-line-chart&quot; style=&quot;width:50%;height:300px&quot; class=&quot;flot-chart-line&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;doc-line-chart&quot; style=&quot;width:50%;height:300px&quot; &gt;&lt;/div&gt;
 											</pre>
 										</div>
 									</div>
@@ -1091,9 +1167,9 @@ var d1 = [[0,30],[1,35],[2,35],[3,30],[4,30],[5,35],[6,32],[7,37],[8,30],[9,35],
 var d2 = [[0,50],[1,40],[2,45],[3,60],[4,50],[5,50],[6,60],[7,55],[8,50],[9,50],[10,60],[11,35]];
 var d3 = [[0,40],[1,50],[2,35],[3,25],[4,40],[5,45],[6,55],[7,50],[8,35],[9,40],[10,48],[11,40]];
 
-/*---------------------------------
-	Chart Options
----------------------------------*/
+
+//Chart Options
+
 var options = {
 	series: {
 		shadowSize: 0,
@@ -1144,9 +1220,9 @@ var options = {
 	colors: [&quot;#6baa01&quot;, &quot;#33bdda&quot;, &quot;#008ee4&quot;]
 };
 
-/*---------------------------------
-	Regular Line Chart
----------------------------------*/
+
+// Create a regular Line Chart
+
 
 $.plot($(&quot;#doc-line-chart&quot;), [
 	{data: d1, lines: { show: true  }, label: &#39;Product A&#39;, stack: true, color: &#39;#F9D900&#39; },
@@ -1160,178 +1236,7 @@ $.plot($(&quot;#doc-line-chart&quot;), [
                                 <p>Please refer to <a href="http://www.flotcharts.org/">http://www.flotcharts.org//</a> for detailed documentation</p>
 
                               </div>
-                              <div role="tabpanel" class="tab-pane" id="inlinecharts">
-                        <h4>Sparklines</h4>
-                            <p>Create nice pie charts with the HTML5 canvas
-                                element using this popular JQuery plugin. Please refer to <a href="http://omnipotent.net/jquery.sparkline/#s-docs">http://omnipotent.net/jquery.sparkline/#s-docs</a> for detailed documentation.
-                            </p>
-                            <p>Shown below are widgets incorporating Sparkines chart. The HTML markup and Javascript used are also shown</p>
-                   
-                    <div class="mini-charts">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="dash-metric md-bg-red">
-                                    <div class="clearfix">
-                                        <div class="p-30 pull-right">
-                                            <p class="c-white m-b-0">Revenue</p>
-                                            <h2 class="c-white m-t-0">651,893K</h2>
-                                        </div>
-                                        <div class="chart m-l-20 stats-bar pull-bottom"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br/>
-                        <pre class="prettyprint linenums">
-&lt;div class=&quot;dash-metric md-bg-red&quot;&gt;
-	&lt;div class=&quot;clearfix&quot;&gt;
-		&lt;div class=&quot;p-30 pull-right&quot;&gt;
-			&lt;p class=&quot;c-white m-b-0&quot;&gt;Revenue&lt;/p&gt;
-			&lt;h2 class=&quot;c-white m-t-0&quot;&gt;651,893K&lt;/h2&gt;
-		&lt;/div&gt;
-		&lt;div class=&quot;chart m-l-20 stats-bar pull-bottom&quot;&gt;&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
 
-                        </pre>
-                        <br/>
-                        
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="mini-charts-item md-bg-teal">
-                                    <div class="clearfix">
-                                        <div class="chart chart-pie stats-pie"></div>
-                                        <div class="count">
-                                            <small>Conversion Rate</small>
-                                            <h2>7%</h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>    
-                        <br/>
-                        <pre class="prettyprint linenums">
-&lt;div class=&quot;mini-charts-item md-bg-teal&quot;&gt;
-	&lt;div class=&quot;clearfix&quot;&gt;
-		&lt;div class=&quot;chart chart-pie stats-pie&quot;&gt;&lt;/div&gt;
-		&lt;div class=&quot;count&quot;&gt;
-			&lt;small&gt;Conversion Rate&lt;/small&gt;
-			&lt;h2&gt;7%&lt;/h2&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-                        </pre>
-                        <br/>
-                        <pre class="prettyprint linenums">
-    /*-------------------------------------------
-        Sparkline
-    ---------------------------------------------*/
-    function sparklineBar(id, values, height, barWidth, barColor, barSpacing) {
-        $(&#39;.&#39;+id).sparkline(values, {
-            type: &#39;bar&#39;,
-            height: height,
-            barWidth: barWidth,
-            barColor: barColor,
-            barSpacing: barSpacing
-        })
-    }
-    
-    function sparklineLine(id, values, width, height, lineColor, fillColor, lineWidth, maxSpotColor, minSpotColor, spotColor, spotRadius, hSpotColor, hLineColor) {
-        $(&#39;.&#39;+id).sparkline(values, {
-            type: &#39;line&#39;,
-            width: width,
-            height: height,
-            lineColor: lineColor,
-            fillColor: fillColor,
-            lineWidth: lineWidth,
-            maxSpotColor: maxSpotColor,
-            minSpotColor: minSpotColor,
-            spotColor: spotColor,
-            spotRadius: spotRadius,
-            highlightSpotColor: hSpotColor,
-            highlightLineColor: hLineColor
-        });
-    }
-    
-    function sparklinePie(id, values, width, height, sliceColors) {
-        $(&#39;.&#39;+id).sparkline(values, {
-            type: &#39;pie&#39;,
-            width: width,
-            height: height,
-            sliceColors: sliceColors,
-            offset: 0,
-            borderWidth: 0
-        });
-    }    
-    
-    /* Mini Chart - Bar Chart 1 */
-    if ($(&#39;.stats-bar&#39;)[0]) {
-        sparklineBar(&#39;stats-bar&#39;, [6,4,8,6,5,6,7,8,3,5,9,5,8,4], &#39;35px&#39;, 3, &#39;#fff&#39;, 2);
-    }
-
-    /* Mini Chart - Pie Chart 1 */
-    if ($(&#39;.stats-pie&#39;)[0]) {
-        sparklinePie(&#39;stats-pie&#39;, [20, 35, 30, 5], 45, 45, [&#39;#fff&#39;, &#39;rgba(255,255,255,0.7)&#39;, &#39;rgba(255,255,255,0.4)&#39;, &#39;rgba(255,255,255,0.2)&#39;]);
-    }
-	
-                        </pre>
-                        <br/>         
-                    </div>
-
-                    <br/>
-                    <br>
-
-                        <h4>Easy Pie Chart</h4>
-                            <p>Create nice pie charts with the HTML5 canvas
-                                element using this popular JQuery plugin. Please refer to <a href="https://rendro.github.io/easy-pie-chart/">https://rendro.github.io/easy-pie-chart/</a> for detailed documentation.
-                            </p>
-                            <p>Shown below is a widget incorporating Easy Pie chart. The HTML markup and Javascript used are also shown</p>
-
-
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="epc-item md-bg-indigo-500">
-                                <div class="easy-pie main-pie" data-percent="45">
-                                    <div class="percent">91</div>
-                                    <div class="pie-title">Total Emails Sent</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-					<br/>
-					<pre class="prettyprint linenums">
-&lt;div class=&quot;epc-item md-bg-indigo-500&quot;&gt;
-	&lt;div class=&quot;easy-pie main-pie&quot; data-percent=&quot;45&quot;&gt;
-		&lt;div class=&quot;percent&quot;&gt;91&lt;/div&gt;
-		&lt;div class=&quot;pie-title&quot;&gt;Total Emails Sent&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-					</pre>
-					<br/>
-					<pre class="prettyprint linenums">
-	
-    /*-------------------------------------------
-        Easy Pie Charts
-    ---------------------------------------------*/
-    function easyPieChart(id, trackColor, scaleColor, barColor, lineWidth, lineCap, size) {
-        $(&#39;.&#39;+id).easyPieChart({
-            trackColor: trackColor,
-            scaleColor: scaleColor,
-            barColor: barColor,
-            lineWidth: lineWidth,
-            lineCap: lineCap,
-            size: size
-        });
-    }
-    
-    /* Main Pie Chart */
-    if ($(&#39;.main-pie&#39;)[0]) {
-        easyPieChart(&#39;main-pie&#39;, &#39;rgba(255,255,255,0.2)&#39;, &#39;rgba(255,255,255,0)&#39;, &#39;rgba(255,255,255,0.7)&#39;, 2, &#39;butt&#39;, 148);
-    }
-					</pre>
-					<br/>
-
-                              </div>
                             </div>
                           </div>
                         </div>
@@ -1357,661 +1262,378 @@ $.plot($(&quot;#doc-line-chart&quot;), [
 								<p>Examples of standard form controls supported in an example form layout.</p>
 								<h5>Inputs</h5>
 								<p>Most common form control, text-based input fields. Includes support for all HTML5 types: <code>text</code>, <code>password</code>, <code>datetime</code>, <code>datetime-local</code>, <code>date</code>, <code>month</code>, <code>time</code>, <code>week</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code>, and <code>color</code>.</p>
-								<div class="form-group">
-									<div class="fg-line">
-										<input type="text" class="form-control" placeholder="Input Default">
-									</div>
-								</div>								
-								<pre class="prettyprint linenums">
-&lt;div class=&quot;form-group&quot;&gt;
-	&lt;div class=&quot;fg-line&quot;&gt;
-		&lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Input Default&quot;&gt;
-	&lt;/div&gt;
+
+<h5>With help</h5>
+<div class="form-group label-floating is-empty">
+	<label class="control-label"></label>
+	<input type="text" class="form-control" value>
+	<span class="help-block">A block of help text that breaks onto a new line.</span>
+</div>
+<pre class="prettyprint linenums">
+&lt;div class="form-group label-floating is-empty"&gt;
+	&lt;label class="control-label"&gt;&lt;/label&gt;
+	&lt;input type="text" class="form-control" value&gt;
+	&lt;span class="help-block"&gt;A block of help text that breaks onto a new line.&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+<h5>Password</h5>
+<div class="form-group label-floating is-empty">
+	<label class="control-label"></label>
+	<input type="password" class="form-control" value>
+</div>
+<pre class="prettyprint linenums">
+&lt;div class="form-group label-floating is-empty"&gt;
+	&lt;label class="control-label"&gt;&lt;/label&gt;
+	&lt;input type="password" class="form-control" value&gt;
+&lt;/div&gt;
+</pre>
+<h5>Placeholder</h5>
+<div class="form-group label-floating is-empty">
+	<label class="control-label"></label>
+	<input type="text" class="form-control" placeholder="placeholder">
+</div>
+<pre class="prettyprint linenums">
+&lt;div class="form-group label-floating is-empty"&gt;
+	&lt;label class="control-label"&gt;&lt;/label&gt;
+	&lt;input type="text" class="form-control" placeholder="placeholder"&gt;
+&lt;/div&gt;
+</pre>
+
+<h5>Disabled</h5>
+<div class="form-group label-floating is-empty">
+	<label class="control-label"></label>
+	<input type="text" placeholder="Disabled input here..." disabled="" class="form-control">
+</div>
+<pre class="prettyprint linenums">
+&lt;div class="form-group label-floating is-empty"&gt;
+	&lt;label class="control-label"&gt;&lt;/label&gt;
+	&lt;input type="text" placeholder="Disabled input here..." disabled="" class="form-control"&gt;
+&lt;/div&gt;
+</pre>
+
+<h5>Static control</h5>
+
+<div class="form-group">
+	<p class="form-control-static">www.example.com</p>
+</div>
+<pre class="prettyprint linenums">
+&lt;h5&gt;Static control&lt;/h5&gt;
+&lt;div class="form-group"&gt;
+	&lt;p class="form-control-static"&gt;www.example.com&lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+
+
+
+<h5>Checkboxes and radios</h5>
+<div class="col-sm-12 checkbox-radios">
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="optionsCheckboxes"> First Checkbox
+		</label>
+	</div>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="optionsCheckboxes"> Second Checkbox
+		</label>
+	</div>
+<pre class="prettyprint linenums">
+&lt;div class="checkbox"&gt;
+	&lt;label&gt;
+		&lt;input type="checkbox" name="optionsCheckboxes"&gt; First Checkbox
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="checkbox"&gt;
+	&lt;label&gt;
+		&lt;input type="checkbox" name="optionsCheckboxes"&gt; Second Checkbox
+	&lt;/label&gt;
+&lt;/div&gt;
+</pre>
+
+</div>
+<div>
+	<div class="radio">
+		<label>
+			<input type="radio" name="optionsRadios" checked="true"> First Radio
+		</label>
+	</div>
+	<div class="radio">
+		<label>
+			<input type="radio" name="optionsRadios"> Second Radio
+		</label>
+	</div>
+<pre class="prettyprint linenums">
+&lt;div class="radio"&gt;
+	&lt;label&gt;
+		&lt;input type="radio" name="optionsRadios" checked="true"&gt; First Radio
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="radio"&gt;
+	&lt;label&gt;
+		&lt;input type="radio" name="optionsRadios"&gt; Second Radio
+	&lt;/label&gt;
+&lt;/div&gt;
+</pre>
+	
+</div>
+
+<h5>Inline checkboxes</h5>
+<div class="col-sm-12">
+	<div class="checkbox checkbox-inline">
+		<label>
+			<input type="checkbox" name="optionsCheckboxes">a
+		</label>
+	</div>
+	<div class="checkbox checkbox-inline">
+		<label>
+			<input type="checkbox" name="optionsCheckboxes">b
+		</label>
+	</div>
+	<div class="checkbox checkbox-inline">
+		<label>
+			<input type="checkbox" name="optionsCheckboxes">c
+		</label>
+	</div>
+	
+</div>
+<pre class="prettyprint linenums">
+&lt;div class="checkbox checkbox-inline"&gt;
+	&lt;label&gt;
+		&lt;input type="checkbox" name="optionsCheckboxes"&gt;a
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="checkbox checkbox-inline"&gt;
+	&lt;label&gt;
+		&lt;input type="checkbox" name="optionsCheckboxes"&gt;b
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="checkbox checkbox-inline"&gt;
+	&lt;label&gt;
+		&lt;input type="checkbox" name="optionsCheckboxes"&gt;c
+	&lt;/label&gt;
+&lt;/div&gt;
+</pre>
+</br>
+<h5>Custom Checkboxes &amp; radios</h5>
+<div class="col-sm-12 col-sm-offset-1 checkbox-radios">
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="optionsCheckboxes"> Unchecked
+		</label>
+	</div>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="optionsCheckboxes" checked> Checked
+		</label>
+	</div>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="optionsCheckboxes" disabled> Disabled Unchecked
+		</label>
+	</div>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" name="optionsCheckboxes" checked disabled> Disabled Checked
+		</label>
+	</div>
+</div>
+<pre class="prettyprint linenums">
+&lt;div class="checkbox"&gt;
+	&lt;label&gt;
+		&lt;input type="checkbox" name="optionsCheckboxes"&gt; Unchecked
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="checkbox"&gt;
+	&lt;label&gt;
+		&lt;input type="checkbox" name="optionsCheckboxes" checked&gt; Checked
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="checkbox"&gt;
+	&lt;label&gt;
+		&lt;input type="checkbox" name="optionsCheckboxes" disabled&gt; Disabled Unchecked
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="checkbox"&gt;
+	&lt;label&gt;
+		&lt;input type="checkbox" name="optionsCheckboxes" checked disabled&gt; Disabled Checked
+	&lt;/label&gt;
+&lt;/div&gt;
+</pre>
+
+
+<div class="col-sm-12 checkbox-radios">
+	<div class="radio">
+		<label>
+			<input type="radio" name="optionsRadios"> Radio is off
+		</label>
+	</div>
+	<div class="radio">
+		<label>
+			<input type="radio" name="optionsRadios" checked="true"> Radio is on
+		</label>
+	</div>
+	<div class="radio">
+		<label>
+			<input type="radio" name="optionsRadiosDisabled" disabled> Disabled Radio is off
+		</label>
+	</div>
+	<div class="radio">
+		<label>
+			<input type="radio" name="optionsRadiosDisabled" checked="true" disabled> Disabled Radio is on
+		</label>
+	</div>
+</div>
+<pre class="prettyprint linenums">
+&lt;div class="radio"&gt;
+	&lt;label&gt;
+		&lt;input type="radio" name="optionsRadios"&gt; Radio is off
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="radio"&gt;
+	&lt;label&gt;
+		&lt;input type="radio" name="optionsRadios" checked="true"&gt; Radio is on
+	&lt;/label&gt;
 &lt;/div&gt;	
-								</pre>
+	
+&lt;div class="radio"&gt;
+	&lt;label&gt;
+		&lt;input type="radio" name="optionsRadiosDisabled" disabled&gt; Disabled Radio is off
+	&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="radio"&gt;
+	&lt;label&gt;
+		&lt;input type="radio" name="optionsRadiosDisabled" checked="true" disabled&gt; Disabled Radio is on
+	&lt;/label&gt;
+&lt;/div&gt;
+</pre>
 
-								<p class="m-b-25 m-t-25 c-black f-500">Floating Label - Floating animation for label when
-									Input feild is active.</p>
-								<div class="form-group fg-float">
-									<div class="fg-line">
-										<input type="text" class="form-control fg-input">
-										<label class="fg-label">Input Default</label>
-									</div>
-								</div>
-								<pre class="prettyprint linenums">
-&lt;div class=&quot;form-group fg-float&quot;&gt;
-	&lt;div class=&quot;fg-line&quot;&gt;
-		&lt;input type=&quot;text&quot; class=&quot;form-control fg-input&quot;&gt;
-		&lt;label class=&quot;fg-label&quot;&gt;Input Default&lt;/label&gt;
+
+<h5>Input with success</h5>
+<div class="col-sm-12">
+	<div class="form-group label-floating is-empty has-success">
+		<label class="control-label"></label>
+		<input type="text" class="form-control" value="Success">
+		<span class="material-icons form-control-feedback">done</span>
+	</div>
+</div>
+<pre class="prettyprint linenums">
+&lt;div class="form-group label-floating is-empty has-success"&gt;
+	&lt;label class="control-label"&gt;&lt;/label&gt;
+	&lt;input type="text" class="form-control" value="Success"&gt;
+	&lt;span class="material-icons form-control-feedback"&gt;done&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+
+<h5>Input with error</h5>
+<div class="col-sm-12">
+	<div class="form-group label-floating is-empty has-error">
+		<label class="control-label"></label>
+		<input type="text" class="form-control" value="Error Input">
+		<span class="material-icons form-control-feedback">clear</span>
+	</div>
+</div>
+<pre class="prettyprint linenums">
+&lt;div class="form-group label-floating is-empty has-error"&gt;
+	&lt;label class="control-label"&gt;&lt;/label&gt;
+	&lt;input type="text" class="form-control" value="Error Input"&gt;
+	&lt;span class="material-icons form-control-feedback"&gt;clear&lt;/span&gt;
+&lt;/div&gt;
+</pre>
+
+<h5>Column sizing</h5>
+<div class="col-sm-12">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="form-group label-floating is-empty">
+				<label class="control-label"></label>
+				<input type="text" class="form-control" placeholder=".col-md-3">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="form-group label-floating is-empty">
+				<label class="control-label"></label>
+				<input type="text" class="form-control" placeholder=".col-md-4">
+			</div>
+		</div>
+		<div class="col-md-5">
+			<div class="form-group label-floating is-empty">
+				<label class="control-label"></label>
+				<input type="text" class="form-control" placeholder=".col-md-5">
+			</div>
+		</div>
+	</div>
+</div>
+<pre class="prettyprint linenums">
+&lt;div class="row"&gt;
+	&lt;div class="col-md-3"&gt;
+		&lt;div class="form-group label-floating is-empty"&gt;
+			&lt;label class="control-label"&gt;&lt;/label&gt;
+			&lt;input type="text" class="form-control" placeholder=".col-md-3"&gt;
+		&lt;/div&gt;
 	&lt;/div&gt;
-&lt;/div&gt;
-								</pre>
-								<h5>Textarea</h5>
-								<p>Form control which supports multiple lines of text. Change <code>rows</code> attribute as necessary.</p>
-								<div class="form-group">
-									<div class="fg-line">
-										<textarea class="form-control" rows="5"
-												  placeholder="Let us type some lorem ipsum...."></textarea>
-									</div>
-								</div>
-								<pre class="prettyprint linenums">
-&lt;div class=&quot;form-group&quot;&gt;
-	&lt;div class=&quot;fg-line&quot;&gt;
-		&lt;textarea class=&quot;form-control&quot; rows=&quot;5&quot;
-				  placeholder=&quot;Let us type some lorem ipsum....&quot;&gt;&lt;/textarea&gt;
+	&lt;div class="col-md-4"&gt;
+		&lt;div class="form-group label-floating is-empty"&gt;
+			&lt;label class="control-label"&gt;&lt;/label&gt;
+			&lt;input type="text" class="form-control" placeholder=".col-md-4"&gt;
+		&lt;/div&gt;
 	&lt;/div&gt;
-&lt;/div&gt;
-								</pre>
-
-
-								<h5>Checkbox
-									<small>Checkboxes are for selecting one or several options in a list.</small>
-								</h5>
-
-
-								<p class="c-black f-500 m-b-20">Basic Example</p>
-
-								<div class="checkbox m-b-15">
-									<label>
-										<input type="checkbox" value="">
-										<i class="input-helper"></i>
-										Option one is this and that-be sure to include why it's great
-									</label>
-								</div>
-
-								<div class="checkbox disabled">
-									<label>
-										<input type="checkbox" value="" disabled="">
-										<i class="input-helper"></i>
-										Option two is disabled
-									</label>
-								</div>
-
-								<pre class="prettyprint linenums">
-&lt;div class=&quot;checkbox m-b-15&quot;&gt;
-	&lt;label&gt;
-		&lt;input type=&quot;checkbox&quot; value=&quot;&quot;&gt;
-		&lt;i class=&quot;input-helper&quot;&gt;&lt;/i&gt;
-		Option one is this and that-be sure to include why it&#39;s great
-	&lt;/label&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;checkbox disabled&quot;&gt;
-	&lt;label&gt;
-		&lt;input type=&quot;checkbox&quot; value=&quot;&quot; disabled=&quot;&quot;&gt;
-		&lt;i class=&quot;input-helper&quot;&gt;&lt;/i&gt;
-		Option two is disabled
-	&lt;/label&gt;
-&lt;/div&gt;
-								</pre>
-
-								<br/>
-
-								<br/>
-								<p class="c-black f-500 m-b-20 m-t-20">Inline Checkboxes - Use the '.checkbox-inline' classes on a series of checkboxes for controls that appear on the same line.</p>
-								<label class="checkbox checkbox-inline m-r-20">
-									<input type="checkbox" value="option1">
-									<i class="input-helper"></i>
-									1
-								</label>
-								<label class="checkbox checkbox-inline m-r-20">
-									<input type="checkbox" value="option2">
-									<i class="input-helper"></i>
-									2
-								</label>
-								<label class="checkbox checkbox-inline m-r-20">
-									<input type="checkbox" value="option3">
-									<i class="input-helper"></i>
-									3
-								</label>
-								<br/>
-								<br/>
-								<pre class="prettyprint linenums">
-&lt;label class=&quot;checkbox checkbox-inline m-r-20&quot;&gt;
-	&lt;input type=&quot;checkbox&quot; value=&quot;option1&quot;&gt;
-	&lt;i class=&quot;input-helper&quot;&gt;&lt;/i&gt;
-	1
-&lt;/label&gt;
-&lt;label class=&quot;checkbox checkbox-inline m-r-20&quot;&gt;
-	&lt;input type=&quot;checkbox&quot; value=&quot;option2&quot;&gt;
-	&lt;i class=&quot;input-helper&quot;&gt;&lt;/i&gt;
-	2
-&lt;/label&gt;
-&lt;label class=&quot;checkbox checkbox-inline m-r-20&quot;&gt;
-	&lt;input type=&quot;checkbox&quot; value=&quot;option3&quot;&gt;
-	&lt;i class=&quot;input-helper&quot;&gt;&lt;/i&gt;
-	3
-&lt;/label&gt;
-								</pre>
-
-
-								<h5>Radio
-									<small>Radios are for selecting one option from many. </small>
-								</h5>
-
-								<p class="c-black f-500 m-b-20">Basic Example</p>
-
-								<div class="radio m-b-15">
-									<label>
-										<input type="radio" name="sample" value="">
-										<i class="input-helper"></i>
-										Option one is this and that-be sure to include why it's great
-									</label>
-								</div>
-
-								<div class="radio m-b-15">
-									<label>
-										<input type="radio" name="sample" value="">
-										<i class="input-helper"></i>
-										Option two can be something else and selecting it will deselect option one
-									</label>
-								</div>
-
-								<div class="radio disabled">
-									<label>
-										<input type="radio" value="" disabled="">
-										<i class="input-helper"></i>
-										Option three is disabled
-									</label>
-								</div>
-
-								<pre class="prettyprint linenums">
-&lt;div class=&quot;radio m-b-15&quot;&gt;
-	&lt;label&gt;
-		&lt;input type=&quot;radio&quot; name=&quot;sample&quot; value=&quot;&quot;&gt;
-		&lt;i class=&quot;input-helper&quot;&gt;&lt;/i&gt;
-		Option one is this and that-be sure to include why it&#39;s great
-	&lt;/label&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;radio m-b-15&quot;&gt;
-	&lt;label&gt;
-		&lt;input type=&quot;radio&quot; name=&quot;sample&quot; value=&quot;&quot;&gt;
-		&lt;i class=&quot;input-helper&quot;&gt;&lt;/i&gt;
-		Option two can be something else and selecting it will deselect option one
-	&lt;/label&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;radio disabled&quot;&gt;
-	&lt;label&gt;
-		&lt;input type=&quot;radio&quot; value=&quot;&quot; disabled=&quot;&quot;&gt;
-		&lt;i class=&quot;input-helper&quot;&gt;&lt;/i&gt;
-		Option three is disabled
-	&lt;/label&gt;
-&lt;/div&gt;
-								</pre>
-
-								<br/>
-								<p class="c-black f-500 m-b-20 m-t-20">Inline Radios - Use the '.radio-inline' classes on a series of radios for controls that appear on the same line.</p>
-								<label class="radio radio-inline m-r-20">
-									<input type="radio" name="inlineRadioOptions" value="option1">
-									<i class="input-helper"></i>
-									1
-								</label>
-
-								<label class="radio radio-inline m-r-20">
-									<input type="radio" name="inlineRadioOptions" value="option2">
-									<i class="input-helper"></i>
-									2
-								</label>
-
-								<label class="radio radio-inline m-r-20">
-									<input type="radio" name="inlineRadioOptions" value="option3">
-									<i class="input-helper"></i>
-									3
-								</label>
-								<br/>
-								<br/>
-
-								<pre class="prettyprint linenums">
-&lt;label class=&quot;radio radio-inline m-r-20&quot;&gt;
-	&lt;input type=&quot;radio&quot; name=&quot;inlineRadioOptions&quot; value=&quot;option1&quot;&gt;
-	&lt;i class=&quot;input-helper&quot;&gt;&lt;/i&gt;
-	1
-&lt;/label&gt;
-
-&lt;label class=&quot;radio radio-inline m-r-20&quot;&gt;
-	&lt;input type=&quot;radio&quot; name=&quot;inlineRadioOptions&quot; value=&quot;option2&quot;&gt;
-	&lt;i class=&quot;input-helper&quot;&gt;&lt;/i&gt;
-	2
-&lt;/label&gt;
-
-&lt;label class=&quot;radio radio-inline m-r-20&quot;&gt;
-	&lt;input type=&quot;radio&quot; name=&quot;inlineRadioOptions&quot; value=&quot;option3&quot;&gt;
-	&lt;i class=&quot;input-helper&quot;&gt;&lt;/i&gt;
-	3
-&lt;/label&gt;
-								</pre>
-
-								<h5>Select
-									<small>Use the default option, or add multiple to show multiple options at once.</small>
-								</h5>
-
-								<p class="c-black f-500 m-b-20">Basic Example</p>
-
-								<div class="form-group">
-									<div class="fg-line">
-										<div class="select">
-											<select class="form-control">
-												<option>Select an Option</option>
-												<option>Option 1</option>
-												<option>Option 2</option>
-												<option>Option 3</option>
-												<option>Option 4</option>
-												<option>Option 5</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<pre class="prettyprint linenums">
-&lt;div class=&quot;form-group&quot;&gt;
-	&lt;div class=&quot;fg-line&quot;&gt;
-		&lt;div class=&quot;select&quot;&gt;
-			&lt;select class=&quot;form-control&quot;&gt;
-				&lt;option&gt;Select an Option&lt;/option&gt;
-				&lt;option&gt;Option 1&lt;/option&gt;
-				&lt;option&gt;Option 2&lt;/option&gt;
-				&lt;option&gt;Option 3&lt;/option&gt;
-				&lt;option&gt;Option 4&lt;/option&gt;
-				&lt;option&gt;Option 5&lt;/option&gt;
-			&lt;/select&gt;
+	&lt;div class="col-md-5"&gt;
+		&lt;div class="form-group label-floating is-empty"&gt;
+			&lt;label class="control-label"&gt;&lt;/label&gt;
+			&lt;input type="text" class="form-control" placeholder=".col-md-5"&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-								</pre>
+</pre>
 
-								<p class="c-black f-500 m-b-20">Disabled Stat</p>
-
-								<div class="form-group">
-									<div class="fg-line">
-										<div class="select">
-											<select class="form-control" disabled>
-												<option>Select an Option</option>
-												<option>Option 1</option>
-												<option>Option 2</option>
-												<option>Option 3</option>
-												<option>Option 4</option>
-												<option>Option 5</option>
-											</select>
-										</div>
-									</div>
-								</div>
-
-								<pre class="prettyprint linenums">
-&lt;div class=&quot;form-group&quot;&gt;
-	&lt;div class=&quot;fg-line&quot;&gt;
-		&lt;div class=&quot;select&quot;&gt;
-			&lt;select class=&quot;form-control&quot; disabled&gt;
-				&lt;option&gt;Select an Option&lt;/option&gt;
-				&lt;option&gt;Option 1&lt;/option&gt;
-				&lt;option&gt;Option 2&lt;/option&gt;
-				&lt;option&gt;Option 3&lt;/option&gt;
-				&lt;option&gt;Option 4&lt;/option&gt;
-				&lt;option&gt;Option 5&lt;/option&gt;
-			&lt;/select&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-								</pre>
 
 					
                                 <p> <a href="../../pages/forms/basic-elements.html" target="_blank">See Material Design Form Elements</a> </p>
                               </div>
                               <div role="tabpanel" class="tab-pane" id="advancedfrmelements">
-                            <h4>Input Groups</h4>
+                            <h4>DateTime Picker</h4>
                             <p>Extend form controls by adding text or buttons before, after, or on both sides of any text-based inputs.</p>
 
                             <p class="c-black f-500 m-b-5">Basic Example</p>
                             <p>Place one add-on or button on either side of an input. You may also place one on both
                                 sides of an input.
                             </p>
-                            <div class="row">
-                                <div class="col-sm-4">
-                                	<div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Full Name">
-                                        </div>
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+                                    <div class="form-group">
+                                        <label class="label-control">Datetime Picker</label>
+                                        <input type="text" class="form-control datetimepicker" value="10/05/2016" />
                                     </div>
-                                </div>
-                                <div class="col-sm-4">
-                                	<div class="input-group">
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Contact Number">
-                                        </div>
-                                        <span class="input-group-addon"><i class="zmdi zmdi-local-phone"></i></span>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                	<div class="input-group">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control" placeholder="Email Address">
-                                        </div>
-                                        <span class="input-group-addon"><i class="zmdi zmdi-globe"></i></span>
-                                    </div>
-                                </div>
-                            </div>
+        </div>
+    </div>
+</div>
                             
                             <br/>
 							<pre class="prettyprint linenums">
-&lt;div class=&quot;col-sm-4&quot;&gt;
-	&lt;div class=&quot;input-group&quot;&gt;
-		&lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;zmdi zmdi-account&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-		&lt;div class=&quot;fg-line&quot;&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Full Name&quot;&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;col-sm-4&quot;&gt;
-	&lt;div class=&quot;input-group&quot;&gt;
-		&lt;div class=&quot;fg-line&quot;&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Contact Number&quot;&gt;
-		&lt;/div&gt;
-		&lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;zmdi zmdi-local-phone&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;col-sm-4&quot;&gt;
-	&lt;div class=&quot;input-group&quot;&gt;
-		&lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;zmdi zmdi-email&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-		&lt;div class=&quot;fg-line&quot;&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Email Address&quot;&gt;
-		&lt;/div&gt;
-		&lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;zmdi zmdi-globe&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-							</pre>
-                            <br/>
-                            <p class="c-black f-500 m-b-5 m-t-20">Floating Labels</p>
-                            <small>Basic example for input groups with floating labels</small>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="input-group fg-float">
-                                        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
-                                        <div class="fg-line">
-                                            <input type="text" class="form-control">
-                                            <label class="fg-label">Full Name</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br/>
-							<pre class="prettyprint linenums">
-&lt;div class=&quot;input-group fg-float&quot;&gt;
-	&lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;zmdi zmdi-account&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-	&lt;div class=&quot;fg-line&quot;&gt;
-		&lt;input type=&quot;text&quot; class=&quot;form-control&quot;&gt;
-		&lt;label class=&quot;fg-label&quot;&gt;Full Name&lt;/label&gt;
-	&lt;/div&gt;
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class='col-sm-6'&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;div class='input-group date' id='datetimepicker1'&gt;
+                    &lt;input type='text' class=&quot;form-control&quot; /&gt;
+                    &lt;span class=&quot;input-group-addon&quot;&gt;
+                        &lt;span class=&quot;glyphicon glyphicon-calendar&quot;&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        &lt;/script&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
 							</pre>
                             <br/>
 
-                            <p class="c-black f-500 m-b-5 m-t-20">Different Sizes</p>
-                            <small>You may use the extra sizing classes to change size of the feilds.</small>
-
-                            <br/><br/>
-
-                            <div class="input-group input-group-lg">
-                                <span class="input-group-addon"><i class="zmdi zmdi-local-phone"></i></span>
-                                <div class="fg-line">
-                                    <input type="text" class="form-control input-lg" placeholder="Contact Number">
-                                </div>
-                            </div>
-                            <br/>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="zmdi zmdi-local-phone"></i></span>
-                                <div class="fg-line">
-                                    <input type="text" class="form-control" placeholder="Contact Number">
-                                </div>
-                            </div>
-                            <br/>
-                            <div class="input-group input-group-sm">
-                                <span class="input-group-addon"><i class="zmdi zmdi-local-phone"></i></span>
-                                <div class="fg-line">
-                                    <input type="text" class="form-control input-sm" placeholder="Contact Number">
-                                </div>
-                            </div>
-                            <br/>
-							<pre class="prettyprint linenums">
-&lt;div class=&quot;input-group input-group-lg&quot;&gt;
-	&lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;zmdi zmdi-local-phone&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-	&lt;div class=&quot;fg-line&quot;&gt;
-		&lt;input type=&quot;text&quot; class=&quot;form-control input-lg&quot; placeholder=&quot;Contact Number&quot;&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;br/&gt;
-&lt;div class=&quot;input-group&quot;&gt;
-	&lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;zmdi zmdi-local-phone&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-	&lt;div class=&quot;fg-line&quot;&gt;
-		&lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Contact Number&quot;&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;br/&gt;
-&lt;div class=&quot;input-group input-group-sm&quot;&gt;
-	&lt;span class=&quot;input-group-addon&quot;&gt;&lt;i class=&quot;zmdi zmdi-local-phone&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-	&lt;div class=&quot;fg-line&quot;&gt;
-		&lt;input type=&quot;text&quot; class=&quot;form-control input-sm&quot; placeholder=&quot;Contact Number&quot;&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-							</pre>
-                            <br/>
-
-
-                            <h4>Input Mask</h4>
-							<p>An inputmask helps the user with the input by ensuring a predefined format. This
-								can be useful for dates, numerics, phone numbers etc...
-							</p>
-                            
-
-                            <div class="row">
-                                <div class="col-sm-3 m-b-20">
-                                    <div class="form-group fg-line">
-                                        <label>Date</label>
-                                        <input type="text" class="form-control input-mask" data-mask="00/00/0000"
-                                               placeholder="eg: 23/05/2014">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3 m-b-20">
-                                    <div class="form-group fg-line">
-                                        <label>Time</label>
-                                        <input type="text" class="form-control input-mask" data-mask="00:00:00"
-                                               placeholder="eg: 23:06:55">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3 m-b-20">
-                                    <div class="form-group fg-line">
-                                        <label>Date Time</label>
-                                        <input type="text" class="form-control input-mask"
-                                               data-mask="00/00/0000 00:00:00" placeholder="eg: 00/00/0000 00:00:00">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3 m-b-20">
-                                    <div class="form-group fg-line">
-                                        <label>CEP</label>
-                                        <input type="text" class="form-control input-mask" data-mask="00000-000"
-                                               placeholder="eg: 00000-000">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3 m-b-20">
-                                    <div class="form-group fg-line">
-                                        <label>Phone Number</label>
-                                        <input type="text" class="form-control input-mask" data-mask="000-00-0000000"
-                                               placeholder="eg: 000-00-0000000">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3 m-b-20">
-                                    <div class="form-group fg-line">
-                                        <label>Phone with Odd</label>
-                                        <input type="text" class="form-control input-mask" data-mask="(00) 0000-0000"
-                                               placeholder="eg: (00) 0000-0000">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3 m-b-20">
-                                    <div class="form-group fg-line">
-                                        <label>US Phone Number</label>
-                                        <input type="text" class="form-control input-mask" data-mask="(000) 000-0000"
-                                               placeholder="eg: (000) 000-0000">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3 m-b-20">
-                                    <div class="form-group fg-line">
-                                        <label>CPF</label>
-                                        <input type="text" class="form-control input-mask" data-mask="000.000.000-00"
-                                               placeholder="eg: 000.000.000-00">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3 m-b-20">
-                                    <div class="form-group fg-line">
-                                        <label>Money</label>
-                                        <input type="text" class="form-control input-mask"
-                                               data-mask="000.000.000.000.000,00"
-                                               placeholder="eg: 000.000.000.000.000,00">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3 m-b-20">
-                                    <div class="form-group fg-line">
-                                        <label>IP Address</label>
-                                        <input type="text" class="form-control input-mask" data-mask="000.000.000.000"
-                                               placeholder="eg: 000.000.000.000">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3 m-b-20">
-                                    <div class="form-group fg-line">
-                                        <label>Percentage</label>
-                                        <input type="text" class="form-control input-mask" data-mask="00000,00%"
-                                               placeholder="eg: 00000,00%">
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-3">
-                                    <div class="form-group fg-line">
-                                        <label>Credit Card</label>
-                                        <input type="text" class="form-control input-mask"
-                                               data-mask="0000 0000 0000 0000" placeholder="eg: 0000 0000 0000 0000">
-                                    </div>
-                                </div>
-                            </div>
-                            <p><strong>Javascript</strong></p>
-							<pre class="prettyprint linenums">
-&lt;script src=&quot;../../vendors/input-mask/input-mask.min.js&quot;&gt;&lt;/script&gt;
-							</pre>
-							<br/>
-							<p><strong>HTML</strong></p>
-							<br/>
-							<pre class="prettyprint linenums">
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-sm-3 m-b-20&quot;&gt;
-		&lt;div class=&quot;form-group fg-line&quot;&gt;
-			&lt;label&gt;Date&lt;/label&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control input-mask&quot; data-mask=&quot;00/00/0000&quot;
-				   placeholder=&quot;eg: 23/05/2014&quot;&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;col-sm-3 m-b-20&quot;&gt;
-		&lt;div class=&quot;form-group fg-line&quot;&gt;
-			&lt;label&gt;Time&lt;/label&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control input-mask&quot; data-mask=&quot;00:00:00&quot;
-				   placeholder=&quot;eg: 23:06:55&quot;&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;col-sm-3 m-b-20&quot;&gt;
-		&lt;div class=&quot;form-group fg-line&quot;&gt;
-			&lt;label&gt;Date Time&lt;/label&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control input-mask&quot;
-				   data-mask=&quot;00/00/0000 00:00:00&quot; placeholder=&quot;eg: 00/00/0000 00:00:00&quot;&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;col-sm-3 m-b-20&quot;&gt;
-		&lt;div class=&quot;form-group fg-line&quot;&gt;
-			&lt;label&gt;CEP&lt;/label&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control input-mask&quot; data-mask=&quot;00000-000&quot;
-				   placeholder=&quot;eg: 00000-000&quot;&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;col-sm-3 m-b-20&quot;&gt;
-		&lt;div class=&quot;form-group fg-line&quot;&gt;
-			&lt;label&gt;Phone Number&lt;/label&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control input-mask&quot; data-mask=&quot;000-00-0000000&quot;
-				   placeholder=&quot;eg: 000-00-0000000&quot;&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;col-sm-3 m-b-20&quot;&gt;
-		&lt;div class=&quot;form-group fg-line&quot;&gt;
-			&lt;label&gt;Phone with Odd&lt;/label&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control input-mask&quot; data-mask=&quot;(00) 0000-0000&quot;
-				   placeholder=&quot;eg: (00) 0000-0000&quot;&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;col-sm-3 m-b-20&quot;&gt;
-		&lt;div class=&quot;form-group fg-line&quot;&gt;
-			&lt;label&gt;US Phone Number&lt;/label&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control input-mask&quot; data-mask=&quot;(000) 000-0000&quot;
-				   placeholder=&quot;eg: (000) 000-0000&quot;&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;col-sm-3 m-b-20&quot;&gt;
-		&lt;div class=&quot;form-group fg-line&quot;&gt;
-			&lt;label&gt;CPF&lt;/label&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control input-mask&quot; data-mask=&quot;000.000.000-00&quot;
-				   placeholder=&quot;eg: 000.000.000-00&quot;&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;col-sm-3 m-b-20&quot;&gt;
-		&lt;div class=&quot;form-group fg-line&quot;&gt;
-			&lt;label&gt;Money&lt;/label&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control input-mask&quot;
-				   data-mask=&quot;000.000.000.000.000,00&quot;
-				   placeholder=&quot;eg: 000.000.000.000.000,00&quot;&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;col-sm-3 m-b-20&quot;&gt;
-		&lt;div class=&quot;form-group fg-line&quot;&gt;
-			&lt;label&gt;IP Address&lt;/label&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control input-mask&quot; data-mask=&quot;000.000.000.000&quot;
-				   placeholder=&quot;eg: 000.000.000.000&quot;&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;col-sm-3 m-b-20&quot;&gt;
-		&lt;div class=&quot;form-group fg-line&quot;&gt;
-			&lt;label&gt;Percentage&lt;/label&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control input-mask&quot; data-mask=&quot;00000,00%&quot;
-				   placeholder=&quot;eg: 00000,00%&quot;&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;col-sm-3&quot;&gt;
-		&lt;div class=&quot;form-group fg-line&quot;&gt;
-			&lt;label&gt;Credit Card&lt;/label&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control input-mask&quot;
-				   data-mask=&quot;0000 0000 0000 0000&quot; placeholder=&quot;eg: 0000 0000 0000 0000&quot;&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-							</pre>
 
                             <h4>Custom Select</h4>
 							<p>A custom select for Bootstrap using it's Dropdown component</p>
@@ -2216,137 +1838,7 @@ $.plot($(&quot;#doc-line-chart&quot;), [
 
 
 
-                            <h4>Chosen</h4>
-                            <p>Make long, unwieldy select boxes more user friendly.</p>
 
-                            <div class="row">
-                                <div class="col-sm-3 m-b-15">
-                                    <p class="f-500 c-black m-b-15">Basic Example</p>
-                                    <select class="chosen" data-placeholder="Choose a Country...">
-                                        <option value="United States">United States</option>
-                                        <option value="United Kingdom">United Kingdom</option>
-                                        <option value="Afghanistan">Afghanistan</option>
-                                        <option value="Aland Islands">Aland Islands</option>
-                                        <option value="Albania">Albania</option>
-                                        <option value="Algeria">Algeria</option>
-                                        <option value="American Samoa">American Samoa</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-sm-3 m-b-15">
-                                    <p class="f-500 c-black m-b-15">Disabled Items</p>
-                                    <select class="chosen" data-placeholder="Choose a Country...">
-                                        <option value="United States">United States</option>
-                                        <option value="United Kingdom">United Kingdom</option>
-                                        <option disabled value="Afghanistan">Afghanistan</option>
-                                        <option disabled value="Aland Islands">Aland Islands</option>
-                                        <option value="Albania">Albania</option>
-                                        <option disabled value="Algeria">Algeria</option>
-                                        <option value="American Samoa">American Samoa</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-sm-3 m-b-15">
-                                    <p class="f-500 c-black m-b-15">Multiple Example</p>
-                                    <select class="chosen" multiple data-placeholder="Choose a Country...">
-                                        <option value="United States">United States</option>
-                                        <option value="United Kingdom">United Kingdom</option>
-                                        <option value="Afghanistan">Afghanistan</option>
-                                        <option value="Aland Islands">Aland Islands</option>
-                                        <option value="Albania">Albania</option>
-                                        <option value="Algeria">Algeria</option>
-                                        <option value="American Samoa">American Samoa</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-sm-3 m-b-15">
-                                    <p class="f-500 c-black m-b-15">Option Group</p>
-                                    <select class="chosen" data-placeholder="Your Favorite Football Team">
-                                        <optgroup label="NFC EAST">
-                                            <option>Dallas Cowboys</option>
-                                            <option>New York Giants</option>
-                                            <option>Philadelphia Eagles</option>
-                                            <option>Washington Redskins</option>
-                                        </optgroup>
-                                        <optgroup label="NFC NORTH">
-                                            <option>Chicago Bears</option>
-                                            <option>Detroit Lions</option>
-                                            <option>Green Bay Packers</option>
-                                            <option>Minnesota Vikings</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-
-                            </div>
-                            <p><strong>Javascript</strong></p>
-							<pre class="prettyprint linenums">
-&lt;link href=&quot;../../vendors/chosen/chosen.css&quot; rel=&quot;stylesheet&quot;&gt;
-
-&lt;script src=&quot;../../vendors/chosen/chosen.jquery.js&quot;&gt;&lt;/script&gt;
-							</pre>
-							<br/>
-							<p><strong>HTML</strong></p>
-							<pre class="prettyprint linenums">
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-sm-3 m-b-15&quot;&gt;
-		&lt;p class=&quot;f-500 c-black m-b-15&quot;&gt;Basic Example&lt;/p&gt;
-		&lt;select class=&quot;chosen&quot; data-placeholder=&quot;Choose a Country...&quot;&gt;
-			&lt;option value=&quot;United States&quot;&gt;United States&lt;/option&gt;
-			&lt;option value=&quot;United Kingdom&quot;&gt;United Kingdom&lt;/option&gt;
-			&lt;option value=&quot;Afghanistan&quot;&gt;Afghanistan&lt;/option&gt;
-			&lt;option value=&quot;Aland Islands&quot;&gt;Aland Islands&lt;/option&gt;
-			&lt;option value=&quot;Albania&quot;&gt;Albania&lt;/option&gt;
-			&lt;option value=&quot;Algeria&quot;&gt;Algeria&lt;/option&gt;
-			&lt;option value=&quot;American Samoa&quot;&gt;American Samoa&lt;/option&gt;
-		&lt;/select&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;col-sm-3 m-b-15&quot;&gt;
-		&lt;p class=&quot;f-500 c-black m-b-15&quot;&gt;Disabled Items&lt;/p&gt;
-		&lt;select class=&quot;chosen&quot; data-placeholder=&quot;Choose a Country...&quot;&gt;
-			&lt;option value=&quot;United States&quot;&gt;United States&lt;/option&gt;
-			&lt;option value=&quot;United Kingdom&quot;&gt;United Kingdom&lt;/option&gt;
-			&lt;option disabled value=&quot;Afghanistan&quot;&gt;Afghanistan&lt;/option&gt;
-			&lt;option disabled value=&quot;Aland Islands&quot;&gt;Aland Islands&lt;/option&gt;
-			&lt;option value=&quot;Albania&quot;&gt;Albania&lt;/option&gt;
-			&lt;option disabled value=&quot;Algeria&quot;&gt;Algeria&lt;/option&gt;
-			&lt;option value=&quot;American Samoa&quot;&gt;American Samoa&lt;/option&gt;
-		&lt;/select&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;col-sm-3 m-b-15&quot;&gt;
-		&lt;p class=&quot;f-500 c-black m-b-15&quot;&gt;Multiple Example&lt;/p&gt;
-		&lt;select class=&quot;chosen&quot; multiple data-placeholder=&quot;Choose a Country...&quot;&gt;
-			&lt;option value=&quot;United States&quot;&gt;United States&lt;/option&gt;
-			&lt;option value=&quot;United Kingdom&quot;&gt;United Kingdom&lt;/option&gt;
-			&lt;option value=&quot;Afghanistan&quot;&gt;Afghanistan&lt;/option&gt;
-			&lt;option value=&quot;Aland Islands&quot;&gt;Aland Islands&lt;/option&gt;
-			&lt;option value=&quot;Albania&quot;&gt;Albania&lt;/option&gt;
-			&lt;option value=&quot;Algeria&quot;&gt;Algeria&lt;/option&gt;
-			&lt;option value=&quot;American Samoa&quot;&gt;American Samoa&lt;/option&gt;
-		&lt;/select&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&quot;col-sm-3 m-b-15&quot;&gt;
-		&lt;p class=&quot;f-500 c-black m-b-15&quot;&gt;Option Group&lt;/p&gt;
-		&lt;select class=&quot;chosen&quot; data-placeholder=&quot;Your Favorite Football Team&quot;&gt;
-			&lt;optgroup label=&quot;NFC EAST&quot;&gt;
-				&lt;option&gt;Dallas Cowboys&lt;/option&gt;
-				&lt;option&gt;New York Giants&lt;/option&gt;
-				&lt;option&gt;Philadelphia Eagles&lt;/option&gt;
-				&lt;option&gt;Washington Redskins&lt;/option&gt;
-			&lt;/optgroup&gt;
-			&lt;optgroup label=&quot;NFC NORTH&quot;&gt;
-				&lt;option&gt;Chicago Bears&lt;/option&gt;
-				&lt;option&gt;Detroit Lions&lt;/option&gt;
-				&lt;option&gt;Green Bay Packers&lt;/option&gt;
-				&lt;option&gt;Minnesota Vikings&lt;/option&gt;
-			&lt;/optgroup&gt;
-		&lt;/select&gt;
-	&lt;/div&gt;
-
-&lt;/div&gt;
-							</pre>
 
                             <h4>Toggle Switch</h4>
                             <p>Material Desing look alike Toggle Switches based on Radio Box.</p>
@@ -2510,153 +2002,7 @@ $.plot($(&quot;#doc-line-chart&quot;), [
 &lt;/div&gt;
 							</pre>
 
-                            <h4>Color Picker</h4>
-                            <p>Simplt HEX and HSL color picker with customizable options</p>
 
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="cp-container">
-                                        <div class="input-group form-group">
-                                            <span class="input-group-addon"><i
-                                                    class="zmdi zmdi-invert-colors"></i></span>
-                                            <div class="fg-line dropdown">
-                                                <input type="text" class="form-control cp-value" value="#03A9F4"
-                                                       data-toggle="dropdown">
-
-                                                <div class="dropdown-menu">
-                                                    <div class="color-picker" data-cp-default="#03A9F4"></div>
-                                                </div>
-
-                                                <i class="cp-value"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <br/>
-                            </div>
-                            <p><strong>Javascript</strong></p>
-							<pre class="prettyprint linenums">
-&lt;link href=&quot;../../vendors/farbtastic/farbtastic.css&quot; rel=&quot;stylesheet&quot;&gt;
-
-&lt;script src=&quot;../../vendors/farbtastic/farbtastic.min.js&quot;&gt;&lt;/script&gt;
-
-							</pre>
-							<br/>
-							<p><strong>HTML</strong></p>
-							<pre class="prettyprint linenums">
-&lt;div class=&quot;cp-container&quot;&gt;
-	&lt;div class=&quot;input-group form-group&quot;&gt;
-		&lt;span class=&quot;input-group-addon&quot;&gt;&lt;i
-				class=&quot;zmdi zmdi-invert-colors&quot;&gt;&lt;/i&gt;&lt;/span&gt;
-		&lt;div class=&quot;fg-line dropdown&quot;&gt;
-			&lt;input type=&quot;text&quot; class=&quot;form-control cp-value&quot; value=&quot;#03A9F4&quot;
-				   data-toggle=&quot;dropdown&quot;&gt;
-
-			&lt;div class=&quot;dropdown-menu&quot;&gt;
-				&lt;div class=&quot;color-picker&quot; data-cp-default=&quot;#03A9F4&quot;&gt;&lt;/div&gt;
-			&lt;/div&gt;
-
-			&lt;i class=&quot;cp-value&quot;&gt;&lt;/i&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-							</pre>
-
-                            <h4>HTML Editor</h4>
-                            <p>WYSIWYG Editor on Bootstrap</p>
-                        
-                            <p class="f-500 c-black m-b-20">Basic Example</p>
-                            <div class="html-editor"></div>
-                            <br/>
-							<pre class="prettyprint linenums">
-                            &lt;div class=&quot;html-editor&quot;&gt;&lt;/div&gt;
-							</pre>
-                            <br/>
-
-                            <p class="f-500 c-black m-b-5">Click to edit</p>
-                            <small>You can edit content on the fly</small>
-                            <div class="m-b-10 m-t-20">
-                                <button class="btn md-bg-blue-grey btn-sm hec-button">Click here to edit the following
-                                    content
-                                </button>
-                                <button class="btn btn-info btn-sm hec-save" style="display:none;">Save</button>
-                            </div>
-                            <div class="html-editor-click">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula erat sit amet
-                                aliquam vehicula. Aliquam aliquet et risus et consequat. Quisque ultrices nulla eu magna
-                                vulputate, quis varius massa tempor. Suspendisse sed condimentum purus, eget consequat
-                                dolor. Fusce aliquet ultricies porta. Nunc semper commodo leo at maximus. Duis maximus
-                                maximus leo, id lobortis nisi aliquam sit amet. Nullam vel ex id augue scelerisque
-                                congue sit amet eget urna.
-                            </div>
-
-                            <br/>
-                            <p><strong>Javascript</strong></p>
-							<pre class="prettyprint linenums">
-&lt;link href=&quot;../../vendors/summernote/dist/summernote.css&quot; rel=&quot;stylesheet&quot;&gt;
-
-&lt;script src=&quot;../../vendors/summernote/dist/summernote-updated.min.js&quot;&gt;&lt;/script&gt;
-
-							</pre>
-							<br/>
-							<p><strong>HTML</strong></p>
-							<pre class="prettyprint linenums">
-&lt;div class=&quot;m-b-10 m-t-20&quot;&gt;
-	&lt;button class=&quot;btn md-bg-blue-grey btn-sm hec-button&quot;&gt;Click here to edit the following
-		content
-	&lt;/button&gt;
-	&lt;button class=&quot;btn btn-info btn-sm hec-save&quot; style=&quot;display:none;&quot;&gt;Save&lt;/button&gt;
-&lt;/div&gt;
-&lt;div class=&quot;html-editor-click&quot;&gt;
-	Content goes here.
-&lt;/div&gt;
-							</pre>
-                            <br/>
-
-                            <p class="c-black f-500 m-b-5">Air-mode</p>
-                            <p>Air-mode gives clearer interface with hiddened toolbar. To reveal toolbar, select a
-                                text below where you want to shape up.
-                            </p>
-                            <div class="html-editor-airmod" contenteditable="true">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod quam vel lacinia
-                                facilisis. Sed condimentum nisi vel ante maximus, sit amet vestibulum leo euismod.
-                                Curabitur viverra faucibus nisi eu molestie. Donec convallis finibus felis porttitor
-                                tristique. Nulla pretium est et ante dignissim,
-                            </div>
-                            <br/>
-							<p><strong>HTML</strong></p>
-							<pre class="prettyprint linenums">
-&lt;div class=&quot;html-editor-airmod&quot; contenteditable=&quot;true&quot;&gt;
-	Content goes here.
-&lt;/div&gt;
-							</pre>
-                            <br/>
-                            <h4>Autocomplete</h4>
-							<p>Typeahead.js is a flexible JavaScript library that provides a strong foundation
-								for building robust autocompletes.
-							</p>
-
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="fg-line">
-                                        <input type="text" class="typeahead form-control" placeholder="States of USA">
-                                    </div>
-                                </div>
-                            </div>
-                            <p><strong>Javascript</strong></p>
-							<pre class="prettyprint linenums">
-
-
-&lt;script src=&quot;../../vendors/typeahead.js/dist/typeahead.bundle.min.js&quot;&gt;&lt;/script&gt;
-
-							</pre>
-							<br/>
-							<p><strong>HTML</strong></p>
-                            <br/>
-							<pre class="prettyprint linenums">
-&lt;input type=&quot;text&quot; class=&quot;typeahead form-control&quot; placeholder=&quot;States of USA&quot;&gt;
-							</pre>
                             <br/>
                             <h4>Simple File Input</h4>
 							<p>The file input plugin allows you to create a visually appealing file or image
@@ -3443,13 +2789,6 @@ $.plot($(&quot;#doc-line-chart&quot;), [
   &lt;!-- TABLE CONTENT --&gt;
 &lt;/table&gt;</pre>
 
-                                <h5><strong>Condensed table</strong></h5>
-                                <p>Use .table-condensed for a condensed table.</p>
-                                <pre class="prettyprint linenums">
-&lt;table class=&quot;table table-condensed&quot;&gt;
-  &lt;!-- TABLE CONTENT --&gt;
-&lt;/table&gt;</pre>
-
                                 <h5><strong>Contextual classes</strong></h5>
                                 <p>Use contextual classes to color table rows or individual cells.</p>
                                 <pre class="prettyprint linenums">
@@ -3473,52 +2812,58 @@ $.plot($(&quot;#doc-line-chart&quot;), [
  
                               </div>
                               <div role="tabpanel" class="tab-pane" id="datatables">
-									<h5>Data Table</h5>
-									<p>jQuery Bootgrid is a powerful table extender if you will. It extends your table with nice and helpful features as you will see right below. Check out the demos here and get a first-hand impression!</p>
-
-									<p>Turn your simple table into a sophisticated data table and offer your users a nice experience and great features without any effort.</p>
+									<h5>DataTables Table plug-in for jQuery</h5>
+									<p>DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, and will add advanced interaction controls to any HTML table.</p>
 
 									<h5>include CSS and Javascript files</h5>
 
-									First of all add jquery.bootgrid.min.css in the &lt;head&gt; of the document
+									First of all add jquery.dataTables.min.css in the &lt;head&gt; of the document
 
 									<pre class="prettyprint linenums">&lt;head&gt;
-	&lt;link href=&quot;../../vendors/bootgrid/jquery.bootgrid.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+	&lt;link href=&quot;../../vendors/DataTables/jquery.dataTables.min.css&quot; rel=&quot;stylesheet&quot;&gt;
 &lt;/head&gt;</pre>
-									Then include jQuery and jquery.bootgrid.updated.min.js into your document. 
+									Then include jQuery and jquery.dataTables.min.js into your document. 
 
 									<pre class="prettyprint linenums">&lt;body&gt;
 	....
 	&lt;!-- jQuery --&gt;
 		&lt;script src=&quot;../../vendors/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;
-		&lt;script src=&quot;../../vendors/bootstrap/dist/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
 
-
-	&lt;!-- Bootgrid plugins --&gt;
-		&lt;script src=&quot;../../vendors/bootgrid/jquery.bootgrid.updated.min.js&quot;&gt;&lt;/script&gt;
+	&lt;!-- DataTables.net plugins --&gt;
+		&lt;script src=&quot;../../vendors/DataTables/jquery.dataTables.min.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt</pre>
 
-									<h5>HTML</h5>
-									<pre class="prettyprint linenums">&lt;table id=&quot;grid-basic&quot; class=&quot;table table-condensed table-hover table-striped&quot;&gt;
-	&lt;thead&gt;
-		&lt;tr&gt;
-			&lt;th data-column-id=&quot;id&quot; data-type=&quot;numeric&quot;&gt;ID&lt;/th&gt;
-			&lt;th data-column-id=&quot;sender&quot;&gt;Sender&lt;/th&gt;
-			&lt;th data-column-id=&quot;received&quot; data-order=&quot;desc&quot;&gt;Received&lt;/th&gt;
-		&lt;/tr&gt;
-	&lt;/thead&gt;
-	&lt;tbody&gt;
-		&lt;tr&gt;
-			&lt;td&gt;10238&lt;/td&gt;
-			&lt;td&gt;eduardo@pingpong.com&lt;/td&gt;
-			&lt;td&gt;14.10.2013&lt;/td&gt;
-		&lt;/tr&gt;
-		...
-	&lt;/tbody&gt;
-&lt;/table&gt;</pre>
+
+<h5>HTML</h5>
+
+<p>For DataTables to be able to enhance an HTML table, the table must be valid, well formatted HTML, with a header (<code class="tag" title="HTML tag">thead</code>) and a body (<code class="tag" title="HTML tag">tbody</code>). An optional footer (<code class="tag" title="HTML tag">tfoot</code>) can also be used.</p>
+
+<pre class="prettyprint linenums">&lt;table id="table_id" class="display"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Column 1&lt;/th&gt;
+            &lt;th&gt;Column 2&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Row 1 Data 1&lt;/td&gt;
+            &lt;td&gt;Row 1 Data 2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Row 2 Data 1&lt;/td&gt;
+            &lt;td&gt;Row 2 Data 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+
+<p>If you are generating your HTML document using a server-side program, such as a PHP script, a Ruby script, a C# program or anything else - all they need to do is output your table like this. This is exactly what you would have for a normal HTML table, although sometimes you might need to add the <code class="tag" title="HTML tag">thead</code> and <code class="tag" title="HTML tag">tbody</code> tags, as these aren't always used (they allow DataTables to know what should be used for the column headers and the click-to-order controls).</p>
+
+<p>Note that DataTables can actually generate the <code class="tag" title="HTML tag">thead</code> and <code class="tag" title="HTML tag">tbody</code> for you, along with all of the rows and cells of the table, if you are using Ajax sourced data, but for the moment we'll focus on a plain HTML. For more information about the different data sources DataTables can use, please see the <a href="https://datatables.net/manual/data">data sources</a> section</p>
 
 									<h5>Javascript</h5>
-									<pre class="prettyprint linenums">$(&quot;#grid-basic&quot;).bootgrid();</pre>
+									<pre class="prettyprint linenums">$(&quot;#myTable&quot;).DataTable();</pre>
                               </div>
                               
                               
@@ -3538,25 +2883,19 @@ $.plot($(&quot;#doc-line-chart&quot;), [
 								<pre class='hierarchy bring-up'>
 								<code class="language-bash" data-lang="bash">
 Turbo/
-├── dist/
+├── assets/
 │   ├── css/
 │   ├── js/
 │   ├── img/
-│   └── fonts/
-├── build/
-│   └── less/
-│        └── Turbo Less files
+│   ├── sass/
+│   └── vendors/
+│  
 ├── pages/
 │   └── Turbo HTML pages
-│
-├── media/
-│   └── Images files used for galleries
 │  
 └── vendors/
-    ├─── All external vendor plugins CSS and JS files
-    └────bootstrap 
-	      └── less/
-               └── Bootstrap less files/ (Only for reference. No modifications have been made)
+    └────All external vendor plugins CSS and JS files
+
     
     							</code>
     							</pre>
@@ -3581,8 +2920,6 @@ Turbo/
 Turbo/
 	│
 	└──vendors                        
-		├──animate.css/(http://daneden.github.io/animate.css/)
-		├──autosize/ (http://www.jacklmoore.com/autosize/)
 		├──bootgrid/ (https://github.com/rstaib/jquery-bootgrid)
 		├──bootstrap/ (getbootstrap.com)
 		├──bootstrap-growl/ (https://github.com/ifightcrime/bootstrap-growl)
@@ -3591,8 +2928,6 @@ Turbo/
 		├──charts
 		│   ├──Flot/ (http://www.flotcharts.org/)
 		│   ├──ChartJS/ (http://www.chartjs.org/)
-		│   └──Sparkline/ (http://omnipotent.net/jquery.sparkline/)    
-		├──chosen/ (http://harvesthq.github.io/chosen/)
 		├──dropzone
 		├──eonasdan-bootstrap-datetimepicker/ (http://eonasdan.github.io/bootstrap-datetimepicker/)
 		├──farbtastic/ (https://github.com/mattfarina/farbtastic)
@@ -3605,19 +2940,14 @@ Turbo/
 		├──jquery-ui
 		├──jquery-ui-1.12.0
 		├──jquery-ui-1.12.0.custom.zip
-		├──jquery.easy-pie-chart/ (http://rendro.github.io/easy-pie-chart/)
 		├──lightgallery
 		├──malihu-custom-scrollbar-plugin
 		├──map
 		├──material-design-iconic-font/ (http://zavoloklom.github.io/material-design-iconic-font/icons.html)
-		├──mediaelement/ (http://mediaelementjs.com/)
 		├──moment/ (http://momentjs.com/)
 		├──nouislider/ (http://refreshless.com/nouislider/)
 		├──simpleWeather/ (http://simpleweatherjs.com/)
-		├──summernote/ (http://summernote.org)
-		├──sweetalert
-		├──typeahead.js/ (from Twitter, Inc)
-		├──Waves
+		├──sweetalert2
 		└── weather-icons                        
 
 Images used in this template are taken from Pixabay
@@ -3681,7 +3011,13 @@ Images used in this template are taken from Pixabay
 <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
 <script src="../../assets/js/moment.min.js"></script>
 <!--  Charts Plugin -->
-<script src="../../assets/js/chartist.min.js"></script>
+<script src="../../assets/vendors/charts/chartjs/Chart.min.js" type="text/javascript"></script>
+<script src="../../assets/vendors/charts/flot/jquery.flot.js"></script>
+<script src="../../assets/vendors/charts/flot/jquery.flot.resize.js"></script>
+<script src="../../assets/vendors/charts/flot/jquery.flot.pie.js"></script>
+<script src="../../assets/vendors/charts/flot/jquery.flot.stack.js"></script>
+<script src="../../assets/vendors/charts/flot/jquery.flot.categories.js"></script>
+
 <!--  Plugin for the Wizard -->
 <script src="../../assets/js/jquery.bootstrap-wizard.js"></script>
 <!--  Notifications Plugin    -->
@@ -3721,14 +3057,141 @@ Images used in this template are taken from Pixabay
 			collapsible: true,
 			animate: 200
 		});
+
+		// Init Sliders
+		//md.initSliders()
 		
-		
+		// Initialize DateTime Picker
+		demo.initDocExtendedDatetimepickers();
+            
+            
 		//Sweet Alert2
 
 		$('#sweetalert-demo').on('click', function () {
 			swal('Here is a message!');
 		});
 		
+		/*-----------------------------------------------------------
+			Charts - Documentation
+		-----------------------------------------------------------*/
+		$(document).ready(function() {
+		
+		   /*---------------------
+			----- ChartJS BAR CHART -----
+			---------------------*/
+			var barChartCanvas = $("#docMyChart").get(0).getContext("2d");
+			var barChartConfig = {
+				type: 'bar',
+				data: {
+					labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+					datasets: [{
+						label: '# of Votes',
+						data: [12, 19, 3, 5, 2, 3],
+						backgroundColor: [
+							'rgba(255, 99, 132, 0.2)',
+							'rgba(54, 162, 235, 0.2)',
+							'rgba(255, 206, 86, 0.2)',
+							'rgba(75, 192, 192, 0.2)',
+							'rgba(153, 102, 255, 0.2)',
+							'rgba(255, 159, 64, 0.2)'
+						],
+						borderColor: [
+							'rgba(255,99,132,1)',
+							'rgba(54, 162, 235, 1)',
+							'rgba(255, 206, 86, 1)',
+							'rgba(75, 192, 192, 1)',
+							'rgba(153, 102, 255, 1)',
+							'rgba(255, 159, 64, 1)'
+						],
+						borderWidth: 1
+					}]
+				},
+				options: {
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero:true
+							}
+						}]
+					}
+				}
+			};
+			
+			var barChart = new Chart(barChartCanvas,barChartConfig);			
+			
+		   /*---------------------
+			----- Flot Line CHART -----
+			---------------------*/				
+			var d1 = [[0,30],[1,35],[2,35],[3,30],[4,30],[5,35],[6,32],[7,37],[8,30],[9,35],[10,30],[11,31]];
+			var d2 = [[0,50],[1,40],[2,45],[3,60],[4,50],[5,50],[6,60],[7,55],[8,50],[9,50],[10,60],[11,35]];
+			var d3 = [[0,40],[1,50],[2,35],[3,25],[4,40],[5,45],[6,55],[7,50],[8,35],[9,40],[10,48],[11,40]];
+
+			/*---------------------------------
+				Chart Options
+			---------------------------------*/
+			var options = {
+				series: {
+					shadowSize: 0,
+					lines: {
+						show: true,
+					},
+				},
+				grid: {
+					borderWidth: 1,
+					labelMargin:10,
+					mouseActiveRadius:6,
+					borderColor: '#eee',
+					show : true,
+					hoverable : true,
+					clickable : true
+		
+				},
+				xaxis: {
+					tickColor: '#fff',
+					tickDecimals: 0,
+					font :{
+						lineHeight: 13,
+						style: "normal",
+						color: "#9f9f9f"
+					},
+					shadowSize: 0,
+					ticks: [[0,"Jan"], [1,"Feb"], [2,"Mar"], [3,"Apr"], [4,"May"], [5,"Jun"], [6,"Jul"], [7,"Aug"], [8,"Sep"], [9,"Oct"], [10,"Nov"], [11,"Dec"]]
+				},
+	
+				yaxis: {
+					tickColor: '#eee',
+					tickDecimals: 0,
+					font :{
+						lineHeight: 13,
+						style: "normal",
+						color: "#9f9f9f",
+					},
+					shadowSize: 0
+				},
+	
+				legend: {
+					container: '.flc-line',
+					backgroundOpacity: 0.5,
+					noColumns: 0,
+					backgroundColor: "white",
+					lineWidth: 0
+				},
+				colors: ["#6baa01", "#33bdda", "#008ee4"]
+			};
+
+			/*---------------------------------
+				Regular Line Chart
+			---------------------------------*/
+
+			$.plot($("#doc-line-chart"), [
+				{data: d1, lines: { show: true  }, label: 'Product A', stack: true, color: '#F9D900' },
+				{data: d2, lines: { show: true }, label: 'Product B', stack: true, color: '#A9E200' },
+				{data: d3, lines: { show: true }, label: 'Product C', stack: true, color: '#22BAD9' }
+			], options);
+
+
+		});
+	
 		
 	});
 </script>
