@@ -80,14 +80,7 @@ $(function () {
 						"#36A2EB"
 					],
 					label: 'My dataset' // for legend
-				}],
-				labels: [
-					"Red",
-					"Green",
-					"Yellow",
-					"Grey",
-					"Blue"
-				]
+				}]
 			},
 			options: {
 				responsive: true

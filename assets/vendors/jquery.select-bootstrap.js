@@ -9,7 +9,7 @@
  /*
 
 
-      Creative Tim Modifications
+      Turbo Modifications
 
       Line: 384-385 - we changed glyphicons with material-icons.
       Line: 599 - we put tickIcon inside of span tag.

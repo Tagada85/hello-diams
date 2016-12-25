@@ -1,34 +1,11 @@
 /*! =========================================================
  *
- Material Dashboard PRO - V1.1.0
+ Turbo Admin Material Dashboard V1.0.0
 *
 * =========================================================
 *
-* Copyright 2016 Creative Tim (http://www.creative-tim.com/product/material-dashboard-pro)
- *
- *                       _oo0oo_
- *                      o8888888o
- *                      88" . "88
- *                      (| -_- |)
- *                      0\  =  /0
- *                    ___/`---'\___
- *                  .' \|     |// '.
- *                 / \|||  :  |||// \
- *                / _||||| -:- |||||- \
- *               |   | \  -  /// |   |
- *               | \_|  ''\---/''  |_/ |
- *               \  .-\__  '-'  ___/-. /
- *             ___'. .'  /--.--\  `. .'___
- *          ."" '<  `.___\_<|>_/___.' >' "".
- *         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
- *         \  \ `_.   \_ __\ /__ _/   .-` /  /
- *     =====`-.____`.___ \_____/___.-`___.-'=====
- *                       `=---='
- *
- *     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *
- *               Buddha Bless:  "No Bugs"
- *
+* Copyright 2016 Turbo
+
  * ========================================================= */
 .noUi-target,
 .noUi-target * {
@@ -12475,7 +12452,7 @@ footer {
  *----------------------------------------------------------
  * File Name : price-table.less                                   
  * Short Desc: Price Table Styles  
- * Author    : Dashplus
+ * Author    : Turbo
  * ---------------------------------------------------------
  */
 .price-table {
@@ -12631,7 +12608,7 @@ footer {
  *----------------------------------------------------------
  * File Name : preloader-progress-bar.less                                   
  * Short Desc: Preloader and Progress Bar Styles  
- * Author    : Dashplus
+ * Author    : Turbo
  * ---------------------------------------------------------
  */
 /* Preloader classes */
@@ -13195,7 +13172,7 @@ footer {
  *----------------------------------------------------------
  * File Name : wizard.less                                   
  * Short Desc: Wizard Styles  
- * Author    : Dashplus
+ * Author    : Turbo
  * ---------------------------------------------------------
  */
 .form-wizard.form-wizard-horizontal {

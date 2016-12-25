@@ -13,11 +13,11 @@
     ---------------------*/
 
 	var data = [
-		{ label: "Series1",  data: 50},
-		{ label: "Series2",  data: 90},
-		{ label: "Series3",  data: 70},
-		{ label: "Series4",  data: 80},
-		{ label: "Series5",  data: 110}
+        {data: 18000, color: '#f8bd19', label: 'Linda'},
+        {data: 20000, color: '#e44a00', label: 'John'},
+        {data: 30000, color: '#008ee4', label: 'David'},
+        {data: 13000, color: '#33bdda', label: 'Margaret'},
+        {data: 15000, color: '#6baa01', label: 'Richard'},
 	];
 
 

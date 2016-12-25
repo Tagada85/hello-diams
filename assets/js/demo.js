@@ -289,7 +289,7 @@ demo = {
                 tension: 0
             }),
             low: 0,
-            high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+            high: 50, // Turbo: we recommend you to set the high sa the biggest value + something for a better look
             chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
         }
 
@@ -317,7 +317,7 @@ demo = {
                 showGrid: false,
             },
             low: 0,
-            high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+            high: 50, // Turbo: we recommend you to set the high sa the biggest value + something for a better look
             chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
             showPoint: false
         }
@@ -341,7 +341,7 @@ demo = {
                 tension: 0
             }),
             low: 0,
-            high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+            high: 50, // Turbo: we recommend you to set the high sa the biggest value + something for a better look
             chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
             classNames: {
                 point: 'ct-point ct-white',
@@ -518,7 +518,7 @@ demo = {
                 tension: 0
             }),
             low: 0,
-            high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+            high: 50, // Turbo: we recommend you to set the high sa the biggest value + something for a better look
             chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
         }
 
@@ -542,7 +542,7 @@ demo = {
                 tension: 0
             }),
             low: 0,
-            high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+            high: 1000, // Turbo: we recommend you to set the high sa the biggest value + something for a better look
             chartPadding: { top: 0, right: 0, bottom: 0, left: 0}
         }
 
@@ -932,7 +932,7 @@ demo = {
 					className: 'event-red'
 				},
 				{
-					title: 'Md-pro Launch',
+					title: 'Turbo Launch',
 					start: new Date(y, m, d-2, 12, 0),
 					allDay: true,
 					className: 'event-azure'
@@ -945,17 +945,17 @@ demo = {
                     className: 'event-azure'
 				},
 				{
-					title: 'Click for Creative Tim',
+					title: 'Click for Urban UI',
 					start: new Date(y, m, 21),
 					end: new Date(y, m, 22),
-					url: 'http://www.creative-tim.com/',
+					url: 'http://www.urbanui.com/',
 					className: 'event-orange'
 				},
 				{
 					title: 'Click for Google',
 					start: new Date(y, m, 21),
 					end: new Date(y, m, 22),
-					url: 'http://www.creative-tim.com/',
+					url: 'http://www.google.com/',
 					className: 'event-orange'
 				}
 			]

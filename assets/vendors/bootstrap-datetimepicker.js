@@ -37,7 +37,7 @@
 /*
 
 
-     Creative Tim Modifications
+     Turbo Modifications
 
      Line: 298 - we added class btn-primary for custom styling button.
 
@@ -489,7 +489,7 @@
                     right: horizontal === 'left' ? 'auto' : parent.outerWidth() - element.outerWidth() - (parent === element ? 0 : position.left)
                 });
 
-                // Creative Tim Changes - we add after 180 ms the ".open" class, in this way the animations will be the same with the other dropdowns from the
+                // Turbo Changes - we add after 180 ms the ".open" class, in this way the animations will be the same with the other dropdowns from the
                 setTimeout(function(){
                     widget.addClass('open');
                 }, 180);
@@ -761,7 +761,7 @@
                     }
 
 
-                    // Creative Tim - we added a div inside each td for design purposes
+                    // Turbo - we added a div inside each td for design purposes
 
                     row.append('<td data-action="selectDay" data-day="' + currentDate.format('L') + '" class="day' + clsName + '"><div>' + currentDate.date() + '</div></td>');
                     currentDate.add(1, 'd');
@@ -791,7 +791,7 @@
                         html.push(row);
                     }
 
-                    // Creative Tim - we added a div inside each class minute for design purposes
+                    // Turbo - we added a div inside each class minute for design purposes
 
                     row.append('<td data-action="selectHour" class="hour' + (!isValid(currentHour, 'h') ? ' disabled' : '') + '"><div>' + currentHour.format(use24Hours ? 'HH' : 'hh') + '</div></td>');
                     currentHour.add(1, 'h');
@@ -813,7 +813,7 @@
                     }
 
 
-                    // Creative Tim - we added a div inside each class minute for design purposes
+                    // Turbo - we added a div inside each class minute for design purposes
 
                     row.append('<td data-action="selectMinute" class="minute' + (!isValid(currentMinute, 'm') ? ' disabled' : '') + '"><div>' + currentMinute.format('mm') + '</div></td>');
                     currentMinute.add(step, 'm');
@@ -833,7 +833,7 @@
                         html.push(row);
                     }
 
-                    // Creative Tim - we added a div inside each class minute for design purposes
+                    // Turbo - we added a div inside each class minute for design purposes
 
                     row.append('<td data-action="selectSecond" class="second' + (!isValid(currentSecond, 's') ? ' disabled' : '') + '"><div>' + currentSecond.format('ss') + '</div></td>');
                     currentSecond.add(5, 's');
@@ -947,7 +947,7 @@
                 widget.off('click', '[data-action]');
                 widget.off('mousedown', false);
 
-                // Creative Tim Changes - we remove the ".open" class, then, fter 400 ms call the .hide() method, in this way the animations will be the same with the other dropdowns from the dashboard
+                // Turbo Changes - we remove the ".open" class, then, fter 400 ms call the .hide() method, in this way the animations will be the same with the other dropdowns from the dashboard
 
                 widget.removeClass('open');
 
