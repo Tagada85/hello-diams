@@ -63,29 +63,22 @@
 @import "material-dashboard/tabs";
 @import "material-dashboard/responsive";
 
-
-
-// Turbo Overrides
 @import "bootstrap-mixins/text-overflow";
 @import "bootstrap-mixins/vendor-prefixes";
 @import "bootstrap-mixins/clearfix";
 
-@import "material-dashboard/mixins/anvar_dashplus_mixin";
+@import "material-dashboard/mixins/misc";
 @import "material-dashboard/color";
 
-@import "material-dashboard/turbo-overrides"; //sajeer
-@import "material-dashboard/anvar-turbo-overrides";
+@import "material-dashboard/misc2"; 
 @import "material-dashboard/accordion";
 @import "material-dashboard/pricing-table";
 @import "material-dashboard/preloader-progress-bar";
 @import "material-dashboard/popover";
 @import "material-dashboard/modal";
 @import "material-dashboard/media";
-
 @import "material-dashboard/chart";
-
-
-@import "temp-scss-from-dashplus/wizard";
+@import "material-dashboard/wizard";
 
 
 
