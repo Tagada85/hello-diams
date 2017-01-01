@@ -1,6 +1,4 @@
-/**
- * Created by anvartk on 05/07/15.
- */
+
 
     /* Flot Charts
      * -------

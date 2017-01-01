@@ -1,4 +1,6 @@
-demo = {
+"use strict";
+
+var demo = {
     initPickColor: function(){
         $('.pick-class-label').on('click',function(){
             var new_class = $(this).attr('new-class');
@@ -14,11 +16,11 @@ demo = {
     },
 
     checkFullPageBackgroundImage: function(){
-        $page = $('.full-page');
-        image_src = $page.data('image');
+        var $page = $('.full-page');
+        var image_src = $page.data('image');
 
         if(image_src !== undefined){
-            image_container = '<div class="full-page-background" style="background-image: url(' + image_src + ') "/>'
+            var image_container = '<div class="full-page-background" style="background-image: url(' + image_src + ') "/>'
             $page.append(image_container);
         }
     },
@@ -132,18 +134,18 @@ demo = {
 
               //check number of tabs and fill the entire row
               var $total = navigation.find('li').length;
-              $width = 100/$total;
+              var $width = 100/$total;
               var $wizard = navigation.closest('.wizard-card');
 
-              $display_width = $(document).width();
+              var $display_width = $(document).width();
 
               if($display_width < 600 && $total > 3){
                   $width = 50;
               }
 
                navigation.find('li').css('width',$width + '%');
-               $first_li = navigation.find('li:first-child a').html();
-               $moving_div = $('<div class="moving-tab">' + $first_li + '</div>');
+               var $first_li = navigation.find('li:first-child a').html();
+               var $moving_div = $('<div class="moving-tab">' + $first_li + '</div>');
                $('.wizard-card .wizard-navigation').append($moving_div);
                refreshAnimation($wizard, index);
                $('.moving-tab').css('transition','transform 0s');
@@ -174,7 +176,7 @@ demo = {
                     $($wizard).find('.btn-finish').hide();
                 }
 
-                button_text = navigation.find('li:nth-child(' + $current + ') a').html();
+                var button_text = navigation.find('li:nth-child(' + $current + ') a').html();
 
                 setTimeout(function(){
                     $('.moving-tab').text(button_text);
@@ -251,12 +253,12 @@ demo = {
         });
 
         function refreshAnimation($wizard, index){
-            total_steps = $wizard.find('li').length;
-            move_distance = $wizard.width() / total_steps;
-            step_width = move_distance;
+            var total_steps = $wizard.find('li').length;
+            var move_distance = $wizard.width() / total_steps;
+            var step_width = move_distance;
             move_distance *= index;
 
-            $current = index + 1;
+            var $current = index + 1;
 
             if($current == 1){
                 move_distance -= 8;
@@ -273,318 +275,6 @@ demo = {
         }
     },
 
-
-    initDocumentationCharts: function(){
-        /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
-
-        dataDailySalesChart = {
-            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-            series: [
-                [12, 17, 7, 17, 23, 18, 38]
-            ]
-        };
-
-        optionsDailySalesChart = {
-            lineSmooth: Chartist.Interpolation.cardinal({
-                tension: 0
-            }),
-            low: 0,
-            high: 50, // Turbo: we recommend you to set the high sa the biggest value + something for a better look
-            chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
-        }
-
-        var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-
-        var animationHeaderChart = new Chartist.Line('#websiteViewsChart', dataDailySalesChart, optionsDailySalesChart);
-    },
-
-    initCharts: function(){
-
-        /* ----------==========    Rounded Line Chart initialization    ==========---------- */
-
-        dataRoundedLineChart = {
-            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-            series: [
-                [12, 17, 7, 17, 23, 18, 38]
-            ]
-        };
-
-        optionsRoundedLineChart = {
-            lineSmooth: Chartist.Interpolation.cardinal({
-                tension: 10
-            }),
-            axisX: {
-                showGrid: false,
-            },
-            low: 0,
-            high: 50, // Turbo: we recommend you to set the high sa the biggest value + something for a better look
-            chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
-            showPoint: false
-        }
-
-        var RoundedLineChart = new Chartist.Line('#roundedLineChart', dataRoundedLineChart, optionsRoundedLineChart);
-
-        md.startAnimationForLineChart(RoundedLineChart);
-
-
-        /*  **************** Straight Lines Chart - single line with points ******************** */
-
-        dataStraightLinesChart = {
-          labels: ['\'07','\'08','\'09', '\'10', '\'11', '\'12', '\'13', '\'14', '\'15'],
-          series: [
-            [10, 16, 8, 13, 20, 15, 20, 34, 30]
-          ]
-        };
-
-        optionsStraightLinesChart = {
-            lineSmooth: Chartist.Interpolation.cardinal({
-                tension: 0
-            }),
-            low: 0,
-            high: 50, // Turbo: we recommend you to set the high sa the biggest value + something for a better look
-            chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
-            classNames: {
-                point: 'ct-point ct-white',
-                line: 'ct-line ct-white'
-            }
-        }
-
-        var straightLinesChart = new Chartist.Line('#straightLinesChart', dataStraightLinesChart, optionsStraightLinesChart);
-
-        md.startAnimationForLineChart(straightLinesChart);
-
-
-        /*  **************** Coloured Rounded Line Chart - Line Chart ******************** */
-
-
-        dataColouredRoundedLineChart = {
-          labels: ['\'06','\'07','\'08','\'09', '\'10', '\'11', '\'12', '\'13', '\'14','\'15'],
-          series: [
-            [287, 480, 290, 554, 690, 690, 500, 752, 650, 900, 944]
-          ]
-        };
-
-        optionsColouredRoundedLineChart = {
-          lineSmooth: Chartist.Interpolation.cardinal({
-              tension: 10
-          }),
-          axisY: {
-              showGrid: true,
-              offset: 40
-          },
-          axisX: {
-              showGrid: false,
-          },
-          low: 0,
-          high: 1000,
-          showPoint: true,
-          height: '300px'
-        };
-
-
-        var colouredRoundedLineChart = new Chartist.Line('#colouredRoundedLineChart', dataColouredRoundedLineChart, optionsColouredRoundedLineChart);
-
-        md.startAnimationForLineChart(colouredRoundedLineChart);
-
-
-        /*  **************** Coloured Rounded Line Chart - Line Chart ******************** */
-
-
-        dataColouredBarsChart = {
-          labels: ['\'06','\'07','\'08','\'09', '\'10', '\'11', '\'12', '\'13', '\'14','\'15'],
-          series: [
-            [287, 385, 490, 554, 586, 698, 695, 752, 788, 846, 944],
-            [67, 152, 143,  287, 335, 435, 437, 539, 542, 544, 647],
-            [23, 113, 67, 190, 239, 307, 308, 439, 410, 410, 509]
-          ]
-        };
-
-        optionsColouredBarsChart = {
-          lineSmooth: Chartist.Interpolation.cardinal({
-              tension: 10
-          }),
-          axisY: {
-              showGrid: true,
-              offset: 40
-          },
-          axisX: {
-              showGrid: false,
-          },
-          low: 0,
-          high: 1000,
-          showPoint: true,
-          height: '300px'
-        };
-
-
-        var colouredBarsChart = new Chartist.Line('#colouredBarsChart', dataColouredBarsChart, optionsColouredBarsChart);
-
-        md.startAnimationForLineChart(colouredBarsChart);
-
-
-
-        /*  **************** Public Preferences - Pie Chart ******************** */
-
-        var dataPreferences = {
-            labels: ['62%','32%','6%'],
-            series: [62, 32, 6]
-        };
-
-        var optionsPreferences = {
-            height: '230px'
-        };
-
-        Chartist.Pie('#chartPreferences', dataPreferences, optionsPreferences);
-
-        /*  **************** Simple Bar Chart - barchart ******************** */
-
-        var dataSimpleBarChart = {
-          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-          series: [
-            [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
-          ]
-        };
-
-        var optionsSimpleBarChart = {
-          seriesBarDistance: 10,
-          axisX: {
-            showGrid: false
-          }
-        };
-
-        var responsiveOptionsSimpleBarChart = [
-          ['screen and (max-width: 640px)', {
-            seriesBarDistance: 5,
-            axisX: {
-              labelInterpolationFnc: function (value) {
-                return value[0];
-              }
-            }
-          }]
-        ];
-
-        var simpleBarChart = Chartist.Bar('#simpleBarChart', dataSimpleBarChart, optionsSimpleBarChart, responsiveOptionsSimpleBarChart);
-
-        //start animation for the Emails Subscription Chart
-        md.startAnimationForBarChart(simpleBarChart);
-
-
-        var dataMultipleBarsChart = {
-          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-          series: [
-            [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
-            [412, 243, 280, 580, 453, 353, 300, 364, 368, 410, 636, 695]
-          ]
-        };
-
-        var optionsMultipleBarsChart = {
-            seriesBarDistance: 10,
-            axisX: {
-                showGrid: false
-            },
-            height: '300px'
-        };
-
-        var responsiveOptionsMultipleBarsChart = [
-          ['screen and (max-width: 640px)', {
-            seriesBarDistance: 5,
-            axisX: {
-              labelInterpolationFnc: function (value) {
-                return value[0];
-              }
-            }
-          }]
-        ];
-
-        var multipleBarsChart = Chartist.Bar('#multipleBarsChart', dataMultipleBarsChart, optionsMultipleBarsChart, responsiveOptionsMultipleBarsChart);
-
-        //start animation for the Emails Subscription Chart
-        md.startAnimationForBarChart(multipleBarsChart);
-    },
-
-    initDashboardPageCharts: function(){
-
-        /* ----------==========     Daily Sales Chart initialization    ==========---------- */
-
-        dataDailySalesChart = {
-            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-            series: [
-                [12, 17, 7, 17, 23, 18, 38]
-            ]
-        };
-
-        optionsDailySalesChart = {
-            lineSmooth: Chartist.Interpolation.cardinal({
-                tension: 0
-            }),
-            low: 0,
-            high: 50, // Turbo: we recommend you to set the high sa the biggest value + something for a better look
-            chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
-        }
-
-        var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-
-        md.startAnimationForLineChart(dailySalesChart);
-
-
-
-        /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
-
-        dataCompletedTasksChart = {
-            labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
-            series: [
-                [230, 750, 450, 300, 280, 240, 200, 190]
-            ]
-        };
-
-        optionsCompletedTasksChart = {
-            lineSmooth: Chartist.Interpolation.cardinal({
-                tension: 0
-            }),
-            low: 0,
-            high: 1000, // Turbo: we recommend you to set the high sa the biggest value + something for a better look
-            chartPadding: { top: 0, right: 0, bottom: 0, left: 0}
-        }
-
-        var completedTasksChart = new Chartist.Line('#completedTasksChart', dataCompletedTasksChart, optionsCompletedTasksChart);
-
-        // start animation for the Completed Tasks Chart - Line Chart
-        md.startAnimationForLineChart(completedTasksChart);
-
-
-        /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
-
-        var dataWebsiteViewsChart = {
-          labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
-          series: [
-            [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
-
-          ]
-        };
-        var optionsWebsiteViewsChart = {
-            axisX: {
-                showGrid: false
-            },
-            low: 0,
-            high: 1000,
-            chartPadding: { top: 0, right: 5, bottom: 0, left: 0}
-        };
-        var responsiveOptions = [
-          ['screen and (max-width: 640px)', {
-            seriesBarDistance: 5,
-            axisX: {
-              labelInterpolationFnc: function (value) {
-                return value[0];
-              }
-            }
-          }]
-        ];
-        var websiteViewsChart = Chartist.Bar('#websiteViewsChart', dataWebsiteViewsChart, optionsWebsiteViewsChart, responsiveOptions);
-
-        //start animation for the Emails Subscription Chart
-        md.startAnimationForBarChart(websiteViewsChart);
-
-    },
 
     showSwal: function(type){
 
@@ -783,57 +473,20 @@ demo = {
         marker.setMap(map);
 
 
-        // Custom Skin & Settings Map
-        var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
-        var mapOptions = {
-            zoom: 13,
-            center: myLatlng,
-            scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
-            disableDefaultUI: true, // a way to quickly hide all controls
-            zoomControl: true,
-            styles: [{"featureType":"water","stylers":[{"saturation":43},{"lightness":-11},{"hue":"#0088ff"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"hue":"#ff0000"},{"saturation":-100},{"lightness":99}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"color":"#808080"},{"lightness":54}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ece2d9"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#ccdca1"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#767676"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","stylers":[{"visibility":"off"}]},{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#b8cb93"}]},{"featureType":"poi.park","stylers":[{"visibility":"on"}]},{"featureType":"poi.sports_complex","stylers":[{"visibility":"on"}]},{"featureType":"poi.medical","stylers":[{"visibility":"on"}]},{"featureType":"poi.business","stylers":[{"visibility":"simplified"}]}]
-
-        }
-
-        var map = new google.maps.Map(document.getElementById("customSkinMap"), mapOptions);
-
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            title:"Custom Skin & Settings Map!"
-        });
-
-        marker.setMap(map);
 
 
 
-        // Satellite Map
-        var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
-        var mapOptions = {
-            zoom: 3,
-            scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
-            center: myLatlng,
-             mapTypeId: google.maps.MapTypeId.SATELLITE
-        }
-
-        var map = new google.maps.Map(document.getElementById("satelliteMap"), mapOptions);
-
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            title:"Satellite Map!"
-        });
-
-        marker.setMap(map);
 
 
     },
 
     initFullCalendar: function(){
-        $calendar = $('#fullCalendar');
+        var $calendar = $('#fullCalendar');
 
-        today = new Date();
-        y = today.getFullYear();
-        m = today.getMonth();
-        d = today.getDate();
+        var today = new Date();
+        var y = today.getFullYear();
+        var m = today.getMonth();
+        var d = today.getDate();
 
         $calendar.fullCalendar({
             viewRender: function(view, element) {
@@ -982,3 +635,6 @@ demo = {
 	}
 
 }
+
+
+

@@ -7,9 +7,10 @@
  * Copyright 2016 Turbo
 
  * ========================================================= */
+"use strict";
 
  (function(){
-     isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
+     var isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
      if (isWindows && !$('body').hasClass('sidebar-mini')){
         // if we are on windows OS we activate the perfectScrollbar function
@@ -40,7 +41,7 @@ var seq2 = 0, delays2 = 80, durations2 = 500;
 
 $(document).ready(function(){
 
-    $sidebar = $('.sidebar');
+    var $sidebar = $('.sidebar');
 
     $.material.init();
 
@@ -53,7 +54,7 @@ $(document).ready(function(){
         md.misc.sidebar_mini_active = true;
     }
 
-    window_width = $(window).width();
+    var window_width = $(window).width();
 
     // check if there is an image set for the sidebar's background
     md.checkSidebarImage();
@@ -128,7 +129,7 @@ $(window).resize(function(){
 
 });
 
-md = {
+var md = {
     misc:{
         navbar_menu_visible: 0,
         active_collapse: true,
@@ -136,11 +137,11 @@ md = {
     },
 
     checkSidebarImage: function(){
-        $sidebar = $('.sidebar');
-        image_src = $sidebar.data('image');
+        var $sidebar = $('.sidebar');
+        var image_src = $sidebar.data('image');
 
         if(image_src !== undefined){
-            sidebar_container = '<div class="sidebar-background" style="background-image: url(' + image_src + ') "/>';
+            var sidebar_container = '<div class="sidebar-background" style="background-image: url(' + image_src + ') "/>';
             $sidebar.append(sidebar_container);
         }
     },
@@ -205,7 +206,8 @@ md = {
                 $('.sidebar .collapse').collapse('hide').on('hidden.bs.collapse',function(){
                     $(this).css('height','auto');
                 });
-
+				
+				var isWindows;
                 if(isWindows){
                     $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
                 }

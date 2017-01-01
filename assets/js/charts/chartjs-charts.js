@@ -1,12 +1,10 @@
-/**
- * Created by anvartk on 05/07/15.
- */
-
-$(function () {
     /* ChartJS
      * -------
      * Here we will create a few charts using ChartJS
      */
+
+
+$(function () {
 
 
    /*---------------------
@@ -37,11 +35,11 @@ $(function () {
 					label: 'My dataset' // for legend
 				}],
 				labels: [
-					"Red",
-					"Green",
-					"Yellow",
-					"Grey",
-					"Blue"
+					"USA",
+					"Germany",
+					"Austalia",
+					"Canada",
+					"France"
 				]
 			},
 			options: {
@@ -80,10 +78,22 @@ $(function () {
 						"#36A2EB"
 					],
 					label: 'My dataset' // for legend
-				}]
+
+					
+				}],
+				labels: [
+					"USA",
+					"Germany",
+					"Austalia",
+					"Canada",
+					"France"
+				]
 			},
 			options: {
-				responsive: true
+				responsive: true,
+				legend: {
+					display: false
+				}
 			}
 		};
 		
