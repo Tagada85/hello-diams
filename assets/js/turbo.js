@@ -91,7 +91,7 @@ $(document).ready(function(){
             var $fix_button = $(this)
             var $card = $(this).parent('.card');
 
-            $card.find('.fix-broken-card').click(function(){
+            $card.find('.fix-broken-card').on('click',function(){
                 console.log(this);
                 var $header = $(this).parent().parent().siblings('.card-header, .card-image');
 
@@ -189,7 +189,7 @@ md = {
             }
         });
 
-        $('#minimizeSidebar').click(function(){
+        $('#minimizeSidebar').on('click',function(){
             var $btn = $(this);
 
             if(md.misc.sidebar_mini_active == true){
@@ -271,7 +271,7 @@ md = {
             $nav_content.insertBefore($sidebar_nav);
             $navbar_form.insertBefore($nav_content);
 
-            $(".sidebar-wrapper .dropdown .dropdown-menu > li > a").click(function(event) {
+            $(".sidebar-wrapper .dropdown .dropdown-menu > li > a").on('click',function(event) {
                 event.stopPropagation();
 
             });
@@ -293,7 +293,7 @@ md = {
         if(!toggle_initialized){
             $toggle = $('.navbar-toggle');
 
-            $toggle.click(function (){
+            $toggle.on('click',function (){
 
                 if(mobile_menu_visible == 1) {
                     $('html').removeClass('nav-open');
@@ -319,7 +319,7 @@ md = {
                         $layer.addClass('visible');
                     }, 100);
 
-                    $layer.click(function() {
+                    $layer.on('click',function() {
                         $('html').removeClass('nav-open');
                         mobile_menu_visible = 0;
 
@@ -371,7 +371,7 @@ md = {
             $navbar.find('button').removeClass('btn-round btn-fill btn-info btn-primary btn-success btn-danger btn-warning btn-neutral');
             $navbar.find('button').addClass('btn-simple btn-block');
 
-            $toggle.click(function (){
+            $toggle.on('click',function (){
                 if(mobile_menu_visible == 1) {
                     $('html').removeClass('nav-open');
 
@@ -394,7 +394,7 @@ md = {
                     }, 100);
 
 
-                    $layer.click(function() {
+                    $layer.on('click',function() {
                         $('html').removeClass('nav-open');
                         mobile_menu_visible = 0;
 

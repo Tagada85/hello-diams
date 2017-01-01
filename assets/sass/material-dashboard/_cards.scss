@@ -1,3 +1,9 @@
+/*
+ *----------------------------------------------------------
+ * Card Styles  
+ * ---------------------------------------------------------
+ */ 
+ 
 .card{
     display: inline-block;
     position: relative;
@@ -68,8 +74,10 @@
     }
 
     .category:not([class*="text-"]){
-        color: $gray-color;
+        color: $gray;
         font-size: 14px;
+        font-weight: 400;
+
     }
 
     .card-content{
@@ -245,7 +253,7 @@
         }
         .stats{
             line-height: 22px;
-            color: $gray-color;
+            color: $gray;
             font-size: $font-size-small;
 
             .material-icons{

@@ -1,4 +1,10 @@
-.wrapper{
+/*
+ *----------------------------------------------------------
+ * Sidebar and main panel   
+ * ---------------------------------------------------------
+ */ 
+ 
+ .wrapper{
     position: relative;
     top: 0;
     height: 100vh;
@@ -130,6 +136,7 @@
             margin: 0;
             line-height: 30px;
             font-size: 14px;
+            font-weight: 400;
             white-space: nowrap;
             @extend .animation-transition-general;
         }
@@ -141,7 +148,7 @@
             line-height: 30px;
             width: 30px;
             text-align: center;
-            color: #a9afbb;
+            color: $gray;
         }
     }
 

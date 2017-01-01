@@ -1,8 +1,14 @@
-.table{
+/*
+ *----------------------------------------------------------
+ * Table Styles  
+ * ---------------------------------------------------------
+ */ 
+ 
+ .table{
    > thead > tr > th{
        border-bottom-width: 1px;
        font-size: $font-size-h5;
-       font-weight: $font-weight-light;
+       font-weight: $font-weight-default;
    }
 
    .radio,

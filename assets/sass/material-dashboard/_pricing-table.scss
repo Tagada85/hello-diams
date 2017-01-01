@@ -1,8 +1,6 @@
 /*
  *----------------------------------------------------------
- * File Name : price-table.less                                   
- * Short Desc: Price Table Styles  
- * Author    : Turbo
+ * Price Table Styles  
  * ---------------------------------------------------------
  */ 
  
@@ -79,11 +77,11 @@
 	margin-top: 0px;
 	
 	.pt-top-bar{
-		background-color: $md-yellow-600;
+		background-color: $yellow-600;
 	}
 	
 	.pt-header{
-		background-color: lighten($md-yellow-600,14%);
+		background-color: lighten($yellow-600,14%);
 	}
 	
 	.pt-footer{
@@ -91,7 +89,7 @@
 		
 		.btn{
 			color: $brand-default;
-			background-color: $md-yellow-600;
+			background-color: $yellow-600;
 		}
 		.btn-alt{
 			color: $brand-default;

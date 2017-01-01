@@ -1,4 +1,10 @@
-html * {
+ /*
+ *----------------------------------------------------------
+ * Typography
+ * ---------------------------------------------------------
+ */ 
+ 
+ html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -59,7 +65,7 @@ h2.title{
 .description,
 .card-description,
 .footer-big p{
-    color: $gray-light;
+    color: $gray;
 }
 
 .text-warning {

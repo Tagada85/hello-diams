@@ -1,433 +1,126 @@
 /*
  *----------------------------------------------------------
- * File Name : color.less                                   
- * Short Desc: Material Design Colors and Background Colors 
- * Author    : Turbo
+ * Material Design Colors and Background Colors 
  * ---------------------------------------------------------
  */
 
-/* Red */
-$md-red-50:  #FFEBEE;
-$md-red-100: #FFCDD2;
-$md-red-200: #EF9A9A;
-$md-red-300: #E57373;
-$md-red-400: #EF5350;
-$md-red-500: #F44336;
-$md-red-600: #E53935;
-$md-red-700: #D32F2F;
-$md-red-800: #C62828;
-$md-red-900: #B71C1C;
-$md-red-A100: #FF8A80;
-$md-red-A200: #FF5252;
-$md-red-A400: #FF1744;
-$md-red-A700: #D50000;
 
-/* Pink */
-$md-pink-50:  #FCE4EC;
-$md-pink-100: #F8BBD0;
-$md-pink-200: #F48FB1;
-$md-pink-300: #F06292;
-$md-pink-400: #EC407A;
-$md-pink-500: #E91E63;
-$md-pink-600: #D81B60;
-$md-pink-700: #C2185B;
-$md-pink-800: #AD1457;
-$md-pink-900: #880E4F;
-$md-pink-A100: #FF80AB;
-$md-pink-A200: #FF4081;
-$md-pink-A400: #F50057;
-$md-pink-A700: #C51162;
-
-/* Purple */
-$md-purple-50:  #F3E5F5;
-$md-purple-100: #E1BEE7;
-$md-purple-200: #CE93D8;
-$md-purple-300: #BA68C8;
-$md-purple-400: #AB47BC;
-$md-purple-500: #9C27B0;
-$md-purple-600: #8E24AA;
-$md-purple-700: #7B1FA2;
-$md-purple-800: #6A1B9A;
-$md-purple-900: #4A148C;
-$md-purple-A100: #EA80FC;
-$md-purple-A200: #E040FB;
-$md-purple-A400: #D500F9;
-$md-purple-A700: #AA00FF;
-
-/* Deep Purple */
-$md-deep-purple-50:  #EDE7F6;
-$md-deep-purple-100: #D1C4E9;
-$md-deep-purple-200: #B39DDB;
-$md-deep-purple-300: #9575CD;
-$md-deep-purple-400: #7E57C2;
-$md-deep-purple-500: #673AB7;
-$md-deep-purple-600: #5E35B1;
-$md-deep-purple-700: #512DA8;
-$md-deep-purple-800: #4527A0;
-$md-deep-purple-900: #311B92;
-$md-deep-purple-A100: #B388FF;
-$md-deep-purple-A200: #7C4DFF;
-$md-deep-purple-A400: #651FFF;
-$md-deep-purple-A700: #6200EA;
-
-/* Indigo */
-$md-indigo-50:  #E8EAF6;
-$md-indigo-100: #C5CAE9;
-$md-indigo-200: #9FA8DA;
-$md-indigo-300: #7986CB;
-$md-indigo-400: #5C6BC0;
-$md-indigo-500: #3F51B5;
-$md-indigo-600: #3949AB;
-$md-indigo-700: #303F9F;
-$md-indigo-800: #283593;
-$md-indigo-900: #1A237E;
-$md-indigo-A100: #8C9EFF;
-$md-indigo-A200: #536DFE;
-$md-indigo-A400: #3D5AFE;
-$md-indigo-A700: #304FFE;
-
-/* Blue */
-$md-blue-50:  #E3F2FD;
-$md-blue-100: #BBDEFB;
-$md-blue-200: #90CAF9;
-$md-blue-300: #64B5F6;
-$md-blue-400: #42A5F5;
-$md-blue-500: #2196F3;
-$md-blue-600: #1E88E5;
-$md-blue-700: #1976D2;
-$md-blue-800: #1565C0;
-$md-blue-900: #0D47A1;
-$md-blue-A100: #82B1FF;
-$md-blue-A200: #448AFF;
-$md-blue-A400: #2979FF;
-$md-blue-A700: #2962FF;
-
-/* Light Blue */
-$md-light-blue-50:  #E1F5FE;
-$md-light-blue-100: #B3E5FC;
-$md-light-blue-200: #81D4FA;
-$md-light-blue-300: #4FC3F7;
-$md-light-blue-400: #29B6F6;
-$md-light-blue-500: #03A9F4;
-$md-light-blue-600: #039BE5;
-$md-light-blue-700: #0288D1;
-$md-light-blue-800: #0277BD;
-$md-light-blue-900: #01579B;
-$md-light-blue-A100: #80D8FF;
-$md-light-blue-A200: #40C4FF;
-$md-light-blue-A400: #00B0FF;
-$md-light-blue-A700: #0091EA;
-
-/* Cyan */
-$md-cyan-50:  #E0F7FA;
-$md-cyan-100: #B2EBF2;
-$md-cyan-200: #80DEEA;
-$md-cyan-300: #4DD0E1;
-$md-cyan-400: #26C6DA;
-$md-cyan-500: #00BCD4;
-$md-cyan-600: #00ACC1;
-$md-cyan-700: #0097A7;
-$md-cyan-800: #00838F;
-$md-cyan-900: #006064;
-$md-cyan-A100: #84FFFF;
-$md-cyan-A200: #18FFFF;
-$md-cyan-A400: #00E5FF;
-$md-cyan-A700: #00B8D4;
-
-/* Teal */
-$md-teal-50:  #E0F2F1;
-$md-teal-100: #B2DFDB;
-$md-teal-200: #80CBC4;
-$md-teal-300: #4DB6AC;
-$md-teal-400: #26A69A;
-$md-teal-500: #009688;
-$md-teal-600: #00897B;
-$md-teal-700: #00796B;
-$md-teal-800: #00695C;
-$md-teal-900: #004D40;
-$md-teal-A100: #A7FFEB;
-$md-teal-A200: #64FFDA;
-$md-teal-A400: #1DE9B6;
-$md-teal-A700: #00BFA5;
-
-/* Green */
-$md-green-50:  #E8F5E9;
-$md-green-100: #C8E6C9;
-$md-green-200: #A5D6A7;
-$md-green-300: #81C784;
-$md-green-400: #66BB6A;
-$md-green-500: #4CAF50;
-$md-green-600: #43A047;
-$md-green-700: #388E3C;
-$md-green-800: #2E7D32;
-$md-green-900: #1B5E20;
-$md-green-A100: #B9F6CA;
-$md-green-A200: #69F0AE;
-$md-green-A400: #00E676;
-$md-green-A700: #00C853;
-
-/* Light Green */
-$md-light-green-50:  #F1F8E9;
-$md-light-green-100: #DCEDC8;
-$md-light-green-200: #C5E1A5;
-$md-light-green-300: #AED581;
-$md-light-green-400: #9CCC65;
-$md-light-green-500: #8BC34A;
-$md-light-green-600: #7CB342;
-$md-light-green-700: #689F38;
-$md-light-green-800: #558B2F;
-$md-light-green-900: #33691E;
-$md-light-green-A100: #CCFF90;
-$md-light-green-A200: #B2FF59;
-$md-light-green-A400: #76FF03;
-$md-light-green-A700: #64DD17;
-
-/* Lime */
-$md-lime-50:  #F9FBE7;
-$md-lime-100: #F0F4C3;
-$md-lime-200: #E6EE9C;
-$md-lime-300: #DCE775;
-$md-lime-400: #D4E157;
-$md-lime-500: #CDDC39;
-$md-lime-600: #C0CA33;
-$md-lime-700: #AFB42B;
-$md-lime-800: #9E9D24;
-$md-lime-900: #827717;
-$md-lime-A100: #F4FF81;
-$md-lime-A200: #EEFF41;
-$md-lime-A400: #C6FF00;
-$md-lime-A700: #AEEA00;
-
-/* Yellow */
-$md-yellow-50:  #FFFDE7;
-$md-yellow-100: #FFF9C4;
-$md-yellow-200: #FFF59D;
-$md-yellow-300: #FFF176;
-$md-yellow-400: #FFEE58;
-$md-yellow-500: #FFEB3B;
-$md-yellow-600: #FDD835;
-$md-yellow-700: #FBC02D;
-$md-yellow-800: #F9A825;
-$md-yellow-900: #F57F17;
-$md-yellow-A100: #FFFF8D;
-$md-yellow-A200: #FFFF00;
-$md-yellow-A400: #FFEA00;
-$md-yellow-A700: #FFD600;
-
-/* Amber */
-$md-amber-50:  #FFF8E1;
-$md-amber-100: #FFECB3;
-$md-amber-200: #FFE082;
-$md-amber-300: #FFD54F;
-$md-amber-400: #FFCA28;
-$md-amber-500: #FFC107;
-$md-amber-600: #FFB300;
-$md-amber-700: #FFA000;
-$md-amber-800: #FF8F00;
-$md-amber-900: #FF6F00;
-$md-amber-A100: #FFE57F;
-$md-amber-A200: #FFD740;
-$md-amber-A400: #FFC400;
-$md-amber-A700: #FFAB00;
-
-/* Orange */
-$md-orange-50:  #FFF3E0;
-$md-orange-100: #FFE0B2;
-$md-orange-200: #FFCC80;
-$md-orange-300: #FFB74D;
-$md-orange-400: #FFA726;
-$md-orange-500: #FF9800;
-$md-orange-600: #FB8C00;
-$md-orange-700: #F57C00;
-$md-orange-800: #EF6C00;
-$md-orange-900: #E65100;
-$md-orange-A100: #FFD180;
-$md-orange-A200: #FFAB40;
-$md-orange-A400: #FF9100;
-$md-orange-A700: #FF6D00;
-
-/* Deep Orange */
-$md-deep-orange-50:  #FBE9E7;
-$md-deep-orange-100: #FFCCBC;
-$md-deep-orange-200: #FFAB91;
-$md-deep-orange-300: #FF8A65;
-$md-deep-orange-400: #FF7043;
-$md-deep-orange-500: #FF5722;
-$md-deep-orange-600: #F4511E;
-$md-deep-orange-700: #E64A19;
-$md-deep-orange-800: #D84315;
-$md-deep-orange-900: #BF360C;
-$md-deep-orange-A100: #FF9E80;
-$md-deep-orange-A200: #FF6E40;
-$md-deep-orange-A400: #FF3D00;
-$md-deep-orange-A700: #DD2C00;
-
-/* Brown */
-$md-brown-50:  #EFEBE9;
-$md-brown-100: #D7CCC8;
-$md-brown-200: #BCAAA4;
-$md-brown-300: #A1887F;
-$md-brown-400: #8D6E63;
-$md-brown-500: #795548;
-$md-brown-600: #6D4C41;
-$md-brown-700: #5D4037;
-$md-brown-800: #4E342E;
-$md-brown-900: #3E2723;
-$md-brown-A100: #D7CCC8; /* Default value set */
-$md-brown-A200: #BCAAA4; /* Default value set */
-$md-brown-A400: #8D6E63; /* Default value set */
-$md-brown-A700: #5D4037; /* Default value set */
-
-/* Grey */
-$md-grey-50:  #FAFAFA;
-$md-grey-100: #F5F5F5;
-$md-grey-200: #EEEEEE;
-$md-grey-300: #E0E0E0;
-$md-grey-400: #BDBDBD;
-$md-grey-500: #9E9E9E;
-$md-grey-600: #757575;
-$md-grey-700: #616161;
-$md-grey-800: #424242;
-$md-grey-900: #212121;
-$md-grey-A100: #F5F5F5; /* Default value set */
-$md-grey-A200: #EEEEEE; /* Default value set */
-$md-grey-A400: #BDBDBD; /* Default value set */
-$md-grey-A700: #616161; /* Default value set */
-
-/* Blue Grey */
-$md-blue-grey-50:  #ECEFF1;
-$md-blue-grey-100: #CFD8DC;
-$md-blue-grey-200: #B0BEC5;
-$md-blue-grey-300: #90A4AE;
-$md-blue-grey-400: #78909C;
-$md-blue-grey-500: #607D8B;
-$md-blue-grey-600: #546E7A;
-$md-blue-grey-700: #455A64;
-$md-blue-grey-800: #37474F;
-$md-blue-grey-900: #263238;
-$md-blue-grey-A100: #CFD8DC; /* Default value set */
-$md-blue-grey-A200: #B0BEC5; /* Default value set */
-$md-blue-grey-A400: #78909C; /* Default value set */
-$md-blue-grey-A700: #455A64; /* Default value set */
-
-$md-black: #000000;
-$md-white: #FFFFFF;
 
 /* Colors and Background Colors */
 /*------------------------------*/
-$md-color-variations: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700;
-$md-main-colors: red, pink, purple, deep-purple, indigo, blue, light-blue, cyan, teal, green, light-green, lime, yellow, amber, orange, deep-orange, brown, grey;
+$color-variations: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700;
+$main-colors: red, pink, purple, deep-purple, indigo, blue, light-blue, cyan, teal, green, light-green, lime, yellow, amber, orange, deep-orange, brown, grey;
 
 $color-valiations-map: (
 	'red': (
-		'50': $md-red-50, '100': $md-red-100, '200': $md-red-200, '300': $md-red-300,  '400': $md-red-400, 
-		'500': $md-red-500, '600': $md-red-600, '700': $md-red-700, '800': $md-red-800, '900': $md-red-900, 
-		'A100': $md-red-A100, 'A200': $md-red-A200, 'A400': $md-red-A400, 'A700': $md-red-A700
+		'50': $red-50, '100': $red-100, '200': $red-200, '300': $red-300,  '400': $red-400, 
+		'500': $red-500, '600': $red-600, '700': $red-700, '800': $red-800, '900': $red-900, 
+		'A100': $red-A100, 'A200': $red-A200, 'A400': $red-A400, 'A700': $red-A700
 		),
 	'pink': (
-		'50': $md-pink-50, '100': $md-pink-100, '200': $md-pink-200, '300': $md-pink-300,  '400': $md-pink-400, 
-		'500': $md-pink-500, '600': $md-pink-600, '700': $md-pink-700, '800': $md-pink-800, '900': $md-pink-900, 
-		'A100': $md-pink-A100, 'A200': $md-pink-A200, 'A400': $md-pink-A400, 'A700': $md-pink-A700
+		'50': $pink-50, '100': $pink-100, '200': $pink-200, '300': $pink-300,  '400': $pink-400, 
+		'500': $pink-500, '600': $pink-600, '700': $pink-700, '800': $pink-800, '900': $pink-900, 
+		'A100': $pink-A100, 'A200': $pink-A200, 'A400': $pink-A400, 'A700': $pink-A700
 		),
 	'purple': (
-		'50': $md-purple-50, '100': $md-purple-100, '200': $md-purple-200, '300': $md-purple-300,  '400': $md-purple-400, 
-		'500': $md-purple-500, '600': $md-purple-600, '700': $md-purple-700, '800': $md-purple-800, '900': $md-purple-900, 
-		'A100': $md-purple-A100, 'A200': $md-purple-A200, 'A400': $md-purple-A400, 'A700': $md-purple-A700
+		'50': $purple-50, '100': $purple-100, '200': $purple-200, '300': $purple-300,  '400': $purple-400, 
+		'500': $purple-500, '600': $purple-600, '700': $purple-700, '800': $purple-800, '900': $purple-900, 
+		'A100': $purple-A100, 'A200': $purple-A200, 'A400': $purple-A400, 'A700': $purple-A700
 		),
 	'deep-purple': (
-		'50': $md-deep-purple-50, '100': $md-deep-purple-100, '200': $md-deep-purple-200, '300': $md-deep-purple-300,  '400': $md-deep-purple-400, 
-		'500': $md-deep-purple-500, '600': $md-deep-purple-600, '700': $md-deep-purple-700, '800': $md-deep-purple-800, '900': $md-deep-purple-900, 
-		'A100': $md-deep-purple-A100, 'A200': $md-deep-purple-A200, 'A400': $md-deep-purple-A400, 'A700': $md-deep-purple-A700
+		'50': $deep-purple-50, '100': $deep-purple-100, '200': $deep-purple-200, '300': $deep-purple-300,  '400': $deep-purple-400, 
+		'500': $deep-purple-500, '600': $deep-purple-600, '700': $deep-purple-700, '800': $deep-purple-800, '900': $deep-purple-900, 
+		'A100': $deep-purple-A100, 'A200': $deep-purple-A200, 'A400': $deep-purple-A400, 'A700': $deep-purple-A700
 		),
 	'indigo': (
-		'50': $md-indigo-50, '100': $md-indigo-100, '200': $md-indigo-200, '300': $md-indigo-300,  '400': $md-indigo-400, 
-		'500': $md-indigo-500, '600': $md-indigo-600, '700': $md-indigo-700, '800': $md-indigo-800, '900': $md-indigo-900, 
-		'A100': $md-indigo-A100, 'A200': $md-indigo-A200, 'A400': $md-indigo-A400, 'A700': $md-indigo-A700
+		'50': $indigo-50, '100': $indigo-100, '200': $indigo-200, '300': $indigo-300,  '400': $indigo-400, 
+		'500': $indigo-500, '600': $indigo-600, '700': $indigo-700, '800': $indigo-800, '900': $indigo-900, 
+		'A100': $indigo-A100, 'A200': $indigo-A200, 'A400': $indigo-A400, 'A700': $indigo-A700
 		),
 	'blue': (
-		'50': $md-blue-50, '100': $md-blue-100, '200': $md-blue-200, '300': $md-blue-300,  '400': $md-blue-400, 
-		'500': $md-blue-500, '600': $md-blue-600, '700': $md-blue-700, '800': $md-blue-800, '900': $md-blue-900, 
-		'A100': $md-blue-A100, 'A200': $md-blue-A200, 'A400': $md-blue-A400, 'A700': $md-blue-A700
+		'50': $blue-50, '100': $blue-100, '200': $blue-200, '300': $blue-300,  '400': $blue-400, 
+		'500': $blue-500, '600': $blue-600, '700': $blue-700, '800': $blue-800, '900': $blue-900, 
+		'A100': $blue-A100, 'A200': $blue-A200, 'A400': $blue-A400, 'A700': $blue-A700
 		),
 	'light-blue': (
-		'50': $md-light-blue-50, '100': $md-light-blue-100, '200': $md-light-blue-200, '300': $md-light-blue-300,  '400': $md-light-blue-400, 
-		'500': $md-light-blue-500, '600': $md-light-blue-600, '700': $md-light-blue-700, '800': $md-light-blue-800, '900': $md-light-blue-900, 
-		'A100': $md-light-blue-A100, 'A200': $md-light-blue-A200, 'A400': $md-light-blue-A400, 'A700': $md-light-blue-A700
+		'50': $light-blue-50, '100': $light-blue-100, '200': $light-blue-200, '300': $light-blue-300,  '400': $light-blue-400, 
+		'500': $light-blue-500, '600': $light-blue-600, '700': $light-blue-700, '800': $light-blue-800, '900': $light-blue-900, 
+		'A100': $light-blue-A100, 'A200': $light-blue-A200, 'A400': $light-blue-A400, 'A700': $light-blue-A700
 		),
 	'cyan': (
-		'50': $md-cyan-50, '100': $md-cyan-100, '200': $md-cyan-200, '300': $md-cyan-300,  '400': $md-cyan-400, 
-		'500': $md-cyan-500, '600': $md-cyan-600, '700': $md-cyan-700, '800': $md-cyan-800, '900': $md-cyan-900, 
-		'A100': $md-cyan-A100, 'A200': $md-cyan-A200, 'A400': $md-cyan-A400, 'A700': $md-cyan-A700
+		'50': $cyan-50, '100': $cyan-100, '200': $cyan-200, '300': $cyan-300,  '400': $cyan-400, 
+		'500': $cyan-500, '600': $cyan-600, '700': $cyan-700, '800': $cyan-800, '900': $cyan-900, 
+		'A100': $cyan-A100, 'A200': $cyan-A200, 'A400': $cyan-A400, 'A700': $cyan-A700
 		),
 	'teal': (
-		'50': $md-teal-50, '100': $md-teal-100, '200': $md-teal-200, '300': $md-teal-300,  '400': $md-teal-400, 
-		'500': $md-teal-500, '600': $md-teal-600, '700': $md-teal-700, '800': $md-teal-800, '900': $md-teal-900, 
-		'A100': $md-teal-A100, 'A200': $md-teal-A200, 'A400': $md-teal-A400, 'A700': $md-teal-A700
+		'50': $teal-50, '100': $teal-100, '200': $teal-200, '300': $teal-300,  '400': $teal-400, 
+		'500': $teal-500, '600': $teal-600, '700': $teal-700, '800': $teal-800, '900': $teal-900, 
+		'A100': $teal-A100, 'A200': $teal-A200, 'A400': $teal-A400, 'A700': $teal-A700
 		),
 	'green': (
-		'50': $md-green-50, '100': $md-green-100, '200': $md-green-200, '300': $md-green-300,  '400': $md-green-400, 
-		'500': $md-green-500, '600': $md-green-600, '700': $md-green-700, '800': $md-green-800, '900': $md-green-900, 
-		'A100': $md-green-A100, 'A200': $md-green-A200, 'A400': $md-green-A400, 'A700': $md-green-A700
+		'50': $green-50, '100': $green-100, '200': $green-200, '300': $green-300,  '400': $green-400, 
+		'500': $green-500, '600': $green-600, '700': $green-700, '800': $green-800, '900': $green-900, 
+		'A100': $green-A100, 'A200': $green-A200, 'A400': $green-A400, 'A700': $green-A700
 		),
 	'light-green': (
-		'50': $md-light-green-50, '100': $md-light-green-100, '200': $md-light-green-200, '300': $md-light-green-300,  '400': $md-light-green-400, 
-		'500': $md-light-green-500, '600': $md-light-green-600, '700': $md-light-green-700, '800': $md-light-green-800, '900': $md-light-green-900, 
-		'A100': $md-light-green-A100, 'A200': $md-light-green-A200, 'A400': $md-light-green-A400, 'A700': $md-light-green-A700
+		'50': $light-green-50, '100': $light-green-100, '200': $light-green-200, '300': $light-green-300,  '400': $light-green-400, 
+		'500': $light-green-500, '600': $light-green-600, '700': $light-green-700, '800': $light-green-800, '900': $light-green-900, 
+		'A100': $light-green-A100, 'A200': $light-green-A200, 'A400': $light-green-A400, 'A700': $light-green-A700
 		),
 	'lime': (
-		'50': $md-lime-50, '100': $md-lime-100, '200': $md-lime-200, '300': $md-lime-300,  '400': $md-lime-400, 
-		'500': $md-lime-500, '600': $md-lime-600, '700': $md-lime-700, '800': $md-lime-800, '900': $md-lime-900, 
-		'A100': $md-lime-A100, 'A200': $md-lime-A200, 'A400': $md-lime-A400, 'A700': $md-lime-A700
+		'50': $lime-50, '100': $lime-100, '200': $lime-200, '300': $lime-300,  '400': $lime-400, 
+		'500': $lime-500, '600': $lime-600, '700': $lime-700, '800': $lime-800, '900': $lime-900, 
+		'A100': $lime-A100, 'A200': $lime-A200, 'A400': $lime-A400, 'A700': $lime-A700
 		),
 	'yellow': (
-		'50': $md-yellow-50, '100': $md-yellow-100, '200': $md-yellow-200, '300': $md-yellow-300,  '400': $md-yellow-400, 
-		'500': $md-yellow-500, '600': $md-yellow-600, '700': $md-yellow-700, '800': $md-yellow-800, '900': $md-yellow-900, 
-		'A100': $md-yellow-A100, 'A200': $md-yellow-A200, 'A400': $md-yellow-A400, 'A700': $md-yellow-A700
+		'50': $yellow-50, '100': $yellow-100, '200': $yellow-200, '300': $yellow-300,  '400': $yellow-400, 
+		'500': $yellow-500, '600': $yellow-600, '700': $yellow-700, '800': $yellow-800, '900': $yellow-900, 
+		'A100': $yellow-A100, 'A200': $yellow-A200, 'A400': $yellow-A400, 'A700': $yellow-A700
 		),
 	'amber': (
-		'50': $md-amber-50, '100': $md-amber-100, '200': $md-amber-200, '300': $md-amber-300,  '400': $md-amber-400, 
-		'500': $md-amber-500, '600': $md-amber-600, '700': $md-amber-700, '800': $md-amber-800, '900': $md-amber-900, 
-		'A100': $md-amber-A100, 'A200': $md-amber-A200, 'A400': $md-amber-A400, 'A700': $md-amber-A700
+		'50': $amber-50, '100': $amber-100, '200': $amber-200, '300': $amber-300,  '400': $amber-400, 
+		'500': $amber-500, '600': $amber-600, '700': $amber-700, '800': $amber-800, '900': $amber-900, 
+		'A100': $amber-A100, 'A200': $amber-A200, 'A400': $amber-A400, 'A700': $amber-A700
 		),
 	'orange': (
-		'50': $md-orange-50, '100': $md-orange-100, '200': $md-orange-200, '300': $md-orange-300,  '400': $md-orange-400, 
-		'500': $md-orange-500, '600': $md-orange-600, '700': $md-orange-700, '800': $md-orange-800, '900': $md-orange-900, 
-		'A100': $md-orange-A100, 'A200': $md-orange-A200, 'A400': $md-orange-A400, 'A700': $md-orange-A700
+		'50': $orange-50, '100': $orange-100, '200': $orange-200, '300': $orange-300,  '400': $orange-400, 
+		'500': $orange-500, '600': $orange-600, '700': $orange-700, '800': $orange-800, '900': $orange-900, 
+		'A100': $orange-A100, 'A200': $orange-A200, 'A400': $orange-A400, 'A700': $orange-A700
 		),
 	'deep-orange': (
-		'50': $md-deep-orange-50, '100': $md-deep-orange-100, '200': $md-deep-orange-200, '300': $md-deep-orange-300,  '400': $md-deep-orange-400, 
-		'500': $md-deep-orange-500, '600': $md-deep-orange-600, '700': $md-deep-orange-700, '800': $md-deep-orange-800, '900': $md-deep-orange-900, 
-		'A100': $md-deep-orange-A100, 'A200': $md-deep-orange-A200, 'A400': $md-deep-orange-A400, 'A700': $md-deep-orange-A700
+		'50': $deep-orange-50, '100': $deep-orange-100, '200': $deep-orange-200, '300': $deep-orange-300,  '400': $deep-orange-400, 
+		'500': $deep-orange-500, '600': $deep-orange-600, '700': $deep-orange-700, '800': $deep-orange-800, '900': $deep-orange-900, 
+		'A100': $deep-orange-A100, 'A200': $deep-orange-A200, 'A400': $deep-orange-A400, 'A700': $deep-orange-A700
 		),
 	'brown': (
-		'50': $md-brown-50, '100': $md-brown-100, '200': $md-brown-200, '300': $md-brown-300,  '400': $md-brown-400, 
-		'500': $md-brown-500, '600': $md-brown-600, '700': $md-brown-700, '800': $md-brown-800, '900': $md-brown-900, 
-		'A100': $md-brown-A100, 'A200': $md-brown-A200, 'A400': $md-brown-A400, 'A700': $md-brown-A700
+		'50': $brown-50, '100': $brown-100, '200': $brown-200, '300': $brown-300,  '400': $brown-400, 
+		'500': $brown-500, '600': $brown-600, '700': $brown-700, '800': $brown-800, '900': $brown-900, 
+		'A100': $brown-A100, 'A200': $brown-A200, 'A400': $brown-A400, 'A700': $brown-A700
 		),
 	'grey': (
-		'50': $md-grey-50, '100': $md-grey-100, '200': $md-grey-200, '300': $md-grey-300,  '400': $md-grey-400, 
-		'500': $md-grey-500, '600': $md-grey-600, '700': $md-grey-700, '800': $md-grey-800, '900': $md-grey-900, 
-		'A100': $md-grey-A100, 'A200': $md-grey-A200, 'A400': $md-grey-A400, 'A700': $md-grey-A700
+		'50': $grey-50, '100': $grey-100, '200': $grey-200, '300': $grey-300,  '400': $grey-400, 
+		'500': $grey-500, '600': $grey-600, '700': $grey-700, '800': $grey-800, '900': $grey-900, 
+		'A100': $grey-A100, 'A200': $grey-A200, 'A400': $grey-A400, 'A700': $grey-A700
 		),
 	'blue-grey': (
-		'50': $md-blue-grey-50, '100': $md-blue-grey-100, '200': $md-blue-grey-200, '300': $md-blue-grey-300,  '400': $md-blue-grey-400, 
-		'500': $md-blue-grey-500, '600': $md-blue-grey-600, '700': $md-blue-grey-700, '800': $md-blue-grey-800, '900': $md-blue-grey-900, 
-		'A100': $md-blue-grey-A100, 'A200': $md-blue-grey-A200, 'A400': $md-blue-grey-A400, 'A700': $md-blue-grey-A700
+		'50': $blue-grey-50, '100': $blue-grey-100, '200': $blue-grey-200, '300': $blue-grey-300,  '400': $blue-grey-400, 
+		'500': $blue-grey-500, '600': $blue-grey-600, '700': $blue-grey-700, '800': $blue-grey-800, '900': $blue-grey-900, 
+		'A100': $blue-grey-A100, 'A200': $blue-grey-A200, 'A400': $blue-grey-A400, 'A700': $blue-grey-A700
 		),
 );
 
 .c-black {
-  	color: $md-black !important;
+  	color: $black !important;
 }
 .c-white {
-  	color: $md-white !important;
+  	color: $white !important;
 }
 
 .md-bg-black {
-  	background: $md-black !important;
+  	background: $black !important;
 }
 .md-bg-white {
-  	background: $md-white !important;
+  	background: $white !important;
 }
 
 @mixin output-color-classes($name, $color){
@@ -496,24 +189,3 @@ $color-valiations-map: (
     float: right;
     text-transform: uppercase;
 }
-/*---- Color Page Styles - End -----*/
-
-
-/* .bg-black-trp { background-color: rgba(0,0,0,0.1) !important; } */
-
-/* Material Background Colors */
-/*$array: c-white bgm-white $m-white, c-black bgm-black $m-black, c-brown bgm-brown $m-brown, c-pink bgm-pink $m-pink, c-red bgm-red $m-red, c-blue bgm-blue $m-blue, c-purple bgm-purple $m-purple, c-deeppurple bgm-deeppurple $m-deeppurple, c-lightblue bgm-lightblue $m-lightblue, c-cyan bgm-cyan $m-cyan, c-teal bgm-teal $m-teal, c-green bgm-green $m-green, c-lightgreen bgm-lightgreen $m-lightgreen, c-lime bgm-lime $m-lime, c-yellow bgm-yellow $m-yellow, c-amber bgm-amber $m-amber, c-orange bgm-orange $m-orange, c-deeporange bgm-deeporange $m-deeporange, c-gray bgm-gray $m-gray, c-bluegray bgm-bluegray $m-bluegray, c-indigo bgm-indigo $m-indigo;
-
-@mixin for($array); .-each($value)
-{
-    $name:  extract($value, 1);
-    $name2: extract($value, 2);
-    $color: extract($value, 3); 
-    &.${name2} {
-        background-color: $color !important;
-    }
-    
-    &.${name} {
-        color: $color !important;
-    }
-}*/

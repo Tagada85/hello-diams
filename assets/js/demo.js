@@ -1,6 +1,6 @@
 demo = {
     initPickColor: function(){
-        $('.pick-class-label').click(function(){
+        $('.pick-class-label').on('click',function(){
             var new_class = $(this).attr('new-class');
             var old_class = $('#display-buttons').attr('data-class');
             var display_div = $('#display-buttons');
@@ -205,7 +205,7 @@ demo = {
             readURL(this);
         });
 
-        $('[data-toggle="wizard-radio"]').click(function(){
+        $('[data-toggle="wizard-radio"]').on('click',function(){
             wizard = $(this).closest('.wizard-card');
             wizard.find('[data-toggle="wizard-radio"]').removeClass('active');
             $(this).addClass('active');
@@ -213,7 +213,7 @@ demo = {
             $(this).find('[type="radio"]').attr('checked','true');
         });
 
-        $('[data-toggle="wizard-checkbox"]').click(function(){
+        $('[data-toggle="wizard-checkbox"]').on('click',function(){
             if( $(this).hasClass('active')){
                 $(this).removeClass('active');
                 $(this).find('[type="checkbox"]').removeAttr('checked');
