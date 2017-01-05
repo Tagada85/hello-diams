@@ -6610,6 +6610,9 @@ h2.title {
     color: #FFFFFF;
     background: transparent;
     box-shadow: none; }
+  .btn.btn-warning,
+  .navbar .navbar-nav > li > a.btn.btn-warning {
+    color: #222222; }
   .btn.btn-facebook,
   .navbar .navbar-nav > li > a.btn.btn-facebook {
     background-color: #3b5998;
@@ -7008,7 +7011,7 @@ blockquote p {
 
 body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.5em; }
 
 .serif-font {
@@ -7876,6 +7879,8 @@ select.form-control {
     color: #2196F3; }
   .alert.alert-rose i {
     color: #2196F3; }
+  .alert.alert-warning {
+    color: #222222; }
   .alert.alert-with-icon {
     margin-top: 43px;
     padding-left: 66px; }
@@ -8060,13 +8065,13 @@ form .form-footer .checkbox {
 .checkbox label {
   cursor: pointer;
   padding-left: 0;
-  color: rgba(0,0,0, 0.26); }
+  color: rgba(0,0,0, 0.5); }
   .form-group.is-focused .checkbox label {
-    color: rgba(0,0,0, 0.26); }
+    color: rgba(0,0,0, 0.5); }
     .form-group.is-focused .checkbox label:hover, .form-group.is-focused .checkbox label:focus {
       color: rgba(0,0,0, .54); }
     fieldset[disabled] .form-group.is-focused .checkbox label {
-      color: rgba(0,0,0, 0.26); }
+      color: rgba(0,0,0, 0.5); }
 .checkbox input[type=checkbox] {
   opacity: 0;
   position: absolute;
@@ -8173,13 +8178,13 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
   cursor: pointer;
   padding-left: 35px;
   position: relative;
-  color: rgba(0,0,0, 0.26); }
+  color: rgba(0,0,0, 0.5); }
   .form-group.is-focused .radio label {
-    color: rgba(0,0,0, 0.26); }
+    color: rgba(0,0,0, 0.5); }
     .form-group.is-focused .radio label:hover, .form-group.is-focused .radio label:focus {
       color: rgba(0,0,0, .54); }
     fieldset[disabled] .form-group.is-focused .radio label {
-      color: rgba(0,0,0, 0.26); }
+      color: rgba(0,0,0, 0.5); }
   .radio label span {
     display: block;
     position: absolute;
@@ -8303,13 +8308,13 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
     user-select: none; }
   .togglebutton label {
     cursor: pointer;
-    color: rgba(0,0,0, 0.26); }
+    color: rgba(0,0,0, 0.5); }
     .form-group.is-focused .togglebutton label {
-      color: rgba(0,0,0, 0.26); }
+      color: rgba(0,0,0, 0.5); }
       .form-group.is-focused .togglebutton label:hover, .form-group.is-focused .togglebutton label:focus {
         color: rgba(0,0,0, .54); }
       fieldset[disabled] .form-group.is-focused .togglebutton label {
-        color: rgba(0,0,0, 0.26); }
+        color: rgba(0,0,0, 0.5); }
     .togglebutton label input[type=checkbox] {
       opacity: 0;
       width: 0;
@@ -9867,7 +9872,7 @@ footer {
     .card .card-footer .stats {
       line-height: 22px;
       color: #555555;
-      font-size: 12px; }
+      font-size: 14px; }
       .card .card-footer .stats .material-icons {
         position: relative;
         top: 4px;
@@ -10367,7 +10372,7 @@ footer {
     left: auto;
     z-index: 1032;
     visibility: visible;
-    background-color: #9A9A9A;
+    background-color: #FFFFFF;
     overflow-y: visible;
     border-top: none;
     text-align: left;
@@ -10397,7 +10402,7 @@ footer {
       height: 100%;
       width: 100%;
       position: absolute;
-      background-color: #282828;
+      background-color: #FFFFFF;
       display: block;
       content: "";
       z-index: 1; }
@@ -10491,7 +10496,8 @@ footer {
     padding: 15px;
     margin-top: 4px;
     width: 40px;
-    height: 40px; }
+    height: 40px;
+    color: #FFFFFF; }
 
   .bar1,
   .bar2,
@@ -12087,18 +12093,18 @@ footer {
       .price-table .pt-body .na i {
         color: #F44336; }
 
-.price-table.recommanded {
+.price-table.recommended {
   margin-top: 0px; }
-  .price-table.recommanded .pt-top-bar {
+  .price-table.recommended .pt-top-bar {
     background-color: #FDD835; }
-  .price-table.recommanded .pt-header {
+  .price-table.recommended .pt-header {
     background-color: #fee67c; }
-  .price-table.recommanded .pt-footer {
+  .price-table.recommended .pt-footer {
     padding: 40px 0; }
-    .price-table.recommanded .pt-footer .btn {
+    .price-table.recommended .pt-footer .btn {
       color: #424242;
       background-color: #FDD835; }
-    .price-table.recommanded .pt-footer .btn-alt {
+    .price-table.recommended .pt-footer .btn-alt {
       color: #424242;
       background-color: #c2c2c2; }
 
@@ -12111,7 +12117,7 @@ footer {
     .price-table-alt .price-table .pt-top-bar h4, .price-table-alt .price-table .pt-top-bar h2 {
       font-size: 14px;
       margin: 0; }
-.price-table-alt .price-table.recommanded .pt-top-bar h4 {
+.price-table-alt .price-table.recommended .pt-top-bar h4 {
   color: #424242; }
 
 /*

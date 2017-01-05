@@ -12,7 +12,7 @@ $mdb-text-color-primary-hex: $black ; // for contrast function in inverse
 $icon-color: rgba(0,0,0,0.5) ;
 
 
-$mdb-label-color: unquote("rgba(#{$rgb-black}, 0.26)") ;
+$mdb-label-color: unquote("rgba(#{$rgb-black}, 0.5)") ;
 $mdb-label-color-toggle-focus: unquote("rgba(#{$rgb-black}, .54)") ;
 
 
@@ -94,11 +94,7 @@ $link-hover-color:      darken($link-color, 15%) ;
 //** Link hover decoration.
 $link-hover-decoration: underline ;
 
-
-//********* Color overriding by Turbo ends here ***************//
-//*************************************************************//
-
-
+$left-sidebar-bg-color: $white-color;
 
 
 

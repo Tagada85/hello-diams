@@ -129,6 +129,8 @@ $(window).resize(function(){
 
 });
 
+var $sidebar = $('.sidebar');
+
 var md = {
     misc:{
         navbar_menu_visible: 0,
@@ -137,7 +139,6 @@ var md = {
     },
 
     checkSidebarImage: function(){
-        var $sidebar = $('.sidebar');
         var image_src = $sidebar.data('image');
 
         if(image_src !== undefined){
@@ -248,28 +249,28 @@ var md = {
 
 
     initRightMenu: debounce(function(){
-        $sidebar_wrapper = $('.sidebar-wrapper');
+        var $sidebar_wrapper = $('.sidebar-wrapper');
 
         if(!mobile_menu_initialized){
-            $navbar = $('nav').find('.navbar-collapse').first().clone(true);
+            var $navbar = $('nav').find('.navbar-collapse').first().clone(true);
 
-            nav_content = '';
-            mobile_menu_content = '';
+            var nav_content = '';
+            var mobile_menu_content = '';
 
             $navbar.children('ul').each(function(){
 
-                content_buff = $(this).html();
+                var content_buff = $(this).html();
                 nav_content = nav_content + content_buff;
             });
 
             nav_content = '<ul class="nav nav-mobile-menu">' + nav_content + '</ul>';
 
-            $navbar_form = $('nav').find('.navbar-form').clone(true);
+            var $navbar_form = $('nav').find('.navbar-form').clone(true);
 
-            $sidebar_nav = $sidebar_wrapper.find(' > .nav');
+            var $sidebar_nav = $sidebar_wrapper.find(' > .nav');
 
             // insert the navbar form before the sidebar list
-            $nav_content = $(nav_content);
+            var $nav_content = $(nav_content);
             $nav_content.insertBefore($sidebar_nav);
             $navbar_form.insertBefore($nav_content);
 
@@ -293,7 +294,7 @@ var md = {
         }
 
         if(!toggle_initialized){
-            $toggle = $('.navbar-toggle');
+            var $toggle = $('.navbar-toggle');
 
             $toggle.on('click',function (){
 
@@ -312,8 +313,8 @@ var md = {
                     }, 430);
 
 
-                    main_panel_height = $('.main-panel')[0].scrollHeight;
-                    $layer = $('<div class="close-layer"></div>');
+                    var main_panel_height = $('.main-panel')[0].scrollHeight;
+                    var $layer = $('<div class="close-layer"></div>');
                     $layer.css('height',main_panel_height + 'px');
                     $layer.appendTo(".main-panel");
 

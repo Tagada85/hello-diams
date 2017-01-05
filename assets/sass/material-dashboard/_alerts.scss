@@ -53,6 +53,10 @@
     &.alert-rose{
         @include alert-icon-color($brand-rose);
     }
+    &.alert-warning{
+    	color: $gray-darker;
+    }
+    
 
     &.alert-with-icon{
         margin-top: 43px;

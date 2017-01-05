@@ -78,7 +78,7 @@
             tickColor: '#eee',
             tickDecimals: 0,
             font :{
-                lineHeight: 13,
+                lineHeight: 15,
                 style: "normal",
                 color: "#000"
             },
@@ -90,7 +90,7 @@
             tickColor: '#eee',
             tickDecimals: 0,
             font :{
-                lineHeight: 13,
+                lineHeight: 15,
                 style: "normal",
                 color: "#000",
             },

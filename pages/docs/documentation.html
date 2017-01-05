@@ -369,6 +369,660 @@
                         </div>
                       </div>
 
+                      <div class="card">
+                        <div class="card-header">
+                          <h3>Widgets</h3>
+                        </div>
+                        <div class="card-content">
+                          <p><span class="lead">Here is a list of widgets that can be used to build your application faster.</span></p>
+                          <div role="tabpanel">
+                            <ul class="nav nav-pills" role="tablist">
+                              <li class="active"><a href="#home11" aria-controls="home11" role="tab" data-toggle="tab">Widgets</a> </li>
+                            </ul>
+                            <div class="tab-content">
+                              <div role="tabpanel" class="tab-pane active" id="home11">
+                              	<h4>Task List</h4>
+                                <p>Create tasklists easily using the below HTML markup</p>
+                                <pre class="prettyprint linenums">
+&lt;table class="table"&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				&lt;div class="checkbox"&gt;
+					&lt;label&gt;
+						&lt;input type="checkbox" name="optionsCheckboxes" checked&gt;
+					&lt;/label&gt;
+				&lt;/div&gt;
+			&lt;/td&gt;
+			&lt;td&gt;Task Description goes here&lt;/td&gt;
+			&lt;td class="td-actions text-right"&gt;
+				&lt;button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs"&gt;
+					&lt;i class="material-icons"&gt;edit&lt;/i&gt;
+				&lt;/button&gt;
+				&lt;button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs"&gt;
+					&lt;i class="material-icons"&gt;close&lt;/i&gt;
+				&lt;/button&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		......                                             
+	&lt;/tbody&gt;
+&lt;/table&gt;
+                                </pre>
+
+
+
+
+<h4>Profile Card</h4>
+                                <p>Profile card HTML markup</p>
+                                <pre class="prettyprint linenums">
+&lt;div class="card card-profile"&gt;
+	&lt;div class="card-avatar"&gt;
+		&lt;a href="#pablo"&gt;
+			&lt;img class="img" src="../../assets/img/faces/avatar.jpg" /&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class="card-content"&gt;
+		&lt;h6 class="category text-gray"&gt;Designation&lt;/h6&gt;
+		&lt;h4 class="card-title"&gt;Your Name&lt;/h4&gt;
+		&lt;p class="description"&gt;
+			Your description goes here...
+		&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="card-footer"&gt;
+	  &lt;div class="row"&gt;
+		&lt;div class="col-xs-3 bg-info"&gt;
+		  &lt;div class="profile-social-wrapper"&gt;
+			&lt;span class="profile-count"&gt;245&lt;/span&gt;
+			&lt;small class=""&gt;Followers&lt;/small&gt;
+		  &lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="col-xs-3 bg-info-alt"&gt;
+		  &lt;div class="profile-social-wrapper"&gt;
+			&lt;span class="profile-count"&gt;55&lt;/span&gt;
+			&lt;small class=""&gt;Following&lt;/small&gt;
+		  &lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="col-xs-3 bg-info"&gt;
+		  &lt;div class="profile-social-wrapper"&gt;
+			&lt;span class="profile-count"&gt;2,035&lt;/span&gt;
+			&lt;small class=""&gt;Tweets&lt;/small&gt;
+		  &lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="col-xs-3 bg-info-alt"&gt;
+		  &lt;div class="profile-social-wrapper"&gt;
+			&lt;span class="profile-count"&gt;16,000&lt;/span&gt;
+			&lt;small class=""&gt;Likes&lt;/small&gt;
+		  &lt;/div&gt;
+		&lt;/div&gt;
+	  &lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+                                </pre>
+
+
+
+
+<h4>Testimonial</h4>
+                                <p>Testimonial HTML markup</p>
+                                <pre class="prettyprint linenums">
+&lt;div class="card card-testimonial"&gt;
+		&lt;div class="card-avatar"&gt;
+			&lt;a href="#pablo"&gt;
+				&lt;img class="img" src="../../assets/img/faces/avatar.jpg" /&gt;
+			&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;div class="card-content"&gt;
+		&lt;div class="icon"&gt;
+			&lt;i class="material-icons"&gt;format_quote&lt;/i&gt;
+		&lt;/div&gt;
+		&lt;h5 class="card-description"&gt;
+			Testimonial goes here...
+		&lt;/h5&gt;
+		&lt;h4 class="card-title"&gt;Customer Name&lt;/h4&gt;
+		&lt;h6 class="category text-gray"&gt;Designation, Company Name&lt;/h6&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+                                </pre>
+
+
+
+
+<h4>Timeline </h4>
+                                <p>Timeline HTML markup</p>
+                                <pre class="prettyprint linenums">
+&lt;ul class="timeline timeline-simple"&gt;
+	&lt;li class="timeline-inverted"&gt;
+		&lt;div class="timeline-image danger"&gt;
+			&lt;img src="../../assets/img/faces/avatar.jpg" &gt;
+		&lt;/div&gt;
+		&lt;div class="timeline-panel"&gt;
+			&lt;div class="timeline-heading"&gt;
+				&lt;span class="label label-danger"&gt;Some title&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class="timeline-body"&gt;
+				&lt;p&gt;Your content goes here...&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;h6&gt;
+				&lt;i class="ti-time"&gt;&lt;/i&gt; 11 hours ago via Twitter
+			&lt;/h6&gt;
+		&lt;/div&gt;
+	&lt;/li&gt;
+	...
+&lt;/ul&gt;
+                                </pre>
+
+
+
+
+<h4>Shopping Cart</h4>
+                                <p>Timeline HTML markup</p>
+                                <pre class="prettyprint linenums">
+&lt;div class="table-responsive"&gt;
+	&lt;table class="table table-shopping"&gt;
+		&lt;thead&gt;
+			&lt;tr&gt;
+				&lt;th class="text-center"&gt;&lt;/th&gt;
+				&lt;th&gt;Product&lt;/th&gt;
+				&lt;th class="text-right"&gt;Price&lt;/th&gt;
+				&lt;th class="text-right"&gt;Qty&lt;/th&gt;
+				&lt;th class="text-right"&gt;Amount&lt;/th&gt;
+				&lt;th&gt;&lt;/th&gt;
+			&lt;/tr&gt;
+		&lt;/thead&gt;
+		&lt;tbody&gt;
+			&lt;tr&gt;
+				&lt;td&gt;
+					&lt;div class="img-container"&gt;
+						&lt;img src="../../assets/img/product-image.jpg" alt="..."&gt;
+					&lt;/div&gt;
+				&lt;/td&gt;
+				&lt;td class="td-name"&gt;
+					&lt;a href="#jacket"&gt;Product Name&lt;/a&gt;
+					&lt;br /&gt;
+					&lt;small&gt;by Vendor Name&lt;/small&gt;
+				&lt;/td&gt;
+				&lt;td class="td-number text-right"&gt;
+					&lt;small&gt;&amp;euro;&lt;/small&gt;549
+				&lt;/td&gt;
+				&lt;td class="td-number"&gt;
+					1
+				&lt;/td&gt;
+				&lt;td class="td-number"&gt;
+					&lt;small&gt;&amp;euro;&lt;/small&gt;549
+				&lt;/td&gt;
+				&lt;td class="td-actions"&gt;
+					&lt;button type="button" rel="tooltip" data-placement="left" title="Remove item" class="btn btn-simple"&gt;
+						&lt;i class="material-icons"&gt;close&lt;/i&gt;
+					&lt;/button&gt;
+				&lt;/td&gt;
+			&lt;/tr&gt;
+
+			&lt;tr&gt;
+				&lt;td colspan="3"&gt;&lt;/td&gt;
+				&lt;td class="td-total"&gt;
+					Total
+				&lt;/td&gt;
+				&lt;td colspan="1" class="td-price"&gt;
+					&lt;small&gt;&amp;euro;&lt;/small&gt;2,346
+				&lt;/td&gt;
+				&lt;td&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+				&lt;td colspan="4"&gt;&lt;/td&gt;
+				&lt;td colspan="2" class="text-right"&gt;
+					&lt;button type="button" class="btn btn-info btn-round"&gt;Proceed To Checkout &lt;i class="material-icons"&gt;keyboard_arrow_right&lt;/i&gt;&lt;/button&gt;
+				&lt;/td&gt;
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/div&gt;
+                                </pre>
+
+
+
+
+<h4>Manage Listings</h4>
+                                <p>Product Listing HTML markup</p>
+                                <pre class="prettyprint linenums">
+&lt;div class="card card-product"&gt;
+	&lt;div class="card-image" data-header-animation="false"&gt;
+		&lt;a href="#pablo"&gt;
+			&lt;img class="img" src="../../assets/img/product-image.jpg"&gt;
+		&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class="card-content"&gt;
+		&lt;div class="card-actions"&gt;
+			&lt;button type="button" class="btn btn-danger btn-simple fix-broken-card"&gt;
+				&lt;i class="material-icons"&gt;build&lt;/i&gt; Fix Header!
+			&lt;/button&gt;
+			&lt;button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="View"&gt;
+				&lt;i class="material-icons"&gt;art_track&lt;/i&gt;
+			&lt;/button&gt;
+			&lt;button type="button" class="btn btn-success btn-simple" rel="tooltip" data-placement="bottom" title="Edit"&gt;
+				&lt;i class="material-icons"&gt;edit&lt;/i&gt;
+			&lt;/button&gt;
+			&lt;button type="button" class="btn btn-danger btn-simple" rel="tooltip" data-placement="bottom" title="Remove"&gt;
+				&lt;i class="material-icons"&gt;close&lt;/i&gt;
+			&lt;/button&gt;
+		&lt;/div&gt;
+		&lt;h4 class="card-title"&gt;
+			&lt;a href="#pablo"&gt;Product Name&lt;/a&gt;
+		&lt;/h4&gt;
+		&lt;div class="card-description"&gt;
+			Product Description goes here...
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="card-footer"&gt;
+		&lt;div class="price"&gt;
+			&lt;h4&gt;$100&lt;/h4&gt;
+		&lt;/div&gt;
+		&lt;div class="stats pull-right"&gt;
+			&lt;p class="category"&gt;&lt;i class="material-icons"&gt;place&lt;/i&gt; Category&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+                                </pre>
+
+
+
+
+<h4>Google Maps</h4>
+                                <p>Google map HTML markup</p>
+                                <pre class="prettyprint linenums">
+&lt;div id="regularMap" class="map"&gt;&lt;/div&gt;
+                                </pre>
+
+                                <p>Javascript</p>
+                                <pre class="prettyprint linenums">
+// Regular Map
+var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+var mapOptions = {
+	zoom: 8,
+	center: myLatlng,
+	scrollwheel: false, 
+}
+
+var map = new google.maps.Map(document.getElementById("regularMap"), mapOptions);
+
+var marker = new google.maps.Marker({
+	position: myLatlng,
+	title:"Regular Map!"
+});
+
+marker.setMap(map);
+                                </pre>
+<h4>FullCalendar</h4>
+
+<h5>Basic Usage</h5>
+<p>The first step in embedding a calendar on a web page is to have the right JavaScript and CSS files.
+Make sure you are including the FullCalendar stylesheet, as well as the FullCalendar,
+<a href='http://jquery.com/'>jQuery</a>, and
+<a href='http://momentjs.com/'>Moment</a>
+JavaScript files, in the <code>&lt;head&gt;</code> of your page:</p>
+
+<pre class="prettyprint linenums">&lt;link rel='stylesheet' href='fullcalendar/fullcalendar.css' /&gt;
+&lt;script src='lib/jquery.min.js'&gt;&lt;/script&gt;
+&lt;script src='lib/moment.min.js'&gt;&lt;/script&gt;
+&lt;script src='fullcalendar/fullcalendar.js'&gt;&lt;/script&gt;
+</pre>
+
+<p>jQuery and Moment must be loaded before FullCalendar's JavaScript.</p>
+
+<p>Once you have your dependencies, you need to write the JavaScript code that initializes the calendar.
+This code must be executed <em>after</em> the page has initialized. The best way to do this is with jQuery's
+<code>$(document).ready</code> like so:</p>
+
+<pre class="prettyprint linenums">$(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+    })
+
+});
+</pre>
+
+<p>The above code should be in a <code>&lt;script&gt;</code> tag in the head of your page. The code
+relies on there being an element with an id of "calendar" in the body of your page.
+The calendar will be placed <em>inside</em> this div:</p>
+
+<pre class="prettyprint linenums">&lt;div id='calendar'&gt;&lt;/div&gt;
+</pre>
+
+<p>An that's it, you should see a month-based calendar that has no events on it.</p>
+<p>Please checkout <a href="https://fullcalendar.io/docs/" target="_blank">full documentation</a> for more features.
+                        </p>
+                        
+<h4>Pricing Table</h4>
+<pre class="prettyprint linenums">
+ &lt;div class="row"&gt;
+	&lt;div class="col-sm-3"&gt;
+		&lt;div class="card price-table"&gt;
+			&lt;div class="pt-top-bar"&gt;&lt;/div&gt;
+			&lt;div class="pt-header"&gt;
+				&lt;h4 class="text-uppercase"&gt;Starter Plan&lt;/h4&gt;
+				&lt;h2&gt;
+					&lt;sup class="f-22"&gt;$&lt;/sup&gt;
+					&lt;span class="f-50"&gt;99&lt;/span&gt;
+					&lt;span class="f-14"&gt;/ mo&lt;/span&gt;
+				&lt;/h2&gt;
+			&lt;/div&gt;
+			&lt;ul class="pt-body list-group text-left"&gt;
+				&lt;li class="list-group-item"&gt;
+					&lt;i class="material-icons"&gt;check&lt;/i&gt; Feature 1
+				&lt;/li&gt;
+				...
+			&lt;/ul&gt;
+			&lt;div class="pt-footer text-center"&gt;
+				&lt;a href="" class="btn"&gt;Start your free trial&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	
+	&lt;div class="col-sm-3"&gt;
+		&lt;div class="card price-table recommended"&gt;
+			&lt;div class="pt-top-bar"&gt;&lt;/div&gt;
+			&lt;div class="pt-header"&gt;
+				&lt;h4 class="text-uppercase"&gt;Premium Plan&lt;/h4&gt;
+				&lt;h2&gt;
+					&lt;sup class="f-22"&gt;$&lt;/sup&gt;
+					&lt;span class="f-50"&gt;179&lt;/span&gt;
+					&lt;span class="f-14"&gt;/ mo&lt;/span&gt;
+				&lt;/h2&gt;
+			&lt;/div&gt;
+			&lt;ul class="pt-body list-group text-left"&gt;
+				&lt;li class="list-group-item"&gt;
+					&lt;i class="material-icons"&gt;check&lt;/i&gt; Feature 1
+				&lt;/li&gt;
+				...
+			&lt;/ul&gt;
+			&lt;div class="pt-footer text-center"&gt;
+				&lt;a href="" class="btn"&gt;Start your free trial&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	
+	&lt;div class="col-sm-3"&gt;
+		&lt;div class="card price-table"&gt;
+			...
+		&lt;/div&gt;
+	&lt;/div&gt;
+	
+	&lt;div class="col-sm-3"&gt;
+		&lt;div class="card price-table"&gt;
+			...
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;    
+</pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="card">
+                        <div class="card-header">
+                          <h3>Charts </h3>
+                        </div>
+                        <div class="card-content">
+                          <div role="tabpanel">
+                            <ul class="nav nav-pills" role="tablist">
+                              <li class="active"><a href="#chartjs" aria-controls="chartjs" role="tab" data-toggle="tab">ChartJS</a> </li>
+                              <li><a href="#flotcharts" aria-controls="flotcharts" role="tab" data-toggle="tab">Flot</a> </li>
+                            </ul>
+                            <div class="tab-content">
+                              <div role="tabpanel" class="tab-pane active" id="chartjs">
+                                <h4>Chart.js</h4>
+                                <p>Simple yet flexible JavaScript charting for designers & developers.</p>
+                                	<div class="row">	
+									<div class="col-md-6"><canvas id="docMyChart" width="400" height="400"></canvas></div>
+									<div class="col-md-6"></div>
+									</div>
+<h4>Usage</h4>
+<p>To import Chart.js using an old-school script tag:</p>
+<pre>
+<code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"Chart.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+    <span class="hljs-keyword">var</span> myChart = <span class="hljs-keyword">new</span> Chart({...})
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code>
+</pre>
+<p>To import Chart.js using an awesome module loader:</p>
+<pre><code class="lang-javascript">
+<span class="hljs-comment">// Using CommonJS</span>
+<span class="hljs-keyword">var</span> Chart = <span class="hljs-built_in">require</span>(<span class="hljs-string">'src/chart.js'</span>)
+<span class="hljs-keyword">var</span> myChart = <span class="hljs-keyword">new</span> Chart({...})
+
+<span class="hljs-comment">// ES6</span>
+<span class="hljs-keyword">import</span> Chart <span class="hljs-keyword">from</span> <span class="hljs-string">'src/chart.js'</span>
+<span class="hljs-keyword">let</span> myChart = <span class="hljs-keyword">new</span> Chart({...})
+
+<span class="hljs-comment">// Using requirejs</span>
+<span class="hljs-built_in">require</span>([<span class="hljs-string">'path/to/Chartjs'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">Chart</span>)</span>{
+ <span class="hljs-keyword">var</span> myChart = <span class="hljs-keyword">new</span> Chart({...})
+})
+</code>
+</pre>
+<h4>Creating a Chart</h4>
+<p>To create a chart, we need to instantiate the <code>Chart</code> class. To do this, we need to pass in the node, jQuery instance, or 2d context of the canvas of where we want to draw the chart. Here&#39;s an example.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myChart"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"400"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+</code>
+</pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Any of the following formats may be used</span>
+<span class="hljs-keyword">var</span> ctx = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"myChart"</span>);
+<span class="hljs-keyword">var</span> ctx = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"myChart"</span>).getContext(<span class="hljs-string">"2d"</span>);
+<span class="hljs-keyword">var</span> ctx = $(<span class="hljs-string">"#myChart"</span>);
+<span class="hljs-keyword">var</span> ctx = <span class="hljs-string">"myChart"</span>;
+</code>
+</pre>
+<p>Once you have the element or context, you&#39;re ready to instantiate a pre-defined chart-type or create your own!</p>
+<p>The following example instantiates a bar chart showing the number of votes for different colors and the y-axis starting at 0.</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myChart"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"400"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">var</span> ctx = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"myChart"</span>);
+<span class="hljs-keyword">var</span> myChart = <span class="hljs-keyword">new</span> Chart(ctx, {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'bar'</span>,
+    <span class="hljs-attr">data</span>: {
+        <span class="hljs-attr">labels</span>: [<span class="hljs-string">"Red"</span>, <span class="hljs-string">"Blue"</span>, <span class="hljs-string">"Yellow"</span>, <span class="hljs-string">"Green"</span>, <span class="hljs-string">"Purple"</span>, <span class="hljs-string">"Orange"</span>],
+        <span class="hljs-attr">datasets</span>: [{
+            <span class="hljs-attr">label</span>: <span class="hljs-string">'# of Votes'</span>,
+            <span class="hljs-attr">data</span>: [<span class="hljs-number">12</span>, <span class="hljs-number">19</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],
+            <span class="hljs-attr">backgroundColor</span>: [
+                <span class="hljs-string">'rgba(255, 99, 132, 0.2)'</span>,
+                <span class="hljs-string">'rgba(54, 162, 235, 0.2)'</span>,
+                <span class="hljs-string">'rgba(255, 206, 86, 0.2)'</span>,
+                <span class="hljs-string">'rgba(75, 192, 192, 0.2)'</span>,
+                <span class="hljs-string">'rgba(153, 102, 255, 0.2)'</span>,
+                <span class="hljs-string">'rgba(255, 159, 64, 0.2)'</span>
+            ],
+            <span class="hljs-attr">borderColor</span>: [
+                <span class="hljs-string">'rgba(255,99,132,1)'</span>,
+                <span class="hljs-string">'rgba(54, 162, 235, 1)'</span>,
+                <span class="hljs-string">'rgba(255, 206, 86, 1)'</span>,
+                <span class="hljs-string">'rgba(75, 192, 192, 1)'</span>,
+                <span class="hljs-string">'rgba(153, 102, 255, 1)'</span>,
+                <span class="hljs-string">'rgba(255, 159, 64, 1)'</span>
+            ],
+            <span class="hljs-attr">borderWidth</span>: <span class="hljs-number">1</span>
+        }]
+    },
+    <span class="hljs-attr">options</span>: {
+        <span class="hljs-attr">scales</span>: {
+            <span class="hljs-attr">yAxes</span>: [{
+                <span class="hljs-attr">ticks</span>: {
+                    <span class="hljs-attr">beginAtZero</span>:<span class="hljs-literal">true</span>
+                }
+            }]
+        }
+    }
+});
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code>
+</pre>
+<p>It&#39;s that easy to get started using Chart.js! From here you can explore the many options that can help you customise your charts with scales, tooltips, labels, colors, custom actions, and much more.</p>
+<p>There are many examples of Chart.js that are available in the <code>/samples</code> folder of <code>Chart.js.zip</code> that is attatched to every <a href="https://github.com/chartjs/Chart.js/releases" target="_blank">release</a>.</p>
+
+
+<h4>Chart Configuration</h4>
+
+<p>Chart.js provides a number of options for changing the behaviour of created charts. These configuration options can be changed on a per chart basis by passing in an options object when creating the chart. Alternatively, the global configuration can be changed which will be used by all charts created after that point.</p>
+<h5>Chart Data</h5>
+<p>To display data, the chart must be passed a data object that contains all of the information needed by the chart. The data object can contain the following parameters</p>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>datasets</td>
+                <td>Array[object]</td>
+                <td>Contains data for each dataset. See the documentation for each chart type to determine the valid options that can be attached to the dataset</td>
+            </tr>
+            <tr>
+                <td>labels</td>
+                <td>Array[string]</td>
+                <td>Optional parameter that is used with the <a href="#scales-category-scale">category axis</a>.</td>
+            </tr>
+            <tr>
+                <td>xLabels</td>
+                <td>Array[string]</td>
+                <td>Optional parameter that is used with the category axis and is used if the axis is horizontal</td>
+            </tr>
+            <tr>
+                <td>yLabels</td>
+                <td>Array[string]</td>
+                <td>Optional parameter that is used with the category axis and is used if the axis is vertical</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<h5>Creating a Chart with Options</h5>
+<p>To create a chart with configuration options, simply pass an object containing your configuration to the constructor. In the example below, a line chart is created and configured to not be responsive.</p>
+<pre>
+<code class="lang-javascript"><span class="hljs-keyword">var</span> chartInstance = <span class="hljs-keyword">new</span> Chart(ctx, {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'line'</span>,
+    <span class="hljs-attr">data</span>: data,
+    <span class="hljs-attr">options</span>: {
+        <span class="hljs-attr">responsive</span>: <span class="hljs-literal">false</span>
+    }
+});
+</code>
+</pre>
+                                <p>Please refer to <a href="http://www.chartjs.org/docs/">http://www.chartjs.org/docs/</a> for detailed documentation</p>
+                                
+                              </div>
+                              <div role="tabpanel" class="tab-pane" id="flotcharts">
+                                <h4>Flot</h4>
+                                <p>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.</p>
+									
+									<div id="doc-line-chart" style="width:50%;height:300px"></div>
+									<h5>Usage</h5>
+
+									<p>Include jquery.flot.js into your document.</p>
+									<pre class="prettyprint linenums">
+&lt;script src=&quot;../../vendors/charts/flot/jquery.flot.js&quot;&gt;&lt;/script&gt;
+									</pre>
+
+									<h5>The markup</h5>
+									<p></p>
+									<div>
+										<div>
+											<pre class="prettyprint linenums">
+&lt;div id=&quot;doc-line-chart&quot; style=&quot;width:50%;height:300px&quot; &gt;&lt;/div&gt;
+											</pre>
+										</div>
+									</div>
+
+									<h5>Call the plugin</h5>
+									<p>Finally you need to initiate the plugin by adding the following code.</p>
+									<div>
+										<div>
+											<pre class="prettyprint linenums">
+var d1 = [[0,30],[1,35],[2,35],[3,30],[4,30],[5,35],[6,32],[7,37],[8,30],[9,35],[10,30],[11,31]];
+var d2 = [[0,50],[1,40],[2,45],[3,60],[4,50],[5,50],[6,60],[7,55],[8,50],[9,50],[10,60],[11,35]];
+var d3 = [[0,40],[1,50],[2,35],[3,25],[4,40],[5,45],[6,55],[7,50],[8,35],[9,40],[10,48],[11,40]];
+
+
+//Chart Options
+
+var options = {
+	series: {
+		shadowSize: 0,
+		lines: {
+			show: true,
+		},
+	},
+	grid: {
+		borderWidth: 1,
+		labelMargin:10,
+		mouseActiveRadius:6,
+		borderColor: &#39;#eee&#39;,
+		show : true,
+		hoverable : true,
+		clickable : true
+
+	},
+	xaxis: {
+		tickColor: &#39;#fff&#39;,
+		tickDecimals: 0,
+		font :{
+			lineHeight: 13,
+			style: &quot;normal&quot;,
+			color: &quot;#9f9f9f&quot;
+		},
+		shadowSize: 0,
+		ticks: [[0,&quot;Jan&quot;], [1,&quot;Feb&quot;], [2,&quot;Mar&quot;], [3,&quot;Apr&quot;], [4,&quot;May&quot;], [5,&quot;Jun&quot;], [6,&quot;Jul&quot;], [7,&quot;Aug&quot;], [8,&quot;Sep&quot;], [9,&quot;Oct&quot;], [10,&quot;Nov&quot;], [11,&quot;Dec&quot;]]
+	},
+
+	yaxis: {
+		tickColor: &#39;#eee&#39;,
+		tickDecimals: 0,
+		font :{
+			lineHeight: 13,
+			style: &quot;normal&quot;,
+			color: &quot;#9f9f9f&quot;,
+		},
+		shadowSize: 0
+	},
+
+	legend: {
+		container: &#39;.flc-line&#39;,
+		backgroundOpacity: 0.5,
+		noColumns: 0,
+		backgroundColor: &quot;white&quot;,
+		lineWidth: 0
+	},
+	colors: [&quot;#6baa01&quot;, &quot;#33bdda&quot;, &quot;#008ee4&quot;]
+};
+
+
+// Create a regular Line Chart
+
+
+$.plot($(&quot;#doc-line-chart&quot;), [
+	{data: d1, lines: { show: true  }, label: &#39;Product A&#39;, stack: true, color: &#39;#F9D900&#39; },
+	{data: d2, lines: { show: true }, label: &#39;Product B&#39;, stack: true, color: &#39;#A9E200&#39; },
+	{data: d3, lines: { show: true }, label: &#39;Product C&#39;, stack: true, color: &#39;#22BAD9&#39; }
+], options);
+											</pre>
+										</div>
+									</div>
+
+                                <p>Please refer to <a href="http://www.flotcharts.org/">http://www.flotcharts.org//</a> for detailed documentation</p>
+
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>     
 
                       <div class="card">
                         <div class="card-header">
@@ -977,269 +1631,7 @@ showNotification: function(from, align){
                             </div>
                           </div>
                         </div>
-                      </div>
-
-                      <div class="card">
-                        <div class="card-header">
-                          <h3>Charts </h3>
-                        </div>
-                        <div class="card-content">
-                          <div role="tabpanel">
-                            <ul class="nav nav-pills" role="tablist">
-                              <li class="active"><a href="#chartjs" aria-controls="chartjs" role="tab" data-toggle="tab">ChartJS</a> </li>
-                              <li><a href="#flotcharts" aria-controls="flotcharts" role="tab" data-toggle="tab">Flot</a> </li>
-                            </ul>
-                            <div class="tab-content">
-                              <div role="tabpanel" class="tab-pane active" id="chartjs">
-                                <h4>Chart.js</h4>
-                                <p>Simple yet flexible JavaScript charting for designers & developers.</p>
-                                	<div class="row">	
-									<div class="col-md-6"><canvas id="docMyChart" width="400" height="400"></canvas></div>
-									<div class="col-md-6"></div>
-									</div>
-<h4>Usage</h4>
-<p>To import Chart.js using an old-school script tag:</p>
-<pre>
-<code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"Chart.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
-    <span class="hljs-keyword">var</span> myChart = <span class="hljs-keyword">new</span> Chart({...})
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</code>
-</pre>
-<p>To import Chart.js using an awesome module loader:</p>
-<pre><code class="lang-javascript">
-<span class="hljs-comment">// Using CommonJS</span>
-<span class="hljs-keyword">var</span> Chart = <span class="hljs-built_in">require</span>(<span class="hljs-string">'src/chart.js'</span>)
-<span class="hljs-keyword">var</span> myChart = <span class="hljs-keyword">new</span> Chart({...})
-
-<span class="hljs-comment">// ES6</span>
-<span class="hljs-keyword">import</span> Chart <span class="hljs-keyword">from</span> <span class="hljs-string">'src/chart.js'</span>
-<span class="hljs-keyword">let</span> myChart = <span class="hljs-keyword">new</span> Chart({...})
-
-<span class="hljs-comment">// Using requirejs</span>
-<span class="hljs-built_in">require</span>([<span class="hljs-string">'path/to/Chartjs'</span>], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">Chart</span>)</span>{
- <span class="hljs-keyword">var</span> myChart = <span class="hljs-keyword">new</span> Chart({...})
-})
-</code>
-</pre>
-<h4>Creating a Chart</h4>
-<p>To create a chart, we need to instantiate the <code>Chart</code> class. To do this, we need to pass in the node, jQuery instance, or 2d context of the canvas of where we want to draw the chart. Here&#39;s an example.</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myChart"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"400"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
-</code>
-</pre>
-<pre><code class="lang-javascript"><span class="hljs-comment">// Any of the following formats may be used</span>
-<span class="hljs-keyword">var</span> ctx = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"myChart"</span>);
-<span class="hljs-keyword">var</span> ctx = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"myChart"</span>).getContext(<span class="hljs-string">"2d"</span>);
-<span class="hljs-keyword">var</span> ctx = $(<span class="hljs-string">"#myChart"</span>);
-<span class="hljs-keyword">var</span> ctx = <span class="hljs-string">"myChart"</span>;
-</code>
-</pre>
-<p>Once you have the element or context, you&#39;re ready to instantiate a pre-defined chart-type or create your own!</p>
-<p>The following example instantiates a bar chart showing the number of votes for different colors and the y-axis starting at 0.</p>
-<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myChart"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"400"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-<span class="hljs-keyword">var</span> ctx = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"myChart"</span>);
-<span class="hljs-keyword">var</span> myChart = <span class="hljs-keyword">new</span> Chart(ctx, {
-    <span class="hljs-attr">type</span>: <span class="hljs-string">'bar'</span>,
-    <span class="hljs-attr">data</span>: {
-        <span class="hljs-attr">labels</span>: [<span class="hljs-string">"Red"</span>, <span class="hljs-string">"Blue"</span>, <span class="hljs-string">"Yellow"</span>, <span class="hljs-string">"Green"</span>, <span class="hljs-string">"Purple"</span>, <span class="hljs-string">"Orange"</span>],
-        <span class="hljs-attr">datasets</span>: [{
-            <span class="hljs-attr">label</span>: <span class="hljs-string">'# of Votes'</span>,
-            <span class="hljs-attr">data</span>: [<span class="hljs-number">12</span>, <span class="hljs-number">19</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>],
-            <span class="hljs-attr">backgroundColor</span>: [
-                <span class="hljs-string">'rgba(255, 99, 132, 0.2)'</span>,
-                <span class="hljs-string">'rgba(54, 162, 235, 0.2)'</span>,
-                <span class="hljs-string">'rgba(255, 206, 86, 0.2)'</span>,
-                <span class="hljs-string">'rgba(75, 192, 192, 0.2)'</span>,
-                <span class="hljs-string">'rgba(153, 102, 255, 0.2)'</span>,
-                <span class="hljs-string">'rgba(255, 159, 64, 0.2)'</span>
-            ],
-            <span class="hljs-attr">borderColor</span>: [
-                <span class="hljs-string">'rgba(255,99,132,1)'</span>,
-                <span class="hljs-string">'rgba(54, 162, 235, 1)'</span>,
-                <span class="hljs-string">'rgba(255, 206, 86, 1)'</span>,
-                <span class="hljs-string">'rgba(75, 192, 192, 1)'</span>,
-                <span class="hljs-string">'rgba(153, 102, 255, 1)'</span>,
-                <span class="hljs-string">'rgba(255, 159, 64, 1)'</span>
-            ],
-            <span class="hljs-attr">borderWidth</span>: <span class="hljs-number">1</span>
-        }]
-    },
-    <span class="hljs-attr">options</span>: {
-        <span class="hljs-attr">scales</span>: {
-            <span class="hljs-attr">yAxes</span>: [{
-                <span class="hljs-attr">ticks</span>: {
-                    <span class="hljs-attr">beginAtZero</span>:<span class="hljs-literal">true</span>
-                }
-            }]
-        }
-    }
-});
-</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</code>
-</pre>
-<p>It&#39;s that easy to get started using Chart.js! From here you can explore the many options that can help you customise your charts with scales, tooltips, labels, colors, custom actions, and much more.</p>
-<p>There are many examples of Chart.js that are available in the <code>/samples</code> folder of <code>Chart.js.zip</code> that is attatched to every <a href="https://github.com/chartjs/Chart.js/releases" target="_blank">release</a>.</p>
-
-
-<h4>Chart Configuration</h4>
-
-<p>Chart.js provides a number of options for changing the behaviour of created charts. These configuration options can be changed on a per chart basis by passing in an options object when creating the chart. Alternatively, the global configuration can be changed which will be used by all charts created after that point.</p>
-<h5>Chart Data</h5>
-<p>To display data, the chart must be passed a data object that contains all of the information needed by the chart. The data object can contain the following parameters</p>
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>datasets</td>
-                <td>Array[object]</td>
-                <td>Contains data for each dataset. See the documentation for each chart type to determine the valid options that can be attached to the dataset</td>
-            </tr>
-            <tr>
-                <td>labels</td>
-                <td>Array[string]</td>
-                <td>Optional parameter that is used with the <a href="#scales-category-scale">category axis</a>.</td>
-            </tr>
-            <tr>
-                <td>xLabels</td>
-                <td>Array[string]</td>
-                <td>Optional parameter that is used with the category axis and is used if the axis is horizontal</td>
-            </tr>
-            <tr>
-                <td>yLabels</td>
-                <td>Array[string]</td>
-                <td>Optional parameter that is used with the category axis and is used if the axis is vertical</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<h5>Creating a Chart with Options</h5>
-<p>To create a chart with configuration options, simply pass an object containing your configuration to the constructor. In the example below, a line chart is created and configured to not be responsive.</p>
-<pre>
-<code class="lang-javascript"><span class="hljs-keyword">var</span> chartInstance = <span class="hljs-keyword">new</span> Chart(ctx, {
-    <span class="hljs-attr">type</span>: <span class="hljs-string">'line'</span>,
-    <span class="hljs-attr">data</span>: data,
-    <span class="hljs-attr">options</span>: {
-        <span class="hljs-attr">responsive</span>: <span class="hljs-literal">false</span>
-    }
-});
-</code>
-</pre>
-                                <p>Please refer to <a href="http://www.chartjs.org/docs/">http://www.chartjs.org/docs/</a> for detailed documentation</p>
-                                
-                              </div>
-                              <div role="tabpanel" class="tab-pane" id="flotcharts">
-                                <h4>Flot</h4>
-                                <p>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.</p>
-									
-									<div id="doc-line-chart" style="width:50%;height:300px"></div>
-									<h5>Usage</h5>
-
-									<p>Include jquery.flot.js into your document.</p>
-									<pre class="prettyprint linenums">
-&lt;script src=&quot;../../vendors/charts/flot/jquery.flot.js&quot;&gt;&lt;/script&gt;
-									</pre>
-
-									<h5>The markup</h5>
-									<p></p>
-									<div>
-										<div>
-											<pre class="prettyprint linenums">
-&lt;div id=&quot;doc-line-chart&quot; style=&quot;width:50%;height:300px&quot; &gt;&lt;/div&gt;
-											</pre>
-										</div>
-									</div>
-
-									<h5>Call the plugin</h5>
-									<p>Finally you need to initiate the plugin by adding the following code.</p>
-									<div>
-										<div>
-											<pre class="prettyprint linenums">
-var d1 = [[0,30],[1,35],[2,35],[3,30],[4,30],[5,35],[6,32],[7,37],[8,30],[9,35],[10,30],[11,31]];
-var d2 = [[0,50],[1,40],[2,45],[3,60],[4,50],[5,50],[6,60],[7,55],[8,50],[9,50],[10,60],[11,35]];
-var d3 = [[0,40],[1,50],[2,35],[3,25],[4,40],[5,45],[6,55],[7,50],[8,35],[9,40],[10,48],[11,40]];
-
-
-//Chart Options
-
-var options = {
-	series: {
-		shadowSize: 0,
-		lines: {
-			show: true,
-		},
-	},
-	grid: {
-		borderWidth: 1,
-		labelMargin:10,
-		mouseActiveRadius:6,
-		borderColor: &#39;#eee&#39;,
-		show : true,
-		hoverable : true,
-		clickable : true
-
-	},
-	xaxis: {
-		tickColor: &#39;#fff&#39;,
-		tickDecimals: 0,
-		font :{
-			lineHeight: 13,
-			style: &quot;normal&quot;,
-			color: &quot;#9f9f9f&quot;
-		},
-		shadowSize: 0,
-		ticks: [[0,&quot;Jan&quot;], [1,&quot;Feb&quot;], [2,&quot;Mar&quot;], [3,&quot;Apr&quot;], [4,&quot;May&quot;], [5,&quot;Jun&quot;], [6,&quot;Jul&quot;], [7,&quot;Aug&quot;], [8,&quot;Sep&quot;], [9,&quot;Oct&quot;], [10,&quot;Nov&quot;], [11,&quot;Dec&quot;]]
-	},
-
-	yaxis: {
-		tickColor: &#39;#eee&#39;,
-		tickDecimals: 0,
-		font :{
-			lineHeight: 13,
-			style: &quot;normal&quot;,
-			color: &quot;#9f9f9f&quot;,
-		},
-		shadowSize: 0
-	},
-
-	legend: {
-		container: &#39;.flc-line&#39;,
-		backgroundOpacity: 0.5,
-		noColumns: 0,
-		backgroundColor: &quot;white&quot;,
-		lineWidth: 0
-	},
-	colors: [&quot;#6baa01&quot;, &quot;#33bdda&quot;, &quot;#008ee4&quot;]
-};
-
-
-// Create a regular Line Chart
-
-
-$.plot($(&quot;#doc-line-chart&quot;), [
-	{data: d1, lines: { show: true  }, label: &#39;Product A&#39;, stack: true, color: &#39;#F9D900&#39; },
-	{data: d2, lines: { show: true }, label: &#39;Product B&#39;, stack: true, color: &#39;#A9E200&#39; },
-	{data: d3, lines: { show: true }, label: &#39;Product C&#39;, stack: true, color: &#39;#22BAD9&#39; }
-], options);
-											</pre>
-										</div>
-									</div>
-
-                                <p>Please refer to <a href="http://www.flotcharts.org/">http://www.flotcharts.org//</a> for detailed documentation</p>
-
-                              </div>
-
-                            </div>
-                          </div>
-                        </div>
-                      </div>                    
+                      </div>               
 
                       <div class="card">
                         <div class="card-header">

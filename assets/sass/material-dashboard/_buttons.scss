@@ -61,6 +61,11 @@
             box-shadow: none;
         }
     }
+    &.btn-warning{
+    	color: $gray-darker;
+    }
+    
+    
 
     // social buttons
     &.btn-facebook {

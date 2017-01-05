@@ -184,7 +184,7 @@
         left: auto;
         z-index: 1032;
         visibility: visible;
-        background-color: #9A9A9A;
+        background-color: $left-sidebar-bg-color;
         overflow-y: visible;
         border-top: none;
         text-align: left;
@@ -206,7 +206,7 @@
             height: 100%;
             width: 100%;
             position: absolute;
-            background-color: #282828;
+            background-color: $left-sidebar-bg-color;
             display: block;
             content: "";
             z-index: 1;
@@ -312,6 +312,7 @@
         margin-top: 4px;
         width: 40px;
         height: 40px;
+        color: $white-color;
     }
     .bar1,
     .bar2,
