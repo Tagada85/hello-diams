@@ -18,6 +18,8 @@
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
+    <link href="../assets/vendors/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -238,17 +240,17 @@
                             <div class="card card-stats">
                                 <div class="card-header">
                                 	<div class="icon icon-warning">                                    
-                                		<i class="material-icons">weekend</i>
+                                		<i class="zmdi zmdi-equalizer"></i>
                                 	</div>
                                 </div>
                                 <div class="card-content">
-                                    <p class="category"><strong>Bookings</strong></p>
-                                    <h3 class="card-title">184</h3>
+                                    <p class="category"><strong>Visits</strong></p>
+                                    <h3 class="card-title">70,340</h3>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                        <i class="material-icons text-danger">warning</i>
-                                        <a href="#pablo">Get More Space...</a>
+                                        <i class="material-icons text-info">info</i>
+                                        <a href="#pablo">See detailed report</a>
                                     </div>
                                 </div>
                             </div>
@@ -257,16 +259,16 @@
                             <div class="card card-stats">
                                 <div class="card-header"">
                                 	<div class="icon icon-rose">
-                                    	<i class="material-icons">equalizer</i>
+                                    	<i class="zmdi zmdi-shopping-cart"></i>
                                     </div>
                                 </div>
                                 <div class="card-content">
-                                    <p class="category"><strong>Website Visits</strong></p>
-                                    <h3 class="card-title">75.521</h3>
+                                    <p class="category"><strong>Orders</strong></p>
+                                    <h3 class="card-title">102</h3>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                        <i class="material-icons">local_offer</i> Tracked from Google Analytics
+                                        <i class="material-icons">local_offer</i> Click to see product-wise sales
                                     </div>
                                 </div>
                             </div>
@@ -275,16 +277,16 @@
                             <div class="card card-stats">
                                 <div class="card-header">
                                 	<div class="icon icon-success">  
-                                    	<i class="material-icons">store</i>
+                                    	<i class="zmdi zmdi-money"></i>
                                     </div>
                                 </div>
                                 <div class="card-content">
                                     <p class="category"><strong>Revenue</strong></p>
-                                    <h3 class="card-title">$34,245</h3>
+                                    <h3 class="card-title">$23,100</h3>
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-                                        <i class="material-icons">date_range</i> Last 24 Hours
+                                        <i class="material-icons">date_range</i> Weekly sales
                                     </div>
                                 </div>
                             </div>
@@ -293,7 +295,7 @@
                             <div class="card card-stats">
                                 <div class="card-header">
                                 	<div class="icon icon-info">  
-                                    	<i class="fa fa-twitter"></i>
+                                    	<i class="zmdi zmdi-twitter"></i>
                                     </div>
                                 </div>
                                 <div class="card-content">
@@ -310,7 +312,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-8">
-                            <div class="card" style="min-height: 350px">
+                            <div class="card" style="height: 370px">
                                 <div class="card-header card-header-icon">
                                     <i class="material-icons">timeline</i>
                                 </div>
@@ -324,14 +326,15 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="card" style="min-height: 350px">
+                            <div class="card" style="height: 370px">
                                 <div class="card-header">
                                 </div>
 								<div class="card-content">
                                     <h4 class="card-title">Region-wise Sales
                                     </h4>                                    
                                     <div class="chart">
-                                        <canvas id="doughnutChart" height="415" width="498" style="display: block; width: 498px; height: 415px;"></canvas>
+                                        <canvas id="doughnutChart" height="400" width="498" style="display: block; width: 498px; height: 400px;"></canvas>
+                                        
                                     </div>
                                 </div>
                             </div>

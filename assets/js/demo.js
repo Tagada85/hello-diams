@@ -473,11 +473,6 @@ var demo = {
         marker.setMap(map);
 
 
-
-
-
-
-
     },
 
     initFullCalendar: function(){
