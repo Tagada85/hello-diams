@@ -2,17 +2,17 @@
   "name": "turbo",
   "version": "1.0",
   "description": "Material Admin Template",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://anvartk@bitbucket.org/anvartk/turbo.git"
+    "url": ""
   },
   "author": "",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/anvartk/turbo#readme",
+  "license": "",
+  "homepage": "",
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-sass": "^1.0.0",

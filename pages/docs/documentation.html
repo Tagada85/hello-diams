@@ -254,7 +254,105 @@
                           	<p><strong>Note</strong>: We are trying our best to   document how to use the template.  If you think that something is missing from the documentation, please do not hesitate to tell us about it. If you have any questions or problems with this theme please use Envato Marketplace contact form on our profile or email us at urbanui.com@gmail.com</p>
                         </div>
                   	</div>
-      
+
+
+                      <div class="card">
+                        <div class="card-header">
+                          <h3>GETTING STARTED</h3>
+                        </div>
+                        <div class="card-content">
+                        
+                        
+                        	<div>
+                            <p class="lead">You can directly use the compiled and ready to use version of the template. But in case you plan to customize the template extensively the template allows you to do so! This section will get you initiated on this.</p>
+
+
+							<h4>File Hierarchy</h4>
+<p>The downloaded package will have the following structure. If you don't want to customize the template you can use the files as is after removing the 'sass' folder in 'assets'. Just unzip the files you just bought, go the pages folder, open the index.html file in a web browser and you are ready to go.</p>
+<p>In case you wish to customize the styles you may do it by modifying .scss files provided in the 'sass' folder. More details on this is provided in the next section.</p>
+
+<pre class='hierarchy bring-up'>
+<code class="language-bash" data-lang="bash">
+Turbo/
+├── assets/
+│   ├── css/
+│   ├── js/
+│   ├── img/
+│   ├── sass/
+│   └── vendors/
+│  
+└── pages/
+    └─── Turbo HTML pages
+    
+</code></pre>
+
+
+
+<h4>Modifying Sass Files</h4>
+
+In case you plan to customize the template extensively, you can make changes to .scss files. We use the grunt task manager for the build processes. Grunt will watch for changes to .scss files and automatically compile the files to CSS.
+
+For this you need to install Node.JS and Grunt. Use of these tools is completely optional and only required if you want to modify the .scss files.
+
+<h4>Dependencies</h4>
+<p>To get started you will need to install the following items</p>
+
+<ul>
+<li>Ruby - to get Sass</li>
+<li>NodeJs - to get npm (For managing our dependences)</li>
+<li>Grunt - for task management.</li>
+</ul>
+
+<h5>Ruby and Sass</h5>
+
+<p>You can use several tools to install Ruby. Follow <a href="https://www.ruby-lang.org/en/documentation/installation/">instructions here</a> for installing Ruby.</p>
+<p>If you are using windows you will have to install Ruby, the <a href="http://rubyinstaller.org/" target="_blank">Ruby Installer</a> is pretty painless, be sure to check the &#8220;Add Ruby executable to your PATH&#8221; option.</p>
+<p>To install Sass on your computer, simply <a href="http://sass-lang.com/install">follow the instructions on the sass-lang.com</a> website.</p>
+
+<h5>Node.js and NPM</h5>
+
+<p>You can download Node.js from <a href="https://nodejs.org">here</a>. Npm comes bundled with Node.js</p>
+
+<h5>Grunt</h5>
+<p>Getting started with grunt is pretty simple. The <a href="http://gruntjs.com/getting-started" target="_blank">Grunt</a> site is a great place to get information on installing Grunt if you need more information.</p>
+<p>You need to first install Grunt using the below command</p>
+<pre><code class="language-markup">npm install -g grunt-cli</code></pre>
+<p>This installs the Grunt commandline interface globally to your machine so that you can access it.</p>
+
+<p>Once this is setup there are a few ways to get started.</p>
+<p><strong>Option 1:</strong><br />
+Using the commandline cd into projects root directory. You can simply run <code class="language-markup">npm install</code> and all the dependencies will be installed based on package.json file in the root folder of the template.</p>
+<p><strong>Option 2:</strong><br />
+You can start fresh byrunning <code class="language-markup">npm init</code> on the commandline from your project root. This will set up the package.json file for you.</p>
+
+<p>For options 2, you will need run <code class="language-markup">npm install grunt --save-dev</code> and grunt will be added to your <code class="language-markup">devDependencies</code> in the pacakge.json file. The <code class="language-markup">--save-dev</code> flag saves grunt into your package.json file, this way you can share this file and have everyone on the project using the same dependencies.</p>
+<p>More information about the package.json file can be found <a href="https://npmjs.org/doc/json.html">here</a>.</p>
+<p>If you ran npm init, you will need to install grunt and then a few other packages. grunt-contrib-sass, grunt-contrib-watch.</p>
+<p>To do this run the command <code class="language-markup">npm install &lt;package&gt; --save-dev</code>. Where <code class="language-markup">&lt;package&gt;</code> is what you need to add. Example <code class="language-markup">npm install grunt-contrib-sass --save-dev</code></p>
+<p><strong>grunt-contrib-sass:</strong> This task is pretty straight forward. It is used to actually compile your scss files to css.</p>
+<p><strong>grunt-contrib-watch:</strong> This is a task that you can run, so that we can watch our folder, whenever a file changes we can configure this task to run other tasks, say compile our Sass files.</p>
+<p>Your package.json should now look something like this:</p>
+<pre><code class="language-javascript">
+"devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-sass": "~0.3.0",
+    "grunt-contrib-watch": "~0.4.4"
+}
+</code></pre>
+<p>The other thing that grunt requires, which, is really what does all the work, is the Gruntfile.js. In this file you set up all of your tasks that you will run.</p>
+<p>Don't worry. We have this file already created for you.</p>
+
+<h4>Compile</h4>
+<p>Before you start modifying .scss files, make sure that you go to the root folder of the template and run the <code class="language-markup">grunt</code> command</p>
+
+<p>This will start the file watch by grunt and whenever a file is modified .scss files will be compiled to create the css file</p>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
                       <div class="card">
                         <div class="card-header">
                           <h3>TEMPLATE STRUCTURE </h3>
@@ -2988,38 +3086,6 @@ showNotification: function(from, align){
 
                           </div>
                       </div>             
-
-                      <div class="card">
-                        <div class="card-header">
-                          <h3>File Hierarchy</h3>
-                        </div>
-                        <div class="card-content">
-                        	<div>
-                            <p class="lead">The downloaded package will have the following structure. If you don't want to customize the template you can use the files from the folder 'dist'. In case you wish to customize the styles you may do it using less files provided in the folder 'build'</p>
-								<pre class='hierarchy bring-up'>
-								<code class="language-bash" data-lang="bash">
-Turbo/
-├── assets/
-│   ├── css/
-│   ├── js/
-│   ├── img/
-│   ├── sass/
-│   └── vendors/
-│  
-└── pages/
-    └─── Turbo HTML pages
-
-    
-    							</code>
-    							</pre>
-
-                                  <h4>Compile</h4>
-                                  <p> If you modify the .less files, you should remember to compile the .less files to CSS.
-
-
-                                </div>
-                            </div>
-                        </div>
 
                       <div class="card">
                         <div class="card-header">
