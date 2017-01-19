@@ -2,7 +2,7 @@
 
 * Turbo Admin Material Dashboard V1.1
 
-* Copyright 2016 Turbo
+* Copyright 2017 Turbo
 
 ---------------------
 [Table of contents]
@@ -11992,199 +11992,120 @@ footer {
  * File: mixins/_topbar-color.scss
  *--------------------------------------
  */
-.navbar {
-    /*&[data-topbar-color="default1"]{
-    	background-color: $navbar-bg;
-		color: $white-color;
-	
-		.navbar-brand {
-			color: $white-color;
-		
-			&:hover,
-			&:focus {
-				color: $white-color;
-			}
-		}
-	
-	
-		.navbar-nav {
-			> li > a {
-				color: $white-color;
-			
-				&:hover,
-				&:focus {
-					color: $white-color;
-					background-color: rgba(0,0,0,.08);
-				}
-			}
-		
-			> .open > a {
-				&,
-				&:hover,
-				&:focus {
-					color: $white-color;
-					background-color: rgba(0,0,0,.08);
-				}
-			}
-		}
-		
-		.logo-container .brand{
-			  color: $white-color;
-		}
-	}*/
-  	/*&[data-topbar-color="white1"]{
-      	background-color: $white-color;
-  		color: $gray-color;
-  	
-  		.navbar-brand {
-  			color: $gray-color;
-  		
-  			&:hover,
-  			&:focus {
-  				color: $gray-color;
-  			}
-  		}
-  	
-  	
-  		.navbar-nav {
-  			> li > a {
-  				color: $gray-color;
-  			
-  				&:hover,
-  				&:focus {
-  					color: $gray-color;
-  					background-color: rgba(0,0,0,.08);
-  				}
-  			}
-  		
-  			> .open > a {
-  				&,
-  				&:hover,
-  				&:focus {
-  					color: $gray-color;
-  					background-color: rgba(0,0,0,.08);
-  				}
-  			}
-  		}
-  				
-  		.logo-container .brand{
-  			  color: red;
-  		}
-  	}*/ }
-  .navbar[data-topbar-color="default"] {
-    background-color: #607D8B;
-    color: #FFFFFF;
-    /*.logo-container .brand{
-    	  color: $font-color;
-    }*/ }
-    .navbar[data-topbar-color="default"] .navbar-brand {
+.navbar[data-topbar-color="default"] {
+  background-color: #607D8B;
+  color: #FFFFFF;
+  /*.logo-container .brand{
+  	  color: $font-color;
+  }*/ }
+  .navbar[data-topbar-color="default"] .navbar-brand {
+    color: #FFFFFF; }
+    .navbar[data-topbar-color="default"] .navbar-brand:hover, .navbar[data-topbar-color="default"] .navbar-brand:focus {
       color: #FFFFFF; }
-      .navbar[data-topbar-color="default"] .navbar-brand:hover, .navbar[data-topbar-color="default"] .navbar-brand:focus {
-        color: #FFFFFF; }
-    .navbar[data-topbar-color="default"] .navbar-nav > li > a {
-      color: #FFFFFF; }
-      .navbar[data-topbar-color="default"] .navbar-nav > li > a:hover, .navbar[data-topbar-color="default"] .navbar-nav > li > a:focus {
-        color: #FFFFFF;
-        background-color: rgba(0, 0, 0, 0.08);
-        /*color: rgba($font-color, .8);*/ }
-    .navbar[data-topbar-color="default"] .navbar-nav > .open > a, .navbar[data-topbar-color="default"] .navbar-nav > .open > a:hover, .navbar[data-topbar-color="default"] .navbar-nav > .open > a:focus {
+  .navbar[data-topbar-color="default"] .navbar-nav > li > a {
+    color: #FFFFFF; }
+    .navbar[data-topbar-color="default"] .navbar-nav > li > a:hover, .navbar[data-topbar-color="default"] .navbar-nav > li > a:focus {
       color: #FFFFFF;
-      background-color: rgba(0, 0, 0, 0.08); }
-  .navbar[data-topbar-color="red"] {
-    background-color: #F44336;
+      background-color: rgba(0, 0, 0, 0.08);
+      /*color: rgba($font-color, .8);*/ }
+  .navbar[data-topbar-color="default"] .navbar-nav > .open > a, .navbar[data-topbar-color="default"] .navbar-nav > .open > a:hover, .navbar[data-topbar-color="default"] .navbar-nav > .open > a:focus {
     color: #FFFFFF;
-    /*.logo-container .brand{
-    	  color: $font-color;
-    }*/ }
-    .navbar[data-topbar-color="red"] .navbar-brand {
+    background-color: rgba(0, 0, 0, 0.08); }
+.navbar[data-topbar-color="red"] {
+  background-color: #F44336;
+  color: #FFFFFF;
+  /*.logo-container .brand{
+  	  color: $font-color;
+  }*/ }
+  .navbar[data-topbar-color="red"] .navbar-brand {
+    color: #FFFFFF; }
+    .navbar[data-topbar-color="red"] .navbar-brand:hover, .navbar[data-topbar-color="red"] .navbar-brand:focus {
       color: #FFFFFF; }
-      .navbar[data-topbar-color="red"] .navbar-brand:hover, .navbar[data-topbar-color="red"] .navbar-brand:focus {
-        color: #FFFFFF; }
-    .navbar[data-topbar-color="red"] .navbar-nav > li > a {
-      color: #FFFFFF; }
-      .navbar[data-topbar-color="red"] .navbar-nav > li > a:hover, .navbar[data-topbar-color="red"] .navbar-nav > li > a:focus {
-        color: #FFFFFF;
-        background-color: rgba(0, 0, 0, 0.08);
-        /*color: rgba($font-color, .8);*/ }
-    .navbar[data-topbar-color="red"] .navbar-nav > .open > a, .navbar[data-topbar-color="red"] .navbar-nav > .open > a:hover, .navbar[data-topbar-color="red"] .navbar-nav > .open > a:focus {
+  .navbar[data-topbar-color="red"] .navbar-nav > li > a {
+    color: #FFFFFF; }
+    .navbar[data-topbar-color="red"] .navbar-nav > li > a:hover, .navbar[data-topbar-color="red"] .navbar-nav > li > a:focus {
       color: #FFFFFF;
-      background-color: rgba(0, 0, 0, 0.08); }
-  .navbar[data-topbar-color="blue"] {
-    background-color: #2196F3;
+      background-color: rgba(0, 0, 0, 0.08);
+      /*color: rgba($font-color, .8);*/ }
+  .navbar[data-topbar-color="red"] .navbar-nav > .open > a, .navbar[data-topbar-color="red"] .navbar-nav > .open > a:hover, .navbar[data-topbar-color="red"] .navbar-nav > .open > a:focus {
     color: #FFFFFF;
-    /*.logo-container .brand{
-    	  color: $font-color;
-    }*/ }
-    .navbar[data-topbar-color="blue"] .navbar-brand {
+    background-color: rgba(0, 0, 0, 0.08); }
+.navbar[data-topbar-color="blue"] {
+  background-color: #2196F3;
+  color: #FFFFFF;
+  /*.logo-container .brand{
+  	  color: $font-color;
+  }*/ }
+  .navbar[data-topbar-color="blue"] .navbar-brand {
+    color: #FFFFFF; }
+    .navbar[data-topbar-color="blue"] .navbar-brand:hover, .navbar[data-topbar-color="blue"] .navbar-brand:focus {
       color: #FFFFFF; }
-      .navbar[data-topbar-color="blue"] .navbar-brand:hover, .navbar[data-topbar-color="blue"] .navbar-brand:focus {
-        color: #FFFFFF; }
-    .navbar[data-topbar-color="blue"] .navbar-nav > li > a {
-      color: #FFFFFF; }
-      .navbar[data-topbar-color="blue"] .navbar-nav > li > a:hover, .navbar[data-topbar-color="blue"] .navbar-nav > li > a:focus {
-        color: #FFFFFF;
-        background-color: rgba(0, 0, 0, 0.08);
-        /*color: rgba($font-color, .8);*/ }
-    .navbar[data-topbar-color="blue"] .navbar-nav > .open > a, .navbar[data-topbar-color="blue"] .navbar-nav > .open > a:hover, .navbar[data-topbar-color="blue"] .navbar-nav > .open > a:focus {
+  .navbar[data-topbar-color="blue"] .navbar-nav > li > a {
+    color: #FFFFFF; }
+    .navbar[data-topbar-color="blue"] .navbar-nav > li > a:hover, .navbar[data-topbar-color="blue"] .navbar-nav > li > a:focus {
       color: #FFFFFF;
-      background-color: rgba(0, 0, 0, 0.08); }
-  .navbar[data-topbar-color="green"] {
-    background-color: #4CAF50;
+      background-color: rgba(0, 0, 0, 0.08);
+      /*color: rgba($font-color, .8);*/ }
+  .navbar[data-topbar-color="blue"] .navbar-nav > .open > a, .navbar[data-topbar-color="blue"] .navbar-nav > .open > a:hover, .navbar[data-topbar-color="blue"] .navbar-nav > .open > a:focus {
     color: #FFFFFF;
-    /*.logo-container .brand{
-    	  color: $font-color;
-    }*/ }
-    .navbar[data-topbar-color="green"] .navbar-brand {
+    background-color: rgba(0, 0, 0, 0.08); }
+.navbar[data-topbar-color="green"] {
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  /*.logo-container .brand{
+  	  color: $font-color;
+  }*/ }
+  .navbar[data-topbar-color="green"] .navbar-brand {
+    color: #FFFFFF; }
+    .navbar[data-topbar-color="green"] .navbar-brand:hover, .navbar[data-topbar-color="green"] .navbar-brand:focus {
       color: #FFFFFF; }
-      .navbar[data-topbar-color="green"] .navbar-brand:hover, .navbar[data-topbar-color="green"] .navbar-brand:focus {
-        color: #FFFFFF; }
-    .navbar[data-topbar-color="green"] .navbar-nav > li > a {
-      color: #FFFFFF; }
-      .navbar[data-topbar-color="green"] .navbar-nav > li > a:hover, .navbar[data-topbar-color="green"] .navbar-nav > li > a:focus {
-        color: #FFFFFF;
-        background-color: rgba(0, 0, 0, 0.08);
-        /*color: rgba($font-color, .8);*/ }
-    .navbar[data-topbar-color="green"] .navbar-nav > .open > a, .navbar[data-topbar-color="green"] .navbar-nav > .open > a:hover, .navbar[data-topbar-color="green"] .navbar-nav > .open > a:focus {
+  .navbar[data-topbar-color="green"] .navbar-nav > li > a {
+    color: #FFFFFF; }
+    .navbar[data-topbar-color="green"] .navbar-nav > li > a:hover, .navbar[data-topbar-color="green"] .navbar-nav > li > a:focus {
       color: #FFFFFF;
-      background-color: rgba(0, 0, 0, 0.08); }
-  .navbar[data-topbar-color="yellow"] {
-    background-color: #FFC107;
+      background-color: rgba(0, 0, 0, 0.08);
+      /*color: rgba($font-color, .8);*/ }
+  .navbar[data-topbar-color="green"] .navbar-nav > .open > a, .navbar[data-topbar-color="green"] .navbar-nav > .open > a:hover, .navbar[data-topbar-color="green"] .navbar-nav > .open > a:focus {
     color: #FFFFFF;
-    /*.logo-container .brand{
-    	  color: $font-color;
-    }*/ }
-    .navbar[data-topbar-color="yellow"] .navbar-brand {
+    background-color: rgba(0, 0, 0, 0.08); }
+.navbar[data-topbar-color="yellow"] {
+  background-color: #FFC107;
+  color: #FFFFFF;
+  /*.logo-container .brand{
+  	  color: $font-color;
+  }*/ }
+  .navbar[data-topbar-color="yellow"] .navbar-brand {
+    color: #FFFFFF; }
+    .navbar[data-topbar-color="yellow"] .navbar-brand:hover, .navbar[data-topbar-color="yellow"] .navbar-brand:focus {
       color: #FFFFFF; }
-      .navbar[data-topbar-color="yellow"] .navbar-brand:hover, .navbar[data-topbar-color="yellow"] .navbar-brand:focus {
-        color: #FFFFFF; }
-    .navbar[data-topbar-color="yellow"] .navbar-nav > li > a {
-      color: #FFFFFF; }
-      .navbar[data-topbar-color="yellow"] .navbar-nav > li > a:hover, .navbar[data-topbar-color="yellow"] .navbar-nav > li > a:focus {
-        color: #FFFFFF;
-        background-color: rgba(0, 0, 0, 0.08);
-        /*color: rgba($font-color, .8);*/ }
-    .navbar[data-topbar-color="yellow"] .navbar-nav > .open > a, .navbar[data-topbar-color="yellow"] .navbar-nav > .open > a:hover, .navbar[data-topbar-color="yellow"] .navbar-nav > .open > a:focus {
+  .navbar[data-topbar-color="yellow"] .navbar-nav > li > a {
+    color: #FFFFFF; }
+    .navbar[data-topbar-color="yellow"] .navbar-nav > li > a:hover, .navbar[data-topbar-color="yellow"] .navbar-nav > li > a:focus {
       color: #FFFFFF;
-      background-color: rgba(0, 0, 0, 0.08); }
-  .navbar[data-topbar-color="white"] {
-    background-color: #FFFFFF;
-    color: #333333;
-    /*.logo-container .brand{
-    	  color: $font-color;
-    }*/ }
-    .navbar[data-topbar-color="white"] .navbar-brand {
+      background-color: rgba(0, 0, 0, 0.08);
+      /*color: rgba($font-color, .8);*/ }
+  .navbar[data-topbar-color="yellow"] .navbar-nav > .open > a, .navbar[data-topbar-color="yellow"] .navbar-nav > .open > a:hover, .navbar[data-topbar-color="yellow"] .navbar-nav > .open > a:focus {
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.08); }
+.navbar[data-topbar-color="white"] {
+  background-color: #FFFFFF;
+  color: #333333;
+  /*.logo-container .brand{
+  	  color: $font-color;
+  }*/ }
+  .navbar[data-topbar-color="white"] .navbar-brand {
+    color: #333333; }
+    .navbar[data-topbar-color="white"] .navbar-brand:hover, .navbar[data-topbar-color="white"] .navbar-brand:focus {
       color: #333333; }
-      .navbar[data-topbar-color="white"] .navbar-brand:hover, .navbar[data-topbar-color="white"] .navbar-brand:focus {
-        color: #333333; }
-    .navbar[data-topbar-color="white"] .navbar-nav > li > a {
-      color: #333333; }
-      .navbar[data-topbar-color="white"] .navbar-nav > li > a:hover, .navbar[data-topbar-color="white"] .navbar-nav > li > a:focus {
-        color: #333333;
-        background-color: rgba(0, 0, 0, 0.08);
-        /*color: rgba($font-color, .8);*/ }
-    .navbar[data-topbar-color="white"] .navbar-nav > .open > a, .navbar[data-topbar-color="white"] .navbar-nav > .open > a:hover, .navbar[data-topbar-color="white"] .navbar-nav > .open > a:focus {
+  .navbar[data-topbar-color="white"] .navbar-nav > li > a {
+    color: #333333; }
+    .navbar[data-topbar-color="white"] .navbar-nav > li > a:hover, .navbar[data-topbar-color="white"] .navbar-nav > li > a:focus {
       color: #333333;
-      background-color: rgba(0, 0, 0, 0.08); }
+      background-color: rgba(0, 0, 0, 0.08);
+      /*color: rgba($font-color, .8);*/ }
+  .navbar[data-topbar-color="white"] .navbar-nav > .open > a, .navbar[data-topbar-color="white"] .navbar-nav > .open > a:hover, .navbar[data-topbar-color="white"] .navbar-nav > .open > a:focus {
+    color: #333333;
+    background-color: rgba(0, 0, 0, 0.08); }
 
 /*
  *----------------------------------------------------------
