@@ -755,3 +755,173 @@ $sidebar-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
 	}
 
 }
+
+/* Theme Styles */
+.sidebar,
+.off-canvas-sidebar{
+	&[data-background-color="gray"]{
+        background-color: #434a54;
+    }
+    &[data-background-color="green"]{
+        background-color: green;
+    }
+}
+
+
+/* 
+ *--------------------------------------
+ * File: mixins/_topbar-color.scss
+ *--------------------------------------
+ */
+@mixin topbar-background-color($bg-color, $font-color){
+    background-color: $bg-color;
+	color: $font-color;
+	
+	.navbar-brand {
+		color: $font-color;
+	
+		&:hover,
+		&:focus {
+			color: $font-color;
+		}
+	}
+
+
+	.navbar-nav {
+		> li > a {
+			color: $font-color;
+		
+			&:hover,
+			&:focus {
+				color: $font-color;
+				background-color: rgba(0,0,0,.08);
+				/*color: rgba($font-color, .8);*/
+			}
+		}
+	
+		> .open > a {
+			&,
+			&:hover,
+			&:focus {
+				color: $font-color;
+				background-color: rgba(0,0,0,.08);
+			}
+		}
+	}
+	
+	/*.logo-container .brand{
+		  color: $font-color;
+	}*/
+	
+}
+
+
+
+.navbar {
+    &[data-topbar-color="default"]{
+		@include topbar-background-color($navbar-bg, $white-color);
+	}
+	
+	&[data-topbar-color="red"]{
+		@include topbar-background-color($brand-danger, $white-color);
+	}
+	
+	&[data-topbar-color="blue"]{
+		@include topbar-background-color($brand-primary, $white-color);
+	}
+	
+	&[data-topbar-color="green"]{
+		@include topbar-background-color($brand-success, $white-color);
+	}
+	
+	&[data-topbar-color="yellow"]{
+		@include topbar-background-color($brand-warning, $white-color);
+	}
+	
+	&[data-topbar-color="white"]{
+		@include topbar-background-color($white-color, $gray-dark);
+	}
+	
+	
+    /*&[data-topbar-color="default1"]{
+    	background-color: $navbar-bg;
+		color: $white-color;
+	
+		.navbar-brand {
+			color: $white-color;
+		
+			&:hover,
+			&:focus {
+				color: $white-color;
+			}
+		}
+	
+	
+		.navbar-nav {
+			> li > a {
+				color: $white-color;
+			
+				&:hover,
+				&:focus {
+					color: $white-color;
+					background-color: rgba(0,0,0,.08);
+				}
+			}
+		
+			> .open > a {
+				&,
+				&:hover,
+				&:focus {
+					color: $white-color;
+					background-color: rgba(0,0,0,.08);
+				}
+			}
+		}
+		
+		.logo-container .brand{
+			  color: $white-color;
+		}
+	}*/
+	
+	
+	
+	/*&[data-topbar-color="white1"]{
+    	background-color: $white-color;
+		color: $gray-color;
+	
+		.navbar-brand {
+			color: $gray-color;
+		
+			&:hover,
+			&:focus {
+				color: $gray-color;
+			}
+		}
+	
+	
+		.navbar-nav {
+			> li > a {
+				color: $gray-color;
+			
+				&:hover,
+				&:focus {
+					color: $gray-color;
+					background-color: rgba(0,0,0,.08);
+				}
+			}
+		
+			> .open > a {
+				&,
+				&:hover,
+				&:focus {
+					color: $gray-color;
+					background-color: rgba(0,0,0,.08);
+				}
+			}
+		}
+				
+		.logo-container .brand{
+			  color: red;
+		}
+	}*/
+}

@@ -21,8 +21,8 @@
     background: $left-sidebar-bg-color;
     @include shadow-big();
 
-    &[data-background-color="black"]{
-        background-color: #191919;
+    &[data-background-color="gray"]{
+        background-color: #434a54;
     }
 
     .sidebar-wrapper{
@@ -268,7 +268,7 @@
         }
     }
 
-    &[data-background-color="black"]{
+    &[data-background-color="gray"]{
         @include sidebar-background-color($gray-base, $white-color);
     }
 
@@ -403,7 +403,7 @@
             display: inline-block !important;
         }
 
-        [data-background-color="black"]{
+        [data-background-color="gray"]{
             .nav,
             .user{
                 .collapse {
@@ -595,3 +595,5 @@
         }
     }
 }
+
+
