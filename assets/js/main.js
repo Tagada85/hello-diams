@@ -1,4 +1,5 @@
 var socket = io();
+var USERS = [];
 
 function initTable(){
     if($.fn.dataTable.isDataTable('#datatables')){
@@ -20,68 +21,89 @@ function initTable(){
     }
 }
 
-
 socket.on('connected', function(data){
     var usersData = '';
-    var users = data.users;
-    for( var i = 0; i < users.length; i++) {
-        if(users[i].hasOwnProperty('Minimum Fee')) {
-            usersData += `<tr><td>${users[i]["Platform"]}`;
-            usersData += `<td>${users[i]["First Name"]}</td>`;
-            usersData += `<td>${users[i]["Last Name"]}</td>`;
-            usersData += `<td>${users[i]["Phone"]}</td>`;
-            usersData += `<td>${users[i]["Email"]}</td>`;
-            usersData += `<td class="text-right"><a class="edit-user btn btn-simple btn-warning btn-icon edit" data-id=${users[i]["id"]} href="#" data-toggle="modal" data-target="#edit-user-modal">
-            <i class="material-icons">dvr</i></a>
-            <a href="#" class="btn btn-simple btn-danger btn-icon remove" data-id=${users[i]["id"]}>
-            <i class="material-icons">close</i></a></td></tr>`;
-        }
-    }
-    $('#user-data').html(usersData);
+    USERS = data.users;
+    filterTable(data.filterType);
     initTable();
 });
 
-socket.on('users_filtered', function(data) {
-    var users = data.users_filtered;
-    if(data.filter == 'resaler') {
+socket.on('update-users', function(data) {
+    USERS = data.users;
+    filterTable(data.filterType);
+    $('.sidebar-wrapper .nav').find('li').removeClass('active');
+    if(data.filterType == 'resaler') {
+        $('.sidebar-wrapper .nav #resaler-filter').parent('li').addClass('active');
+    }
+    else if (data.filterType == 'white-label') {
+        $('.sidebar-wrapper .nav #white-label-filter').parent('li').addClass('active');
+    }
+    else if (data.filterType == 'franchise') {
+        $('.sidebar-wrapper .nav #franchise-filter').parent('li').addClass('active');
+    }
+    if( $("#add-user-modal").hasClass('in') ) {
+        $('#add-user-modal').find('input, textarea').val('');
+        $('#add-user-modal select').val('');
+        $('#edit-user-modal .error-container p').html('');
+        $('#add-user-modal').modal('toggle');
+    }
+    else if( $('#edit-user-modal').hasClass('in')) {
+        $('#edit-user-modal').modal('toggle');
+        $('#edit-user-modal .error-container p').html('');
+    }
+});
+
+function filterTable(type) {
+    if(type == 'resaler') {
         $('#platform-header').hide();
     }
     else {
         $('#platform-header').show();
     }
     var usersData = '';
-    for( var i = 0; i < users.length; i++) {
-        if(data.filter == 'resaler') {
-            usersData += `<tr><td>${users[i]["First Name"]}</td>`;
-            usersData += `<td>${users[i]["Last Name"]}</td>`;
-            usersData += `<td>${users[i]["Phone"]}</td>`;
-            usersData += `<td>${users[i]["Email"]}</td>`;
-            usersData += `<td class="text-right"><a class="edit-user btn btn-simple btn-warning btn-icon edit" data-id=${users[i]["id"]} href="#" data-toggle="modal" data-target="#edit-user-modal">
-            <i class="material-icons">dvr</i></a>
-            <a href="#" class="btn btn-simple btn-danger btn-icon remove" data-id=${users[i]["id"]}>
-            <i class="material-icons">close</i></a></td></tr>`;
+    for( var i = 0; i < USERS.length; i++) {
+        if(type == 'resaler') {
+            if(!USERS[i].hasOwnProperty("Platform")) {
+                usersData += `<tr><td>${USERS[i]["First Name"]}</td>`;
+                usersData += `<td>${USERS[i]["Last Name"]}</td>`;
+                usersData += `<td>${USERS[i]["Phone"]}</td>`;
+                usersData += `<td>${USERS[i]["Email"]}</td>`;
+                usersData += `<td class="text-right"><a class="edit-user btn btn-simple btn-warning btn-icon edit" data-id=${USERS[i]["id"]} href="#" data-toggle="modal" data-target="#edit-user-modal">
+                <i class="material-icons">dvr</i></a>
+                <a href="#" class="btn btn-simple btn-danger btn-icon remove" data-id=${USERS[i]["id"]}>
+                <i class="material-icons">close</i></a></td></tr>`;
+            }
         }
-        else {
-            usersData += `<tr><td>${users[i]["Platform"]}`;
-            usersData += `<td>${users[i]["First Name"]}</td>`;
-            usersData += `<td>${users[i]["Last Name"]}</td>`;
-            usersData += `<td>${users[i]["Phone"]}</td>`;
-            usersData += `<td>${users[i]["Email"]}</td>`;
-            usersData += `<td class="text-right"><a class="edit-user btn btn-simple btn-warning btn-icon edit" data-id=${users[i]["id"]} href="#" data-toggle="modal" data-target="#edit-user-modal">
-            <i class="material-icons">dvr</i></a>
-            <a href="#" class="btn btn-simple btn-danger btn-icon remove" data-id=${users[i]["id"]}>
-            <i class="material-icons">close</i></a></td></tr>`;
+        else if (type == 'white-label'){
+            if(USERS[i].hasOwnProperty("Minimum Fee")){
+                usersData += `<tr><td>${USERS[i]["Platform"]}`;
+                usersData += `<td>${USERS[i]["First Name"]}</td>`;
+                usersData += `<td>${USERS[i]["Last Name"]}</td>`;
+                usersData += `<td>${USERS[i]["Phone"]}</td>`;
+                usersData += `<td>${USERS[i]["Email"]}</td>`;
+                usersData += `<td class="text-right"><a class="edit-user btn btn-simple btn-warning btn-icon edit" data-id=${USERS[i]["id"]} href="#" data-toggle="modal" data-target="#edit-user-modal">
+                <i class="material-icons">dvr</i></a>
+                <a href="#" class="btn btn-simple btn-danger btn-icon remove" data-id=${USERS[i]["id"]}>
+                <i class="material-icons">close</i></a></td></tr>`;
+            }
+        }
+        else if( type == 'franchise') {
+            if(USERS[i].hasOwnProperty("Platform") && !USERS[i].hasOwnProperty("Minimum Fee")) {
+                usersData += `<tr><td>${USERS[i]["Platform"]}`;
+                usersData += `<td>${USERS[i]["First Name"]}</td>`;
+                usersData += `<td>${USERS[i]["Last Name"]}</td>`;
+                usersData += `<td>${USERS[i]["Phone"]}</td>`;
+                usersData += `<td>${USERS[i]["Email"]}</td>`;
+                usersData += `<td class="text-right"><a class="edit-user btn btn-simple btn-warning btn-icon edit" data-id=${USERS[i]["id"]} href="#" data-toggle="modal" data-target="#edit-user-modal">
+                <i class="material-icons">dvr</i></a>
+                <a href="#" class="btn btn-simple btn-danger btn-icon remove" data-id=${USERS[i]["id"]}>
+                <i class="material-icons">close</i></a></td></tr>`;
+            }
         }
     }
-    initTable();
     $('#user-data').html(usersData);
-    if( $("#add-user-modal").hasClass('in') ) {
-        $('#add-user-modal').modal('toggle');
-    }
-    else if( $('#edit-user-modal').hasClass('in')) {
-        $('#edit-user-modal').modal('toggle');
-    }
-});
+    initTable();
+}
 
 $(document).on('click', '.edit-user', function(){
     var userId = $(this).data('id');
@@ -130,24 +152,21 @@ function fillEditUserModal(user, type) {
 }
 
 $('#white-label-filter').on('click', function(){
-    $('#user-type').html('White Label Users');
     $('.nav li').removeClass('active');
     $(this).parent('li').addClass('active');
-    socket.emit('filter-white-label');
+    filterTable('white-label');
 });
 
 $('#resaler-filter').on('click', function(){
-    $('#user-type').html('Resaler Users');
     $('.nav li').removeClass('active');
     $(this).parent('li').addClass('active');
-    socket.emit('filter-resaler');
+    filterTable('resaler');
 });
 
 $('#franchise-filter').on('click', function(){
-    $('#user-type').html('Franchise Users');
     $('.nav li').removeClass('active');
     $(this).parent('li').addClass('active');
-    socket.emit('filter-franchise');
+    filterTable('franchise');
 });
 
 
@@ -177,6 +196,7 @@ $('#submit-edit-user').on('click', function(){
     var userData = {};
     var errorCount = 0;
     var errors = [];
+    var userType = 'resaler';
 
     $('#edit-user-modal :input:visible:not(:button)').each(function(idx, element) {
         if(element.value === '') {
@@ -217,9 +237,14 @@ $('#submit-edit-user').on('click', function(){
     userData["Comment"] = $('#edit-user-modal #comment').val();
     if($('#edit-user-modal #minfeegroup').is(':visible')){
         userData["Minimum Fee"] = $('#edit-user-modal #minimum-fee').val();
+        userType = 'white-label';
     }
     if($('#edit-user-modal #platformgroup').is(':visible')) {
         userData["Platform"] = $('#edit-user-modal #platform').val();
+    }
+
+    if( $('#edit-user-modal #platformgroup').is(':visible') && !$('#edit-user-modal #minfeegroup').is(':visible')) {
+        userType = 'franchise';
     }
 
     if(errorCount > 0) {
@@ -228,10 +253,8 @@ $('#submit-edit-user').on('click', function(){
         $('#edit-user-modal .error-container p').html(errorMessage);
     }
     else {
-        socket.emit('edit-user', userData);
+        socket.emit('edit-user', { data: userData, type: userType});
     }
-
-
 });
 
 $('#submit-add-user').on('click', function(){
@@ -251,7 +274,6 @@ $('#submit-add-user').on('click', function(){
     if(typeUser == 'resaler') {
         $('#add-user-modal :input:not(:button, #platform, #minimum-fee)').each(function(idx, element) {
             if(element.value === '') {
-                console.log(element);
                 $(this).parent('div .form-group').addClass('has-error');
                 errorCount++;
             }
@@ -316,6 +338,17 @@ $('#submit-add-user').on('click', function(){
         $('#add-user-modal .error-container p').html(errorMessage);
     }
     else {
-        socket.emit('add-user', userData);
+        socket.emit('add-user', {data: userData, type:typeUser} );
     }
+});
+
+//clean up modal on close
+$('#add-user-modal').on('hidden.bs.modal', function(){
+    $('#add-user-modal .error-container p').html('');
+    $('#add-user-modal').find('input, textarea').val('');
+    $('#add-user-modal select').val('');
+});
+
+$('#edit-user-modal').on('hidden.bs.modal', function(){
+    $('#edit-user-modal .error-container p').html('');
 });

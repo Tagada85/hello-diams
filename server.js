@@ -55,36 +55,7 @@ function Server() {
     },
     this.initSocketServer = function(callback){
         ioServer.on('connection', function(socket){
-            socket.emit('connected', {users: _self.usersData});
-            socket.on('filter-white-label', function(){
-                var users = [];
-                for( var i = 0; i < _self.usersData.length; i++) {
-                    if(_self.usersData[i].hasOwnProperty("Minimum Fee")){
-                        users.push(_self.usersData[i]);
-                    }
-                }
-                socket.emit('users_filtered', { filter: 'white-label', users_filtered: users});
-            });
-
-            socket.on('filter-franchise', function(){
-                var users = [];
-                for( var i = 0; i < _self.usersData.length; i++) {
-                    if(_self.usersData[i].hasOwnProperty("Platform") && !_self.usersData[i].hasOwnProperty("Minimum Fee")){
-                        users.push(_self.usersData[i]);
-                    }
-                }
-                socket.emit('users_filtered', {filter: 'franchise', users_filtered: users});
-            });
-
-            socket.on('filter-resaler', function(){
-                var users = [];
-                for( var i = 0; i < _self.usersData.length; i++){
-                    if(!_self.usersData[i].hasOwnProperty("Platform")){
-                        users.push(_self.usersData[i]);
-                    }
-                }
-                socket.emit('users_filtered', {filter: 'resaler', users_filtered: users});
-            });
+            socket.emit('connected', {users: _self.usersData, filterType: 'white-label'});
 
             socket.on('findUser', function(data) {
                 var id = data.id;
@@ -99,11 +70,11 @@ function Server() {
 
             socket.on('edit-user', function(user) {
                 for( var i = 0; i < _self.usersData.length; i++) {
-                    if(_self.usersData[i]["id"] == user["id"]) {
-                        _self.usersData[i] = user;
+                    if(_self.usersData[i]["id"] == user.data["id"]) {
+                        _self.usersData[i] = user.data;
                     }
                 }
-                socket.emit('users_filtered', {users_filtered: _self.usersData});
+                socket.emit('update-users', {users: _self.usersData, filterType: user.type});
             });
 
             socket.on('delete-user', function(userId){
@@ -114,14 +85,14 @@ function Server() {
                     }
                 }
                 _self.usersData.splice(idx, 1);
-                socket.emit('users_filtered', {users_filtered: _self.usersData});
+                socket.emit('update-users', {users: _self.usersData, filterType: user.type});
             });
 
             socket.on('add-user', function(user){
                 let idx = _self.usersData.length + 1;
-                _self.usersData.push(user);
+                _self.usersData.push(user.data);
                 _self.usersData[idx-1]["id"] = idx;
-                socket.emit('users_filtered', {users_filtered: _self.usersData});
+                socket.emit('update-users', {users: _self.usersData, filterType: user.type });
             });
         });
         callback();
