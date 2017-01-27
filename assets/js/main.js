@@ -25,19 +25,17 @@ socket.on('connected', function(data){
     var usersData = '';
     var users = data.users;
     for( var i = 0; i < users.length; i++) {
-        usersData += `<tr><td>${users[i]["First Name"]}</td>`;
-        usersData += `<td>${users[i]["Last Name"]}</td>`;
-        usersData += `<td>${users[i]["Phone"]}</td>`;
-        usersData += `<td>${users[i]["Email"]}</td>`;
-        usersData += `<td>${users[i]["Company Name"]}</td>`;
-        usersData += `<td>${users[i]["Country of Incorporation"]}</td>`;
-        usersData += `<td>${users[i]["Registration Number"]}</td>`;
-        usersData += `<td>${users[i]["Corporate Address"]}</td>`;
-        usersData += `<td>${users[i]["Legal Representative"]}</td>`;
-        usersData += `<td class="text-right"><a class="edit-user btn btn-simple btn-warning btn-icon edit" data-id=${users[i]["id"]} href="#" data-toggle="modal" data-target="#edit-user-modal">
-                    <i class="material-icons">dvr</i></a>
-                    <a href="#" class="btn btn-simple btn-danger btn-icon remove" data-id=${users[i]["id"]}>
-                    <i class="material-icons">close</i></a></td></tr>`;
+        if(users[i].hasOwnProperty('Minimum Fee')) {
+            usersData += `<tr><td>${users[i]["Platform"]}`;
+            usersData += `<td>${users[i]["First Name"]}</td>`;
+            usersData += `<td>${users[i]["Last Name"]}</td>`;
+            usersData += `<td>${users[i]["Phone"]}</td>`;
+            usersData += `<td>${users[i]["Email"]}</td>`;
+            usersData += `<td class="text-right"><a class="edit-user btn btn-simple btn-warning btn-icon edit" data-id=${users[i]["id"]} href="#" data-toggle="modal" data-target="#edit-user-modal">
+            <i class="material-icons">dvr</i></a>
+            <a href="#" class="btn btn-simple btn-danger btn-icon remove" data-id=${users[i]["id"]}>
+            <i class="material-icons">close</i></a></td></tr>`;
+        }
     }
     $('#user-data').html(usersData);
     initTable();
@@ -45,21 +43,35 @@ socket.on('connected', function(data){
 
 socket.on('users_filtered', function(data) {
     var users = data.users_filtered;
+    if(data.filter == 'resaler') {
+        $('#platform-header').hide();
+    }
+    else {
+        $('#platform-header').show();
+    }
     var usersData = '';
     for( var i = 0; i < users.length; i++) {
-        usersData += `<tr><td>${users[i]["First Name"]}</td>`;
-        usersData += `<td>${users[i]["Last Name"]}</td>`;
-        usersData += `<td>${users[i]["Phone"]}</td>`;
-        usersData += `<td>${users[i]["Email"]}</td>`;
-        usersData += `<td>${users[i]["Company Name"]}</td>`;
-        usersData += `<td>${users[i]["Country of Incorporation"]}</td>`;
-        usersData += `<td>${users[i]["Registration Number"]}</td>`;
-        usersData += `<td>${users[i]["Corporate Address"]}</td>`;
-        usersData += `<td>${users[i]["Legal Representative"]}</td>`;
-        usersData += `<td class="text-right"><a class="edit-user btn btn-simple btn-warning btn-icon edit" data-id=${users[i]["id"]} href="#" data-toggle="modal" data-target="#edit-user-modal">
-                    <i class="material-icons">dvr</i></a>
-                    <a href="#" class="btn btn-simple btn-danger btn-icon remove" data-id=${users[i]["id"]}>
-                    <i class="material-icons">close</i></a></td></tr>`;
+        if(data.filter == 'resaler') {
+            usersData += `<tr><td>${users[i]["First Name"]}</td>`;
+            usersData += `<td>${users[i]["Last Name"]}</td>`;
+            usersData += `<td>${users[i]["Phone"]}</td>`;
+            usersData += `<td>${users[i]["Email"]}</td>`;
+            usersData += `<td class="text-right"><a class="edit-user btn btn-simple btn-warning btn-icon edit" data-id=${users[i]["id"]} href="#" data-toggle="modal" data-target="#edit-user-modal">
+            <i class="material-icons">dvr</i></a>
+            <a href="#" class="btn btn-simple btn-danger btn-icon remove" data-id=${users[i]["id"]}>
+            <i class="material-icons">close</i></a></td></tr>`;
+        }
+        else {
+            usersData += `<tr><td>${users[i]["Platform"]}`;
+            usersData += `<td>${users[i]["First Name"]}</td>`;
+            usersData += `<td>${users[i]["Last Name"]}</td>`;
+            usersData += `<td>${users[i]["Phone"]}</td>`;
+            usersData += `<td>${users[i]["Email"]}</td>`;
+            usersData += `<td class="text-right"><a class="edit-user btn btn-simple btn-warning btn-icon edit" data-id=${users[i]["id"]} href="#" data-toggle="modal" data-target="#edit-user-modal">
+            <i class="material-icons">dvr</i></a>
+            <a href="#" class="btn btn-simple btn-danger btn-icon remove" data-id=${users[i]["id"]}>
+            <i class="material-icons">close</i></a></td></tr>`;
+        }
     }
     initTable();
     $('#user-data').html(usersData);
@@ -136,13 +148,6 @@ $('#franchise-filter').on('click', function(){
     $('.nav li').removeClass('active');
     $(this).parent('li').addClass('active');
     socket.emit('filter-franchise');
-});
-
-$('#all-users').on('click', function(){
-    $('#user-type').html('All Users');
-    $('.nav li').removeClass('active');
-    $(this).parent('li').addClass('active');
-    socket.emit('all-users');
 });
 
 

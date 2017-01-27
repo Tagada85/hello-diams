@@ -63,7 +63,7 @@ function Server() {
                         users.push(_self.usersData[i]);
                     }
                 }
-                socket.emit('users_filtered', {users_filtered: users});
+                socket.emit('users_filtered', { filter: 'white-label', users_filtered: users});
             });
 
             socket.on('filter-franchise', function(){
@@ -73,7 +73,7 @@ function Server() {
                         users.push(_self.usersData[i]);
                     }
                 }
-                socket.emit('users_filtered', {users_filtered: users});
+                socket.emit('users_filtered', {filter: 'franchise', users_filtered: users});
             });
 
             socket.on('filter-resaler', function(){
@@ -83,11 +83,7 @@ function Server() {
                         users.push(_self.usersData[i]);
                     }
                 }
-                socket.emit('users_filtered', {users_filtered: users});
-            });
-
-            socket.on('all-users', function(){
-                socket.emit('users_filtered', {users_filtered: _self.usersData});
+                socket.emit('users_filtered', {filter: 'resaler', users_filtered: users});
             });
 
             socket.on('findUser', function(data) {
