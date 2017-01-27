@@ -1,5 +1,8 @@
 var socket = io();
 var USERS = [];
+var WL_SETTINGS = {};
+var FRANCHISE_SETTINGS = {};
+var RESALER_SETTINGS = {};
 
 function initTable(){
     if($.fn.dataTable.isDataTable('#datatables')){
@@ -352,10 +355,6 @@ $('#edit-user-modal').on('hidden.bs.modal', function(){
     $('#edit-user-modal .error-container p').html('');
 });
 
-$('#add-company-modal').on('hidden.bs.modal', function(){
-    $('#add-company-modal .error-container p').html('');
-    $('#add-company-modal').find('input').val('');
-});
 function getTypeUser(){
     var id = $('.sidebar-wrapper .nav li.active a').attr('id');
     var type = id.split('-')[0];
@@ -365,56 +364,69 @@ function getTypeUser(){
 $('#settings').on('click', function(){
     var type = getTypeUser();
     if(type == 'resaler') {
-        $('#add-company-modal h4').html('Add Company - Resaler');
+        $('#add-company-modal h4').html('Company Settings - Resaler');
+        $('#add-company-modal #company-name').val(RESALER_SETTINGS["Name"]);
+        $('#add-company-modal #company-surname').val(RESALER_SETTINGS["Surname"]);
+        $('#add-company-modal #company-city').val(RESALER_SETTINGS["City"]);
+        $('#add-company-modal #company-id').val(RESALER_SETTINGS["ID"]);
+        $('#add-company-modal #company-country').val(RESALER_SETTINGS["Country"]);
+        $('#add-company-modal #company-owner').val(RESALER_SETTINGS["Owner"]);
+        $('#add-company-modal #company-address').val(RESALER_SETTINGS["Address"]);
     }
     else if (type == 'white') {
-        $('#add-company-modal h4').html('Add Company - White Label');
+        $('#add-company-modal h4').html('Company Settings - White Label');
+        $('#add-company-modal #company-name').val(WL_SETTINGS["Name"]);
+        $('#add-company-modal #company-surname').val(WL_SETTINGS["Surname"]);
+        $('#add-company-modal #company-city').val(WL_SETTINGS["City"]);
+        $('#add-company-modal #company-id').val(WL_SETTINGS["ID"]);
+        $('#add-company-modal #company-country').val(WL_SETTINGS["Country"]);
+        $('#add-company-modal #company-owner').val(WL_SETTINGS["Owner"]);
+        $('#add-company-modal #company-address').val(WL_SETTINGS["Address"]);
     }
     else if (type == 'franchise') {
-        $('#add-company-modal h4').html('Add Company - Franchise');
+        $('#add-company-modal h4').html('Company Settings - Franchise');
+        $('#add-company-modal #company-name').val(FRANCHISE_SETTINGS["Name"]);
+        $('#add-company-modal #company-surname').val(FRANCHISE_SETTINGS["Surname"]);
+        $('#add-company-modal #company-city').val(FRANCHISE_SETTINGS["City"]);
+        $('#add-company-modal #company-id').val(FRANCHISE_SETTINGS["ID"]);
+        $('#add-company-modal #company-country').val(FRANCHISE_SETTINGS["Country"]);
+        $('#add-company-modal #company-owner').val(FRANCHISE_SETTINGS["Owner"]);
+        $('#add-company-modal #company-address').val(FRANCHISE_SETTINGS["Address"]);
     }
 });
+
 
 $('#submit-company').on('click', function(){
     var companyData = {};
-    var errorCount = 0;
-    var errors = [];
-    var type = $('#add-company-modal h4').html().split('-')[1];
-    console.log(type);
-    $('#add-company-modal :input:not(button)').each(function(idx, element){
-        if(element.value === ''){
-            errorCount++;
-            errors.push('Please fill in the required fields');
-            $(this).parent('div .form-group').addClass('has-error');
-        }
-    });
-
-    if($('#add-company-modal #company-id').val() < 0) {
-        errorCount++;
-        errors.push('Company ID: Invalid Number');
+    var type = $('#add-company-modal h4').html().split('-')[1].trim();
+    if(type == 'White Label') {
+        WL_SETTINGS["Name"] = $('#add-company-modal #company-name').val();
+        WL_SETTINGS["Surname"] = $('#add-company-modal #company-surname').val();
+        WL_SETTINGS["Address"] = $('#add-company-modal #company-address').val();
+        WL_SETTINGS["City"] = $('#add-company-modal #company-city').val();
+        WL_SETTINGS["Country"] = $('#add-company-modal #company-country').val();
+        WL_SETTINGS["ID"] = $('#add-company-modal #company-id').val();
+        WL_SETTINGS["Owner"] = $('#add-company-modal #company-owner').val();
     }
-
-    if(errorCount > 0){
-        var errorMessage = errors.join('<br>');
-        $('#add-company-modal .error-container p').html(errorMessage);
-        $('#add-company-modal').scrollTop(0);
+    else if( type == 'Franchise') {
+        FRANCHISE_SETTINGS["Name"] = $('#add-company-modal #company-name').val();
+        FRANCHISE_SETTINGS["Surname"] = $('#add-company-modal #company-surname').val();
+        FRANCHISE_SETTINGS["Address"] = $('#add-company-modal #company-address').val();
+        FRANCHISE_SETTINGS["City"] = $('#add-company-modal #company-city').val();
+        FRANCHISE_SETTINGS["Country"] = $('#add-company-modal #company-country').val();
+        FRANCHISE_SETTINGS["ID"] = $('#add-company-modal #company-id').val();
+        FRANCHISE_SETTINGS["Owner"] = $('#add-company-modal #company-owner').val();
     }
-    else {
-        companyData["Name"] = $('#add-company-modal #company-name').val();
-        companyData["Surname"] = $('#add-company-modal #company-surname').val();
-        companyData["Address"] = $('#add-company-modal #company-address').val();
-        companyData["City"] = $('#add-company-modal #company-city').val();
-        companyData["Country"] = $('#add-company-modal #company-country').val();
-        companyData["ID"] = $('#add-company-modal #company-id').val();
-        companyData["Owner"] = $('#add-company-modal #company-owner').val();
-        companyData['Type'] = type;
-
-        socket.emit('add-company', companyData);
+    else if( type == "Resaler") {
+        RESALER_SETTINGS["Name"] = $('#add-company-modal #company-name').val();
+        RESALER_SETTINGS["Surname"] = $('#add-company-modal #company-surname').val();
+        RESALER_SETTINGS["Address"] = $('#add-company-modal #company-address').val();
+        RESALER_SETTINGS["City"] = $('#add-company-modal #company-city').val();
+        RESALER_SETTINGS["Country"] = $('#add-company-modal #company-country').val();
+        RESALER_SETTINGS["ID"] = $('#add-company-modal #company-id').val();
+        RESALER_SETTINGS["Owner"] = $('#add-company-modal #company-owner').val();
     }
-});
-
-socket.on('company-saved', function(){
-    $('#add-company-modal .error-container p').html('');
-    $('#add-company-modal').find('input').val('');
     $('#add-company-modal').modal('toggle');
+
+
 });

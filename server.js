@@ -32,7 +32,6 @@ app.use(express.static(path.join(__dirname, 'assets')));
 function Server() {
     var _self = this;
     this.usersData = {};
-    this.companyData = [];
 
     this.init = function(){
         console.log('Initializing');
@@ -67,11 +66,6 @@ function Server() {
                     }
                 }
                 socket.emit('userData', {user: user});
-            });
-
-            socket.on('add-company', function(companyData) {
-                _self.companyData.push(companyData);
-                socket.emit('company-saved');
             });
 
             socket.on('edit-user', function(user) {
