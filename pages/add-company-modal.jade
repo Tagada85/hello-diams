@@ -1,0 +1,35 @@
+.modal.fade(tabindex="-1",role="dialog",aria-labelledby="Label",aria-hidden="true")#add-company-modal
+    .modal-dialog
+        .modal-content
+            .modal-header
+                button.close(type="button",data-dismiss="modal")
+                    span(aria-hidden="true") &times;
+                    span.sr-only Close
+                h4.modal-title#company-modal-header
+            .modal-body
+                .error-container
+                    p.text-danger.bg-danger
+                .form-group
+                    label(for="company-name") Company Name:
+                    input.form-control(type="text" name="company-name")#company-name
+                .form-group
+                    label(for="company-surname") Company Surname:
+                    input.form-control(type="text" name="company-surname")#company-surname
+                .form-group
+                    label(for="company-address") Company Address:
+                    input.form-control(type="text" name="company-address")#company-address
+                .form-group
+                    label(for="company-city") Company City:
+                    input.form-control(type="text" name="company-city")#company-city
+                .form-group
+                    label(for="company-country") Company Country:
+                    input.form-control(type="text" name="company-country")#company-country
+                .form-group
+                    label(for="company-id") Company ID:
+                    input.form-control(type="number" min="0" name="company-id")#company-id
+                .form-group
+                    label(for="company-owner") Company Owner:
+                    input.form-control(type="text" name="company-owner")#company-owner
+            .modal-footer
+                button(class="btn btn-success")#submit-company Add Company
+                button.btn.btn-default(type="button",data-dismiss="modal") Close
