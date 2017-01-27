@@ -1,0 +1,28 @@
+extends layout
+
+block content
+   .content
+       .container-fluid
+           .row
+               .col-md-12
+                   .card
+                       .card-content
+                           .toolbar
+                           .material-datatables
+                               #datatables_wrapper.dataTables_wrapper.form-inline.dt-bootstrap.no-footer
+                                    .row
+                                        .class-sm-12
+                                           table#datatables.table.table-striped.table-no-bordered.table-hover(cellspacing="0" width="100%" style="width:100%")
+                                               thead
+                                                   tr
+                                                       th.disabled-sorting First Name
+                                                       th.disabled-sorting Last Name
+                                                       th.disabled-sorting Phone
+                                                       th.disabled-sorting Email
+                                                       th.disabled-sorting Company Name
+                                                       th.disabled-sorting Country of Incorporation
+                                                       th.disabled-sorting Registration Number
+                                                       th.disabled-sorting Corporate Address
+                                                       th.disabled-sorting Legal Representative
+                                                       th.disabled-sorting.text-right Actions
+                                               tbody#user-data

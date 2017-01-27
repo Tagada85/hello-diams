@@ -1,0 +1,63 @@
+.modal.fade(tabindex="-1",role="dialog",aria-labelledby="User" aria-hidden="true")#add-user-modal
+  .modal-dialog
+      .modal-content
+          .modal-header
+              button.close(type="button",data-dismiss="modal")
+                  span(aria-hidden="true") &times;
+                  span.sr-only Close
+              h4.modal-title(id="User") Add User
+          .modal-body
+              .error-container
+                  p.text-danger.bg-danger 
+              .form-group
+                  label(for='type-user') User Type :
+                  select#type-user
+                      option(value='' selected disabled) Choose a Type
+                      option(value="white-label") White Label
+                      option(value="franchise") Franchise
+                      option(value="resaler") Resaler
+              .form-group#platformgroup
+                  label(for='platform') Plateform:
+                  input.form-control#platform(type="text" required name="platform")
+              .form-group
+                  label(for='firstname') First Name:
+                  input.form-control#firstname(type="text" required name="firstname")
+              .form-group
+                  label(for='lastname') Last Name:
+                  input.form-control#lastname(type="text" required name="lastname")
+              .form-group
+                  label(for='email') Email:
+                  input.form-control#email(type="text" required name="email")
+              .form-group
+                  label(for='phone') Phone:
+                  input.form-control#phone(type="text" required name="phone")
+              .form-group
+                  label(for='company-name') Company Name:
+                  input.form-control#company-name(type="text" required name="company-name")
+              .form-group
+                  label(for='country-incorporation') Country of Incorporation:
+                  input.form-control#country-incorporation(type="text" required name="country-incorporation")
+              .form-group
+                  label(for='registration-number') Registration Number:
+                  input.form-control#registration-number(type="number" required name="registration-number")
+              .form-group
+                  label(for='corporate-address') Corporate Address:
+                  input.form-control#corporate-address(type="text" required name="corporate-address")
+              .form-group
+                  label(for='legal-rep') Legal Representative:
+                  input.form-control#legal-rep(type="text" required name="legal-rep")
+              .form-group
+                  label(for='setup-fee') Setup Fee:
+                  input.form-control#setup-fee(type="number" min="0" required name="setup-fee")
+              .form-group
+                  label(for='license-fee') License Fee:
+                  input.form-control#license-fee(type="number" min="0" required name="license-fee")
+              .form-group#minfeegroup
+                  label(for='minimum-fee') Minimum Fee:
+                  input.form-control#minimum-fee(type="number" min="0" required name="minimum-fee")
+              .form-group
+                  label(for='comment') Comment:
+                  textarea.form-control#comment
+          .modal-footer
+              button(class="btn btn-success")#submit-add-user Add User
+              button.btn.btn-default(type="button",data-dismiss="modal") Close
