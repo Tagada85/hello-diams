@@ -7,8 +7,8 @@ var RESALER_SETTINGS = {};
 require(['Interface'], function(){
     socket.on('connected', function(data){
         USERS = data.users;
-        filterTable(data.filterType);
         initTable();
+        filterTable(data.filterType);
     });
 
     socket.on('update-users', function(data) {
