@@ -32,6 +32,9 @@ app.use(express.static(path.join(__dirname, 'assets')));
 function Server() {
     var _self = this;
     this.usersData = {};
+    this.whiteLabelParams = {};
+    this.franchiseParams = {};
+    this.resalerParams = {};
 
     this.init = function(){
         console.log('Initializing');
@@ -75,6 +78,32 @@ function Server() {
                     }
                 }
                 socket.emit('update-users', {users: _self.usersData, filterType: user.type});
+            });
+
+            socket.on('save-company-params', function(data){
+                var userType = data.userType;
+                var companyData = data.data;
+                if(userType == 'White Label') {
+                    _self.whiteLabelParams["White Label"] = companyData;
+                }
+                else if(userType == 'Franchise') {
+                    _self.franchiseParams["Franchise"] = companyData;
+                }
+                else if(userType == 'Resaler') {
+                    _self.resalerParams['Resaler'] = companyData;
+                }
+            });
+
+            socket.on('get-company-params', function(type) {
+                if(type == 'white') {
+                    socket.emit('company-params', {data: _self.whiteLabelParams, userType: 'white'});
+                }
+                else if( type == 'franchise') {
+                    socket.emit('company-params', {data: _self.franchiseParams, userType: 'franchise'});
+                }
+                else if( type == 'resaler') {
+                    socket.emit('company-params', {data: _self.resalerParams, userType: 'resaler'});
+                }
             });
 
             socket.on('delete-user', function(userId){
